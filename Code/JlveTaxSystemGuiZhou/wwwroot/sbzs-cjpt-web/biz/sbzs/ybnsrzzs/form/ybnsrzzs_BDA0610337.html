@@ -1,0 +1,408 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>02$增值税纳税申报表附列资料（二）</title>
+<script type="text/javascript">
+  		var bz = "";
+		var fb = "《增值税纳税申报表附列资料二（本期进项税额明细）》";
+		var pbfbBz = "Y";
+		var pathArr = ["bqjxsemxbGridlbVO[2].fs",
+		               "bqjxsemxbGridlbVO[2].je",
+		               "bqjxsemxbGridlbVO[2].se",
+		               "bqjxsemxbGridlbVO[4].fs",
+		               "bqjxsemxbGridlbVO[4].je",
+		               "bqjxsemxbGridlbVO[4].se",
+		               "bqjxsemxbGridlbVO[5].fs",
+		               "bqjxsemxbGridlbVO[5].je",
+		               "bqjxsemxbGridlbVO[5].se",
+		               "bqjxsemxbGridlbVO[6].fs",
+		               "bqjxsemxbGridlbVO[6].se",
+		               "bqjxsemxbGridlbVO[13].se",
+		               "bqjxsemxbGridlbVO[14].se",
+		               "bqjxsemxbGridlbVO[15].se",
+		               "bqjxsemxbGridlbVO[16].se",
+		              // "zzsybnsrsbInitData.mdtsbfckhwbddkjxse", //主表已置零
+		              // "zzsybnsrsbInitData.JXSEZC_MDTCKBDK",  //主表已置零
+		               "bqjxsemxbGridlbVO[18].se",
+		               "bqjxsemxbGridlbVO[19].se",
+		               //"zzsybnsrsbInitData.sqldsedjqs",  //主表已置零
+		              // "zzsybnsrsbInitData.JXSEZC_SQLDDJ",  //主表已置零
+		             //  "zzsybnsrsbInitData.sqldsets",  //主表已置零
+		              // "zzsybnsrsbInitData.JXSEZC_SQLDTS",  //主表已置零
+		               "bqjxsemxbGridlbVO[22].se",
+		               "bqjxsemxbGridlbVO[25].fs",
+		               "bqjxsemxbGridlbVO[25].je",
+		               "bqjxsemxbGridlbVO[25].se",
+		               "bqjxsemxbGridlbVO[26].fs",
+		               "bqjxsemxbGridlbVO[26].je",
+		               "bqjxsemxbGridlbVO[26].se",
+		               "bqjxsemxbGridlbVO[29].fs",
+		               "bqjxsemxbGridlbVO[29].je",
+		               "bqjxsemxbGridlbVO[29].se",
+		               "bqjxsemxbGridlbVO[30].fs",
+		               "bqjxsemxbGridlbVO[30].je",
+		               "bqjxsemxbGridlbVO[30].se",
+		               "bqjxsemxbGridlbVO[31].fs",
+		               "bqjxsemxbGridlbVO[31].je",
+		               "bqjxsemxbGridlbVO[31].se",
+		               "bqjxsemxbGridlbVO[34].fs",
+		               "bqjxsemxbGridlbVO[34].je",
+		               "bqjxsemxbGridlbVO[34].se"];
+		var subViewCustomScripts = [ "/sbzs_res/ybnsrzzs/js/ybnsrzzspbfb.js" ];
+	</script>
+</head>
+
+<body>
+<div style="width:96%; margin:auto;" id="viewCtrlId" ng-controller="viewCtrl">
+<div class="NewTableHead" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr02_bqjxsemxb.sbbhead">
+     <h1>增值税纳税申报表附列资料（表二）（本期进项税额明细） </h1>
+ 
+    <li class="dateTxt">税款所属时间:<input type="text" class="topInput" value=" " ng-model="sbbhead.skssqq" readonly> 至<input type="text" class="topInput" value=" " ng-model="sbbhead.skssqz" readonly>  </li>
+</div>
+
+<div class="NewTableTop" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr ng-jprefix="qcs.initData.nsrjbxx">  <td>纳税人识别号：
+      <input type="text" class="topInput" value="" ng-model="sbbhead.nsrsbh" readonly> </td></tr>
+  <tr>
+    <td>纳税人名称（公章）：
+      <span class="textline" ng-bind="sbbhead.nsrmc"></span> </td>
+    <td align="right">金额单位：元至角分</td>
+    </tr>
+</table>
+</div>
+<div class="NewTableMain" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr02_bqjxsemxb.bqjxsemxbGrid.bqjxsemxbGridlbVO">
+  <table width="100%" border="0" cellpadding="0" cellspacing="1">
+    <col width="72" span="2">
+    <col width="160">
+    <col width="104">
+    <col width="108">
+    <col width="87">
+    <col width="121">
+    <tr align="center">
+      <td colspan="7"class="title01 title02"><strong>一、申报抵扣的进项税额</strong></td>
+    </tr>
+    <tr>
+      <td colspan="3" rowspan="2" align="center" class="title01  title02" width="30%">项目</td>
+      <td width="100" rowspan="2" align="center" class="title01  title02"  width="10%">栏次</td>
+      <td rowspan="2" align="center" class="title01  title02" width="20%">份数</td>
+      <td rowspan="2" align="center" class="title01  title02" width="20%">金额</td>
+      <td rowspan="2" align="center" class="title01  title02" width="20%">税额</td>
+    </tr>
+    <tr> </tr>
+    <tr>
+      <td colspan="3" class="title01">（一）认证相符的增值税专用发票</td>
+      <td align="center" class="title01">1=2+3</td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[0].fs" type="text" ng-datatype="number{0}" readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[0].je" type="text" ng-datatype="number" readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[0].se" type="text" ng-datatype="number" readonly></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">        其中：本期认证相符且本期申报抵扣</td>
+      <td align="center" class="title01">2</td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[1].fs" type="text" ng-datatype="number{0}" readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[1].je" type="text" ng-datatype="number" readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[1].se" type="text" ng-datatype="number" readonly></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">                 &nbsp;&nbsp;&nbsp;&nbsp;前期认证相符且本期申报抵扣</td>
+      <td align="center" class="title01">3</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[2].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[2].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[2].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">（二）其他扣税凭证</td>
+      <td align="center" class="title01">4=5+6+7+8</td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[3].fs" type="text" ng-datatype="number{0}" readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[3].je" type="text" ng-datatype="number" readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[3].se" type="text" ng-datatype="number" readonly></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">        其中：海关进口增值税专用缴款书</td>
+      <td align="center" class="title01">5</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[4].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[4].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[4].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">                &nbsp;&nbsp;&nbsp;&nbsp;农产品收购发票或者销售发票</td>
+      <td align="center" class="title01">6</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[5].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[5].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[5].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">                  &nbsp;&nbsp;&nbsp;&nbsp;代扣代缴税收缴款凭证</td>
+      <td align="center" class="title01">7</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[6].fs" type="text" ng-datatype="number{0}" ></td>
+      <td class="read mid" align="center" >--</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[6].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr id="qt8a">
+      <td colspan="3" class="title01">               &nbsp;&nbsp;&nbsp;&nbsp;加计扣除农产品进项税额</td>
+      <td align="center" class="title01">8a</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[36].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr id="qt8b">
+      <td colspan="3" class="title01">               &nbsp;&nbsp;&nbsp;&nbsp;其他</td>
+      <td align="center" class="title01">8b</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[7].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[7].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[7].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr id="qt8b-1"   ng-show="formData.zzsybsbSbbdxxVO.zzssyyybnsr02_bqjxsemxb.sbbhead.skssqq>='2019-04-01'&&(formData.qcs.initData.nsrjbxx.swjgDm).substring(0,3)=='144'" >
+      <td colspan="3" class="title01" >             		  		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中：本期其他国内旅客运输服务扣税凭证的进项税额</td>
+      <td align="center" class="title01">8b-1</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[37].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[37].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[37].se" type="text" ng-datatype="number"></td>
+      </tr>
+      <!-- &&(formData.qcs.initData.nsrjbxx.swjgDm).substring(0,3)=='144' -->
+    <tr id="qt8b-2"  ng-show="formData.zzsybsbSbbdxxVO.zzssyyybnsr02_bqjxsemxb.sbbhead.skssqq>='2019-04-01' &&(formData.qcs.initData.nsrjbxx.swjgDm).substring(0,3)=='144'" >
+      <td colspan="3" class="title01" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本期不动产转入的进项税额</td>
+      <td align="center" class="title01">8b-2</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[38].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[38].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[38].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr id="qt8b-3"  ng-show="formData.zzsybsbSbbdxxVO.zzssyyybnsr02_bqjxsemxb.sbbhead.skssqq>='2019-04-01' &&(formData.qcs.initData.nsrjbxx.swjgDm).substring(0,3)=='144'" >
+      <td colspan="3" class="title01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本期桥闸费发票对应的进项税额</td>
+      <td align="center" class="title01">8b-3</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[39].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[39].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[39].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">（三）本期用于购建不动产的扣税凭证</td>
+      <td align="center" class="title01">9</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[8].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[8].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[8].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <!-- 20190401以前使用 -->
+    <tr ng-show="formData.qcs.initData.zzsybnsrsbInitData.sj_201904yq=='Y'">
+      <td colspan="3" class="title01">（四）本期不动产允许抵扣进项税额</td>
+      <td align="center" class="title01">10</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="read right"><input ng-model="bqjxsemxbGridlbVO[9].se" type="text" ng-datatype="number" readonly></td>
+    </tr>
+    <!-- 20190401以后使用 -->
+    <tr ng-show="formData.qcs.initData.zzsybnsrsbInitData.sj_201904yq!='Y'">
+      <td colspan="3" class="title01">（四）本期用于抵扣的旅客运输服务扣税凭证</td>
+      <td align="center" class="title01">10</td>
+      <td class="edit right" align="center" ><input  ng-model="bqjxsemxbGridlbVO[9].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right" align="center" ><input  ng-model="bqjxsemxbGridlbVO[9].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[9].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">（五）外贸企业进项税额抵扣证明</td>
+      <td align="center" class="title01">11</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[10].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">当期申报抵扣进项税额合计</td>
+      <td align="center" class="title01" ng-if="formData.qcs.initData.zzsybnsrsbInitData.sj_201904yq=='Y'">12=1+4-9+10+11</td>
+      <td align="center" class="title01" ng-if="formData.qcs.initData.zzsybnsrsbInitData.sj_201904yq!='Y'">12=1+4+11</td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[11].fs" type="text" ng-datatype="number{0}" readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[11].je" type="text" ng-datatype="number" readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[11].se" type="text" ng-datatype="number" readonly></td>
+      </tr>
+    <tr align="center" class="title01">
+      <td colspan="7" class="title01"><strong>二、进项税额转出额</strong></td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center" class="title01">项目</td>
+      <td align="center" class="title01">栏次</td>
+      <td colspan="3" align="center" class="title01">税额</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">本期进项税额转出额</td>
+      <td align="center" class="title01">13=14至23之和</td>
+      <td colspan="3" class="read right"><input  ng-model="bqjxsemxbGridlbVO[12].se" type="text" ng-datatype="number" readonly></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">其中：免税项目用</td>
+      <td align="center" class="title01">14</td>
+      <td colspan="3" class="edit right"><input  ng-model="bqjxsemxbGridlbVO[13].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">       &nbsp;&nbsp;&nbsp;&nbsp;集体福利、个人消费</td>
+      <td align="center" class="title01">15</td>
+      <td colspan="3" class="edit right"><input  ng-model="bqjxsemxbGridlbVO[14].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">          非正常损失</td>
+      <td align="center" class="title01">16</td>
+      <td colspan="3" class="edit right"><input  ng-model="bqjxsemxbGridlbVO[15].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">          简易计税方法征税项目用</td>
+      <td align="center" class="title01">17</td>
+      <td colspan="3" class="edit right"><input  ng-model="bqjxsemxbGridlbVO[16].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">          免抵退税办法不得抵扣的进项税额</td>
+      <td align="center" class="title01">18</td>
+      <td colspan="3" class="edit right"><input  ng-model="bqjxsemxbGridlbVO[17].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">          纳税检查调减进项税额</td>
+      <td align="center" class="title01">19</td>
+      <td colspan="3" class="edit right"><input  ng-model="bqjxsemxbGridlbVO[18].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">          红字专用发票信息表注明的进项税额</td>
+      <td align="center" class="title01">20</td>
+      <td colspan="3" class="edit right"><input  ng-model="bqjxsemxbGridlbVO[19].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">          上期留抵税额抵减欠税</td>
+      <td align="center" class="title01">21</td>
+      <td colspan="3" class="read right"><input  ng-model="bqjxsemxbGridlbVO[20].se" type="text" ng-datatype="number" readonly></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">          上期留抵税额退税</td>
+      <td align="center" class="title01">22</td>
+      <td colspan="3" class="read right"><input  ng-model="bqjxsemxbGridlbVO[21].se" type="text" ng-datatype="number" readonly></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">          其他应作进项税额转出的情形</td>
+      <td align="center" class="title01">23</td>
+      <td colspan="3" class="edit right"><input  ng-model="bqjxsemxbGridlbVO[22].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr align="center" class="title01">
+      <td colspan="7" class="title01"><strong>三、待抵扣进项税额</strong></td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center" class="title01">项目</td>
+      <td align="center" class="title01">栏次</td>
+      <td align="center" class="title01">份数</td>
+      <td align="center" class="title01">金额</td>
+      <td align="center" class="title01">税额</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">（一）认证相符的增值税专用发票</td>
+      <td align="center" class="title01">24</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="read mid" align="center" >--</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">     　 &nbsp;期初已认证相符但未申报抵扣</td>
+      <td align="center" class="title01">25</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[24].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[24].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[24].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">      　&nbsp;本期认证相符且本期未申报抵扣</td>
+      <td align="center" class="title01">26</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[25].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[25].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[25].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">      　&nbsp;期末已认证相符但未申报抵扣</td>
+      <td align="center" class="title01">27</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[26].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[26].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[26].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">       　　其中：按照税法规定不允许抵扣</td>
+      <td align="center" class="title01">28</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[27].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[27].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[27].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">（二）其他扣税凭证</td>
+      <td align="center" class="title01">29=30至33之和</td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[28].fs" type="text" ng-datatype="number{0}"  readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[28].je" type="text" ng-datatype="number"  readonly></td>
+      <td class="read right"><input  ng-model="bqjxsemxbGridlbVO[28].se" type="text" ng-datatype="number"  readonly></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">      　　 其中：海关进口增值税专用缴款书</td>
+      <td align="center" class="title01">30</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[29].fs" type="text" ng-datatype="number{0}" ></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[29].je" type="text" ng-datatype="number" ></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[29].se" type="text" ng-datatype="number" ></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">                　　　农产品收购发票或者销售发票</td>
+      <td align="center" class="title01">31</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[30].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[30].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[30].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">                　　　代扣代缴税收缴款凭证</td>
+      <td align="center" class="title01">32</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[31].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="read mid" align="center" >--</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[31].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">             　　　其他</td>
+      <td align="center" class="title01">33</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[32].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[32].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[32].se" type="text" ng-datatype="number"></td>
+      </tr>
+    <tr>
+      <td colspan="3" class="title01">     </td>
+      <td align="center" class="title01">34</td>
+       <td class="read mid" align="center" >--</td>
+       <td class="read mid" align="center" >--</td>
+       <td class="read mid" align="center" >--</td>
+      </tr>
+    <tr align="center" >
+      <td colspan="7" class="title01"><strong>四、其他</strong></td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center" class="title01">项目</td>
+      <td align="center" class="title01">栏次</td>
+      <td align="center" class="title01">份数</td>
+      <td align="center" class="title01">金额</td>
+      <td align="center" class="title01">税额</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="title01">本期认证相符的增值税专用发票</td>
+      <td align="center" class="title01">35</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[34].fs" type="text" ng-datatype="number{0}"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[34].je" type="text" ng-datatype="number"></td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[34].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr ng-render-finish="">
+      <td colspan="3" class="title01">代扣代缴税额</td>
+      <td align="center" class="title01">36</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="read mid" align="center" >--</td>
+      <td class="edit right"><input  ng-model="bqjxsemxbGridlbVO[35].se" type="text" ng-datatype="number"></td>
+    </tr>
+    <tr ng-jprefix="qcs.initData.zzsybnsrsbInitData" style="display:none"></tr>
+  </table>
+</div>
+  
+<div class="NewTableFoot">
+ 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr ng-render-finish="">
+    <td style="text-indent:2em;">注： 第1栏=第2栏+第3栏；第2栏=第35栏-第26栏；第3栏=第25栏+第26栏-第27栏；第4栏等于第5栏至第8栏之和；<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第12栏=第1栏+第4栏+第11栏；第13栏等于第14栏至第23栏之和；第29栏等于第30栏至第34栏之和。<br/>
+</td>
+  </tr>
+</table>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+.noticeBox .hd {
+	overflow: hidden;
+	height: 30px;
+	background: #f4f4f4;
+	padding: 0 10px;
+}
+
+.noticeBox .hd .prev, .noticeBox .hd .next {
+	display: block;
+	width: 9px;
+	height: 5px;
+	float: right;
+	margin-right: 5px;
+	margin-top: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	background: url("../images/arrow.png") 0 -100px no-repeat;
+}
+
+.noticeBox .hd .next {
+	background-position: 0 -140px;
+}
+
+.noticeBox .hd .prevStop {
+	background-position: -60px -100px;
+}
+
+.noticeBox .hd .nextStop {
+	background-position: -60px -140px;
+}
+
+.noticeBox .hd ul {
+	float: right;
+	overflow: hidden;
+	zoom: 1;
+	margin-top: 10px;
+}
+
+.noticeBox .hd ul li {
+	float: left;
+	width: 9px;
+	height: 9px;
+	overflow: hidden;
+	margin-right: 5px;
+	text-indent: -999px;
+	cursor: pointer;
+	background: url("../images/icoCircle.gif") 0 -9px no-repeat;
+}
+
+.noticeBox .hd ul li.on {
+	background-position: 0 0;
+}
+
+.list ul {
+	margin-top: 20px;
+}
+
+a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #666666;
+}
+
+a:hover {
+	text-decoration: none;
+	font-size: 14px;
+}
+
+a:visited {
+	color: #666666;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+a:hover {
+	color: #b22828;
+	text-decoration: none;
+	font-size: 14px;
+}

@@ -1,0 +1,344 @@
+<!doctype html>
+<html id="ng-app" xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>增值税一般纳税人报表选择</title>
+<link rel="stylesheet" type="text/css" href="../../../../resources/style/green/css/table.css">
+<script src="../../../../resources/js/lib/jquery.min.js"></script>
+<script src="../../../../resources/js/lib/json3.min.js" type="text/javascript"></script>
+<script src="../../../../resources/js/lib/jsonpath.js" type="text/javascript"></script>
+<script src="../../../../resources/js/lib/message.js" type="text/javascript"></script>
+<script src="../../../../resources/js/setting/angular_compatible_IE7.js" type="text/javascript"></script>
+<script src="../../../../resources/js/lib/angular.js" type="text/javascript"></script>
+<script src="../../../../resources/js/ecm-taglib/layer-v2.2/layer/layer.js" type="text/javascript"></script>
+<script src="../../../../setting_res/ybnsrzzsxbsz/ybnsrzzsxbsz.js" type="text/javascript"></script>
+<script src="../../../../resources/js/setting/setViewDirective.js" type="text/javascript"></script>
+<style>
+	#left_tab {
+		float:left;
+		margin-bottom:20px;
+	}
+	.rside {
+		float:right;
+		width:19%;
+	}
+	td.title01 {
+		cursor: default;
+	}
+</style>
+
+</head>
+
+<body style="margin:auto;height:600px;">
+<div class="boxmain" id="viewCtrlId" ng-controller="viewCtrl">
+<div class="NewTableHead">
+      <h1 style="letter-spacing:2px">增值税一般纳税人报表选择</h1>
+      <span id="formDataSpan" style="display: none;">{{formData}}</span>
+</div>
+<div class="NewTableMain" style="position:relative;" ng-jprefix="jcxxsz">
+<table id="left_tab" width="90%" border="0" cellspacing="1" cellpadding="0" ng-jprefix="xgmap">
+<tbody ng-jprefix="xsmap">
+  <tr>
+    <td align="center" class="title01" width="160"><strong>表单分类</strong></td>
+    <td align="center" class="title01" width="420"><strong>表单名称</strong></td>
+    <td align="center" class="title01" width="64px"><strong>选择</strong></td>
+    <td align="center" class="title01" width="112px"><strong>填报说明</strong></td>
+    <td align="center" class="title01" ><strong>表单报送条件</strong></td>
+    </tr>
+  <tr>
+    <td align="center" class="title01">主表</td>
+    <td class="title01">增值税纳税申报表（适用于增值税一般纳税人）</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx1" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610606" ng-disabled="xgmap.BDA0610606 !=='Y'"></td>
+    <td align="center" class="title01">必报</td>
+    <td align="left" class="title01">必报</td>
+    </tr>
+  <tr>
+    <td align="center" class="title01">销项</td>
+    <td class="title01">增值税纳税申报表附列资料(表一)(本期销售情况明细)</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx2" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610339"  ng-disabled="xgmap.BDA0610339 !=='Y'"></td>
+    <td align="center" class="title01">必报</td>
+    <td align="left" class="title01">必报</td>
+    </tr>
+  <tr>
+    <td align="center" class="title01">进项</td>
+    <td class="title01">增值税纳税申报表附列资料（表二）（本期进项税额明细）</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx3" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610337" ng-disabled="xgmap.BDA0610337 !== 'Y'"></td>
+    <td align="center" class="title01">必报</td>
+    <td align="left" class="title01">必报</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610338 === 'Y'">
+    <td align="center" class="title01">扣除</td>
+    <td class="title01">增值税纳税申报表附列资料（表三）（服务、不动产和无形资产扣除项目明细）</td>
+    <td align="center" class="title01"><input ng-click="onCheck($event)" type="checkbox" name="checkobx4" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610338" ng-disabled="xgmap.BDA0610338 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">营业税改征增值税服务、不动产和无形资产有扣除项目的纳税人。有扣除项目的营业税改增值税纳税人填写，其他纳税人可不填。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610566 === 'Y'">
+    <td align="center" class="title01">抵减</td>
+    <td class="title01">增值税纳税申报表附列资料（表四）（税额抵减情况表）</td>
+    <td align="center" class="title01"><input ng-click="onCheck($event)" type="checkbox" name="checkobx5" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610566" ng-disabled="xgmap.BDA0610566 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">营业税改征增值税纳税人申报，发生相关业务的纳税人填写，其他纳税人可不填。</td>
+    </tr>
+  <tr ng-if="xsmap.BDAbdcfqdkjsb === 'Y'">
+    <td align="center" class="title01">抵扣</td>
+    <td class="title01">增值税纳税申报表附列资料（五）（不动产分期抵扣计算表）</td>
+    <td align="center" class="title01"><input ng-click="onCheck($event)" type="checkbox" name="checkobx6" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDAbdcfqdkjsb" ng-disabled="xgmap.BDAbdcfqdkjsb !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">分期抵扣不动产进项税额的纳税人填写</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610031 === 'Y'">
+    <td align="center" class="title01">抵扣</td>
+    <td class="title01">固定资产（不含不动产）进项税额抵扣情况表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx7" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610031" ng-disabled="xgmap.BDA0610031 !== 'Y'"></td>
+    <td align="center" class="title01">必报</td>
+    <td align="left" class="title01">本期有抵扣的固定资产（不含不动产）的进项税额纳税人，必报</td>
+    </tr>
+  <tr ng-if="xsmap.BDAbqtkjxsejgmxb === 'Y'">
+    <td align="center" class="title01">抵扣</td>
+    <td class="title01">本期抵扣进项税额结构明细表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx8" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDAbqtkjxsejgmxb" ng-disabled="xgmap.BDAbqtkjxsejgmxb !== 'Y'"></td>
+    <td align="center" class="title01">必报</td>
+    <td align="left" class="title01">必报</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610758 === 'Y'">
+    <td align="center" class="title01">优惠</td>
+    <td class="title01">增值税减免税申报明细表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx9" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610758" ng-disabled="xgmap.BDA0610758 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">享受增值税减免优惠政策的一般纳税人填写</td>
+    </tr>
+  <tr ng-if="xsmap.BDAygzsffxcsmxb === 'Y'">
+    <td align="center" class="title01">调查</td>
+    <td class="title01">营改增税负分析测算明细表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx10" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDAygzsffxcsmxb" ng-disabled="xgmap.BDAygzsffxcsmxb !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">税务机关确定的营改增样本企业必须报送，其余营改增企业不报送。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610669 === 'Y'">
+    <td align="center" class="title01">汇总纳税总机构</td>
+    <td class="title01">汇总纳税企业增值税分配表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx12" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610669" ng-disabled="xgmap.BDA0610669 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">按照销售分配比例计算缴纳增值税的汇总纳税企业总机构纳税申报时。分支机构是否报送该表由各地自定。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610614 === 'Y'">
+    <td align="center" class="title01">预征预缴分支机构</td>
+    <td class="title01">汇总纳税企业通用传递单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx11" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610614" ng-disabled="xgmap.BDA0610614 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">实行预缴方式缴纳增值税的汇总纳税企业分支机构（除发、供电企业和航空运输企业、邮政企业、铁路总公司、电信企业外）</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610535 === 'Y'">
+    <td align="center" class="title01">电力</td>
+    <td class="title01">电力企业增值税销项税额和进项税额传递单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx13" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610535" ng-disabled="xgmap.BDA0610535 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">实行预缴方式缴纳增值税的电力产品增值税纳税人，即生产、销售电力产品的单位和个人</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610630 === 'Y'">
+    <td align="center" class="title01">邮政</td>
+    <td class="title01">邮政企业分支机构增值税汇总纳税信息传递单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx14" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610630" ng-disabled="xgmap.BDA0610630 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">实行预缴方式缴纳增值税的邮政企业分支机构</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610667 === 'Y'">
+    <td align="center" class="title01">电信</td>
+    <td class="title01">电信企业分支机构增值税汇总纳税信息传递单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx15" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610667" ng-disabled="xgmap.BDA0610667 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">实行预缴方式缴纳增值税的电信企业分支机构</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610628 === 'Y'">
+    <td align="center" class="title01">航空</td>
+    <td class="title01">航空运输企业分支机构传递单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx16" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610628" ng-disabled="xgmap.BDA0610628 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">实行预缴方式缴纳增值税的航空运输企业分支机构</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610631 === 'Y'">
+    <td ng-if="true" rowspan="{{( xsmap.BDA0610631 === 'Y'?1:0)+( xsmap.BDA0610863 ==='Y'?1:0)+( xsmap.BDA0610670 ==='Y'?1:0)}}" align="center" class="title01">铁路</td>
+    <td class="title01">铁路运输企业分支机构增值税汇总纳税信息传递单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx17" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610631" ng-disabled="xgmap.BDA0610631 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">实行预缴方式缴纳增值税的中国铁路总公司所属运输企业</td>
+    </tr>
+   <tr ng-if="xsmap.BDA0610863 === 'Y'">
+   	<td ng-if="xsmap.BDA0610631 !== 'Y'" rowspan="{{( xsmap.BDA0610631 === 'Y'?1:0)+( xsmap.BDA0610863 ==='Y'?1:0)+( xsmap.BDA0610670 ==='Y'?1:0)}}" align="center" class="title01">铁路</td>
+    <td class="title01">铁路建设基金纳税申报表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx39" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610863" ng-disabled="xgmap.BDA0610863 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">中国铁路总公司的铁路建设基金增值税纳税申报使用。</td>
+  </tr> 
+  <tr ng-if="xsmap.BDA0610670 === 'Y'">
+ 	<td ng-if="xsmap.BDA0610863 !== 'Y'&&xsmap.BDA0610631 !== 'Y'" rowspan="{{( xsmap.BDA0610631 === 'Y'?1:0)+( xsmap.BDA0610863 ==='Y'?1:0)+( xsmap.BDA0610670 ==='Y'?1:0)}}" align="center" class="title01">铁路</td>
+    <td class="title01">增值税税款分解表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx18" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610670" ng-disabled="xgmap.BDA0610670 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">跨省合资铁路企业</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610113 === 'Y'">
+    <td ng-if="true" rowspan="{{(xsmap.BDA0610113 === 'Y'?1:0)+(xsmap.BDA0610112 ==='Y'?1:0)+(xsmap.BDA0610564==='Y'?1:0)+(xsmap.BDA0610568 === 'Y'?1:0)}}" align="center" class="title01">成品油</td>
+    <td class="title01">成品油购销存情况明细表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx19" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610113" ng-disabled="xgmap.BDA0610113 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">适用于发生成品油零售业务的纳税人</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610112 === 'Y'">
+  	<td ng-if="xsmap.BDA0610113 !== 'Y'" rowspan="{{(xsmap.BDA0610113 === 'Y'?1:0)+(xsmap.BDA0610112 ==='Y'?1:0)+(xsmap.BDA0610564==='Y'?1:0)+(xsmap.BDA0610568 === 'Y'?1:0)}}" align="center" class="title01">成品油</td>
+    <td class="title01">成品油购销存数量明细表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx20" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610112" ng-disabled="xgmap.BDA0610112 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">从事成品油零售业务的加油站</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610564 === 'Y'">
+  	<td ng-if="xsmap.BDA0610112 !== 'Y'" rowspan="{{(xsmap.BDA0610113 === 'Y'?1:0)+(xsmap.BDA0610112 ==='Y'?1:0)+(xsmap.BDA0610564==='Y'?1:0)+(xsmap.BDA0610568 === 'Y'?1:0)}}" align="center" class="title01">成品油</td>
+    <td class="title01">加油站xx月份加油信息明细表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx21" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610564" ng-disabled="xgmap.BDA0610564 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">从事成品油零售业务的加油站</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610568 === 'Y'">
+  	<td ng-if="xsmap.BDA0610564 !== 'Y'" rowspan="{{(xsmap.BDA0610113 === 'Y'?1:0)+(xsmap.BDA0610112 ==='Y'?1:0)+(xsmap.BDA0610564==='Y'?1:0)+(xsmap.BDA0610568 === 'Y'?1:0)}}" align="center" class="title01">成品油</td>
+    <td class="title01">加油站月销售油品汇总表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx22" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610568" ng-disabled="xgmap.BDA0610568 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">从事成品油零售业务的加油站</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610028 === 'Y'">
+    <td ng-if="true" rowspan="{{( xsmap.BDA0610028 === 'Y'?1:0 )+( xsmap.BDA0610027 ==='Y'?1:0)+( xsmap.BDA0610026 ==='Y'?1:0)+( xsmap.BDA0610025 === 'Y'?1:0)+( xsmap.BDA0610029 === 'Y'?1:0)}}" align="center" class="title01">机动车</td>
+    <td class="title01">机动车辆生产企业销售明细表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx23" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610028" ng-disabled="xgmap.BDA0610028 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">机动车生产企业</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610027 === 'Y'">
+  <td ng-if="xsmap.BDA0610028 !== 'Y'" rowspan="{{( xsmap.BDA0610028 === 'Y'?1:0 )+( xsmap.BDA0610027 ==='Y'?1:0)+( xsmap.BDA0610026 ==='Y'?1:0)+( xsmap.BDA0610025 === 'Y'?1:0)+( xsmap.BDA0610029 === 'Y'?1:0)}}" align="center" class="title01">机动车</td>
+    <td class="title01">机动车辆生产企业销售情况统计表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx24" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610027" ng-disabled="xgmap.BDA0610027 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">机动车生产企业</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610026 === 'Y'">
+  <td ng-if="xsmap.BDA0610027 !== 'Y'" rowspan="{{( xsmap.BDA0610028 === 'Y'?1:0 )+( xsmap.BDA0610027 ==='Y'?1:0)+( xsmap.BDA0610026 ==='Y'?1:0)+( xsmap.BDA0610025 === 'Y'?1:0)+( xsmap.BDA0610029 === 'Y'?1:0)}}" align="center" class="title01">机动车</td>
+    <td class="title01">机动车销售统一发票领用存月报表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx25" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610026" ng-disabled="xgmap.BDA0610026 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">机动车生产企业、经销企业</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610025 === 'Y'">
+  <td ng-if="xsmap.BDA0610026 !== 'Y'" rowspan="{{( xsmap.BDA0610028 === 'Y'?1:0 )+( xsmap.BDA0610027 ==='Y'?1:0)+( xsmap.BDA0610026 ==='Y'?1:0)+( xsmap.BDA0610025 === 'Y'?1:0)+( xsmap.BDA0610029 === 'Y'?1:0)}}" align="center" class="title01">机动车</td>
+    <td class="title01">机动车销售统一发票清单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx26" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610025" ng-disabled="xgmap.BDA0610025 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">机动车生产企业、经销企业及零售企业</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610029 === 'Y'">
+  <td ng-if="xsmap.BDA0610025 !== 'Y'" rowspan="{{( xsmap.BDA0610028 === 'Y'?1:0 )+( xsmap.BDA0610027 ==='Y'?1:0)+( xsmap.BDA0610026 ==='Y'?1:0)+( xsmap.BDA0610025 === 'Y'?1:0)+( xsmap.BDA0610029 === 'Y'?1:0)}}" align="center" class="title01">机动车</td>
+    <td class="title01">机动车辆经销企业销售明细表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx27" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610029" ng-disabled="xgmap.BDA0610029 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">机动车经销企业</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610507 === 'Y'">
+    <td ng-if="true" rowspan="{{( xsmap.BDA0610507 === 'Y'?1:0 )+( xsmap.BDA0610534 ==='Y'?1:0)
+    +( xsmap.BDA0610491 ==='Y'?1:0)+( xsmap.BDA0610506 === 'Y'?1:0)+( xsmap.BDA0610505 === 'Y'?1:0)}}" align="center" class="title01">农产品</td>
+    <td class="title01">农产品核定扣除增值税进项税额计算表（汇总表）</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx28" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610507" ng-disabled="xgmap.BDA0610507 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">购进农产品抵扣增值税进项税额试点范围的增值税一般纳税人，即试点纳税人（农产品备案）。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610534 === 'Y'">
+	  <td ng-if="xsmap.BDA0610507 !== 'Y'" rowspan="{{( xsmap.BDA0610507 === 'Y'?1:0 )+( xsmap.BDA0610534 ==='Y'?1:0)
+    +( xsmap.BDA0610491 ==='Y'?1:0)+( xsmap.BDA0610506 === 'Y'?1:0)+( xsmap.BDA0610505 === 'Y'?1:0)}}" align="center" class="title01">农产品</td>
+    <td class="title01">投入产出法核定农产品增值税进项税额计算表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx29" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610534" ng-disabled="xgmap.BDA0610534 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">购进农产品抵扣增值税进项税额试点范围的增值税一般纳税人，即试点纳税人（农产品备案）。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610491 === 'Y'">
+  	<td ng-if="xsmap.BDA0610534 !== 'Y'" rowspan="{{( xsmap.BDA0610507 === 'Y'?1:0 )+( xsmap.BDA0610534 ==='Y'?1:0)
+    +( xsmap.BDA0610491 ==='Y'?1:0)+( xsmap.BDA0610506 === 'Y'?1:0)+( xsmap.BDA0610505 === 'Y'?1:0)}}" align="center" class="title01">农产品</td>
+    <td class="title01">成本法核定农产品增值税进项税额计算表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx30" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610491" ng-disabled="xgmap.BDA0610491 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">购进农产品抵扣增值税进项税额试点范围的增值税一般纳税人，即试点纳税人（农产品备案）。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610506 === 'Y'">
+	<td ng-if="xsmap.BDA0610491 !== 'Y'" rowspan="{{( xsmap.BDA0610507 === 'Y'?1:0 )+( xsmap.BDA0610534 ==='Y'?1:0)
+    +( xsmap.BDA0610491 ==='Y'?1:0)+( xsmap.BDA0610506 === 'Y'?1:0)+( xsmap.BDA0610505 === 'Y'?1:0)}}" align="center" class="title01">农产品</td>
+    <td class="title01">购进农产品直接销售核定农产品增值税进项税额计算表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx31" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610506" ng-disabled="xgmap.BDA0610506 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">购进农产品抵扣增值税进项税额试点范围的增值税一般纳税人，即试点纳税人（农产品备案）。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610505 === 'Y'">
+    <td ng-if="xsmap.BDA0610506 !== 'Y'" rowspan="{{( xsmap.BDA0610507 === 'Y'?1:0 )+( xsmap.BDA0610534 ==='Y'?1:0)
+    +( xsmap.BDA0610491 ==='Y'?1:0)+( xsmap.BDA0610506 === 'Y'?1:0)+( xsmap.BDA0610505 === 'Y'?1:0)}}" align="center" class="title01">农产品</td>
+    <td class="title01">购进农产品用于生产经营且不构成货物实体计算表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx32" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610505" ng-disabled="xgmap.BDA0610505 !== 'Y'"></td>
+    <td align="center" class="title01">条件必报</td>
+    <td align="left" class="title01">购进农产品抵扣增值税进项税额试点范围的增值税一般纳税人，即试点纳税人（农产品备案）。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610492 === 'Y' &&(formData.swjgDm).substring(0,3)!='144' ">
+    <td align="center" class="title01">运输</td>
+    <td class="title01">增值税运输发票抵扣清单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx33" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610492" ng-disabled="xgmap.BDA0610492 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">发生代扣代缴事项的纳税人。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0210112 === 'Y' &&(formData.swjgDm).substring(0,3)!='144'   ">
+    <td align="center" class="title01">海关</td>
+    <td class="title01">海关完税凭证抵扣联数据采集申请单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx34" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0210112" ng-disabled="xgmap.BDA0210112 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">一般纳税人凭完税凭证抵扣进项税额的，销售建筑服务、销售不动产、出租不动产并按规定预缴增值税后抵减应纳增值税税额的,应填写本表。</td>
+    </tr>
+  <tr ng-if="xsmap.BDA0610569 === 'Y'">
+    <td align="center" class="title01">代扣代缴</td>
+    <td class="title01">代扣代缴税收通用缴款书抵扣清单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx35" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.BDA0610569" ng-disabled="xgmap.BDA0610569 !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">纳税人销售服务、不动产和无形资产，在确定服务、不动产和无形资产销售额时，按照有关规定从取得的全部价款和价外费用中扣除价款的，申报时应报送本表。</td>
+  </tr>
+  <tr ng-if="xsmap.WSPZDKJQD === 'Y'">
+    <td align="center" class="title01">抵扣</td>
+    <td class="title01">完税凭证抵扣（减）清单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx36" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.WSPZDKJQD" ng-disabled="xgmap.WSPZDKJQD !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">纳税人销售服务、不动产和无形资产，在确定服务、不动产和无形资产销售额时，按照有关规定从取得的全部价款和价外费用中扣除价款的，申报时应报送本表。</td>
+  </tr>
+  <tr ng-if="xsmap.FWBDCHWXZCKCXMQD === 'Y'">
+    <td align="center" class="title01">扣除</td>
+    <td class="title01">服务、不动产和无形资产扣除项目清单</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx37" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.FWBDCHWXZCKCXMQD" ng-disabled="xgmap.FWBDCHWXZCKCXMQD !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">纳税人销售服务、不动产和无形资产，在确定服务、不动产和无形资产销售额时，按照有关规定从取得的全部价款和价外费用中扣除价款的，申报时应报送本表。（广东地区表单）</td>
+  </tr>
+  <tr ng-if="xsmap.YBNSRZZS_BCSBB === 'Y'">  
+    <td align="center" class="title01">补充</td>
+    <td class="title01">增值税补充申报表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx38" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.YBNSRZZS_BCSBB" ng-disabled="xgmap.YBNSRZZS_BCSBB !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01">补充申报纳税评估系统数据</td>
+  </tr>
+  <tr ng-if="xsmap.YBNSRZZS_FJSSB === 'Y'">
+    <td align="center" class="title01">补充</td>
+    <td class="title01">附加税（费）申报信息表</td>
+    <td align="center" class="title01"><input type="checkbox" ng-click="onCheck($event)" name="checkobx38" ng-true-value="Y" ng-false-value="N" ng-model="jcxxsz.YBNSRZZS_FJSSB" ng-disabled="xgmap.YBNSRZZS_FJSSB !== 'Y'"></td>
+    <td align="center" class="title01">据实填报</td>
+    <td align="left" class="title01"></td>
+  </tr>
+	</tbody>
+</table>
+</div>
+
+
+
+</div>
+<script src="../../../../resources/js/setting/setViewEngine.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+﻿@model JlveTaxSystemGuiZhou.Models.Model
+@{
+    string ptext;
+    ptext = "尊敬的" + Model.Nsrxx.NSRMC + "(" + Model.Nsrxx.NSRSBH + ")：";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+    <title>申报结果</title>
+    <script src="/sbzs-cjpt-web/abacus/resources4/tax-js/jquery-1.9.1.min.js"></script>
+    <script src="/sbzs-cjpt-web/abacus/resources4/tax-js/common.js"></script>
+    <link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/layui/css/layui.css">
+    <link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-css/common.css">
+    <link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-module/errorMessage/errorMessage.css">
+    <script src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+    <!-- 原js -->
+    <script src="/sbzs-cjpt-web/abacus/_res_/js/lib/jquery.min.js"></script>
+    <script src="/sbzs-cjpt-web/abacus/_res_/js/layer-v2.2/layer/layer.js"></script>
+    <script src="/sbzs-cjpt-web/sbzs_res/autotest/autotest.js"></script>
+
+    <script>
+        $(function () {
+            var btnTime = 9
+            var interval = setInterval(function () {
+                if (btnTime >= 0) {
+                    var txt = "(" + btnTime + ") 关闭本页";
+                    $(".setBtnTime").text(txt);
+                    btnTime = btnTime - 1;
+                } else {
+                    clearInterval(interval);
+                    $(".setBtnTime").text("关闭本页").removeClass("layui-btn-disabled").addClass("layer-close-btn")
+                }
+            }, 1000)
+        })
+
+        var gzsbTip = "";
+        var sbtjgcbz = "";
+        var isShowGzsbTip = "";
+        $(function () {
+            if ("Y" == isShowGzsbTip) {
+                layer.alert(gzsbTip, { title: "提示", icon: 6 });
+            }
+        })
+
+        $(function () {
+            var sbywbm = 'LHFJSSB';
+            if (sbywbm === "QYSDS_A_18ND") {
+                var dqdm = "11";
+                if (dqdm === "11") {
+                    layer.alert("尊敬的纳税人您好 ，如要进行关联申报，请前往【其他申报-关联业务往来报告表】模块填报", { title: "提示", icon: 6 });
+                } else {
+                    layer.alert("尊敬的纳税人您好 ，如要进行关联申报，请前往【关联业务往来报告表】进行填报。", { title: "提示", icon: 6 });
+
+                }
+
+            }
+        })
+
+        var closeBtnlxDm = "1";//页面关闭类型代码，0表示关闭按钮关闭，1表示页面浏览器关闭 ,防止页面关闭重复发送消息提示
+        /**
+         * 关闭按钮
+         */
+        function closePage() {
+            layer.confirm("确定关闭？", { icon: 2, title: '提示' }, function (index) {
+                closeBtnlxDm = "0";//按钮关闭，页面不执行
+                saveXxts();//保存消息提示信息
+            });
+        }
+
+        //保存消息提示信息
+        function saveXxts() {
+            //获取申报信息
+            var errMsg = '';
+            var sbresult = '您的税款所属期为2019-04-01至2019-06-30的《附加税申报表》（应征凭证序号为：10011119000053283372）已申报成功。税款金额：0.00元，无需进行缴款。';
+            var ybtse = '0.00';
+            var sbywbm = 'LHFJSSB';
+            //判断是否需要发送消息提示
+            if (ybtse != null && ybtse != '' && ybtse != 'undefined' && parseFloat(ybtse) <= 1.0) {
+                //若申报金额小于1，无需缴款，不行要发送系统消息
+                closePageeEnd();
+                return;
+            } else if (ybtse != null && ybtse != '' && ybtse != 'undefined' && parseFloat(ybtse) >= 1.0) {
+                //若申报金额大于1，需要缴款
+                sbresult += "请及时缴纳税款，以免产生滞纳金！ 超过法律、行政法规规定或者税务机关依照法律、行政法规的规定确定的缴纳期限缴款的，将从税款滞纳次日按日加收滞纳税款万分之五的滞纳金。";
+            }
+            var reqParamsObj = {};
+            reqParamsObj.errMsg = errMsg;
+            reqParamsObj.sbresult = sbresult;
+            reqParamsObj.ybtse = ybtse;
+            reqParamsObj.gdslxDm = parent.gdslxDm;
+            var reqParamsObjStr = JSON.stringify(reqParamsObj);
+            var _data_url = '/sbzs-cjpt-web' + '/nssb/saveXxts.do?gdslxDm=' + parent.gdslxDm;
+            $.ajax({
+                url: _data_url,
+                dataType: "json",
+                async: false,
+                data: { reqParamsJSON: reqParamsObjStr },
+                beforeSend: function () {
+                    //layer.msg("先执行", {icon : 1});
+                    //发送消息成功后关闭页面
+                    closePageeEnd();
+                },
+                success: function (data) {
+                    //发送消息成功后关闭页面
+                    closePageeEnd();
+                }
+            });
+        }
+
+        //最后关闭页面
+        function closePageeEnd() {
+            //发送消息成功后关闭页面
+            if (navigator.userAgent.indexOf("MSIE") > 0) {
+                if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+                    window.opener = null;
+                    window.close();
+                } else {
+                    window.open('', '_top');
+                    window.top.close();
+                }
+            } else if (navigator.userAgent.indexOf("Firefox") > 0) {
+                window.location.href = 'about:blank ';
+                window.close();
+            } else if (navigator.userAgent.indexOf("Chrome") > 0) {
+                /* window.location.href = 'about:blank ';
+                window.close(); */
+                top.open(location, '_self').close();
+            } else {
+                window.open('', '_top');
+                window.top.close();
+            }
+        }
+
+
+        //关闭浏览器
+        window.onbeforeunload = function () {
+            //浏览器关闭 ，按钮关闭不执行
+            if (closeBtnlxDm == "1") {
+                saveXxts();//保存消息提示信息
+            }
+        }
+
+        //缴款按钮
+        function qjsk() {
+            //缴款按钮无需保存消息提示
+            closeBtnlxDm = "2";
+            if ('/sbzs-cjpt-web' == '/shbxf-cjpt-web') {
+                window.open('/shbxf-cjpt-web/view/nssb/zjsbfjk/zjsbfjk.jsp?gdslxDm=1', '_top');
+            } else {
+                if ('N' == 'Y') {
+                    window.open('');
+                } else {
+                    window.open('/sbzs-cjpt-web' +
+                        '/zsjs/qjsk.do', '_top');
+                }
+            }
+
+        }
+
+        function cfybtj(ysqxxid) {
+            layer.alert("<ul><li>&nbsp;</li><li style=text-indent:2em;>检测到：因连接税局系统超时，导致申报提交失败。</li><li style=text-indent:2em;>您可选择稍晚由后台系统自动代为提交申报表，点【确认】后，系统将在稍后每隔 30 分钟帮您申报一次，最多重试3次（如已申报成功不会再重复申报，请放心）。</li><li style=text-indent:2em;>每次申报成功或失败均会通过消息提醒，请留意。</li><li>&nbsp;</li></ul>",
+                { btn: ['确认', '取消'] },
+                function () {
+                    $.ajax({
+                        type: "post",
+                        url: "/sbzs-cjpt-web/cfybtj/createrz.do",
+                        data: {
+                            "ysqxxid": ysqxxid
+                        },
+                        success: function (data) {
+                            layer.msg("已将申报表添加到后台处理队列，请留意消息", { icon: 1 });
+                        },
+                        error: function () {
+                            layer.alert("添加到后台处理队列失败，请重试", {
+                                skin: { icon: 1 },
+                                closeBtn: 0
+                            });
+                        },
+                        complete: function () {
+
+                        }
+                    });
+                });
+        }
+
+        function autoTestBt() {
+            var strJob = '';
+            getSbxx(strJob);
+        }
+
+        function dtprintPdf(pzxh, gdslxDm) {
+            var index = layer.load(2, { shade: 0.2 });
+            var printPdfUrl = "/sbzs-cjpt-web/nssb/sbxx/printPdf.do?pzxh=" + pzxh + "&gdslxDm=" + parent.gdslxDm + "&ysqxxid=" + 'E54F985EFFFFFF8F6AACB887F370C5A7';
+            $.ajax({
+                url: printPdfUrl,
+                type: "GET",
+                data: {},
+                dataType: "json",
+                contentType: "application/json",
+                success: function (data) {
+                    var pdfName = eval("(" + data + ")");
+                    if (pdfName == null || pdfName == "") {
+                        //layer.alert('非本渠道申报，暂不提供打印!', {icon : 5});
+                        return;
+                    }
+                    var url = "/zlpz-cjpt-web/view/ssws/viewAttachment.jsp?targetName=" + pdfName + "&gdslxDm=" + gdslxDm;
+                    window.open(url);
+                },
+                error: function () {
+                    //layer.alert('链接超时或网络异常', {icon : 5});
+                },
+                complete: function () {
+                    layer.close(index);
+                },
+                timeout: 1000000000
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="info-page marginT20">
+
+        <h3 class="font-green">申报成功</h3>
+
+        <ul>
+
+            <!-- 申报成功 -->
+            <li class="info-icon"><img src="/sbzs-cjpt-web/abacus/resources4/tax-module/errorMessage/success.png" alt="" /></li>
+
+            <li class="info-txt">
+                <p>@ptext</p>
+
+                <!-- 申报成功 -->
+                <p id="sbcg" class="suojin">@Model.msg</p>
+
+
+
+            </li>
+            <li class="info-btn">
+
+
+                <button class="layui-btn layui-btn-primary" onclick="qjsk()">缴款</button>
+                <button class="layui-btn layui-btn-primary" onclick="closePage()">关闭本页</button>
+
+
+            </li>
+            <li class="info-star" style="display:none">
+                <fieldset class="layui-elem-field layui-field-title"
+                          style="margin-top: 30px;">
+                    <legend>用户评价</legend>
+                </fieldset>
+                <iframe src="/yyzxn-cjpt-web/view/yyzx/nsrpj/nsrpjcx/pjym.jsp" frameborder="0" scrolling="no" height="220px" width="100%"></iframe>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+

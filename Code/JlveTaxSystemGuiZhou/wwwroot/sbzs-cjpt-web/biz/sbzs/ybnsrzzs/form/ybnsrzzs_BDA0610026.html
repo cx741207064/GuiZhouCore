@@ -1,0 +1,121 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>机动车销售统一发票领用存月报表</title>
+</head>
+
+<body style="width:2000px;">
+<div style="width:96%; margin:auto;" id="viewCtrlId"  ng-controller="viewCtrl">
+<div class="NewTableHead" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcxstyfplycybb.sbbheadVO">
+     <h1>机动车销售统一发票领用存月报表</h1>
+     <li class="dateTxt">税款所属时间:<input type="text"   readonly style="width:100px; height:20px;" ng-model="sbbheadVO.skssqq" class="topInput"> 至 <input type="text"   readonly style="width:100px; height:20px;" ng-model="sbbheadVO.skssqz" class="topInput"></li>
+</div>
+
+
+<div class="NewTableTop" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcxstyfplycybb.sbbheadVO">
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>纳税人名称：
+                <span class="textline" ng-bind="sbbheadVO.nsrmc"></span></td>
+                <td align="right">纳税人识别号：<span class="textline" ng-bind="sbbheadVO.nsrsbh"></span></td>
+                </tr>
+          </table></td>
+          </tr>
+    </table>
+</div>
+
+
+<div class="NewTableMain" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcxstyfplycybb.jdcxstyfplycybbGrid.jdcxstyfplycybbGridlbVO">
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="1" class="jdcfplycybb">
+    <tbody>
+      </tbody><colgroup class="c1"></colgroup>
+	  <colgroup class="c2"></colgroup>
+	  <colgroup class="c3"></colgroup>
+	  <colgroup class="c4"></colgroup>
+	  <colgroup class="c5"></colgroup>
+	  <colgroup class="c6"></colgroup>
+	  <colgroup class="c7"></colgroup>
+	  <colgroup class="c8"></colgroup>
+	  <colgroup class="c9"></colgroup>
+	  <colgroup class="c10"></colgroup>
+	  <colgroup class="c11"></colgroup>
+	  <colgroup class="c12"></colgroup>
+	  <colgroup class="c13"></colgroup>
+	  <colgroup class="c14"></colgroup>
+	  <colgroup class="c15"></colgroup>
+	  <colgroup class="c16"></colgroup>
+	  <colgroup class="c17"></colgroup>
+	  <colgroup class="c18"></colgroup>
+	  <colgroup class="c19"></colgroup>
+      <tbody><tr>
+        <td align="center" class="title01">项目</td>
+        <td colspan="3" align="center" class="title01">期初库存</td>
+        <td colspan="3" align="center" class="title01">本期领购</td>
+        <td colspan="3" align="center" class="title01">本期开具</td>
+        <td colspan="3" align="center" class="title01">本期交回未开具数量</td>
+        <td colspan="3" align="center" class="title01">本期作废或遗失</td>
+        <td colspan="3" align="center" class="title01">期末库存</td>
+        <td rowspan="2" align="center" width="86px" class="title01">操作</td>
+      </tr>
+      <tr>
+        <td align="center" class="title01">机动车<br>销售统一发票</td>
+        <td align="center" class="title01">份数</td>
+        <td align="center" class="title01">起始号码</td>
+        <td align="center" class="title01">终止号码</td>
+        <td align="center" class="title01">份数</td>
+        <td align="center" class="title01">起始号码</td>
+        <td align="center" class="title01">终止号码</td>
+        <td align="center" class="title01">份数</td>
+        <td align="center" class="title01">起始号码</td>
+        <td align="center" class="title01">终止号码</td>
+        <td align="center" class="title01">份数</td>
+        <td align="center" class="title01">起始号码</td>
+        <td align="center" class="title01">终止号码</td>
+        <td align="center" class="title01">份数</td>
+        <td align="center" class="title01">起始号码</td>
+        <td align="center" class="title01">终止号码</td>
+        <td align="center" class="title01">份数</td>
+        <td align="center" class="title01">起始号码</td>
+        <td align="center" class="title01">终止号码</td>
+      </tr>
+      <tr ng-repeat="p in jdcxstyfplycybbGridlbVO track by $index" ng-repeat-init="jdcxstyfplycybbGridlbVO" 
+      default-value='{"ewbhxh":0,"jdcxstyfp":"","qckcFs":0,"qckcQshm":"","qckcZzhm":"","bqlgFs":0,"bqlgQshm":"","bqlgZzhm":"","bqkjFs":0,"bqkjQshm":"","bqkjZzhm":"","bqjhwkjslFs":0,"bqjhwkjslQshm":"","bqjhwkjslZzhm":"","bqzfhysFs":0,"bqzfhysQshm":"","bqzfhysZzhm":"","qwkcFs":0,"qwkcQshm":"","qwkcZzhm":""}'>
+        <td align="center" style="display:none" ng-bind="p.ewbhxh=$index+1"></td> 
+        <td class="edit left"><input   type="text"   ng-model="p.jdcxstyfp"></td>
+        <td class="edit right"><input    type="text"  ng-datatype="number{0}"  ng-model="p.qckcFs"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.qckcQshm"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.qckcZzhm"></td>
+        <td class="edit right"><input   type="text" ng-datatype="number{0}" ng-model="p.bqlgFs"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.bqlgQshm"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.bqlgZzhm"></td>
+        <td class="edit right"><input   type="text" ng-datatype="number{0}" ng-model="p.bqkjFs"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.bqkjQshm"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.bqkjZzhm"></td>
+        <td class="edit right"><input   type="text" ng-datatype="number{0}" ng-model="p.bqjhwkjslFs"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.bqjhwkjslQshm"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.bqjhwkjslZzhm"></td>
+        <td class="edit right"><input   type="text"  ng-datatype="number{0}"  ng-model="p.bqzfhysFs"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.bqzfhysQshm"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.bqzfhysZzhm"></td>
+        <td class="edit right"><input   type="text" ng-datatype="number{0}" ng-model="p.qwkcFs"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.qwkcQshm"></td>
+        <td class="edit left"><input   type="text"   ng-model="p.qwkcZzhm"></td>
+<td align="center" ><div class="sbtnbox"><a class="layui-btn layui-btn-xs" ng-href="#" ng-click="add()">增加</a>&nbsp;<a class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0" ng-href="#" ng-click="del($index)">删除</a></div></td>
+      </tr>
+     <tr ng-render-finish=""></tr>
+    </tbody>
+  </table>
+</div>
+
+ 
+
+
+</div>
+</body>
+</html>

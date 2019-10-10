@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <business>
+    <type>1</type>
+    <value>industry</value>
+  </business>
+  <business>
+    <type>2</type>
+    <value>commerce</value>
+  </business>
+</root>

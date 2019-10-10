@@ -1,0 +1,337 @@
+
+
+<!-- 框架公用代码 -->
+
+
+
+  
+  
+
+
+
+
+<script src="/sbzs-cjpt-web/resources/js/jquery.base64.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/lib/jquery.min.js"></script>
+<script src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources4/layui/css/layui.css"/>
+<script type="text/javascript">
+	//申报查看功能需要用到的参数2019-5-6
+	var lookBack = "null";
+	var yslookBack = "null";
+	var ywlx = "sbzs";
+	
+	var config = {'qyzdqtrycjBtn':{'name':'企业重点群体人员采集','func':'redirectQyzdqtrycjAndQytysbcjPage("qyzdrq")','disp':'none'},'qytysbcjBtn':{'name':'企业退役士兵采集','func':'redirectQyzdqtrycjAndQytysbcjPage("qytysb")','disp':'none'},'btnCzgc':{'name':'操作规程','func':'showCzgc()','disp':'none'},'btnSave':{'name':'暂存','func':'tempSave()','disp':'block'},'btnSaved':{'name':'保存','func':'save()','disp':'block'},'btnVerify':{'name':'校验','func':'verifyMake()','disp':'none'},'btnPrepareMake':{'name':'下一步','func':'prepareMake()','disp':'block','isUsual':'true'},'btnEdit':{'name':'修改','func':'','disp':'none'},'btnPrint':{'name':'打印','func':'printForm()','disp':'none'},'btnExportXML':{'name':'导出报盘','func':'exportXML()','disp':'none'},'btnDelete':{'name':'删除','func':'tempSave','disp':'none'},'btnClose':{'name':'关闭','func':'closeForm()','disp':'none'},'btnReset':{'name':'重置','func':'resetForm()','disp':'block'},};
+	$(function(){
+		parent.menuBtnControl(config,isExporting);
+		
+		var layer;
+		layui.use('layer', function() { //独立版的layer无需执行这一句
+			layer = layui.layer;
+		});
+	});
+	//声明为全局变量，pdfCheck.js会根据该值，若为“HTML”则表示没有确认页，不校验浏览器信息
+	var makeType = "HTML";
+    var jsonParams = {"nsqx_dm":"11","zsxmDm":"","sbSign":"6ea7aaeead6748b2333de44d83a9ead1","gdslxDm":"1","skssq_z":"2019-09-03","ywbm":"YHSSB","tjNd":"2019","sssqZ":"2019-09-03","skssq_q":"2019-09-03","sbqx":"","sssqQ":"2019-09-03","tjYf":"09","gsdq":"152","zspmDm":"","nsqxDmIn":"","djxh":"10115201000083900814","nsrsbh":"91520190314387738N","sssqQ":"2019-09-03","sssqZ":"2019-09-03"};
+    var temp = '';
+    var _bizReq_path_ = "sbzs/yhssb";
+    var pathRoot = "/sbzs-cjpt-web";
+    var pathRes = "/sbzs-cjpt-web/abacus/_res_";
+    var ywbm = "yhssb";
+    var flagFormDebuging = false;//默认开发者模式是关闭的
+    var environment = "";
+  	//阻断提示和非阻断提示
+	var errors = '[]' ;
+    var warns = '[]' ;
+    var rfTips = '';
+    if(rfTips && rfTips != '[]' && rfTips != ''){
+    	//存在容峰排队信息，把提醒都去除，避免弹出的框把容峰的去除
+    	errors = rfTips;
+    }
+    var isExporting = false;	
+    var cp = '/sbzs-cjpt-web';
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title></title>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/_res_/css/abacus/main.css">
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/_res_/css/message/message_solid.css">
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/_res_/js/message/skin/default/Message.css"/>
+<script>
+window.console = window.console || {
+    log: $.noop,
+    debug: $.noop,
+    info: $.noop,
+    warn: $.noop,
+    exception: $.noop,
+    assert: $.noop,
+    dir: $.noop,
+    dirxml: $.noop,
+    trace: $.noop,
+    group: $.noop,
+    groupCollapsed: $.noop,
+    groupEnd: $.noop,
+    profile: $.noop,
+    profileEnd: $.noop,
+    count: $.noop,
+    clear: $.noop,
+    time: $.noop,
+    timeEnd: $.noop,
+    timeStamp: $.noop,
+    table: $.noop,
+    error: $.noop
+};
+</script>
+<style>
+	.MenuNormal .SheetMenu {
+		min-width:300px;
+	}
+</style>
+</head>
+<body class="USER">
+<form  id="myform"  name= "myform" method = 'post' action="/sbzs-cjpt-web/biz/sbzs/yhssb/make">
+<input type="hidden" id="zssbxx"  name="zssbxx" value="" />
+<input type="hidden" id="_query_string_"  name="_query_string_" value='"nsqx_dm":"11","zsxmDm":"","sbSign":"6ea7aaeead6748b2333de44d83a9ead1","gdslxDm":"1","skssq_z":"2019-09-03","ywbm":"YHSSB","tjNd":"2019","sssqZ":"2019-09-03","skssq_q":"2019-09-03","sbqx":"","sssqQ":"2019-09-03","tjYf":"09","gsdq":"152","zspmDm":"","nsqxDmIn":"","djxh":"10115201000083900814","nsrsbh":"91520190314387738N","sssqQ":"2019-09-03","sssqZ":"2019-09-03"'/>
+<input type="hidden" id="msg" value=""/>
+	<input type="hidden" id="xybNoTip"  name="xybNoTip" value="null" />
+<input type="hidden" id="ysqxxid" name="ysqxxid" value=""/>
+<input type="hidden" id="saveData1" name="saveData" value=""/>
+<input type="hidden" id="submitData1" name="submitData" value=""/>
+<input type="hidden" id="ywbm" name="ywbm" value="yhssb"/>
+<input type="hidden" id="swjgDm" name="swjgDm" value=""/>
+<input type="hidden" id="djxh" name="djxh" value="10115201000083900814"/>
+<input type="hidden" id="sssqQ" name="sssqQ" value="2019-09-03"/>
+<input type="hidden" id="sssqZ" name="sssqZ" value="2019-09-03"/>
+<input type="hidden" id="gdslxDm" name="gdslxDm" value="1"/>
+<input type="hidden" id="nsrsbh" name="nsrsbh" value="91520190314387738N"/>
+<input type="hidden" id="test" name="test" value=""/>
+<input type="hidden" id="sjlybz" name="sjlybz" value=""/>
+<input type="hidden" id="dzbdbmList" name="dzbdbmList" value=""/>
+<input type="hidden" id="swsxDm" name="swsxDm" value=""/>
+<input type="hidden" id="_bizReq_path_" name="_bizReq_path_" value="sbzs/yhssb"/>
+<input type="hidden" id="isShowTbsmId"  value="null"/>
+<input type="hidden" id="fxsm"  value=""/>
+<input type="hidden" id="fbid"  value=""/>
+<input type="hidden" id="showTipsType"  value=""/>
+<input type="hidden" id="backBegin" name="backBegin" value="/sbzs-cjpt-web/biz/sbzs/yhssb/begin?gdslxDm=1&sssqQ=2019-09-03&sssqZ=2019-09-03&skssq_q=2019-09-03&skssq_z=2019-09-03&nsqx_dm=11&sbqx=&zsxmDm=&zspmDm=&nsqxDmIn=&sbSign=6ea7aaeead6748b2333de44d83a9ead1&tjNd=2019&tjYf=09"/>
+<input type="hidden" id="formulaExecType"  value=""/>
+<input type="hidden" id="info2tip"  value=""/>
+<input type="hidden" id="fxsmFjp"  value=""/>
+<input type="hidden" id="zlpzWebContextPath" value="/zlpz-cjpt-web">
+<input type="hidden" id="wbcsh" name="wbcsh" value="null"/>
+<input type="hidden" id="zyywnWebContextPath" value="/zyywn-cjpt-web">
+<input type="hidden" id="czgcFlag" value="Y">
+<input type="hidden" id="jmsbId" value="">
+</form>
+	<div class="TableMain">
+		<table width="100%" border="0" cellspacing="0" class="all_table" cellpadding="0">
+			<tr>
+				<td class="biao_leftmenu" valign="top">
+					<div class="MenuNormal">
+						<table border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td><div class="SheetMenu leftmenucss">
+										<h3>
+						                     <div class="leftTab"><li class="active" id="bblbMenu">报表列表</li></div>
+						                     <div class="btnfixed"><span class="iconfont icon-on"></span></div>
+						                </h3>
+										<ul id="divSheetlist" class="sheetlist">
+											<li class="active"><a href="#">正在加载表单...</a></li>
+										</ul>
+										
+									</div>
+								</td>
+								<td class="close_btn close_btn1"><span><</span></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<td valign="top" width="100%"><iframe id="frmSheet" name="frmSheet" height="100%" width="100%"></iframe></td>
+			</tr>
+		</table>
+	</div>
+	<div class='RightEdit' id='divRight'>
+		<div class='boxStyle'>
+			<h1>
+				表单数据模型&nbsp;&nbsp;<font id="lblJpathSelected"></font>
+			</h1>
+			<input id="inpJpathSelector" type="text" onchange="formDebuging.setDatamodelFilter(this.value)" />
+			<div id="divDebugDataView">
+				<iframe id="frmDebugDataView" height="100%"></iframe>
+			</div>
+		</div>
+	</div>
+	<div class='FootEdit' id='divFootEdit'>
+		<h1>
+			已装载规则库&nbsp;&nbsp;&nbsp;&nbsp;<input id="txtFormulaSearch" type="text"
+				onchange="formDebuging.setFormulaSearch(this.value)" /> <input type="button" value="清空"
+				onclick="formDebuging.clickFormulaListClear()" /> ID:&nbsp;<input id="lblFormulaId"
+				type="text" readonly="readonly" /> Type:&nbsp;<input id="lblFormulaType" type="text" readonly="readonly" />
+			Desc:&nbsp;<input id="lblFormulaDesc" type="text" readonly="readonly"
+				onclick="if (this.title) {alert('【错误信息】\n'+this.title);}" />
+		</h1>
+		<div id="divFormulaList"></div>
+		<div id="divFormulaEditor">
+			<h1>
+				编辑区&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;<input id="txtFormulaId" type="text" />&nbsp;&nbsp;Type:&nbsp;<input
+					id="txtFormulaType" type="text" />
+			</h1>
+			Desc:&nbsp;<input id="txtFormulaDesc" type="text" /><br> Tips:&nbsp;&nbsp;<input id="txtFormulaTips"
+				type="text" />
+			<textarea id="txtFormulaEditor"></textarea>
+			<textarea id="txtFormulaTargetEditor"></textarea>
+			<p>
+				<input id="btnClearFormula" type="button" value="清空" onclick="formDebuging.clickClearFormula(this, event)" />
+				&nbsp;<input id="btnCheckFormula" type="button" value="检查" onclick="formDebuging.clickCheckFormula(this, event)" />
+				&nbsp;<input id="btnUpdateFormula" type="button" value="更新" onclick="formDebuging.clickUpdateFormula(this, event)" />
+				&nbsp;<input id="btnAppendFormula" type="button" value="新增" onclick="formDebuging.clickAppendFormula(this, event)" />&nbsp;<input
+					id="btnEmpty" type="button" value="从excel中导入" onclick="formDebuging.clickExcelToJson(this, event)" />&nbsp;<input id="btnDeleteFormula" type="button" value="删除"
+					onclick="formDebuging.clickDeleteFormula(this, event)" />&nbsp;&nbsp;<input id="btnSave2File" type="button"
+					value="保存文件" onclick="formDebuging.clickSave2File(this, event)" style="float: right;" />
+			</p>
+		</div>
+	</div>
+	
+	<div class="FootEdit2" id="divFootEdit2">
+		<h1>
+			ywbm: <input type="text" style="width: 20%" id="ViewModeYwbm" disabled="true" />
+			urlkey: <input type="text" style="width: 25%" id="ViewModeUrlkey" disabled="true"/>
+			jpath: <input type="text" style="width: 20%;" id="ViewModeJpath" />
+			<input id="btnSaveTbsm" type="button" value="保存至数据库" onclick="formDebuging.clickSaveTbsm(this,event)" />
+			<input id="btnClearTbsm" type="button" value="清空" onclick="formDebuging.clickClearTbsm(this,event)" />
+		</h1>
+		<table width="100%">
+			<thead>
+				<tr>
+					<th><h1>填表说明</h1></th>
+					<th><h1>政策法规</h1></th>
+					<th><h1>税会差异</h1></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><textarea id="tbsm"></textarea></td>
+					<td><textarea id="zcfg"></textarea></td>
+					<td><textarea id="shcy"></textarea></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class='line' id='line'></div>
+	<div class='linefoot' id='linefoot'></div>
+	<input type="hidden" id="contextPath" value="/sbzs-cjpt-web"/>
+	<!-- 框架公共引入的js将迁移到此文件中,在此控制js引入顺序,替换原来的autoLoadJS.js的作用,以后框架添加公用的js在此文件添加 -->
+
+
+  
+
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/message/Message.js"></script>
+
+<script type="text/javascript" src="/sbzs-cjpt-web/sbzs_res/common.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/lib/json3.min.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/lib/jsonpath.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/lib/mask.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/fsjpath.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/formEngine.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/fxsmInitData.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/menuBtnEvent.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/sbzs_res/sbzs.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/sbzs_res/yhssb/js/yhssb.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/sbzs_res/yhssb/js/yhssbDeliver.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/sbzs_res/commonDeliver.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/formulaFunction.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/formulaEngine.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/sbCommon.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/framework/diyImport.js"></script>		
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/viewEvent.js"></script>
+<script src="/sbzs-cjpt-web/abacus/_res_/js/lib/message.js"></script>
+<!-- //TODO 此文件中有包含页面自适应的代码，后续要剥离出来 -->
+<script src="/sbzs-cjpt-web/abacus/_res_/js/abacus/formDebuging.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/abacus/responsive.tabs.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources/js/lib/pdfcheck.js"></script>
+<script src="/sbzs-cjpt-web/sbzs_res/loadJS.js"></script>
+
+<script>
+    // 改变选中附表 C.Q 20170317
+    function fbSelected(index) {
+        $("#divSheetlist").find("li:.current_selected_BD").removeClass("current_selected_BD");
+        $("#divSheetlist").find("li:eq("+index+")").addClass("current_selected_BD");
+    }
+
+	$(function(){
+		DiyImport.load($("#ywbm").val(),
+				[{
+					script:"/sbzs-cjpt-web/resources/js/lib/jquery.json2xml.js",
+					key:"tysb"
+				},{
+					script:"/sbzs-cjpt-web/sbzs_res/tysb/js/tysb_ysq.js",
+					key:"tysb"
+				},{
+					script:"/sbzs-cjpt-web/resources/js/nssb/ccssb/ccssb.js",
+					key:"ccssb"
+				},{
+					script:"/sbzs-cjpt-web/resources/js/nssb/glywwl/cbft.js",
+					key:"glywwlndbgsb"
+				},{
+					script:"/sbzs-cjpt-web/resources/js/nssb/cgssb/cgssb.js",
+					key:"cgssb"
+				}
+				]);		
+		$("#divSheetlist").find("li:not(.active)").live("click",function(){
+			$(this).siblings("li").removeClass("current_selected_BD");
+			$(this).addClass("current_selected_BD");
+		});
+		if(false == flagFormDebuging) {
+			$("#btnChangeMode").css("display","none");
+		}
+		if(environment == "1"){
+			$("#btnChangeMode").show();
+			if($("#sbywbm").val()=="YBNSRZZS" || $("#sbywbm").val()=="QYSDS_A" ||$("#sbywbm").val()=="QYSDS_B"
+				|| $("#sbywbm").val()=="FJM_QYSDS_A" ||$("#sbywbm").val()=="FJM_QYSDS_B"
+				){
+				$("#jcsz").show();
+			}
+			if($("#sbywbm").val()=="YBNSRZZS" || $("#sbywbm").val()=="QYSDS_A"){
+				$("#qcssz").show();
+			}
+			$("#btnImport01").show();
+			$("#btnExport01").show();
+			if($("#sbywbm").val().match("CWBB")){
+				$("#jcsz").show();
+				$("#btnImport01").hide();
+				$("#btnExport01").hide();
+			}
+		}else if(environment == "2"){
+			$("#btnChangeMode").hide();
+			$("#btnImport01").show();
+			$("#btnExport01").show();
+			if($("#sbywbm").val()=="YBNSRZZS" || $("#sbywbm").val()=="QYSDS_A" ||$("#sbywbm").val()=="QYSDS_B"
+				|| $("#sbywbm").val()=="FJM_QYSDS_A" ||$("#sbywbm").val()=="FJM_QYSDS_B"){
+				$("#jcsz").show();
+			}
+			if($("#sbywbm").val()=="YBNSRZZS" || $("#sbywbm").val()=="QYSDS_A"){
+				$("#qcssz").show();
+			}
+			if($("#sbywbm").val().match("CWBB")){
+				$("#jcsz").show();
+				$("#btnImport01").hide();
+				$("#btnExport01").hide();
+			}
+		}else if(environment == "3"){
+			$("#btnChangeMode").hide();
+			if($("#sbywbm").val()=="YBNSRZZS"){
+				$("#qcssz").hide();
+				$("#jcsz").hide();
+			}
+			$("#btnImport01").hide();
+			$("#btnExport01").hide();
+		}
+	});
+	window.contextPath = $("#contextPath").val();
+	
+	</script>
+</body>
+</html>

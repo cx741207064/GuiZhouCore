@@ -1,0 +1,55 @@
+/*** 右侧微信、微博栏****/
+.backtop{ position:fixed; right:0px; top:49%; z-index:10000;}
+.backtop li{ background-color:#b3d3f1; border-top:2px solid #fff;
+	transition:margin 0.5s,background 0.5s;
+	-moz-transition:margin 0.5s,background 0.5s;
+	-webkit-transition:margin 0.5s,background 0.5s;
+	-o-transition:margin 0.5s,background 0.5s; }
+.backtop .mabox:hover{ margin-left:0px;}
+.backtop .erweima{ position:absolute; padding:15px; background-color:#006ecf; right:-235px; opacity:0; margin-top:-36px; z-index:-1;
+	transition:right 0.5s,opacity 0.6S;
+	-webkit-transition:right 0.5s,opacity 0.6S;
+}
+.backtop .mabox:hover .erweima{ right:40px;  opacity:1;}
+.erweima h3{ color:#fff; text-align:center; padding-bottom:10px;}
+.erweima p{ background-color:#fff; text-align:center; padding:0px 0 10px 0; margin-bottom:10px;}
+
+.backtop li:hover{ margin-left:-65px; background-color:#006ecf}
+.backtop li a{ position:relative; display:block;white-space:nowrap;  }
+.backtop li a span{ color:#fff; position:absolute; left:42px; top:7px;}
+
+.index_body{   background-color: #e7e8e8}
+.index_body .indextop{ background-position: top; background-repeat: no-repeat; background-size: 100% 100%; width: 100%; height: 460px;}
+.topbg{ position: absolute;top:0px; left: 0px;z-index: -1;}
+.topbg img{ width: 100%; height: 460px; }
+.index_body .indextop .logo img{ margin-left: 0px; left: 30px; top:35px;}
+.index_body .indextop .bigbox{ width: 1200px; margin: auto;}
+.rcon .list a{  color: #D2E6F7;  }
+.index_body  .indexbom a{margin-top: 0px;}
+.index_body  .indexbom ul{ padding-top: 80px;  }
+.footFixed{position: fixed; width: 100%;left: 0px;bottom: 0px; padding: 0px;}
+
+/*登录前 登录按钮*/
+.loginbefore {}
+.loginbefore .dlbox { position: absolute; width: 44px;right:0px; top: 20px;}
+.loginbefore .dlbox a{text-align: center;display: block;}
+.loginbefore .dlbox a h4{ color: #fff; font-size: 16px; text-align: center; }
+
+
+/* 通知公告滚动 */
+.news-container{overflow: hidden; position: relative;padding-right: 1px; border-right: 1px solid #dcdee2;border-bottom: 1px solid #f9fafd;}
+.news-container ul{ height: auto; position: absolute;width: 100%;  margin-right: 1px;border-right:none; }	
+.news-container ul li{ height: 48px; line-height: 48px; box-sizing: border-box;}
+.tr-even{ background-color: #f9fafd;}
+
+/* 左侧菜单栏 */
+.left_menu .left-title{ padding-left: 20px; font-size: 16px; height: 38px; line-height: 38px;color: #fff; background-color: #74b1ee;border-bottom: 1px solid #dcdee2;border-top-left-radius: 3px; border-top-right-radius: 3px;background-image: url(/xxmh/resources4/tax-images/common/left_title.png);}
+.left_menu .left-title .title-index{font-size: 14px; color: #fff; position: absolute; border-radius: 6px; padding-right: 10px; white-space:nowrap;left:150px;  line-height: 37px; }
+.left_menu .left-title .title-index .iconfont{ margin: 0 6px 0 5px;font-size: 14px;}
+
+/* 图标适应 */
+.con-side{ width: 328px; height: 97%; background: #ffffff; border: 1px solid #dcdee2; border-top-left-radius:3px; border-top-right-radius:3px;  position: absolute;left:0px;margin-bottom:20px;}
+.con-rcon .conbox{ display: block; border: 1px solid #dcdee2; border-top: none; min-height: 250px; background: #ffffff;height:auto}
+.con-rcon .layui-tab-content .tabico a{ margin: 10px 0px; display: block; text-align: center; color: #333333; font-size: 14px;}
+/* 我要办税等没有我的待办等tab时样式 */
+.con-rcon .noNextTab{height: 625px;}

@@ -1,0 +1,105 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>申报确认页面</title>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/layer-v2.2/layer/layer.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/sbzs_res/common.js"></script>
+
+</head>
+<body class="bodyfff">
+
+</body>
+<script type="text/javascript">
+	var makeType = 'HTML';
+	var flag=true;
+	//阻断提示和非阻断提示
+	var errors = '[]' ;
+	var warns = '[]' ; 
+	//针对verifySubmit()的校验结构，给出相应的提示
+	//TODO 用这个提示pdf界面会覆盖提示
+	if(typeof errorsAndWarnsAlert != "undefined"){
+       //调用 errorsAndWarnsAlert
+		errorsAndWarnsAlert(errors,warns,'make');
+		
+    }else{
+	
+		if(errors != null && errors != '' && errors != '[]'){
+			flag=false;
+	    	var index = window.parent.layer.load(2,{shade: 0.3});
+		    var myErrors = '';
+	    	try{
+	    		var tempErrors = eval('('+errors+')');
+		    	for(var i = 1; i <= tempErrors.length; i++){
+		    		if(tempErrors.length == 1){
+						myErrors = tempErrors[0].msg;
+						break;
+					}
+		    		myErrors +=i + "：" + tempErrors[i-1].msg + "<br>";
+		    	}
+	    	}catch(err){
+	    		myErrors=errors;
+	    	}
+	    	window.parent.layer.alert(myErrors, {
+				icon : 5,
+				offset : '270px'
+			});
+	    }else{
+	    	 if(warns != null && warns != '' && warns != '[]'){
+	   	    	var index = window.parent.layer.load(2,{shade: 0.3});
+				var myWarns = '';
+				try{
+					var tempWarns = eval('('+warns+')');
+					for(var i = 1; i <= tempWarns.length; i++){
+						if(tempWarns.length == 1){
+							if(tempWarns.length == 1){
+								myWarns = tempWarns[0].msg;
+								break;
+							}
+							myWarns = tempWarns[0].msg;
+							break;
+						}
+						myWarns += i + "：" + tempWarns[i-1].msg + "<br>";
+					}
+				}catch(err){
+					myWarns= warns;
+				}
+	   	    	window.parent.layer.confirm(myWarns, {icon: 5, title:'信息',btn:['确定']}, function(index) {
+	   	    		window.parent.layer.close(index);
+	   	    		locationhref(flag);
+				});
+	   	    	window.parent.layer.close(index);
+	    	 }else{
+	    		 locationhref(flag);
+	    	 }
+	    }
+    }
+	
+	function locationhref(){
+	var menuBtnConfig = {'btnSubmitWell':{'name':'申报','func':'submitWell()','disp':'block','isUsual':'true'},'btnPrintMake':{'name':'打印','func':'printPDF()','disp':'block'}};
+	parent.menuBtnControl(menuBtnConfig);
+	var returnFlag = "";
+	var errMsg = "";
+	var skipPdf = "";
+	if("N" == returnFlag){
+		window.parent.layer.alert(errMsg);
+	}else{
+		if(makeType == 'HTML') {
+			// 调用父页面的函数，清空按钮区域
+			parent.cleanMeunBtn();
+			//隐藏外框架页面的头部区域
+			parent.hideFrameHead();
+		}
+		layer.load(2);
+		if("Y" == skipPdf){
+			$("#makeform").submit();
+		}else{
+			window.location.href = "/sbzs-cjpt-web/biz/sbzs/@ViewContext.RouteData.Values["dm"]/well?_bizReq_path_=sbzs/lhfjssb&_query_string_=%22nsqx_dm%22%3A%2208%22%2C%22zsxmDm%22%3A%2210109%22%2C%22sbSign%22%3A%2240aa654b3848748f7642f3e900c387be%22%2C%22gdslxDm%22%3A%221%22%2C%22skssq_z%22%3A%222019-06-30%22%2C%22ywbm%22%3A%22LHFJSSB%22%2C%22tjNd%22%3A%222019%22%2C%22sssqZ%22%3A%222019-06-30%22%2C%22skssq_q%22%3A%222019-04-01%22%2C%22sbqx%22%3A%222019-07-15%22%2C%22sssqQ%22%3A%222019-04-01%22%2C%22tjYf%22%3A%2207%22%2C%22gsdq%22%3A%22111%22%2C%22zspmDm%22%3A%22101090201%22%2C%22nsqxDmIn%22%3A%22%22%2C%22djxh%22%3A%2210111102010000069822%22%2C%22nsrsbh%22%3A%2291110116MA00H4L8X1%22%2C%22sssqQ%22%3A%222019-04-01%22%2C%22sssqZ%22%3A%222019-06-30%22%2C%22jumpFjssb%22%3A%22N%22%2C%22extraKey%22%3A%22lhfjs_E54F952A840C51396F83C5A6195514B1%22&ysqxxid=E54F985EFFFFFF8F6AACB887F370C5A7&qzbz=N&_re_contextpath_=/sbzs-cjpt-web&makeType=HTML&asyncSubmit=undefined";
+		}
+	}
+}
+</script>
+</html>

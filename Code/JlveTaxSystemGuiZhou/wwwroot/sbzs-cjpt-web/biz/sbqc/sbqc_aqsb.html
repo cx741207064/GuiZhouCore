@@ -1,0 +1,71 @@
+﻿
+
+
+
+ 
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>申报清册</title>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/lib/jquery.min.js"></script>
+
+<style>
+.padd01{ 
+	padding:20px 0px 20px 30px;
+}
+</style>
+
+<script type="text/javascript">
+    //获取url参数
+    var gdslxDm ='';
+    var tjNd ='';
+    var tjYf ='';
+    //财税管家参数
+    var appid ='';
+    var yypt_nsrsbh ='';
+    var token ='';
+	//获取初始化日期  取服务器时间
+	//var date = new Date;
+	var time = 'Tue Sep 03 11:39:52 CST 2019';
+	//不能直接把后台格式的时间转换，需要把CST时区换掉
+	var dateStr = $.trim(time).split(" ");  
+	var strGMT = dateStr[0]+" "+dateStr[1]+" "+dateStr[2]+" "+dateStr[5]+" "+dateStr[3]+" GMT+0800";      
+	var date = new Date(Date.parse(strGMT));
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	month = (month < 10 ? "0" + month : month);
+	if ("" == tjNd) {
+		tjNd = year;
+	}
+	if ("" == tjYf) {
+		tjYf = month;
+	}
+	function loadPage() {
+		var href = window.location.href;
+		if (href.indexOf("?") > 0) {
+			href = href.substr(0, href.indexOf("?"));
+		}
+		if (href.indexOf(";") > -1) {
+			href = href.substr(0, href.indexOf(";"));
+		}
+
+	window.location.href = href + "/setting?tjNd=" + tjNd + "&tjYf=" + tjYf
+				+ "&gdslxDm=" + gdslxDm + "&token=" + token + "&yypt_nsrsbh="
+				+ yypt_nsrsbh + "&appid=" + appid;
+	}
+	function initFrame() {
+		window.setTimeout(loadPage, 1);
+	}
+</script>
+</head>
+
+<body onload="initFrame()" class="padd01">
+
+</body>
+</html>

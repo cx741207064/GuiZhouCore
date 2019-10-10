@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="text/javascript" src="/zyywn-cjpt-web/resources4/tax-js/jquery-1.9.1.min.js"></script>
+    <script src="/zyywn-cjpt-web/resources4/layui/layui.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/zyywn-cjpt-web/resources4/layui/css/layui.css">
+    <link rel="stylesheet" href="/zyywn-cjpt-web/resources4/tax-css/common.css">
+    <link rel="stylesheet" href="/zyywn-cjpt-web/resources4/tax-font-icon/iconfont.css">
+    <link rel="stylesheet" href="/zyywn-cjpt-web/resources4/tax-module/taxNewsPage/tax-news-page.css">
+</head>
+<body style="overflow:auto;overflow-x: hidden;">
+<div id="czgcDiv" style="width: 100%;margin-top:16px;">
+    <div class="ui-tax-center-box">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <div class="layui-inline" style="margin-left: 5%;">
+                    <label class="layui-form-label" style="width:50px;padding:0px 10px 0px 0px"><h5>标题：</h5></label>
+                    <div class="layui-input-inline">
+                        <select name="czgcmc" id="czgcmc"  lay-verify="required" lay-filter="czgcmc" style="background-color: #0994dc">
+                            <option value="">选择</option>
+                        </select>
+                    </div>
+                    
+                        
+                    
+                </div>
+            </div>
+            <div class="layui-form-item" id="loadCzgcDiv" style="width: 100%;margin-top: 16px;margin-left: -10px;">
+                <div class="news-page-box" style="border: 0px;width:90%;">
+                    <div id="loadCzgcDivChild" style="margin-top: 16px;border: 0px;overflow:auto;overflow-x: hidden;height: 60%;">
+                        <p class="line-p marginT20"></p>
+                        <div class="news-text marginT30 marginB32" id="news-text">
+                            <div style="border: 0px" id="content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="wglczgc" style="display: none;margin-top: 30px;">
+    <center><span style="color: red;font-size: 16px;">暂未关联操作规程!</span></center>
+</div>
+</body>
+<script>
+    layui.use(['form','layer','table'], function() {
+        var table = layui.table;
+        var table = layui.table;
+        var form = layui.form;
+        var layer = layui.layer;
+        var glgn = 'FJSSB';
+        form.render('select');
+        form.on('select(czgcmc)', function (data) {
+            //触发按钮事件 yysjTab
+            var czgcid = $('#czgcmc').val();
+            loadData(czgcid);
+        });
+        /***
+         *  动态加载div数据
+         */
+        function  loadData(czgcid) {
+            $.ajax({
+                url: "/zyywn-cjpt-web/czgc/queryDataLoad.do",
+                data: {czgcid : czgcid},
+                async: false,
+                type: "POST",
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 0) {
+                        var html = '';
+                        /**
+                         * 文件列表拼接 ： 循环拼接
+                         */
+                        var fileList = data.filesList;
+                        /**
+                         * 实体内容：  czgcmc
+                         * 				发布时间 说明
+                         */
+                        $("#loadCzgcDivChild").html('');
+                        var czgcVo = data.czgcVo;
+                        var czgcsmStr = '';
+                        if( czgcVo.czgcsm != null &&  czgcVo.czgcsm != '') {
+                            czgcsmStr = czgcVo.czgcsm;
+                            // czgcsmStr = czgcVo.czgcsm.replace(/\n/g,'<br/><br/>');
+                            // czgcsmStr = czgcsmStr.replace(/<br(\s+)?\/?>(\s+)?/gi, '<br />');
+                        }
+                        html += '<div class="news-text marginT8 marginB32">\n' +
+                            '                             <div id="content"  style="margin-left:20px;margin-right: 20px;">' + czgcsmStr + '</div>\n' +
+                            '                             </div>';
+                        if(fileList != null && fileList != '' && fileList != undefined) {
+                            html += '<div class="item-attached marginT30 marginT10">';
+                            html += '<p class="marginB20 marginL20"><b>【附件】</b></p>';
+                            for(var i = 0; i < fileList.length; i++) {
+                                var file = fileList[i];
+                                html += '<ul>';
+                                html += '<a href="#" class="link-strong" style="margin-left: 30px;" onclick="downFile(' + "'" + file.filePath.trim() + "'" + ',' + "'" + file.fileName +  "'" + ')">' + file.fileName + '</a>';
+                                html += '</ul>';
+                            }
+                            html += '</div>';
+                        }
+                        html += '<div class="item-attached marginT30" id="item-attached">\n' +
+                            '\n' +
+                            '\t\t\t\t\t\t\t</div>\n' +
+                            '\t\t\t\t\t\t\t<div class="news-bottom-text marginT30">\n' +
+                            '\t\t\t\t\t\t\t</div>\n';
+                        $("#loadCzgcDivChild").css('border','1px solid #ebebeb');
+                        $("#loadCzgcDivChild").html(html);
+                        resizePicture();//返回成功了再调整图片大小
+                    } else {
+                        layer.msg('加载数据失败!',{
+                            icon : 5
+                        });
+                    }
+                }
+            });
+        }
+        /**
+         * 初始化下拉列表框
+         */
+        function initCzgczy(glgn) {
+            var isCloseWs = false;
+            $.ajax({
+                url: "/zyywn-cjpt-web/czgc/loadDataList.do",
+                data: {glgn:glgn,limit : 10, page : 1},
+                async: false,
+                type: "POST",
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 0) {
+                        if (data.data.length > 0) {//至少保证了下拉框有内容
+                            $("#czgcmc").html("");
+                            // $("#czgcmc").append("<option value=''>请选择...</option>");
+                            $.each(data.data, function (index, item) {
+                                $("#czgcmc").append("<option value='" + item.czgcid + "'>" + item.czgcmc + "</option>");
+                            })
+                            form.render('select');
+                            var czgcmcOptions = $("#czgcmc").find('option');
+                            if(czgcmcOptions.length < 1) {
+                                isCloseWs = true;
+                                $("#czgcDiv").hide();
+                                $("#wglczgc").show();
+                            } else {
+                                $("#czgcDiv").show();
+                                $("#wglczgc").hide();
+                                /**
+                                 * 默认选中第一项下拉框 style="background-color: #0994dc"
+                                 */
+                                $(czgcmcOptions[0]).prop("selected",true);
+                                $("#czgcmc").css('background-color','#0994dc');
+                                /**
+                                 * 拼接实体内容
+                                 * <h1 class="news-title"> </h1>
+                                 * <h2 class="news-num"  style="text-align: right">发布时间：</h2>
+                                 * <div class="news-text marginT30 marginB32">
+                                 <div id="content"></div>
+                                 </div>
+
+                                 <c:if test="false">
+                                 <p>附件：</p>
+                                 <ul>
+                                 <c:forEach items="" var="file" varStatus="status">
+                                 <a href="#" class="link-strong" onclick="downFile('','')">1．</a>
+                                 </c:forEach>
+                                 </ul>
+                                 </c:if>
+                                 */
+                                var html = '';
+                                /**
+                                 * 文件列表拼接 ： 循环拼接
+                                 */
+                                var fileList = data.filesList;
+                                /**
+                                 * 实体内容：  czgcmc
+                                 * 				发布时间 说明
+                                 */
+                                $("#loadCzgcDivChild").html('');
+                                var czgcVo = data.czgcVo;
+                                var czgcsmStr = '';
+                                if( czgcVo.czgcsm != null &&  czgcVo.czgcsm != '') {
+                                    czgcsmStr = czgcVo.czgcsm;
+                                    // czgcsmStr = czgcVo.czgcsm.replace(/\n/g,'<br/><br/>');
+                                }
+                                html += '<div class="news-text marginT8 marginB32">\n' +
+                                    '                             <div id="content"  style="margin-left:20px;margin-right: 20px;">' + czgcsmStr + '</div>\n' +
+                                    '                             </div>';
+                                if(fileList != null && fileList != '' && fileList != undefined) {
+                                    html += '<div class="item-attached marginT30 marginT10">';
+                                    html += '<p class="marginB20 marginL20"><b>【附件】</b></p>';
+                                    for(var i = 0; i < fileList.length; i++) {
+                                        var file = fileList[i];
+                                        html += '<ul>';
+                                        html += '<a href="#" class="link-strong" style="margin-left: 30px;" onclick="downFile(' + "'" + file.filePath + "'" + ',' + "'" + file.fileName +  "'" + ')">' + file.fileName + '</a>';
+                                        html += '</ul>';
+                                    }
+                                    html += '</div>';
+                                }
+                                html += '<div class="item-attached marginT30" id="item-attached">\n' +
+                                    '\n' +
+                                    '\t\t\t\t\t\t\t</div>\n' +
+                                    '\t\t\t\t\t\t\t<div class="news-bottom-text marginT30">\n' +
+                                    '\t\t\t\t\t\t\t</div>\n';
+                                $("#loadCzgcDivChild").css('border','1px solid #ebebeb');
+                                $("#loadCzgcDivChild").html(html);
+                                resizePicture();//返回成功了再调整图片大小
+                            }
+
+                        } else {//隐藏
+                            $("#czgcDiv").hide();
+                            $("#wglczgc").show();
+                        }
+                    } else {
+                        isCloseWs = true;
+                        $("#czgcDiv").hide();
+                        $("#wglczgc").show();
+                        layer.msg('没有操作规程指引内容,无法查看!', {
+                            icon: 5,
+                            time: 3000
+                        });
+                    }
+                }
+            });
+            return isCloseWs;
+        }
+
+        $(document).ready(function(){
+            /**
+             * 初始化操作规程指引数据
+             */
+            layui.use('form',function () {
+                initCzgczy(glgn);
+            })
+            /**
+             * 初始化展示div内容 并调整
+             */
+            // resizePicture();
+
+        });
+    });
+
+    //下载附件
+    function downFile(filePath, fileName){
+        filePath = filePath.replace(" ", "");
+        var url = "/zyywn-cjpt-web/file/readFile.do?fileNameID=" + filePath + "&fileName=" + encodeURI(encodeURI(fileName));
+        window.open(url,"文件下载");
+    }
+    //获取宽度限制图片宽度
+    function resizePicture(){
+        // var contentDiv = document.getElementById("content");
+        // var contentWidth = contentDiv.clientWidth;
+        // alert(contentWidth)
+        // var contentImags = contentDiv.getElementsByTagName("img");
+        // if(contentImags != null && contentImags != '' && contentImags.length > 0) {
+        // for(var i = 0; i < contentImags.length; i++){
+        //        var contentImagsI = contentImags[i];
+        //        alert(contentImagsI.width);
+        //    }
+        // }
+        var widthDiv = $("#content").width();
+        var imgs =  $("#content").children('img');
+        // imgs.each(function(){
+        $("#content").children('img').each(function(){
+            //获取图片宽度
+            var widthImg = $(this).width();
+            if (widthImg > widthDiv){
+                $(this).css({ width: widthDiv});
+            }
+        });
+    }
+</script>
+</html>

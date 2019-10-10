@@ -1,0 +1,33 @@
+{
+    "menus":{
+        "cdid":"2",
+        "cdjs":2,
+        "cdmc":"菜单名称",
+        "cdsx":"1",
+        "cdtb":"@TBD",
+        "childrenNodes":[
+            {
+                "cdid":"22",
+                "cdjs":1,
+                "cdmc":"菜单名称",
+                "cdsx":"1",
+                "cdtb":"sbqc",
+                "childrenNodes":[],
+                "fcdid":"2",
+                "gdsywsx":"1",
+                "gnUrl":"/functionNotOpen",
+                "gndm":"gndm-22",
+                "sfxd":true,
+                "xh":0
+            }
+        ],
+        "fcdid":"qyywcd",
+        "gdsywsx":"1",
+        "gnUrl":"/xxmh/html/gnjsz.html",
+        "gndm":"gndm-2",
+        "sfxd":true,
+        "xh":0
+    },
+    "flag":"ok",
+    "gsdjxh":"10115201000083900814"
+}

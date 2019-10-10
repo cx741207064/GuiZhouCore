@@ -1,0 +1,266 @@
+<!doctype html>
+<html id="ng-app" xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>居民企业参股外国企业信息报告表</title>
+<script>
+	var subViewCustomScripts = ["/sbzs_res/qysds_a_18yjd/js/xxbgb.js" ];	
+</script>
+</head>
+
+<body>
+<div style="width:96%; margin:auto;" id="viewCtrlId" ng-controller="viewCtrl">
+<ng-codetable url="dm_qysds_gflx.json" name="gflxCT" node="" dm="root.dm" mc="root.mc"></ng-codetable>
+<ng-codetable url="dm_gy_sfzjlx.json" name="sfzjlxCT" node="" dm="root.dm" mc="root.mc"></ng-codetable>
+  <div class="NewTableHead" >
+      <h1 >居民企业参股外国企业信息报告表</h1>  
+</div>
+<div  class="NewTableMain" ng-jprefix="kz.temp.cgwgqyxxbgbVO" >
+ <div   ng-jprefix="fq.nsrjbxx">
+  	<table width="100%" border="0" cellpadding="0" cellspacing="1">
+	  <tr>
+	    <td colspan="7" class="title01" align="center"><strong>报告人信息</strong></td>
+	  </tr>
+	  <tr>
+	    <td class="title01" align="center"> 企业名称 </td>
+	    <td colspan="2" class="read right" ><input  type="text"  style="text-align: left;" readonly  ng-model="nsrjbxx.nsrmc"></td>
+	    <td class="title01" align="center">纳税人识别号 </td>
+	    <td colspan="3" class="read right"><input  type="text"   style="text-align: left;" readonly ng-model="nsrjbxx.nsrsbh"></td>
+	  </tr>
+  	</table>
+  </div>
+  <div  >
+   <table width="100%" border="0" cellpadding="0" cellspacing="1"> 
+     <tr>
+       <td colspan="7"  class="title01"  align="center"><strong>居民企业参股外国企业信息报告表--总信息表</strong></td>
+     </tr>
+     <tr>
+       <td rowspan="2" align="center" class="title01">外国企业名称（中文）</td>       
+       <td rowspan="2" align="center" class="title01">成立地（中文）</td>
+       <td rowspan="2" align="center" class="title01">外国企业名称（外文）</td>
+       <td rowspan="2" align="center" class="title01">成立地（外文）</td>
+       <td rowspan="2" align="center" class="title01">所在国纳税识别号 </td>
+       <td rowspan="2" align="center" class="title01">主营业务类型 </td>
+       <td align="center" class="title01" width="150px">操作   		
+       </td>
+     </tr>
+     <tr>
+     	<td>
+     		<div class="sbtnbox" align="center">
+   				<button class="layui-btn layui-btn-xs" ng-click="externalMethods('addMxxx','');"><i class="iconfont fsicon-btn-add"></i>增加</button>
+   			</div>
+   		</td>
+     </tr>
+     <!-- 分页最后一个参数是总条数应减去的偏移值 -->
+     <tr ng-repeat="p in cgwgqyxxbgbVO | paging:'p1':(cgwgqyxxbgbVO[0].wgqyxxForm.wgqyzwmc==''?1:0)  track by $index" ng-repeat-init="cgwgqyxxbgbVO"
+      default-value='{}' ng-show="cgwgqyxxbgbVO[$pageIndex()].wgqyxxForm.wgqyzwmc!=''">
+     	<td  class="read right"><input ng-show-tbsm="{{p.wgqyxxForm.wgqyzwmc}}" ng-model="p.wgqyxxForm.wgqyzwmc"   style="text-align: left;"  type="text" readonly ></td>
+     	<td  class="read right"><input ng-show-tbsm="{{p.wgqyxxForm.wgqyzwcld}}"  ng-model="p.wgqyxxForm.wgqyzwcld"   style="text-align: left;"  type="text" readonly ></td>       
+       	<td class="read right"><input ng-show-tbsm="{{p.wgqyxxForm.wgqywwmc}}"  ng-model="p.wgqyxxForm.wgqywwmc"  style="text-align: left;"   type="text" readonly ></td>       
+       	<td class="read right"><input ng-show-tbsm="{{p.wgqyxxForm.wgqywwcld}}" ng-model="p.wgqyxxForm.wgqywwcld"  style="text-align: left;"   type="text" readonly ></td>
+        <td  class="read right"><input ng-show-tbsm="{{p.wgqyxxForm.szgnssbh}}" ng-model="p.wgqyxxForm.szgnssbh"   style="text-align: left;"  type="text" readonly  ></td>       
+       	<td class="read right"><input ng-show-tbsm="{{p.wgqyxxForm.zyywlx}}" ng-model="p.wgqyxxForm.zyywlx"   type="text"  style="text-align: left;" readonly ></td>
+       	<td align="center"  >
+       		<div class="sbtnbox">
+       			<!-- <a class="sbtn sbtn01" ng-href="#" ng-click="externalMethods('addMxxx','');">增加</a>&nbsp; -->
+       			<button class="layui-btn layui-btn-primary layui-btn-xs" ng-click="externalMethods('updateMxxx',$pageIndex());"><i class="iconfont fsicon-btn-edit"></i>修改</button>&nbsp;
+       			<button class="layui-btn layui-btn-danger layui-btn-xs" ng-click="del($index)"><i class="iconfont fsicon-btn-del"></i>删除</button>
+       		</div>
+       	</td>
+     </tr>   
+   </table>
+   <ng-pagination id="p1" ></ng-pagination>
+  </div>
+  <div  style="width:96%; display:none; left:2%;" align="center" class="winbox" id="mxxx" >
+	  <h1 style="margin-top:0px;">
+	  	<table width="100%" border="0" cellspacing="0" cellpadding="0"     style="border-spacing:0px; font-size:14px;">
+		  <tr>
+		    <td id="tableHead">居民企业参股外国企业信息报告表--新增</td>
+		    <td align="right"><span ng-click="externalMethods('closeWinbox')"><img src="../../../../sbzs_res/hbscj/images/win/win03.png"alt=""/></span></td>
+		  </tr>
+		</table>
+	</h1>
+<div class="inputbox" style="overflow-y:auto;">
+  <div ng-jprefix="fq.nsrjbxx">
+  	<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td colspan="7" class="title01" align="center"><strong>报告人信息</strong></td>
+  </tr>
+  <tr>
+    <td class="title01" align="center"> 企业名称 </td>
+    <td colspan="2" class="read right" ><input  type="text"  style="text-align: left;" readonly  ng-model="nsrjbxx.nsrmc"></td>
+    <td class="title01" align="center">纳税人识别号 </td>
+    <td colspan="3" class="read right"><input  type="text"   style="text-align: left;" readonly ng-model="nsrjbxx.nsrsbh"></td>
+  </tr></table>
+  </div>
+  <div  ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.cgwgqyxxbgbYwbd.cgwgqyxxbgbVO[0].wgqyxxForm">
+   <table width="100%" border="0" cellpadding="0" cellspacing="1">
+ 
+     <tr>
+       <td colspan="7"  class="title01"  align="center"><strong>被投资外国企业信息</strong></td>
+     </tr>
+     <tr>
+       <td align="center" class="title01">外国企业名称（中文）</td>
+       <td colspan="2" class="edit right"><input  ng-model="wgqyxxForm.wgqyzwmc"   style="text-align: left;"  type="text"  ></td>
+       <td align="center" class="title01">成立地（中文）</td>
+       <td colspan="3" class="edit right"><input   ng-model="wgqyxxForm.wgqyzwcld"   style="text-align: left;"  type="text"  ></td>
+     </tr>
+     <tr>
+       <td align="center" class="title01">外国企业名称（外文）</td>
+       <td colspan="2" class="edit right"><input   ng-model="wgqyxxForm.wgqywwmc"  style="text-align: left;"   type="text"  ></td>
+       <td align="center" class="title01">成立地（外文）</td>
+       <td colspan="3" class="edit right"><input  ng-model="wgqyxxForm.wgqywwcld"  style="text-align: left;"   type="text"  ></td>
+     </tr>
+     <tr >
+       <td align="center" class="title01">所在国纳税识别号 </td>
+       <td colspan="2" class="edit right"><input ng-datatype="strDigit" ng-model="wgqyxxForm.szgnssbh"   style="text-align: left;"  type="text"  ></td>
+       <td align="center" class="title01">主营业务类型 </td>
+       <td class="edit right"><input  ng-model="wgqyxxForm.zyywlx"   type="text"  style="text-align: left;"  ></td>
+       <td align="center" class="title01">报告人持股比例</td>
+       <td class="edit right"><input  ng-datatype="strInt{4}"   ng-model="wgqyxxForm.bgrcgbl"   type="text"   style="text-align: right:"></td>
+     </tr>
+     </table></div>
+  <div ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.cgwgqyxxbgbYwbd.cgwgqyxxbgbVO[0].gdxxGrid.gdxxGridlb">
+    <table width="100%" border="0" cellpadding="0" cellspacing="1">
+     <tr>
+       <td colspan="8" class="title01" align="center"><strong>被投资外国企业信息--持有外国企业10%以上股份或有表决权股份的其他股东情况</strong></td>
+     </tr>
+     <tr>
+       <td align="center" class="title01">持股股东名称（中文）</td>
+       <td align="center" class="title01">持股股东名称（外文）</td>
+       <td align="center" class="title01">居住地或成立地（中文）</td>
+       <td align="center" class="title01">居住地或成立地（外文）</td>
+       <td align="center" class="title01">持股类型</td>
+       <td align="center" class="title01">持股比例</td>
+       <td align="center" class="title01">达到10%以上权益份额的起始日期</td>
+        <td  align="center" class="title01" width="14%">操作</td>
+     </tr>
+     <tr ng-repeat="yb in gdxxGridlb track by $index" ng-repeat-init="gdxxGridlb"
+      default-value='{"cggdzwmc":"","cggdwwmc":"","jzdhcldzw":"","jzdhcldww":"","cglx":"","cgbl":0.00,"qyfeqsrq":""}'>
+       <td class="edit right"><input ng-model="yb.cggdzwmc"   type="text"   style="text-align: left;" ></td>
+       <td class="edit right"><input  ng-model="yb.cggdwwmc"   type="text"   style="text-align: left;" ></td>
+       <td class="edit right"><input   ng-model="yb.jzdhcldzw"   type="text"   style="text-align: left;" ></td>
+       <td class="edit right"><input ng-model="yb.jzdhcldww"   type="text"   style="text-align: left;" ></td>
+       <td> 
+         <select name="select" id="select"  ng-model="yb.cglx" ng-options="key as value for (key,value) in CT.gflxCT">
+            <option value=""></option>
+        </select></td>
+       <td class="edit right"><input ng-model="yb.cgbl"   type="text"  ng-datatype="number"  style="text-align: right;" ></td>
+       <td class="right right"><input  ng-model="yb.qyfeqsrq"   type="text" class="laydate-icon topInput"  ng-laydate="{}"   readonly style="width: 98%; padding-right: 0; padding-left: 0; height: 90%;text-align: left;"></td>
+     <td align="center"   width="10%"  >
+     	<div class="sbtnbox">
+     		<button class="layui-btn layui-btn-xs" ng-click="add()"><i class="iconfont fsicon-btn-add"></i>增加</button>&nbsp;
+     		<button class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0" ng-href="#" ng-click="del($index)"><i class="iconfont fsicon-btn-del"></i>删除</button>
+     	</div></td>
+      </tr>
+      </table></div>
+  <div ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.cgwgqyxxbgbYwbd.cgwgqyxxbgbVO[0].dsxxGrid.dsxxGridlb">
+  <table width="100%" border="0" cellpadding="0" cellspacing="1">
+     <tr>
+       <td colspan="8" class="title01" align="center"><strong>被投资外国企业信息--中国居民个人担任外国企业高管或董事情况</strong></td>
+     </tr>
+     <tr>
+       <td align="center" class="title01">中国居民个人姓名</td>
+       <td align="center" class="title01">中国境内常住地</td>
+       <td align="center" class="title01">身份证件类型</td>
+       <td align="center" class="title01">身份证件号码</td>
+       <td align="center" class="title01">职务</td>
+       <td align="center" class="title01">任职日期起</td>
+       <td align="center" class="title01">任职日期止</td>
+        <td  align="center" class="title01" width="14%">操作</td>
+     </tr>    
+     <tr ng-repeat="zg in dsxxGridlb track by $index"  ng-repeat-init="dsxxGridlb"
+      default-value='{"zgmjgrxm":"","zgjnczd":"","sfzjlx":"","sfzjhm":"","zw":"","rzrqq":"","rzrqz":""}'>
+       <td class="edit right"><input  ng-model="zg.zgmjgrxm"   type="text"   style="text-align: left;" ></td>
+       <td class="edit right"><input  ng-model="zg.zgjnczd"   type="text"   style="text-align: left;" ></td>
+       <td><select name="select" id="select" ng-change="externalMethods('setMc','sfzjlx_'+zg.sfzjlx+'_'+CT.sfzjlxCT[zg.sfzjlx])" ng-model="zg.sfzjlx" ng-options="key as value for (key,value) in CT.sfzjlxCT">
+            <option value=""></option>
+       </select> </td>
+       <td class="edit right"><input  ng-model="zg.sfzjhm"   type="text"   style="text-align: left;" ></td>
+       <td class="edit right"><input  ng-model="zg.zw"   type="text"   style="text-align: left;" ></td>
+       <td class="right right"><input  ng-model="zg.rzrqq"  id="idx{{$index}}1"  type="text"  class="laydate-icon topInput"  ng-laydate="{}"   readonly style="width: 98%; padding-right: 0; padding-left: 0; height: 90%;text-align: left;"></td>
+       <td class="right right"><input   ng-model="zg.rzrqz"  id="idx{{$index}}2"   type="text"  class="laydate-icon topInput"  ng-laydate="{}"   readonly style="width: 98%; padding-right: 0; padding-left: 0; height: 90%;text-align: left;" ></td>
+      <td align="center" width="10%"  >
+      	<div class="sbtnbox">
+	      	<button class="layui-btn layui-btn-xs" ng-click="add()"><i class="iconfont fsicon-btn-add"></i>增加</button>&nbsp;
+	      	<button class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0" ng-href="#" ng-click="del($index)"><i class="iconfont fsicon-btn-del"></i>删除</button>
+      	</div></td>
+      </tr>
+    
+      </table></div>
+  <div ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.cgwgqyxxbgbYwbd.cgwgqyxxbgbVO[0].sggfxxGrid.sggfxxGridlb">
+ <table width="100%" border="0" cellpadding="0" cellspacing="1">
+     <tr>
+       <td colspan="8"  class="title01" align="center"><strong>外国企业股份变动信息--报告人收购外国企业股份情况</strong></td>
+     </tr>
+     <tr>
+       <td class="title01" align="center">被收购股份类型</td>
+       <td class="title01" align="center">交易日期</td>
+       <td class="title01" align="center">收购方式</td>
+       <td colspan="2" class="title01" align="center">收购前报告人在外国企业持股份额</td>
+       <td colspan="2" align="center" class="title01">收购后报告人在外国企业持股份额</td>
+        <td  align="center" class="title01" width="14%">操作</td>
+     </tr>
+     <tr ng-repeat="bg in sggfxxGridlb track by $index" ng-repeat-init="sggfxxGridlb" 
+     default-value='{"bsggflx":"","jyrq":"","sgfs":"","sgqbgrzwgqycgfe":0.00,"sghbgrzwgqycgfe":0.00}'>
+       <td><select name="select" id="select"  ng-model="bg.bsggflx" ng-options="key as value for (key,value) in CT.gflxCT">
+            <option value=""></option>
+       </select></td>
+       <td class="right right"><input  ng-model="bg.jyrq"   type="text"  class="laydate-icon topInput"  ng-laydate="{}"   readonly style="width: 98%; padding-right: 0; padding-left: 0; height: 90%;text-align: left;"></td>
+       <td class="edit right"><input   ng-model="bg.sgfs"   type="text"   style="text-align: left;" ></td>
+       <td colspan="2" class="edit right"><input   ng-datatype="number"  ng-model="bg.sgqbgrzwgqycgfe"   type="text"   style="text-align: right;" ></td>
+       <td colspan="2" class="edit right"><input   ng-datatype="number" ng-model="bg.sghbgrzwgqycgfe"   type="text"   style="text-align: right;" ></td>
+      <td align="center"  width="10%" >
+      	<div class="sbtnbox">
+      		<button class="layui-btn layui-btn-xs" ng-click="add()"><i class="iconfont fsicon-btn-add"></i>增加</button>&nbsp;
+      		<button class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0" ng-href="#" ng-click="del($index)"><i class="iconfont fsicon-btn-del"></i>删除</button>
+      	</div></td>
+      </tr>
+      </table></div>
+  <div ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.cgwgqyxxbgbYwbd.cgwgqyxxbgbVO[0].czgfxxGrid.czgfxxGridlb">
+  <table width="100%" border="0" cellpadding="0" cellspacing="1">
+     <tr>
+       <td colspan="8"  class="title01" align="center"><strong>外国企业股份变动信息--报告人处置外国企业股份情况</strong></td>
+     </tr>
+     <tr>
+       <td align="center" class="title01">被处置股份类型</td>
+       <td align="center" class="title01">处置日期</td>
+       <td align="center" class="title01">处置方式</td>
+       <td colspan="2" align="center" class="title01">处置前报告人在外国企业持股份额</td>
+       <td colspan="2" align="center" class="title01">处置后报告人在外国企业持股份额</td>
+       <td  align="center" class="title01" width="14%">操作</td>
+     </tr>
+     <tr ng-repeat="b in czgfxxGridlb track by $index" ng-repeat-init="czgfxxGridlb" 
+     default-value='{"bczgflx":"","czrq":"","czfs":"","czqbgrzwgqycgfe":0.00,"czhbgrzwgqycgfe":0.00}' >
+       <td><select name="select" id="select" ng-model="b.bczgflx" ng-options="key as value for (key,value) in CT.gflxCT">
+            <option value=""></option>
+       </select></td>
+       <td class="right right"><input  ng-model="b.czrq"   type="text"  class="laydate-icon topInput"  ng-laydate="{}"   readonly style="width: 98%; padding-right: 0; padding-left: 0; height: 90%;text-align: left;"></td>
+       <td class="edit right"><input  ng-model="b.czfs"   type="text"   style="text-align: left;" ></td>
+       <td colspan="2" class="edit right"><input   ng-datatype="number"  ng-model="b.czqbgrzwgqycgfe"   type="text"   style="text-align: right;" ></td>
+       <td colspan="2" class="edit right"><input  ng-datatype="number" ng-model="b.czhbgrzwgqycgfe"   type="text"   style="text-align: right;" ></td>
+     <td align="center"  width="10%" >
+     	<div class="sbtnbox">
+     		<button class="layui-btn layui-btn-xs" ng-click="add()"><i class="iconfont fsicon-btn-add"></i>增加</button>&nbsp;
+     		<button class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0" ng-href="#" ng-click="del($index)"><i class="iconfont fsicon-btn-del"></i>删除</button>
+     	</div></td>
+      </tr>
+      <tr ng-render-finish=""></tr>
+   </table>
+   </div>
+ 
+</div> 
+ <div class="winbtn">
+    <button class="layui-btn" ng-click="externalMethods('save','')">确定</button>&nbsp;&nbsp;&nbsp;
+    <button class="layui-btn layui-btn-primary" ng-click="externalMethods('closeWinbox')">关闭</button>
+  </div>
+</div>
+</div>
+  
+
+ 
+
+</div>
+</body>
+</html>

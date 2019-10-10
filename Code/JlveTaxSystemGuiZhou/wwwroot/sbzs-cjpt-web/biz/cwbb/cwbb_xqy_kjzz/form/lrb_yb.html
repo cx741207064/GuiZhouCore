@@ -1,0 +1,243 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>利润表_月报</title>
+</head>
+
+<body>
+<div style="width:96%; margin:auto;"  ng-jprefix="SB100VO.SB100BdxxVO.cjbdxml.syxqylrb.nsrxxForm2"   id="viewCtrlId" ng-controller="viewCtrl">
+<div class="NewTableHead">
+     <h1>利润表_月报（适用执行小企业会计准则的企业）</h1>
+	 <li class="dateTxt">
+	  所属期起<input type="text" class="topInput" value=" " ng-model="nsrxxForm2.skssqq" readonly="true"> 
+	  所属期止<input type="text" class="topInput" value=" " ng-model="nsrxxForm2.skssqz" readonly="true">
+	 </li>     
+</div>
+
+<div class="NewTableTop">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	    <td>报送日期：<span class="textline" ng-bind="nsrxxForm2.bsrq" ></td>
+	    <td align="right"></td>
+   </tr>
+  <tr>
+    <td>纳税人识别号：<span class="textline" ng-bind="nsrxxForm2.nsrsbh">
+    </td>
+    <td align="right">会小企02表</td>
+  </tr>
+  <tr>
+    <td>纳税人名称：<span class="textline" ng-bind="nsrxxForm2.nsrmc">
+     </td>
+    <td align="right">单位：元     
+</td>
+  </tr>
+</table>
+</div>
+
+<div class="NewTableMain">
+<table width="100%" border="0" cellspacing="1" cellpadding="0" ng-jprefix="SB100VO.SB100BdxxVO.cjbdxml.syxqylrb.syxqylrbGrid">
+    <tr>
+      <td colspan="2" align="center" class="title01"><strong>项      目</strong></td>
+      <td align="center" class="title01"><strong>行次</strong></td>
+      <td align="center" class="title01"><strong>本月金额</strong></td>
+      <td align="center" class="title01"><strong>本年累计金额</strong></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01"> 一、营业收入</td>
+      <td align="center" class="title01">1</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[0].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[0].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01"> 减：营业成本</td>
+      <td align="center" class="title01">2</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[1].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[1].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">     税金及附加</td>
+      <td align="center" class="title01">3</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[2].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[2].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">         其中：消费税</td>
+      <td align="center" class="title01">4</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[3].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[3].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               营业税</td>
+      <td align="center" class="title01">5</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[4].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[4].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               城市维护建设税</td>
+      <td align="center" class="title01">6</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[5].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[5].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               资源税</td>
+      <td align="center" class="title01">7</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[6].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[6].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               土地增值税</td>
+      <td align="center" class="title01">8</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[7].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[7].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               城镇土地使用税、房产税、车船税、印花税</td>
+      <td align="center" class="title01">9</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[8].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[8].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               教育费附加、矿产资源补偿费、排污费</td>
+      <td align="center" class="title01">10</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[9].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[9].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">     销售费用</td>
+      <td align="center" class="title01">11</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[10].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[10].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">         其中：商品维修费</td>
+      <td align="center" class="title01">12</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[11].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[11].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               广告费和业务宣传费</td>
+      <td align="center" class="title01">13</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[12].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[12].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">     管理费用</td>
+      <td align="center" class="title01">14</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[13].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[13].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">         其中：开办费</td>
+      <td align="center" class="title01">15</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[14].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[14].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               业务招待费</td>
+      <td align="center" class="title01">16</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[15].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[15].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">               研究费用</td>
+      <td align="center" class="title01">17</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[16].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[16].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">     财务费用</td>
+      <td align="center" class="title01">18</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[17].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[17].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">         其中：利息费用（收入以－号填列）</td>
+      <td align="center" class="title01">19</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[18].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[18].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">   加：投资收益（亏损以－号填列）</td>
+      <td align="center" class="title01">20</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[19].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[19].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01"> 二、营业利润（亏损以－号填列）</td>
+      <td align="center" class="title01">21</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[20].byje" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[20].bnljje" type="text" value="0.00" readonly></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">   加：营业外收入</td>
+      <td align="center" class="title01">22</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[21].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[21].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">       其中：政府补助</td>
+      <td align="center" class="title01">23</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[22].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[22].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">   减：营业外支出</td>
+      <td align="center" class="title01">24</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[23].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[23].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">       其中：坏账损失</td>
+      <td align="center" class="title01">25</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[24].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[24].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">             无法收回的长期债券投资损失</td>
+      <td align="center" class="title01">26</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[25].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[25].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">             无法收回的长期股权投资损失</td>
+      <td align="center" class="title01">27</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[26].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[26].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">             自然灾害等不可抗力因素造成的损失</td>
+      <td align="center" class="title01">28</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[27].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[27].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">             税收滞纳金</td>
+      <td align="center" class="title01">29</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[28].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[28].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01"> 三、利润总额（亏损总额以－号填列）</td>
+      <td align="center" class="title01">30</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[29].byje" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[29].bnljje" type="text" value="0.00" readonly></td>
+      </tr>
+    <tr>
+      <td colspan="2" class="title01">   减：所得税费用</td>
+      <td align="center" class="title01">31</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[30].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[30].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr ng-render-finish="">
+      <td colspan="2" class="title01"> 四、净利润（净亏损以－号填列）</td>
+      <td align="center" class="title01">32</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[31].byje" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqylrbGrid.syxqylrbGridlb[31].bnljje" type="text" value="0.00" readonly></td>
+      </tr>
+  </table>
+</div>
+</div>
+</body>
+</html>

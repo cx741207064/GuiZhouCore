@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="renderer" content="ie-comp"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>国家税务总局贵州省电子税务局</title>
+    <link rel="stylesheet" href="/xxmh/resources4/layui/css/layui.css">
+    <link rel="stylesheet" href="/xxmh/resources4//tax-font-icon/iconfont.css">
+    <link rel="stylesheet" href="/xxmh/resources4/tax-css/index.css">
+    <link rel="icon" href="/xxmh/resources/images/common/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/xxmh/resources4/tax-css/common.css">
+    <link rel="stylesheet" href="/xxmh/resources/css/newcss/addstyle.css" type="text/css"/>
+    <link rel="stylesheet" href="/xxmh/resources4/layui/css/modules/layer/default/layer.css">
+    <script src="/xxmh/resources/skin/js/jquery.js"></script>
+    <script src="/xxmh/resources4/layui/layui.js"></script>
+    <script src="/xxmh/resources4/layui/transfer.js"></script>
+    <script src="/xxmh/resources4/tax-module/vticker/jquery.vticker-min.js"></script>
+    <script type="text/javascript" src="/xxmh/resources/js/html5.min.js"></script>
+    <script type="text/javascript" src="/xxmh/resources/js/respond.min.js"></script>
+
+    <script src="/xxmh/resources/js/portal.js"></script>
+    <script type="text/javascript" src="/xxmh/resources/js/golobalTitle.js"></script>
+    <script type="text/javascript" src="/xxmh/resources/js/zxkf.js"></script>
+    <script type="text/javascript" src="/xxmh/resources/js/goPages.js"></script>
+    <script type="text/javascript" src="/xxmh/resources/js/menuUtil.js"></script>
+    <script src="/xxmh/resources/js/urlLogic.js"></script>
+    <script src="/xxmh/resources/js/mlog.js"></script>
+    <script src="/xxmh/resources/js/loginDbtxData.js"></script>
+    <script type="text/javascript" src="/xxmh/resources/js/index_login.js"></script>
+    <!--本地方法需要引入的js文件  开始-->
+    <script type="text/javascript" src="/xxmh/resources/js/jquery.cookie.js"></script>
+    <!--本地方法需要引入的js文件  结束-->
+    <!--弹框需要-->
+    <script src="/xxmh/resources/js/thirdPartyCall/assert/layer/layer.js"></script>
+</head>
+<body class="bodybg-1">
+<!--head-->
+<!--新增头部-->
+
+<!-- <div class="headbox">
+    <div class="logo"></div>
+    <div class="head-right">
+            <div class="head-right-user"><span id="userName"></span></div>
+            <div class="head-right-menu">
+                <div class="head-search" style="margin-right: 90px;">
+                    <input type="text" id="keyword" name="text" placeholder="请输入关键词" class="search-input">
+                    <a id="keysearch" href="#">搜索</a>
+                    </div>
+                <div class="head-right-btn">
+                    <a href="javascript:changeCard();"><img src="/xxmh/resources/images/common/head_btn_refresh.png"><span>切换身份</span></a>
+                    <a href="javascript:logout();"><img src="/xxmh/resources/images/common/head_btn_close.png"><span>退出</span></a>
+                </div>
+            </div>
+        </div>
+</div> -->
+<div class="tax-head-box login-after">
+    <img id="titleLogo" class="head-logo" src=""></i>
+    <div class="head-main">
+        <!-- <div class="head-user" id="userName" style="min-height:18px;"></div> -->
+        <div class="head-right-menu loginbefore">
+            <div class="head-search">
+                <input type="text" id="keyword" name="text" placeholder="请输入需要搜索的内容" class="search-input">
+                <a id="keysearch" href="#">搜索</a>
+            </div>
+            <div class="head-btn">
+                <a style="display:none" href="javascript:backZy();" id="zyBtn" class="head-btn-home"><span
+                        style="margin-left: 0px;">主页</span></a>
+                <!-- <p style="display:none">|</p> -->
+                <div id="userBtn" class="user-item" style="display:none;">
+                    <a href="##" class="user-name" id="userName"></a>
+                    <ul>
+                        <p class="top-dot"><i class="iconfont fsicon-dot-up"></i></p>
+                        <dl>
+                            <dd class="user-item-txt" id="userName2"></dd>
+                            <dd class="user-item-menu" id="qhsfBtn" style="display:none;"><a
+                                    href="javascript:changeCard();"><i
+                                    class="iconfont fsicon-qiehuanjiaose"></i>切换身份</a></dd>
+                            <dd class="user-item-menu" id="zztsfqhBtn" style="display:none;"><a
+                                    href="javascript:void(0);"><i class="iconfont fsicon-xuanze"></i>选择主管税务机关</a></dd>
+                        </dl>
+                    </ul>
+                </div>
+                <!-- <p>|</p> -->
+                <a href="javascript:void(0);" style="display:none;" id="tcBtn"
+                   class="head-btn-close"><span>退出</span></a>
+            </div>
+            <div class="dlbox" id="dlbox" style="display:none;">
+                <a href="javascript:login();" class="loginico">
+                    <img src="/xxmh/resources4/tax-images/login/loginimg.png">
+                    <h4>登录</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--新增头部结束-->
+
+<div class="mian-container pad-top layui-row">
+    <!--side-->
+    <div class="con-side">
+        <div class="title">
+            <h3>
+                <img src="/xxmh/resources4/tax-images/login/login_ico1.png">常用功能
+            </h3>
+            <div class="title-r">
+                <a id="cygnsz" href="#">设置</a>
+            </div>
+        </div>
+        <div id="cygn" class="listcon menusDiv menusDiv-l">
+            <!-- <ul>
+                <li><a href="#"
+                    onclick="goIndexUrl('/taxpayer/doLogin?is_client_login=1&actionType=zpdk.dkfp&cdId=631&gnDm=gndm-631&gdslxDm=3','fpgl','zzszyfpdk','','undefined');">代开增值税专用发票</a>
+                </li>
+                <li><a href="#"
+                    onclick="goIndexUrl('/taxpayer/doLogin?is_client_login=1&actionType=lyfp&cdId=64&gnDm=gndm-64&gdslxDm=3','fpgl','fply','','undefined');">发票领用</a>
+                </li>
+                <li><a href="#"
+                    onclick="goIndexUrl('/sbzs-cjpt-web/biz/sbqc/sbqc_aqsb?cdId=231&gnDm=gndm-23&gdslxDm=3','sbjs','aqysb','','undefined')">按期应申报</a>
+                </li>
+                <li><a href="#"
+                    onclick="goIndexUrl('/taxpayer/fpcy/fpcy?cdId=533&gnDm=gndm-533&gdslxDm=3','sscx','fpcy','','1')">发票查验</a>
+                </li>
+            </ul> -->
+        </div>
+        <div class="title titnbar">
+            <h3>
+                <img src="/xxmh/resources4/tax-images/login/login_ico2.png">套餐业务
+            </h3>
+        </div>
+        <div class="listcon menusDiv menusDiv-l">
+            <!-- <ul>
+                <li><a href="#" onclick="goUrl('/sxsq-cjpt-web/biz/sxsq/hbzxdj?swsxDm=SXA011005001&gdslxDm=1')">注销登记综合办理</a></li>
+                <li><a href="#">跨区域涉税事项报告</a></li>
+            </ul> -->
+        </div>
+        <div class="title titnbar">
+            <h3>
+                <img src="/xxmh/resources4/tax-images/login/login_ico3.png">特色业务
+            </h3>
+        </div>
+        <div class="listcon menusDiv menusDiv-l">
+            <!-- <ul>
+                <li><a href="#" onclick="goUrl('/sbzs-cjpt-web/biz/sbzs/ybnsrzzs?gdslxDm=1')">一表集成</a></li>
+                <li><a href="#" onclick="goIndexUrl('','nsrhx','nsrhxgl')">纳税人画像</a></li>
+            </ul> -->
+        </div>
+    </div>
+
+    <!--rightcon-->
+    <div class="con-rcon">
+        <div class="layui-tab layui-tab-brief layui-tab-hover" lay-filter="docDemoTabBrief" id="topTabs">
+            <ul class="layui-tab-title contit">
+                <li id="wdxxTab" class="showtab1 layui-this">我的信息</li>
+                <li id="wybsTab" class="showtab1">我要办税</li>
+                <li id="wycxTab" class="showtab1">我要查询</li>
+                <li id="hdzxTab" class="showtab1">互动中心</li>
+                <li id="gzfwTab" class="showtab2">公众服务</li>
+                <!--	<li id="gxfwTab" class="showtab1">个性服务</li>-->
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="conbox menusDiv menusDiv-r">
+
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="conbox menusDiv menusDiv-r">
+
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="conbox menusDiv menusDiv-r">
+
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="conbox menusDiv menusDiv-r">
+
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="conbox menusDiv menusDiv-r">
+
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="conbox menusDiv menusDiv-r">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="nexttab nexttab1" style="display:none;">
+                <div class="layui-tab layui-tab-brief layui-tab-hover">
+                    <ul class="layui-tab-title contit">
+                        <li class="layui-this">我的待办<span class="layui-badge" id="dbxxTotalCount"
+                                                         style="display: none;"></span></li>
+                        <li>服务提醒<span id="sstxTotalCount" class="layui-badge" style="display: none;"></span></li>
+                        <!-- <li>政策速递</li> -->
+                        <a href='#' onclick="goIndexUrl('/xxmh','sbjs','')"
+                           class="newsMore link-weakest">更多></a>
+                    </ul>
+                    <div class="layui-tab-content secondcon">
+                        <div class="layui-tab-item layui-show">
+                            <div class="tablecon home-table-01">
+                                <table id="dbxxDataList" class="layui-table" lay-even lay-skin="nob" lay-size="lg">
+                                    <colgroup>
+                                        <col>
+                                        <col width="220">
+                                        <col width="120">
+                                        <col width="120">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>事项名称</th>
+                                        <th>截止日期</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr name='trData'>
+                                        <td colspan='4'
+                                            style='text-align:center;height:220px;border-top: 1px solid #dddddd;'>暂无待办
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">
+                            <div class="tablecon home-table-01">
+                                <table id="sstxDataList" class="layui-table" lay-even lay-skin="nob" lay-size="lg">
+                                    <colgroup>
+                                        <col>
+                                        <col width="220">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>事项名称</th>
+                                        <th>时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr name='trData'>
+                                        <td colspan='2'
+                                            style='text-align:center;height:220px;border-top: 1px solid #dddddd;'>暂无提醒
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- <div class="layui-tab-item newlist">
+                            <ul id="zcsdBox"></ul>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="nexttab nexttab2" style="display:none;">
+                <div class="layui-tab layui-tab-brief layui-tab-hover">
+                    <!-- 通知公告 -->
+                    <ul class="layui-tab-title contit">
+                        <li class="layui-this">通知公告</li>
+                        <li class="">政策法规通知公告</li>
+                        <li class="">重大税收违法案件公告</li>
+                        <li class="">信用等级A级纳税人公告</li>
+                        <li class="">欠税公告</li>
+                        <!--登陆后通知公告-->
+                        <a onclick="goIndexUrl('/xxmh','sbjs','')"
+                           class="newsMore link-weakest">更多></a>
+                    </ul>
+
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show newlist" id="znggDiv">
+                            <ul id="znggBox" style="height:288px;"></ul>
+                        </div>
+                        <div class="layui-tab-item newlist" id="zcfgDiv">
+                            <ul id="zcfgBox" style="height:288px;"></ul>
+                        </div>
+                        <div class="layui-tab-item newlist" id="zdssDiv">
+                            <ul id="zdssBox" style="height:288px;"></ul>
+                        </div>
+                        <div class="layui-tab-item newlist" id="xydjDiv">
+                            <ul id="xydjBox" style="height:288px;"></ul>
+                        </div>
+                        <div class="layui-tab-item newlist" id="qsggDiv">
+                            <ul id="qsggBox" style="height:288px;"></ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--rightconend-->
+        </div>
+    </div>
+</div>
+<!--<div class="backtop">
+    <ul>
+        <li class="mabox"><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons03.png"/><span>微信</span></a>
+			<div class="erweima">
+				<h3>微信二维码</h3>
+				<div class="ctrl01">
+					<img src="/xxmh/resources/skin/images/gswx.jpg" width="100" height="100" />
+					<img src="/xxmh/resources/skin/images/dswx.jpg" width="100" height="100" /></div>
+				<div class="ctrl02"><img src="/xxmh/resources/skin/images/gswx.jpg" width="100" height="100" /></div>
+			</div>
+        </li>
+        <li class="mabox"><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons01.png"/><span>微博</span></a>
+			<div class="erweima">
+				<h3>微博二维码</h3>
+				<div class="ctrl01">
+					<img src="/xxmh/resources/skin/images/gswb.jpg" width="100" height="100" />
+					<img src="/xxmh/resources/skin/images/dswb.png" width="100" height="100" /></div>
+				<div class="ctrl02"><img src="/xxmh/resources/skin/images/gswb.jpg" width="100" height="100" /></div>
+			</div>
+
+        </li>
+        <li class="mabox">
+            <a href="#none" onclick='onclickZxkf()'>
+                <img title="在线客服" src="/xxmh/resources/skin/images/icons/left_icons06.png"/>
+            </a>
+        </li>
+
+        &lt;!&ndash;  <li class="mabox"><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons06.png" /><span>手机客户端</span></a>
+             <div class="erweima">
+                 <h3>手机客户端</h3>
+                 <img src="/xxmh/resources/skin/images/gswb.jpg" width="100" height="100" /><p>安卓版</p>
+                 <img src="/xxmh/resources/skin/images/dswb.png" width="100" height="100" /><p>ios版</p>
+             </div>
+         </li> &ndash;&gt;
+        &lt;!&ndash; <li><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons05.png" /><span>在线咨询</span></a></li>
+        <li><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons02.png" /><span>客服电话</span></a></li> &ndash;&gt;
+        <li><a href="#"><img src="/xxmh/resources/skin/images/icons/left_icons04.png"/><span>顶部</span></a></li>
+    </ul>
+</div>-->
+
+<input type='hidden' id="logoutUrl" value=""/><!-- 退出登录地址 -->
+<input type='hidden' id="ssoServerAddr" value=""/><!-- 单点登录地址 -->
+<input type='hidden' id="ssoXxmhUrl" value=""/><!-- 信息门户单点登录地址 -->
+
+
+<script>
+    $(document).ready(function () {
+        getShowGdsbz();//获取国地税标志是否显示配置  在portal.js
+
+        if (showGdsbz == "N") {
+            $(".ctrl01").hide();
+            $(".ctrl02").show();
+        } else if (showGdsbz == "Y") {
+            $(".ctrl01").show();
+            $(".ctrl02").hide();
+        } else {
+            $(".ctrl01").show();
+            $(".ctrl02").hide();
+        }
+    });
+
+    function tips(nsrsbh) {
+        //贵州本地begin
+
+        var fkzt = "";
+        var fxlx = "";
+        var txmx = "";
+        var nsrsbh = nsrsbh;
+        var tipsurl = "/xxmh/portalSer/checkfxxx.do";
+        $.ajax({
+            type: "POST",
+            url: tipsurl,
+            async: false,
+            dataType: "json",
+            data: {
+                "nsrsbh": nsrsbh
+            },
+            success: function (retData) {
+                fkzt = retData.fkzt;
+                fxlx = retData.fxlx;
+                txmx = retData.txmx;
+            },
+        })
+        if (fkzt == "01") {
+
+            if (fxlx == "01") {
+                layer.open({
+                    type: 1
+                    , content: '<div style="padding: 20px 20px;">' + txmx + '</div>'
+                    , btn: '确定'
+                    , btnAlign: 'c'
+                    , shade: 0 //不显示遮罩
+                    , closeBtn: 0
+                    , skin: "demo-class"
+                    , yes: function () {
+                        layer.closeAll();
+                    }
+                });
+            } else {
+                layer.open({
+                    type: 1
+                    , id: 'tip'
+                    , content: '<div style="padding: 20px 20px;">' + txmx + '</div>'
+                    , btn: '确定'
+                    , btnAlign: 'c'
+                    , shade: 0 //不显示遮罩
+                    , closeBtn: 0
+                    , skin: "demo-class"
+                    , yes: function () {
+                        layer.closeAll();
+                        logout();
+                    }
+                });
+            }
+        }
+        //贵州本地end
+    }
+
+    //注销登录
+    function logout() {
+        var logoutUrl = $("#logoutUrl").val();
+        top.window.location.href = logoutUrl;//"/sso/logout?service="+encodeURIComponent(indexUrl);
+    }
+</script>
+<!--本地弹框功能开始-->
+<script type="text/javascript">
+    var gsdjxh = "";
+    var dsdjxh = "";
+    var sstx_data;
+    $(function () {
+        //获取纳税人信息，如果包含国税纳税人信息，则弹框显示需要纳税人核实基本信息
+        // 是否登录
+        var checkLoginUrl = "/xxmh/portalSer/checkLogin.do";
+        $.post(checkLoginUrl, {}, function (d) {
+            //判断纳税人是否为国税
+            if (d.info.nsr.gsnsrsbh != undefined && d.info.nsr.gszdjxh != undefined) {
+                gsdjxh = d.info.nsr.gszdjxh;
+                // 登陆时弹窗,判断缓存中储存的状态,如果曾经没有勾选，这弹窗
+                /*var bootCookie = $.cookie(("dzswj_nsrjbxx_hs" + gsdjxh));
+                if (!bootCookie) {
+                    alertTzgg("1");//通知公告 国税加联合
+                }*/
+                $.ajax({
+                    url: '/xxmh/txss//txfdsas.do',
+                    type: "post",
+                    dataType: "json",
+                    data: {},
+                    cache: false,
+                    async: false,
+                    success: function (data, textStatus, jqXHR) {
+                        sstx_data = data;
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                    }
+                });
+                alertTzgg("1");//通知公告 国税加联合
+            }
+        });
+    });
+    /*
+    * 支持多条公告，json数组
+    * bt:标题
+    * zw:正文
+    * sj:时间
+    * lk:落款
+    *
+    * */
+    var tzggBz = true; // 通知公告控制开关，false不弹框，true则弹框
+    // gdsbz :  2：地税弹框  1: 国税弹框  0: 国地税都弹框
+    /*var tzggData = [{
+        "gdsbz": "0",
+        "bt": "电子税务局纳税人端问卷调查",
+        "zw": ["为了完善贵州省电子税务局开发建设,提高用户体验,着力解决好纳税人关切的突出问题和服务需求,我们邀请您参加电子税务局建设问卷调查。本次调查问卷不记名,内容严格保密,调查结果将会作为贵州省电子税务局改进工作的重要依据。衷心感谢您配合完成此次调查!", "<a style='color:royalblue' target='_blank' href=\"https://etax.guizhou.chinatax.gov.cn/zyywn-cjpt-web/nsrmyddc/readWenjuan.do?content_id=dc8b737e0fb24d0797591561e3d207d6&nsrzt=01\" ><u>电子税务局纳税人端问卷调查</u></a>。"],
+        "sj": "2018年12月25日",
+        "lk": "国家税务总局贵州省税务局"
+    }];*/
+
+    var tzggData =[{
+        "gdsbz": "0",
+        "bt": "国家税务总局关于按照纳税信用等级对增值税发票使用实行分类管理有关事项的公告<!--<br>电子税务局纳税人端问卷调查<br>关于纳税信用激励和惩戒措施的相关事项-->",
+        "zw": ["纳税信用A级的纳税人可一次领取不超过3个月的增值税发票用量，因生产经营情况发生变化，需要调整增值税发票用量，手续齐全的，按照规定即时办理。”“纳税信用B级的纳税人可一次领取不超过2个月的增值税发票用量，因纳税人生产经营情况发生变化，需要调整增值税发票用量，手续齐全的，按照规定即时办理。<br><br><br><br><br><br><br><br><br><br>"<!--,"您好，2019年纳税信用评价结果已发布，现对相关纳税信用激励和惩戒措施提醒，详情见附件。","<a style='color:royalblue' target='_blank' href=\"http://download.etaxcn.com/GZDS/CZSC/关于发布2019年纳税信用激励和惩戒措施的相关事项提醒.pdf\" ><u>国家税务总局贵州省税务局关于纳税信用激励和惩戒措施的相关事项提醒</u></a>。<br><br>","为了完善贵州省电子税务局开发建设,提高用户体验,着力解决好纳税人关切的突出问题和服务需求,我们邀请您参加电子税务局建设问卷调查。本次调查问卷不记名,内容严格保密,调查结果将会作为贵州省电子税务局改进工作的重要依据。衷心感谢您配合完成此次调查!", "<a style='color:royalblue' target='_blank' href=\"https://etax.guizhou.chinatax.gov.cn/zyywn-cjpt-web/nsrmyddc/readWenjuan.do?content_id=dc8b737e0fb24d0797591561e3d207d6&nsrzt=01\" ><u>电子税务局纳税人端问卷调查</u></a>。<br><br>尊敬的纳税人：<br>您好！","贵州省自 2019年 1月1日至 2021 年12月31日期间，增值税小规模纳税人减按 50%征收资源税、城市维护建设税、房产税、城镇土地使用税、印花税（不含证券交易印花税）、耕地占用税和教育费附加、地方教育附加。同时增值税小规模纳税人已依法享受资源税、城市维护建设税、房产税、城镇土地使用税、印花税（不含证券交易印花税）、耕地占用税和教育费附加、地方教育附加其他优惠政策的，可叠加享受减按50%的优惠政策。"-->
+		],
+        "sj": "",
+        "lk": ""
+    },
+	{
+        "gdsbz": "0",
+        "bt": "关于纳税信用激励和惩戒措施的相关事项",
+        "zw": ["您好，2019年纳税信用评价结果已发布，现对相关纳税信用激励和惩戒措施提醒，详情见附件。","<a style='color:royalblue' target='_blank' href=\"http://download.etaxcn.com/GZDS/CZSC/关于发布2019年纳税信用激励和惩戒措施的相关事项提醒.pdf\" ><u>国家税务总局贵州省税务局关于纳税信用激励和惩戒措施的相关事项提醒</u></a>。","<a style='color:royalblue' target='_blank' href=\"http://download.etaxcn.com/GZDS/CZSC/国家税务总局贵州省税务局关于发布2019年纳税信用评价结果的相关事项提醒.pdf\" ><u>国家税务总局贵州省税务局关于发布2019年纳税信用评价结果的相关事项提醒</u></a>。<br><br>"],
+        "sj": "",
+        "lk": ""
+    }];
+
+    function alertTzgg(gdsbz) {
+        var alerthtml = "<div>";
+        for (var index in sstx_data) {
+            alerthtml = alerthtml + "<p style=\"text-align:center\"><font style=\"font-size:25px;text-align:center\">" + sstx_data[index].txsxMc + "</font></p><br>" +
+                "<p style=\"text-indent : 0px;line-height:20px;text-align:left\" ><font style='font-size: 18px'>尊敬的纳税人：</font></p>";
+            alerthtml = alerthtml + "<p style=\"text-indent : 35px;line-height:25px; text-align:left\">" + sstx_data[index].txywnr + "</p>";
+            alerthtml = alerthtml + "<br>" +
+                "<p style=\"text-indent : 0px; line-height:20px;text-align:right\">国家税务总局贵州省税务局</p>" +
+                "<br><br>";
+        }
+        for (var index in tzggData) {
+            alerthtml = alerthtml + "<p style=\"text-align:center\"><font style=\"font-size:25px;text-align:center\">" + tzggData[index].bt + "</font></p><br>" +
+                "<p style=\"text-indent : 0px;line-height:20px;text-align:left\" ><font style='font-size: 18px'>尊敬的纳税人：</font></p>";
+            for (var i = 0; i < tzggData[index].zw.length; i++) {
+                alerthtml = alerthtml + "<p style=\"text-indent : 35px;line-height:25px; text-align:left\">" + tzggData[index].zw[i] + "</p>";
+            }
+            alerthtml = alerthtml + "<br>" +
+                "<p style=\"text-indent : 0px; line-height:20px;text-align:right\">" + tzggData[index].lk + "</p>" +
+                "<p style=\"text-indent : 0px; line-height:20px;text-align:right\">" + tzggData[index].sj + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>" +
+                "<br><br>";
+        }
+        alerthtml = alerthtml + "</div>";
+        if (alerthtml != "" && tzggBz) {
+            layer.open({
+                type: 1, //弹窗
+                closeBtn: 1, //不显示关闭按钮
+                shift: 0, //动画效果
+                area: ['800px', '300px'],
+                // btn: ['关闭', '不再提醒'],
+                title: false,
+                shadeClose: true,//点击窗体外关闭
+                content: alerthtml,
+                btn2: function (index, layero) {
+                    var djxh = gsdjxh;
+                    var expiresDate = new Date();
+                    expiresDate.setTime(expiresDate.getTime() + (180 * 24 * 60 * 60 * 1000)); //?替换成分钟数如果为60分钟则为 60 * 60 *1000
+                    $.cookie("dzswj_nsrjbxx_hs" + djxh, true, {
+                        expires: expiresDate
+                    });
+                },
+                success: function (layero) {
+                    layero.find('.layui-layer-btn').css('text-align', 'center')
+                }
+            });
+        }
+    }
+</script>
+<!--本地弹框功能结束-->
+<div style="display:none">
+    <iframe id="qhsfIfrm" src="" style="display:none"></iframe>
+</div><!-- 切换身份后，通知外围系统 -->
+
+<!--本地化显示测试环境还是生产环境 --- 开始 ------>
+<div id="CheckEnvironment" style="position: absolute; left: 40%;top:15px;display:none">
+    <marquee style="width:300px;"><A title=客户端检测提示   style="color: red; font-size: 30px;" href="#"><SPAN   style="COLOR: #ff0000" spanstyle="font-size:40pt">测试环境</SPAN></A></marquee>
+</div>
+<script type="text/javascript">
+    $(function () {
+        //检查是否是测试环境
+        var localStr = location.href;
+        if (localStr.indexOf("test") > 0) {
+            $("#CheckEnvironment").show();
+        }
+    });
+</script>
+<!--本地化显示测试环境还是生产环境 --- 结束 ------>
+</body>
+</html>

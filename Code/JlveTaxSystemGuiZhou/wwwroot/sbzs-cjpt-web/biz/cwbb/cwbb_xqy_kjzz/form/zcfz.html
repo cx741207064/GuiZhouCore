@@ -1,0 +1,375 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>资产负债表</title>
+</head>
+
+<body>
+<div style="width:96%; margin:auto;" ng-jprefix="SB100VO.SB100BdxxVO.cjbdxml.syxqyzcfzb.nsrxxForm1"  id="viewCtrlId" ng-controller="viewCtrl">
+<div class="NewTableHead">
+     <h1>资产负债表（适用执行小企业会计准则的企业）</h1>
+	<li class="dateTxt">
+	所属期起<input type="text" class="topInput" value=" " ng-model="nsrxxForm1.skssqq" readonly="true"> 
+	所属期止<input type="text" class="topInput" value=" " ng-model="nsrxxForm1.skssqz" readonly="true"> 
+	</li>    
+</div>
+<div class="NewTableTop">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	    <td>报送日期：<span class="textline" ng-bind="nsrxxForm1.bsrq" ></td>
+	    <td align="right"></td>
+   </tr>
+  <tr>
+    <td>纳税人识别号：<span class="textline" ng-bind="nsrxxForm1.nsrsbh">
+    </td>
+    <td align="right">会小企01表</td>
+  </tr>    
+  <tr>
+    <td>纳税人名称：<span class="textline" ng-bind="nsrxxForm1.nsrmc">
+     </td>
+    <td align="right">单位：元      
+</td>
+</tr>
+</table>
+</div>
+
+<div class="NewTableMain">
+<table width="100%" border="0" cellspacing="1" cellpadding="0" ng-jprefix="SB100VO.SB100BdxxVO.cjbdxml.syxqyzcfzb.syxqyzcfzbGrid">
+    <tr>
+      <td align="center" class="title01" width="150"><strong>资    产</strong></td>
+      <td align="center" class="title01" width="50"><strong> 行次 </strong></td>
+      <td align="center" class="title01"><strong>期末余额</strong></td>
+      <td align="center" class="title01"><strong>年初余额</strong></td>
+      <td align="center" class="title01" width="150"><strong>负债和所有者权益</strong></td>
+      <td align="center" class="title01" width="50"><strong> 行次 </strong></td>
+      <td align="center" class="title01"><strong>期末余额</strong></td>
+      <td align="center" class="title01"><strong>年初余额</strong></td>
+    </tr>
+    <tr>
+      <td class="title01">流动资产：</td>
+      <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td class="title01">流动负债：</td>
+      <td align="center" class="title01">　</td>
+      <td class="title01">　</td>
+      <td class="title01">　</td>
+    </tr>
+    <tr>
+      <td class="title01">    货币资金</td>
+      <td align="center" class="title01">1</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[0].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[0].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    短期借款</td>
+      <td align="center" class="title01">31</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[0].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[0].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    短期投资</td>
+      <td align="center" class="title01">2</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[1].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[1].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    应付票据</td>
+      <td align="center" class="title01">32</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[1].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[1].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    应收票据</td>
+      <td align="center" class="title01">3</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[2].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[2].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    应付账款</td>
+      <td align="center" class="title01">33</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[2].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[2].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    应收账款</td>
+      <td align="center" class="title01">4</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[3].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[3].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    预收账款</td>
+      <td align="center" class="title01">34</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[3].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[3].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    预付账款</td>
+      <td align="center" class="title01">5</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[4].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[4].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    应付职工薪酬</td>
+      <td align="center" class="title01">35</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[4].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[4].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    应收股利</td>
+      <td align="center" class="title01">6</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[5].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[5].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    应交税费</td>
+      <td align="center" class="title01">36</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[5].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[5].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    应收利息</td>
+      <td align="center" class="title01">7</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[6].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[6].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    应付利息</td>
+      <td align="center" class="title01">37</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[6].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[6].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">其他应收款</td>
+      <td align="center" class="title01">8</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[7].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[7].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    应付利润</td>
+      <td align="center" class="title01">38</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[7].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[7].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">存货</td>
+      <td align="center" class="title01">9</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[8].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[8].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    其他应付款</td>
+      <td align="center" class="title01">39</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[8].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[8].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">&nbsp;&nbsp;其中：原材料</td>
+      <td align="center" class="title01">10</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[9].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[9].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    其他流动负债</td>
+      <td align="center" class="title01">40</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[9].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[9].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在产品</td>
+      <td align="center" class="title01">11</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[10].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[10].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    流动负债合计</td>
+      <td align="center" class="title01">41</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[10].qmyeQy" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[10].ncyeQy" type="text" value="0.00" readonly></td>
+    </tr>
+    <tr>
+      <td class="title01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;库存商品</td>
+      <td align="center" class="title01">12</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[11].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[11].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    非流动负债</td>
+      <td align="center" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+    </tr>
+    <tr>
+      <td class="title01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周转材料</td>
+      <td align="center" class="title01">13</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[12].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[12].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">        长期借款</td>
+      <td align="center" class="title01">42</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[12].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[12].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">其他流动资产</td>
+      <td align="center" class="title01">14</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[13].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[13].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">        长期应付款</td>
+      <td align="center" class="title01">43</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[13].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[13].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">流动资产合计</td>
+      <td align="center" class="title01">15</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[14].qmyeZc" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[14].ncyeZc" type="text" value="0.00" readonly></td>
+      <td class="title01">        递延收益</td>
+      <td align="center" class="title01">44</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[14].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[14].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">非流动资产</td>
+      <td align="center" class="title01">　</td>
+      <td width="162" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td class="title01">其他非流动负债</td>
+      <td align="center" class="title01">45</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[15].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[15].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">长期债券投资</td>
+      <td align="center" class="title01">16</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[16].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[16].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">非流动负债合计</td>
+      <td align="center" class="title01">46</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[16].qmyeQy" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[16].ncyeQy" type="text" value="0.00" readonly></td>
+    </tr>
+    <tr>
+      <td class="title01">    长期股权投资</td>
+      <td align="center" class="title01">17</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[17].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[17].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">        负债合计</td>
+      <td align="center" class="title01">47</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[17].qmyeQy" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[17].ncyeQy" type="text" value="0.00" readonly></td>
+    </tr>
+    <tr>
+      <td class="title01">    固定资产原价</td>
+      <td align="center" class="title01">18</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[18].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[18].ncyeZc" type="text" value="0.00"></td>
+       <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">    减：累计折旧</td>
+      <td align="center" class="title01">19</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[19].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[19].ncyeZc" type="text" value="0.00"></td>
+       <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">    固定资产账面价值</td>
+      <td align="center" class="title01">20</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[20].qmyeZc" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[20].ncyeZc" type="text" value="0.00" readonly></td>
+       <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">    在建工程</td>
+      <td align="center" class="title01">21</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[21].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[21].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">    工程物资</td>
+      <td align="center" class="title01">22</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[22].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[22].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">    固定资产清理</td>
+      <td align="center" class="title01">23</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[23].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[23].ncyeZc" type="text" value="0.00"></td>
+       <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">生物性生物资产</td>
+      <td align="center" class="title01">24</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[24].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[24].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">所有者权益（或股东权益）：</td>
+      <td align="center" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+    </tr>
+    <tr>
+      <td class="title01">    无形资产</td>
+      <td align="center" class="title01">25</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[25].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[25].ncyeZc" type="text" value="0.00"></td>
+      <td class="title01">    实收资本（或股本）</td>
+      <td align="center" class="title01">48</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[25].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[25].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    </tr>
+    <tr>
+      <td class="title01">    开发支出</td>
+      <td align="center" class="title01">26</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[26].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[26].ncyeZc" type="text" value="0.00"></td>
+     <td class="title01">    资本公积</td>
+      <td align="center" class="title01">49</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[26].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[26].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    长期待摊费用</td>
+      <td align="center" class="title01">27</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[27].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[27].ncyeZc" type="text" value="0.00"></td>
+     <td class="title01">    盈余公积</td>
+      <td align="center" class="title01">50</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[27].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[27].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">其他非流动资产</td>
+      <td align="center" class="title01">28</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[28].qmyeZc" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[28].ncyeZc" type="text" value="0.00"></td>
+       <td class="title01">    未分配利润</td>
+      <td align="center" class="title01">51</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[28].qmyeQy" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[28].ncyeQy" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">非流动资产合计</td>
+      <td align="center" class="title01">29</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[29].qmyeZc" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[29].ncyeZc" type="text" value="0.00" readonly></td>
+     <td class="title01">所有者权益（或股东权益）合计</td>
+      <td align="center" class="title01">52</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[29].qmyeQy" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[29].ncyeQy" type="text" value="0.00" readonly></td>
+    </tr>
+    <tr ng-render-finish="">
+      <td class="title01">    资产合计</td>
+      <td align="center" class="title01">30</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[30].qmyeZc" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[30].ncyeZc" type="text" value="0.00" readonly></td>
+       <td class="title01">负债和所有者权益(或股东权益)总计</td>
+      <td align="center" class="title01">53</td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[30].qmyeQy" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="syxqyzcfzbGrid.xqyzcfzbGridlb[30].ncyeQy" type="text" value="0.00" readonly></td>
+    </tr>
+  </table>
+</div>
+</div>
+</body>
+</html>

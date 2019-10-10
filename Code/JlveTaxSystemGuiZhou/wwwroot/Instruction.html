@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        html {
+            color: #505050;
+            background: #f3f5f5;
+        }
+
+        .Header_box {
+            height: 100px;
+            width: 1180px;
+            clear: both;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .ins_main_ {
+            width: 1180px;
+            clear: both;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .img_logo {
+            WIDTH: 280px;
+            height: 50px;
+            float: left;
+            position: relative;
+            left: 35px;
+            top: 12px;
+            z-index: 100;
+        }
+
+        .title {
+            height: 50px;
+            float: left;
+            position: relative;
+            left: 65px;
+            top: 12px;
+            z-index: 100;
+        }
+
+            .title h1 {
+                font-family: 'Adobe Devanagari';
+                font-size: 40px;
+                line-height: 1.5;
+                margin-bottom: 25px;
+                color: #333;
+                margin-top: 8px;
+                font-weight: bolder;
+            }
+
+        .note {
+            color: #E60012;
+            font-size: 20px;
+            line-height: 50px;
+            font-weight: bolder;
+            height: 50px;
+            border: 1px solid #e8e6e6;
+            background: #f3f3f3;
+            padding: 0 10px;
+        }
+
+        .noteinfo {
+            border: 1px solid #e8e6e6;
+            border-top: 0px;
+            padding: 0 10px;
+        }
+
+            .noteinfo p {
+                margin: 0px;
+                line-height: 55px;
+                padding: 0 10px;
+                font-weight: bolder;
+                font-size: 15px;
+            }
+
+            .noteinfo a {
+                margin-left: 40px;
+                font-weight: bolder;
+            }
+
+        .img_kxrzd {
+            margin-left: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById("domain").innerText = window.location.protocol+ document.domain;
+        }
+    </script>
+</head>
+<body>
+    <script src="/js/point_line.js" count="100" zindex="-2" opacity="0.6" color="131,111,255" type="text/javascript">
+    </script>
+    <div class="Header_box">
+        <div class="img_logo">
+            <!--<img alt="精略" src="image/logo.png" />-->
+        </div>
+        <div class="title">
+            <h1>模拟报税系统使用说明</h1>
+        </div>
+    </div>
+    <div class="ins_main_">
+        <div class="note">注意事项:</div>
+        <div class="noteinfo">
+            <p>尊敬的用户：</p>
+            <p>（1）推荐使用谷歌Chrome浏览器或者IE浏览器（IE9以上）</p>
+            <p>（2）请浏览器"设置"》"Internet选项"》"安全"》将网址"<span id="domain" style="color: #E60012;"></span>"设置可信任站点，并且设置ActiveX控件和插件级别为"<span style="color: #E60012;">启用</span>"。</p>
+            <div class="img_kxrzd">
+                <img alt="精略" src="image/kxrzd.png" height="550" width="850" />
+                <img alt="精略" src="image/zdyjb.png" height="550" width="850" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

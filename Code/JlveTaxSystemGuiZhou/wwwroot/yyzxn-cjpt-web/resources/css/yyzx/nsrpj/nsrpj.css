@@ -1,0 +1,378 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: SimSun;
+	font-size: 12px;
+}
+
+.r_combtnbox {
+	width: 100%;
+	text-align: center;
+}
+
+a.simpleAlertBtn {
+    padding: 5px 20px;
+    cursor: pointer;
+    background: #00a3cd;
+    min-width: 60px;
+    border-style: none;
+    line-height: 20px;
+    font-size: 14px;
+    color: white;
+    margin: 0 10px;
+}
+.r_comment {
+	position: fixed;
+	right: 0;
+	cursor: pointer;
+	top: 50%;
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	background: url(/yyzxn-cjpt-web/resources/images/yyzx/nsrpj/pingl.png) no-repeat center #f1f1f1;
+	
+}
+.r_comment:hover {
+	background: url(/yyzxn-cjpt-web/resources/images/yyzx/nsrpj/pingl2.png) no-repeat;
+	line-height: 30px;
+	text-align: center;
+}
+
+.tc_tit {
+	line-height: 40px;
+	text-indent: 12px;
+	font-size: 16px;
+	background-color: #1a56a8;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.close_btn {
+	cursor: pointer;
+}
+
+.close-reveal-modal {
+	font-size: 24px;
+	text-align: center;
+	line-height: 18px;
+	height: 20px;
+	width: 20px;
+	color: #FFF;
+	position: absolute;
+	top: 10px;
+	right: 8px;
+	cursor: pointer;
+}
+.close-reveal-modal:hover {
+	background-color: rgba(0,0,0,0.2)
+}
+
+.msc_tzgg {
+	padding: 15px 0;
+	display: block;
+}
+.msc_tzgg h4 {
+	padding-bottom: 10px;
+	margin: 0 20px;
+	display: block;
+	line-height: 25px;
+	font-size: 16px;
+	text-align: center;
+	color: #333;
+	border-bottom: 1px solid #f3f3f3;
+}
+.msc_tzgg h4.nobar {
+	border: none;
+}
+.msc_tzgg .tzbox {
+	padding: 10px 20px;
+}
+.msc_tzgg .tzbox h5 {
+	line-height: 30px;
+	font-size: 14px;
+	padding-bottom: 10px;
+	display: block;
+	font-weight: normal;
+}
+.msc_tzgg .tzbox p {
+	line-height: 22px;
+	font-size: 14px;
+	color: #666;
+	text-indent: 28px;
+}
+.msc_tzgg .tzbox .rbz {
+	width: 100%;
+	padding-top: 20px;
+	text-align: right;
+}
+.msc_tzgg .tzbox .rbz b {
+	font-weight: normal;
+	color: #333;
+	line-height: 22px;
+	display: block;
+}
+.msc_tzgg .fujian {
+	width: 100%;
+	text-indent: 20px;
+	padding: 10px 0;
+	margin-top: 20px;
+	background: #f1f1f1;
+	color: #333;
+	line-height: 24px;
+}
+.msc_tzgg .fujian a {
+	display: inline-block;
+	text-indent: 0;
+	color: #00a3cd;
+	background: url(/yyzxn-cjpt-web/resources/images/yyzx/nsrpj/ysb.png) no-repeat 5px center;
+	padding-left: 26px;
+}
+.msc_tzgg .fujdow {
+	width: 100%;
+	text-indent: 20px;
+	padding: 10px 0;
+	font-size: 12px;
+	margin-top: 20px;
+	color: #333;
+	line-height: 24px;
+}
+.msc_tzgg .fujdow p {
+	display: inline-block;
+	font-size: 12px;
+	color: #888;
+}
+.msc_tzgg .fujdow a {
+	display: inline-block;
+	margin: 0 5px;
+	text-indent: 0;
+	line-height: 24px;
+	height: 24px;
+	color: #00a3cd;
+}
+.msc_tzgg .fujdow a.red {
+	color: crimson;
+}
+.msc_tzgg .btnsty {
+	padding: 10px 20px;
+	text-align: center;
+}
+.msc_tzgg .inptrea {
+	padding: 5px;
+	width: 60%;
+	min-height: 60px;
+	border: 1px solid #e1e1e1;
+	margin: 20px auto;
+	display: block;
+}
+.msc_tzgg .file {
+	width: 150px;
+	font-size: 14px;
+}
+
+#star {
+	position: relative;
+	width: 60%;
+	padding: 7px 20px;
+	margin: 10px auto;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+#star ul, #star span {
+	float: left;
+	display: inline;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+}
+#star ul {
+	margin: 0 10px;
+	list-style-type:none;
+}
+#star li {
+	float: left;
+	width: 30px;
+	cursor: pointer;
+	text-indent: -9999px;
+	background: url(/yyzxn-cjpt-web/resources/images/yyzx/nsrpj/star.png) no-repeat;
+}
+#star strong {
+	color: #f60;
+	padding-left: 10px;
+}
+#star li.on {
+	background-position: 0 -38px;
+}
+#star p {
+	position: absolute;
+	top: 31px;
+	width: 109px;
+	height: 41px;
+	line-height: 37px;
+	text-align: center;
+	display: none;
+	/* background: url(../images/icon.png) no-repeat; */
+	padding: 7px 10px 0;
+}
+#star p em {
+	color: #f60;
+	display: block;
+	font-style: normal;
+}
+
+/**弹出窗口**/
+		
+.reveal-modal-bg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: #999;
+	background: rgba(0,0,0,0.1);
+	z-index: 100;
+	display: none;
+	top: 0;
+	left: 0;
+}
+.reveal-modal {
+	visibility: hidden;
+	top: 50%;
+	left: 50%;
+	border-radius: 3px;
+	background: #fff;
+	position: absolute;
+	z-index: 101;
+	-webkit-box-shadow: 0 0 40px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 40px rgba(0,0,0,.5);
+	box-shadow: 0 0 40px rgba(0,0,0,.5);
+}
+.reveal-modal.small {
+	width: 200px;
+	margin-left: -140px;
+}
+.reveal-modal.medium {
+	width: 400px;
+	margin-left: -240px;
+}
+.reveal-modal.large {
+	width: 600px;
+	margin-left: -340px;
+}
+.reveal-modal.xlarge {
+	width: 800px;
+	margin-left: -440px;
+}
+.simpleAlertBtn0:hover{background-color:dodgerblue; color: white;}
+
+.simpleAlertBtn0{
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+	height:auto;
+	width:auto;
+	color: #FFF;
+	position:inherit;
+	top: auto;
+	right: auto;
+	cursor: pointer;
+}
+
+.huifugo {
+	width: 100%;
+	line-height: 30px;
+	font-size: 22px;
+	text-align: center;
+	color: #666;
+	padding: 30px 0;
+}
+
+.huifugo2 {
+	width: 100%;
+	line-height: 100px;
+	font-size: 22px;
+	text-align: center;
+	color: #666;
+	padding: 30px 0;
+}
+
+.fixed{
+	position: fixed;
+	right: 0;
+	cursor: pointer;
+	top: 50%;
+	width: 60px;
+	height: 60px;
+	z-index:1000;
+}
+.fixed img{
+	width: 60px;
+	height: 60px;
+}
+
+.mypl2{
+	position:absolute;
+	width:100%; 
+	background:#fcfcfc; 
+}
+
+/* 对适用范围内 所有的placeholder有效 */
+::-moz-placeholder {opacity:0.2  }/* 火狐内核*/
+::-webkit-input-placeholder {opacity:0.7;font-size:120%  }/* 谷歌内核*/
+:-ms-input-placeholder {opacity:0.4  }/* IE内核 */
+
+
+/* 2018-7-23-样式调整*/
+.layui-elem-field legend {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.layui-card-header, .layui-colla-title {
+	font-size: 12px;
+	background-color: #d7e9fa;
+	line-height: 27px;
+	height: 27px;
+}
+
+
+.layui-table td, .layui-table th {
+    line-height: 12px;
+    font-size: 12px;
+}
+
+.layui-btn {
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0px 13px;
+}
+
+.layui-form-item {
+    margin-bottom: 0px;
+}
+
+.layui-form-item .layui-inline {
+    padding: 7px;
+}
+
+.layui-input, .layui-textarea {
+    height: 24px;
+    padding-left: 5px;
+}
+
+.layui-input-block {
+    padding: 7px;
+}
+
+.layui-card {
+    border-style: solid;
+    border-color: #8FBBEA;
+}
+
+
+
+
+
+
+
+

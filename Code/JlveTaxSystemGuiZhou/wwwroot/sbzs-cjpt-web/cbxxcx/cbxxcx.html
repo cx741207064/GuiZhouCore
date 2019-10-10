@@ -1,0 +1,277 @@
+
+
+
+
+
+
+	
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" id="ng-app" ng-app="viewApp" xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<meta http-equiv="pragma" content="no-cache">  
+<meta http-equiv="cache-control" content="no-cache">  
+<meta http-equiv="expires" content="0"> 
+<title>财报信息查询</title>
+<!-- 自定义参数 -->
+<script type="text/javascript">
+//低版本IE兼容性处理：控制台日志记录器。
+if (!window.console) {
+    console = { log : function(){} };
+}
+var contextRoot="/sbzs-cjpt-web";
+var DZSWJ_TGC = 'a2e81c8c93c34e178e54b44f537918a5';
+</script>
+<!-- 框架通用js -->
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/lib/angular.js"></script>
+<link href="/sbzs-cjpt-web/abacus/_res_/css/comon0.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/jquery.min.js"></script>
+<script type="text/javascript"src="/sbzs-cjpt-web/abacus/_res_/js/lib/json3.js"></script>
+
+
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/DatePicker/DatePicker.js"></script>
+
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/message.js"></script>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/css/message/message_solid.css">
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/laypage-v1.3/laypage/laypage.js"></script>
+<!-- 自定义js -->
+<script type="text/javascript" src="/sbzs-cjpt-web/view/nssb/cbxxcx/cbxxcx.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/view/nssb/sbxxcx/sbcxzdy.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/view/nssb/sbzf/cp/cpDateControl.js"></script>
+
+<!--4.0版本UI  -->
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources4/layui/css/layui.css" />
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/tax-js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/tax-js/common.js"></script>
+<link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-css/common.css">
+<link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-font-icon/iconfont.css">
+</head>
+<body ng-app="viewApp" id = "cbviewCtrlid" >
+	<div  class="tax-center-box" ng-controller="viewCtrl">
+		<div class="ui-tax-center-box">
+		   
+	   <table class="top_title" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 10px;">
+			 <tbody><tr>
+			    <td width="52"><img src="/sbzs-cjpt-web/abacus/resources4/tax-images/png_icon/sbcxjdy.png"></td>
+			    <td><div class="big_title">财报查询及打印</div></td>
+			  </tr>
+			</tbody>
+	   </table>
+	   <div class="title">
+				<ul class="nav">
+					<li>报税中心</li>
+					<li>财务报表信息查询</li>
+				</ul>
+				<div class="theme">财务报表信息查询</div>
+		</div>
+
+		<form class="marginT20 layui-form-item">
+			<table border="0" cellspacing="0" cellpadding="0" >
+				<tr>
+					<td ng-cloak ng-if="showGdsbz=='Y'" id="gdbztd1"  style="display : none;">国地标志：</td>
+					<td ng-cloak ng-if="showGdsbz=='Y'" id="gdbztd2"  style="display : none;">
+						<select id="gdbz" class="select01css" style="width: 155px;">
+							<option value="0">全部</option>
+							<option value="1">国税</option>
+							<option value="2">地税</option>
+						</select>
+					</td>
+					<td ng-cloak ng-if="showGdsbz=='N'"  style="display : none;">国地标志：</td>
+					<td ng-cloak ng-if="showGdsbz=='N'"  style="display : none;">
+						<span ng-if="showGdsbz=='N'" id="gdbztd1"></span>
+						<span ng-if="showGdsbz=='N'" id="gdbztd2"></span>
+						<select id="gdbz" class="select01css" style="display: none;">
+							<option value="0">全部</option>
+							<option value="1">国税</option>
+							<option value="2">地税</option>
+						</select>
+					</td>
+					<td colspan="4">
+						<div class="layui-inline marginB12">
+							<label class="layui-form-label label-left" style="width: 100px">申报日期起止:</label>
+							<input type="hidden" name="sssqQ" id="sssqQ" value="null">
+							<input type="hidden" name="sssqZ" id="sssqZ" value="null">
+							<input type="hidden" name="bsq" id="bsq">
+							<div class="layui-input-inline" style="width: 120px">
+								<input type="text" class="layui-input layui-date-input" id="sbrqq" lay-key="1">
+							</div>
+						</div>
+						<div class="layui-inline marginB12">
+							<label class="layui-form-label label-left" style="width: 20px">-</label>
+							<div class="layui-input-inline" style="width: 120px">
+								<input type="text" class="layui-input layui-date-input" id="sbrqz"  lay-key="2">
+							</div>
+						</div>
+						<div class="layui-inline marginB12">
+							<label class="layui-form-label label-left" style="width: 110px">税款所属期起止:</label>
+							<div class="layui-input-inline" style="width: 120px">
+								<input type="text" class="layui-input layui-date-input" id="skssqq" lay-key="3">
+							</div>
+						</div>
+						<div class="layui-inline marginB12">
+							<label class="layui-form-label label-left" style="width: 20px">-</label>
+							<div class="layui-input-inline" style="width: 120px">
+								<input type="text" class="layui-input layui-date-input" id="skssqz" lay-key="4">
+							</div>
+						</div>
+						<div class="layui-inline marginB12">
+							<button class="layui-btn layui-btn-primary" onclick="queryBtn()">查询</button>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+			
+		<table width="100%" class="layui-table" border="0" cellspacing="0" cellpadding="0" id="cbxxList">
+			<tbody>
+				<tr class="trheader">	
+					<th width="50px">序号</th>
+					<th width="5%" ng-if="showGdsbz=='Y'">国地标志</th>
+					<th width="35%">财务报表名称</th>
+					<th width="15%">申报日期</th>
+					<th width="15%">税款所属期起</th>
+					<th width="15%">税款所属期止</th>
+					<!-- <th width="110px">网报作废状态</th> -->
+					<th width="15%">操作</th>
+				</tr>
+				<tr ng-repeat="item in cbxxitems" pzxh="{{item.pzxh}}">
+					<td align="center" ng-cloak ng-bind="item.index + 1"></td>
+					<td align="center" ng-if="showGdsbz=='Y'" ng-cloak ng-bind-html="item.gdslxDm | gdslxDm | to_trusted"></td>
+					<td align="left" ng-cloak ng-bind="item.ywbmmc"></td>
+					<td align="center" ng-cloak ng-bind="item.sbrq | limitTo : 10"></td>
+					<td align="center" ng-cloak ng-bind="item.ssqq | limitTo : 10"></td>
+					<td align="center" ng-cloak ng-bind="item.ssqz | limitTo : 10"></td>
+					<!-- <td align="center" ng-cloak ng-bind="item.sbzfmc"></td> -->
+					<td align="center" ng-cloak ng-if="item.version == 1" ng-bind-html="item | pzxh | to_trusted"></td>
+					<td align="center" ng-cloak ng-if="item.version == 3" ng-bind-html="item | cksbb | to_trusted"></td>
+				</tr>
+			</tbody>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="cbxxNotTips" style="display: none;border-top: 0;">
+			<tbody>
+				<tr>
+					<td align="center" ng-if="showGdsbz=='Y'" colspan="7"><font color="red">没有财报信息!</font></td>
+					<td align="center" ng-if="showGdsbz!='Y'" colspan="6"><font color="red">没有财报信息!</font></td>
+				</tr>
+			</tbody>
+		</table>
+			
+		</div> <!-- box -->
+		
+		<!-- <div class="layui-box layui-laypage layui-laypage-default"
+			id="layui-laypage-5">
+			<a href="javascript:;" class="layui-laypage-prev layui-disabled"
+				id="cbpage1" data-page="0"><i class="layui-icon"></i></a><span
+				class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span><span class="layui-laypage-skip">到第<input
+				type="text" min="1" value="1" class="layui-input">页
+				<button type="button" class="layui-laypage-btn">确定</button></span><span
+				class="layui-laypage-count" id="cbpageInfo">共 0 条</span><span
+				class="layui-laypage-limits"><select lay-ignore=""><option
+						value="10" selected="">10 条/页</option>
+			</select></span>
+		</div> -->
+			
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="50"><select class="inputstyle inputstyle02"
+					id="cbpageSize">
+						<option selected>10</option>
+				</select></td>
+				<td id="cbpageInfo">条/页，共0条信息</td>
+				<td>
+					<div class="page1" id="cbpage1"
+						style="padding: 10px 0; float: right;">
+						<div class="page_box"></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+			
+	</div>
+</body>
+<script>
+var gdbsms='1';
+var urlgdslxDm = '1';
+var nsrJson= '{"gsNsrsbh":"91520190314387738N","gsZgswjdm":"15201156300","error":"","dsDjxh":"","gsDjxh":"10115201000083900814","dsZgswjdm":"","dsNsrmc":"","gsNsrmc":"贵州鸿瑞锦机电有限公司","gsSwjgDm":"15201150000","dsNsrsbh":"","dsSwjgDm":""}';
+//var jsessionid = '';
+//改用datepicker
+/* $("#sbny").on('click', function () {
+	new DatePicker({inputObj:this,dateFormatStyle:'yyyy-MM',beginDate:'2000-01-01',endDate:'2099-12-30',lang:1,type:'m'}).show();
+	//WdatePicker({dateFmt:'yyyyMM',maxDate:'%y-%M-%d 00:00:00',autoPickDate:true,onpicked:changvalue,isShowClear:false});
+}); 
+
+$("#skssqq").on('click', function () {
+	new DatePicker({inputObj:this,dateFormatStyle:'yyyy-MM',beginDate:'2000-01-01',endDate:'2099-12-30',lang:1,type:'m'}).show();
+	//WdatePicker({dateFmt:'yyyyMM',maxDate:'%y-%M-%d 00:00:00',autoPickDate:true,onpicked:changvalue,isShowClear:false});
+});
+
+$("#skssqz").on('click', function () {
+	new DatePicker({inputObj:this,dateFormatStyle:'yyyy-MM',beginDate:'2000-01-01',endDate:'2099-12-30',lang:1,type:'m'}).show();
+});*/
+
+viewApp.controller('viewCtrl', function ($scope) {
+    var db_showGdsbz = 'N';
+    $scope.showGdsbz = (db_showGdsbz == 'null' || db_showGdsbz=='' || db_showGdsbz=='undefined')?'Y':db_showGdsbz;
+});
+
+var date = new Date();  
+var year = date.getFullYear();  
+var month = date.getMonth() + 1;
+if(month < 10){
+    month = "0" + month;
+}
+var day = date.getDate();
+var firstDay = year + '-' + month + '-01';
+var nowDay = year + '-' + month + '-' + day;
+
+//4.0日期控件 
+layui.use('laydate', function() {
+var laydate = layui.laydate;
+
+//日期范围
+laydate.render({
+	elem : '#sbrqq',
+	value : firstDay
+});
+
+laydate.render({
+	elem : '#sbrqz',
+	value : nowDay
+});
+
+laydate.render({
+	elem : '#sbrq',
+	range : true
+});
+
+/* laydate.render({
+	elem : '#skssq',
+	range : true
+}); */
+
+laydate.render({
+	elem : '#skssqq',
+});
+
+laydate.render({
+	elem : '#skssqz',
+});
+
+/* laydate.render({
+	elem : '#sbny',
+	type: 'month'
+}); */
+
+});
+//加载层
+var layer;
+layui.use('layer', function() {
+layer = layui.layer;
+})
+
+
+</script>
+</html>

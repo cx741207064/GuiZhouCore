@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<select>
+		<option>
+			<dm>1</dm>
+			<mc>按月申报 </mc>
+		</option>
+		<option>
+			<dm>3</dm>
+			<mc>按季申报 </mc>
+		</option>
+		<option>
+			<dm>12</dm>
+			<mc>按年申报 </mc>
+		</option>
+	</select>
+</root>

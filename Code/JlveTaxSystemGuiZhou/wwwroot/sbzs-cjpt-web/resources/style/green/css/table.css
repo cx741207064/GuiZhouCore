@@ -1,0 +1,198 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px; font-family:"微软雅黑"; color:#313131; list-style-type:none;}
+body{  padding-top:10px; padding-bottom:10px;}
+
+.NewTableHead{}
+.NewTableTop{}
+.NewTableHead h1{  font-size:18px; text-align:center; padding-bottom:30px;  padding-top:30px; line-height:28px;}
+.NewTableHead .dateTxt{ text-align:center; font-size:12px; height:28px; line-height:33px;}
+.NewTableTop td{ font-size:12px; height:26px; line-height:26px; padding-top:8px;}
+.NewTableMain { padding-top:12px;}
+.NewTableMain table{ background-color:#b5b5b5; font-size:12px;}
+.NewTableMain td{background-color: #f3f5f5;height:27px;}
+.NewTableMain .title01{ background-color:#f8fcfd; padding:0 5px 0 5px;}
+.NewTableMain .EditInput01 { padding-right: 2px;}
+.NewTableMain .EditInput01 input{ text-align:right; width:100%; height:25px; border:1px solid #fff; font-size:12px;*width:98%;}
+.NewTableMain .EditInput01 input:hover{ background-color:#ffffd5;}
+
+.NewTableMain .EditInput02 { padding-right: 2px;}
+.NewTableMain .EditInput02 input{ text-align:left; width:100%; height:25px; border:1px solid #fff; font-size:12px;*width:98%;s}
+.NewTableMain .EditInput02 input:hover{ background-color:#ffffd5;}
+.NewTableMain .EditInput03 { padding-right: 2px;}
+.NewTableMain .EditInput03 input{ text-align:center; width:100%; height:25px; border:1px solid #fff; font-size:12px;*width:98%;}
+.NewTableMain .EditInput03 input:hover{ background-color:#ffffd5;}
+
+.NewTableMain .ReadInput01 { padding-right: 2px;background-color:#f1edee;}
+.NewTableMain .ReadInput01 input{ text-align:right; width:100%; height:25px; border:1px solid #f1edee; font-size:12px;background-color:#f1edee;*width:98%;}
+
+.NewTableMain .ReadInput02 { padding-right: 2px; background-color:#f1edee;}
+.NewTableMain .ReadInput02 input{ text-align:center; width:100%; height:25px; border:1px solid #f1edee; font-size:12px;background-color:#f1edee;*width:98%;}
+
+.NewTableMain .ReadInputTemp { padding-right: 2px;}
+.NewTableMain .ReadInputTemp input{ text-align:right; width:100%; height:25px; border:1px solid #f1edee; font-size:12px;}
+
+
+.NewTableMain .ReadInput03 { padding-right: 2px; background-color:#f1edee;}
+.NewTableMain .ReadInput03 input{ text-align:left; width:100%; height:25px; border:1px solid #f1edee; font-size:12px;background-color:#f1edee;*width:98%;}
+
+.statement{ margin:5px; }
+.statement .text{ font-size:12px; line-height:18px; }
+.statement td{color:#575757;}
+.statement h2{text-align:center;font-size:12px; height:20px; line-height:20px;}
+.NewTableFoot { font-size:12px; padding-bottom:10px; padding-top:10px;}
+.NewTableFoot h2{font-size:12px; height:28px; line-height:28px; }
+.NewTableFoot td{font-size:12px; height:22px; }
+.topInput{ font-size:12px; height:25px; line-height:25px; padding-left:5px; border:1px solid transparent; border-bottom-color:#b5b5b5; }
+.topInput:hover{background-color:#ffffd5;}
+.NewTableMain select{ border:1px solid #fff; width:100%;}
+.NewTableMain .back{ text-align:center; background-color:#f1edee;}
+.topInput:hover{background-color:#ffffd5;}
+/* .yellow_tisi{line-height:20px; background-color:#FFC; position:absolute; right:-70px; bottom:-50px; padding:0px 5px;text-align:left; z-index:2; box-shadow:2px 2px 3px #ccc; display:none;} */
+
+.yellow{ background-color:#fefc0c; line-height:100%; height:100%;}
+input[type="checkbox"].yellow{ background-color:#ffd21d; line-height:13px; height:13px;}
+input[type="radio"].yellow{ background-color:#ffd21d; line-height:13px; height:13px;}
+.relative{position: relative;background-color: #fefc0c;height: 100%;}
+.relative_sbqc{position: relative;background-color: #ffffff;height: 100%;}
+.yellow_tisi{line-height:20px; background-color:#FFC; position:absolute; right:-18px; padding:5px 5px;text-align:left; z-index:2; box-shadow:2px 2px 3px #ccc; display:none;}
+
+.boxmain{width:96%; margin:auto;}
+.linkpagebox{ border:1px solid #b5b5b5; margin-bottom:40px;}
+.linkpagebox .table td{ font-size:14px; padding:0px 2px 0px 2px;color:#575757;}
+.linkpagebox .table .btn{ float:right; margin-right:18px;}
+.linkpagebox .table{ padding:20px 15px;}
+.linkpagebox .titleText{font-weight:bold;font-size:16px;position:absolute;float:left;margin-top:-20px;margin-left:8px;background-color: #f3f5f5;height:36px;line-height:36px;padding:0 10px;}
+.linkpagebox .titleText .btnhide{ background-color:#f6f6f6; border:1px solid #e5e5e5; height:20px; line-height:20px; margin-left:10px; cursor:pointer;
+ background-image:url(../images/donw.png); background-repeat:no-repeat; padding:0px 10px;
+}
+.linkpagebox .titleText .btnshow{ background-color:#f6f6f6; border:1px solid #e5e5e5; height:20px; line-height:20px; margin-left:10px; cursor:pointer;
+ background-image:url(../images/up.png); background-repeat:no-repeat; padding:0px 10px;;
+
+}
+.linkpagebox .titleText .btnhide:hover{ background-color:#f8fcfd; border:1px solid #d6e2e5; height:20px; line-height:20px; margin-left:10px; cursor:pointer;}
+
+
+.inputDate01{ height: 26px; border: 1px solid #dddddd;  margin: 3px 6px 3px 3px; background-image:url(../images/dateico.png); background-position:right center; background-repeat:no-repeat;}
+.inputText01{ height: 26px; border: 1px solid #dddddd;  margin: 3px 6px 3px 3px; background-color:#f1edee; }
+.inputText02{ height: 26px; border: 1px solid #dddddd;  margin: 3px 6px 3px 3px; }
+.inputSelect01{ height: 26px; border: 1px solid #dddddd;  margin: 3px 6px 3px 3px;  }
+.inputSelect02{ height: 26px; border: 1px solid #dddddd;  margin: 3px 6px 3px 3px; background-color:#f1edee;  }
+.font-color01{ color:#F00}
+.font-color02{ color:#1a56a9; }
+.btn{line-height: 28px;
+    margin-right: 5px;
+    border-radius: 1px;
+    padding: 0px 20px;
+    display: inline-block;
+    border: 1px solid transparent;
+    color: #fff;
+    cursor: pointer; text-decoration: none;
+}
+.btn01 {
+    background-color: #00a2c9;
+    border: 1px solid transparent;
+}
+.btn01:hover{background-color:#00b3de;}  
+.pageBox{ margin:0 20px;}
+.page{ background-color:#; padding:10px 0; overflow:hidden; text-align:right; float:right}
+.page_box{ border:1px solid #d9d9d9; border-radius:2px; background-color:#fff;  overflow:hidden;}
+.pageBox td{ font-size:12px}
+.page a{ padding:7px 10px; border-right:1px solid #d9d9d9; color:#333; display:block; float:left;font-size:12px; text-decoration:none;}
+.page .active,.page .active:hover{ color:#333; background-color:#eee; border:none;}
+.page a:last-child{ border:none;}
+.page a:hover{ background-color:#ebebeb;}
+
+.linkpagebox .NewTableMain{ margin:0 20px;}
+.linkpagebox .NewTableMain td,.linkpagebox .NewTableMain th{ padding: 2px 5px;}
+ .sbtnbox{ text-align:center}
+.sbtn{ color:#fff; margin:0px 2px; border-radius:2px; font-size:12px; padding:0px 10px; display:inline-block; height:24px; line-height:24px;}
+.sbtn:hover{ opacity:0.8}
+.sbtn01{ background-color:#37BC9B}
+.sbtn02{ background-color:#F4D03F}
+
+.btncz { text-align:right; height:40px; line-height:40px;}
+.btncz img{ display:inline-block; vertical-align:middle;}
+.btncz a{ margin:5px 8px; color:#313131; font-size:12px;}
+.inputReadonly{ background-color:#f7f7f7; border:1px solid #e6e6e6; color:#696969;margin:3px 0;height:28px; line-height:28px;}
+.select01{height: 26px; border: 1px solid #dddddd;  margin: 3px 6px 3px 3px;}
+
+.biaotab{ width:100%; border-bottom:1px solid #CCC; line-height:48px; margin-bottom:46px; }
+.biaotab a{ padding:0 30px; line-height:47px; border-bottom:1px solid #FFF; display:inline-block; font-size:16px; color:#666;}
+.biaotab a.ved{ color:#333; border-bottom:2px solid #0a7fcf; padding:0 10px;  margin-bottom:-1px; font-weight:bold; }
+.sbtnw{margin:0px 5px;padding:0px 20px; height:34px; line-height:34px; font-size:14px;}
+.sbtn03{ background-color:#f56a6a}
+.sbtn04{ background-color:#34ace5}
+.linkpagebox .titleText .btnadd{border-radius:3px;  margin:0px 5px;padding:0px 10px; display:inline-block; height:24px; line-height:24px; font-size:12px; color:#FFF; background-color:#37BC9B}
+/*****更多*****/
+.morebtn{ position: absolute;right:2%; padding:0px 10px; margin-top:8px; cursor:pointer;}
+  
+
+.morebtn .btnhide{ background-color:#1aa1ee; border:1px solid #4366c1; height:20px; line-height:20px; margin-left:10px; cursor:pointer;
+ background-image:url(../images/donw.png); background-repeat:no-repeat; padding:0px 10px;
+}
+.morebtn .btnshow{ background-color:#1aa1ee; border:1px solid #4366c1; height:20px; line-height:20px; margin-left:10px; cursor:pointer;
+ background-image:url(../images/up.png); background-repeat:no-repeat; padding:0px 10px;;
+
+}
+.morebtn .btnhide:hover{ background-color:#27b0ff; border:1px solid #4366c1; height:20px; line-height:20px; margin-left:10px; cursor:pointer;}
+#tabs {
+  overflow: hidden;
+  width: 94%;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+
+#tabs li {
+  float: left;
+  margin: 0 -15px 0 0;
+}
+
+#tabs a {
+  float: left;
+  position: relative;
+  padding: 0 40px;
+  height: 0; 
+  line-height: 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FFF;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid #09F;
+  border-bottom-color: #777\9;
+  opacity: .3;
+  filter: alpha(opacity=30);    
+}
+
+#tabs a:hover,
+#tabs a:focus {
+  border-bottom-color: #00F;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+#tabs a:focus {
+  outline: 0;
+}
+.textarea{ border:none; width:100%;}
+
+#tabs .current {
+  z-index: 3;
+  border-bottom-color: #09F;
+  opacity: 1;
+  filter: alpha(opacity=100);   
+}
+.NewTableMain .line{ background-image:url(../images/table00.png); background-repeat:no-repeat;height:110px; width:216px;
+  z-index: 3; position:relative;} 
+.NewTableMain .line .p1{ position:absolute; left:50px; top:8px;}
+.NewTableMain .line .p2{ position:absolute; left:52px; bottom:40px;}
+.NewTableMain .line01{ background-image:url(../images/table02.png); background-repeat:no-repeat;height:63px; width:178px;
+  z-index: 3; position:relative;} 
+.NewTableMain .line01 .p1{ position:absolute; left:120px; top:16px;}
+.NewTableMain .line01 .p2{ position:absolute; left:32px; bottom:15px;}
+.rside{ font-size:12px;position:fixed; top:118px; right:14px; width:20%;}
+.title{ border-bottom:1px solid #b5b5b5; text-align:center; padding-bottom:10px;}
+.content{ padding-top:20px; text-indent:26px;}
+.NewTableMain .bgc01{ background-color:#dbfdfd; padding:0px 5px;}
+.redstar { color: #E00; margin:0 5px 0 0; font-weight: bold;}

@@ -1,0 +1,301 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+	<title>国家税务总局贵州省电子税务局</title>
+	<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources/skin/css/comon0.css">
+	<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/_res_/css/abacus/main.css">
+	<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/_res_/css/message/message_solid.css">
+	<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/_res_/js/message/skin/default/Message.css"/>
+	<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources4/layui/css/layui.css"/>
+
+	<script src="/sbzs-cjpt-web/resources/js/lib/jquery.min.js"></script>
+	<script src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+	<script src="/sbzs-cjpt-web/abacus/_res_/js/pxsp.js"></script>
+	<script src="/sbzs-cjpt-web/abacus/_res_/js/ywbm.js"></script>
+	<style type="text/css">
+	* {margin: 0px; padding: 0px; font-family: "微软雅黑"; list-style-type: none;}
+	body {margin: 0px; padding: 0px;}
+	table {border-spacing: 0px;}
+	iframe {margin: 0px; padding: 0px; border-spacing: 0px; border:0px;}
+	</style>
+	<script type="text/javascript">
+		var layer;
+		layui.use('layer', function() { //独立版的layer无需执行这一句
+			layer = layui.layer;
+		});
+
+		var curDjxh = '10115201010000193737';
+		var curNsrsbh = '91520111MA6HA38P10';
+		var cp = '/sbzs-cjpt-web';
+		var makeTypeDefualt = 'HTML' ;
+		var signType = 'ocx' ;
+		var swsxDm = "";
+		var jsonConfig = {"ywbm":"DEFAULT","level":"DEFAULT","rt_biz":"/sbzs/qysds_a_18yjd","_id":0,"pages":[{"needHead":true,"name":"begin","needGet":true,"headPath":"/WEB-INF/sbzs/qysds_a_18yjd/begin/doHead.jsp"},{"needHead":true,"name":"form","realPath":"/WEB-INF/sbzs/qysds_a_18yjd/form/","needGet":true,"headPath":"/WEB-INF/sbzs/qysds_a_18yjd/form/doHead.jsp"},{"needHead":true,"name":"make","realPath":"/WEB-INF/_default_/make/","needGet":true,"headPath":"/WEB-INF/sbzs/_default_/make/doHead.jsp"},{"needHead":true,"name":"well","realPath":"/WEB-INF/_default_/well/","needGet":true,"headPath":"/WEB-INF/_default_/well/doHead.jsp"},{"needHead":false,"name":"xSheets","realPath":"/WEB-INF/_default_/xSheets/","needGet":true},{"needHead":false,"name":"xFormula","realPath":"/WEB-INF/_default_/xFormula/","needGet":true},{"needHead":false,"name":"xInitData","realPath":"/WEB-INF/_default_/xInitData/","needGet":true},{"needHead":false,"name":"xTempSave","realPath":"/WEB-INF/_default_/xTempSave/","needGet":true},{"needHead":false,"name":"xExportXML","needGet":true}],"framePath":"/WEB-INF/_default_/","ywmc":"依申请--缺省业务"};
+		var queryString = "djxh=10115201010000193737&gdslxDm=1&sssqQ=2018-10-01&sssqZ=2018-12-31&skssq_q=2018-10-01&skssq_z=2018-12-31&nsqx_dm=08&sbqx=2019-01-15&zsxmDm=10104&zspmDm=101040001&yhid=T5H8fr5coAmV6oxzxn9vd8wW+uNI08HO27GRpJubo3PuU49WHwqRPw==&gsnsrsbh=91520111MA6HA38P10&gszgswskfjDm=15201110300&shxyDm=null&yhm=2QSPM7F//a/i6iw4L439UwZbaaJN8Vv+&nsqxDmIn=&sbSign=f757f5d46d22ae43666d66f9d03b9dfb&tjNd=2019&tjYf=01";
+		var lcswsxDm = "";
+		var pathRoot = "/sbzs-cjpt-web";
+		var sybbfs1 = 0;
+		var sytjbbfs1 = 0;
+		var ywlx = "SBZS";
+		//逾期申报入口
+		var yqsbbz = "N";
+		var yqsbuuid = "";
+		//阻断提示和非阻断提示
+		var errors = '[]' ;
+		var warns = '[]' ;
+
+		var zlpzWebContextPath = "/zlpz-cjpt-web";
+        var sbzsWebContextPath = "/sbzs-cjpt-web";
+
+        var gdslxDm = "1";
+        var isGgUser = "01";
+        var gdshbbz = "N";
+        var ywbm = "qysds_a_18yjd";
+        var nsrsbh = '91520111MA6HA38P10';
+        var sbbmBz = "Y";
+        
+        var emName = "";//公司测试环境A端国地公用，此方法不可用，暂时屏蔽
+
+        var hideBtns = 'btnExport01,btnImport01';
+        var showBtns = 'btnCbzh,btnCzgc';
+        var showPxsp = 'null';
+        var bbFunction = 'null';
+        var spcd = "null";
+        
+		var cs_swsxDm = '';
+
+		var fdtBz = 'null';
+        var zxkfUrl = 'null';
+        var sbzsBtnTitle = '{}';
+        var sxsqBtnTitle = '{}';
+		$(function(){
+			setGdsBz();
+
+			if("Y" === fdtBz){
+                $(".ctrl01").show();
+			}
+
+			//gdshbbz国地税合并标志
+            if(gdshbbz === "N"){
+                $(".ctrl01").hide();
+                $(".ctrl02").show();
+            }else if(gdshbbz=="Y"){
+                $(".ctrl01").show();
+                $(".ctrl02").hide();
+            }else{
+                $(".ctrl01").show();
+                $(".ctrl02").hide();
+            }
+
+            //在线客服
+            if (window.addEventListener) {
+                window.addEventListener('message', function (e) {
+                    var user = JSON.parse(e.data);
+                    var openUrl = user.url;
+                    switch(user.method)
+                    {
+                        case "closeLayer":
+                            layer.closeAll();
+                            break;
+                        case "closeAllLayer":
+                            layer.closeAll();
+                            break;
+                        case "openNav":
+                            layer.closeAll();
+                            onclickZxkf();
+                            break;
+                        case "layerMessageAction":
+                            layerMessageAction(openUrl);
+                            break;
+                        case "closeLayerByIndex":
+                            layer.close(closeIndex);
+                            break;
+                    }
+                }, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onmessage", function (e) {
+                    var user = JSON.parse(e.data);
+                });
+            }
+		});
+
+        /*
+		 * 在线客服接入
+		 */
+        //客服组编号（由在线客服提供）
+        var groupNo = "10341037";
+        //易号码，如果是匿名则使用anyone，如果是实名则改成自己实名的易号码
+        var eno = "anyone";
+        var thirdPartySession = "123";
+        //控制只能打开一个在线客服的咨询窗口
+        var openIndex=0;
+        //关闭页面索引
+        var closeIndex;
+        //在线客服弹窗方法
+        function onclickZxkf() {
+            openIndex=openIndex+1;
+
+            if(openIndex>1){
+                layer.msg("只能发起一个会话");
+                openIndex--;
+            }else{
+                if(!zxkfUrl || zxkfUrl === "null" || zxkfUrl ==="undefined"){
+                    //没有配置默认使用测试环境地址http://119.29.162.83:8082/Web/Im/Gz/Index.html
+                    zxkfUrl = 'http://119.29.162.83:8082/Web/Im/Gz/Index.html';
+                }
+                //聊天界面url
+                var url = zxkfUrl+'?groupNo='+groupNo+'&eno='+eno+'&thirdPartySession='+thirdPartySession;
+                //生产环境地址
+                //var url = 'http://ecm.esv.com.cn/custom/web/Index.html?groupNo='+groupNo+'&eno='+eno+'&thirdPartySession='+thirdPartySession;
+                layer.open({
+                    type: 2,
+                    title: ' ',
+                    shadeClose: true,
+                    shade: false,
+                    maxmin: false, //开启最大化最小化按钮
+                    area: ['600px', '556px'],
+                    offset: 'rb',
+                    content: [url, 'no'],//传入要调用的url
+                    end: function () {           //关闭弹出层触发
+                        openIndex--;
+                    }
+                });
+            }
+        }
+
+        //留言和查看留言回复弹窗方法
+        function layerMessageAction(url) {
+            var title = "";
+            if(url.indexOf("msgManage.do")!=-1){
+                title = "请您留言";
+            }else if(url.indexOf("msgReply.do")!=-1){
+                title = "查看留言回复";
+            }else if(url.indexOf("eval.do")!=-1){
+                title = "评价";
+            }
+            closeIndex = layer.open({
+                type: 2,
+                title: title,
+                shadeClose: true,
+                shade: false,
+                maxmin: false, //开启最大化最小化按钮
+                area: ['600px', '556px'],
+                offset: 'r',
+                move: false,
+                content: [url] //传入要调用的url
+            });
+        }
+
+        /**
+         * 操作规程
+         */
+        function onclickCzgc() {
+            var obj = self.frames[0];
+            obj.showCzgc();
+        }
+	</script>
+
+</head>
+<body onresize="resizeFrame()" onload="initFrame()">
+    <table width="100%" height="100%">
+		<tr>
+			<td>
+			<div class="TopHead">
+				<div class="LeftPadding">
+				<table class="topHeadTab" width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td><div class="HeadTitle">
+								<span class="spangs" id="gdFlag"></span> <span class="spanbm" id="sbbName"></span>
+							</div></td>
+						<td class="areaHeadBtn" align="right">
+
+						</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+			</td>
+		</tr>
+		<tr height="100%">
+			<td vAlign="top"><iframe id="frmMain" name="frmMain" width="100%" height="100%" src="about:blank"></iframe></td>
+		</tr>
+	</table>
+	<div id="myModa1" class="winbox fjzl" style="width:1000px;height:80%; display:none;">
+		<div class="tc_tit">上传文件<a href="#" class="winclose" style="margin-left:800px;">×</a></div>
+		<iframe id="sbFszlFrame" name="sbFszlFrame" class="fszlFrame" width="100%" height="90%" ></iframe>
+	</div>
+
+	<div id="myModa2" class="winbox fjzl" style="width:1000px;height:80%; display:none;">
+		<div class="tc_tit">上传附注<a href="#" class="winclose" style="margin-left:500px;">×</a></div>
+		<iframe id="fzzlFrame" class="fszlFrame" width="100%" height="90%" ></iframe>
+	</div>
+		</div>
+	<div id="myModa4" class="winbox fjzl" style="width:1000px;height:80%; display:none;">
+		<div class="tc_tit">导入XML<a href="#" class="winclose" style="margin-left:500px;">×</a></div>
+		<iframe id="xmlFrame" class="fszlFrame" width="100%" height="90%" ></iframe>
+	</div>
+
+	<div class="backtop" style="display: none">
+		<ul>
+			
+			<li class="mabox"><a href="#none"><img src="/sbzs-cjpt-web/abacus/resources/skin/images/icons/left_icons03.png"><span style="display: none">微信</span></a>
+				<div class="erweima">
+					<h3>微信二维码</h3>
+					<div class="ctrl01" style="display: none;">
+						<img src="/sbzs-cjpt-web/abacus/resources/skin/images/gswx.jpg" width="100" height="100"><p>北京国税</p>
+						<img src="/sbzs-cjpt-web/abacus/resources/skin/images/dswx.jpg" width="100" height="100"><p>北京地税</p>
+					</div>
+					<div class="ctrl02">
+						<img src="/sbzs-cjpt-web/abacus/resources/skin/images/gswx.jpg" width="100" height="100"><p>北京市税务局</p>
+					</div>
+				</div>
+			</li>
+			<li class="mabox"><a href="#none"><img src="/sbzs-cjpt-web/abacus/resources/skin/images/icons/left_icons01.png"><span style="display: none">微博</span></a>
+				<div class="erweima">
+					<h3>微博二维码</h3>
+					<div class="ctrl01" style="display: none;">
+						<img src="/sbzs-cjpt-web/abacus/resources/skin/images/gswb.jpg" width="100" height="100"><p>北京国税</p>
+						<img src="/sbzs-cjpt-web/abacus/resources/skin/images/dswb.png" width="100" height="100"><p>北京地税</p>
+					</div>
+					<div class="ctrl02">
+						<img src="/sbzs-cjpt-web/abacus/resources/skin/images/gswb.jpg" width="100" height="100"><p>北京市税务局</p>
+					</div>
+				</div>
+
+			</li>
+			<li class="mabox">
+				<a href="#none" onclick="onclickZxkf()">
+					<img title="在线客服" src="/sbzs-cjpt-web/abacus/resources/skin/images/icons/left_icons06.png">
+				</a>
+			</li>
+			<li class="mabox">
+				<a href="#none" onclick="onclickCzgc()">
+					<img title="操作规程" src="/sbzs-cjpt-web/abacus/resources/skin/images/icons/czgc.png">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="/sbzs-cjpt-web/abacus/resources/skin/images/icons/left_icons04.png"><span>顶部</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<script src="/sbzs-cjpt-web/resources/js/frame/frame.js"></script>
+</body>
+</html>

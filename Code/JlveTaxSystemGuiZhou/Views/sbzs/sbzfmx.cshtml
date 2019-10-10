@@ -1,0 +1,152 @@
+﻿@model JlveTaxSystemGuiZhou.Models.Model
+
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" id="ng-app" ng-app="viewApp" xmlns:ng="http://angularjs.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>申报作废明细（核心）</title>
+    <!-- 通用样式和框架js -->
+    <script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/angular.js"></script>
+    <link href="/sbzs-cjpt-web/resources/css/comon0.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/js/ecm-taglib/message/skin/default/Message.css" />
+    <script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/json2/json2.js"></script>
+    <script type="text/javascript">var contextRoot = "/sbzs-cjpt-web";</script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/view/common/gy.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/resources/js/jquery.reveal.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/laydate-v1.1/laydate/laydate.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/laypage-v1.3/laypage/laypage.js"></script>
+
+    <script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/message/Message.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/message.js"></script>
+
+    <script type="text/javascript">var contextRoot = "/sbzs-cjpt-web";</script>
+    <script language="JavaScript" src="/sbzs-cjpt-web/view/nssb/sbzf/sb/sbzfmx.js"></script>
+
+    <!--4.0版本UI  -->
+    <link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources4/layui/css/layui.css" />
+    <script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/tax-js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/tax-js/common.js"></script>
+</head>
+<body class="padd01" ng-app="viewApp" id="viewCtrlid">
+    <div class="layui-container" ng-controller="viewCtrl">
+        <div class="ui-tax-center-box">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="46">
+                        <img src="/sbzs-cjpt-web/abacus/resources4/tax-images/png_icon/sbzfdt.png">
+                    <td><div class="big_title">申报作废明细</div></td>
+                </tr>
+            </table>
+        </div>
+        <form class="marginT20 layui-form-item"></form>
+        <table class="layui-table" width="98%" border="0" cellspacing="0"
+               cellpadding="0" id="sbmxGrid">
+            <colgroup>
+                <col width="50">
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>征收项目</th>
+                    <th>征收品目</th>
+                    <th title="税（费）款所属期起">所属期起</th>
+                    <th title="税（费）款所属期止">所属期止</th>
+                    <th title="单位税（费）额或税（费）率" ng-show="sbblxDm!='BDA0610857'">税（费）率</th>
+                    <th title="上年在职职工年平均工资" ng-show="sbblxDm=='BDA0610857'">上年在职职工年平均工资</th>
+                    <th>应纳税（费）额</th>
+                    <th title="应补退税（费）额">应补退金额</th>
+                </tr>
+            <thead>
+            <tbody>
+                <tr ng-repeat="item in sbmxitems | orderBy:['skssqq','skssqz']:true">
+                    <td width="3%" align="center" ng-bind="$index+1"></td>
+                    <td width="15%" style="display: none" ng-bind="item.zsxmDm"></td>
+                    <td width="15%" style="display: none" ng-bind="item.zspmDm"></td>
+                    <td width="15%" align="left" ng-bind="item.zsxmmc"></td>
+                    <td width="15%" align="left" ng-bind="item.zspmmc"></td>
+                    <td width="10%" align="center" ng-bind="item.skssqq | limitTo : 10"></td>
+                    <td width="10%" align="center" ng-bind="item.skssqz | limitTo : 10"></td>
+                    <td width="10%" align="rigth" ng-bind="item.sl1"></td>
+                    <td width="10%" align="rigth" ng-bind="item.ynse"></td>
+                    <td width="10%" align="rigth" ng-bind="item.ybtse"></td>
+                </tr>
+            </tbody>
+        </table>
+        <form class="marginT20 layui-form-item"></form>
+        <tabe width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">作废原因：</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入内容" class="layui-textarea" name="sqzfly"
+                                      clos="20" rows="5" style="width: 98%; height: 100px" id="sqzfly"></textarea>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="layui-form">
+                        <div class="layui-form-item">
+                            <button class="layui-btn" lay-submit="" lay-filter="demo1"
+                                    onclick="zfSubmit();">
+                                作废提交
+                            </button>
+                            <button type="reset" class="layui-btn layui-btn-primary"
+                                    onclick="back();">
+                                返回上页
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tabe>
+    </div>
+    <script>
+        var gdbz_ = '1';
+        var skssqq_ = 'undefined';
+        var skssqz_ = 'undefined';
+        var pzxh = '@Model.qc.Id';
+        var gdslxDm = '1';
+        var skssqq = '2019-08-08';
+        var skssqz = '2019-08-08';
+        var djxh = '10115201000083900814';
+        var nsrsbh = '91520190314387738N';
+        var zgswjgDm = '15201156300';
+        var swjgDm = '15201150000';
+        var sbblxDm = 'BDA0610794';
+        var sbrq = '2019-08-08';
+        var ywbm = '';
+
+        //4.0日期控件
+        layui.use('laydate', function () {
+            var laydate = layui.laydate;
+            //日期范围
+            laydate.render({
+                elem: '#sbrq',
+                range: true
+            });
+
+            laydate.render({
+                elem: '#skssq',
+                range: true
+            });
+
+        });
+        //加载层
+        var layer;
+        layui.use('layer', function () {
+            layer = layui.layer;
+        })
+    </script>
+</body>
+</html>

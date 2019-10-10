@@ -1,0 +1,82 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>机动车辆生产企业销售明细表</title>
+</head>
+
+<body>
+<div style="width:96%; margin:auto;" id="viewCtrlId"  ng-controller="viewCtrl">
+<div class="NewTableHead"  ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdclscqyxsmxb.sbbxxVO">
+     <h1>机动车辆生产企业销售明细表</h1>
+     <li class="dateTxt">税款所属时间:<input style="text-align: center;" type="text" datatype="date" jflag="1" readonly style="width:100px;" ng-model="sbbxxVO.skssqq
+" class="topInput"> 至 <input style="text-align: center;" type="text" datatype="date" jflag="1" readonly style="width:100px;" ng-model="sbbxxVO.skssqz
+" class="topInput"></li>
+</div>
+
+
+<div class="NewTableTop" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdclscqyxsmxb.sbbheadVO">
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>纳税人名称：
+                 <span class="textline" ng-bind="sbbxxVO.nsrmc"></span>
+              </td>
+              
+            </tr>
+            <tr>
+              <td>纳税人识别号：
+               	 <span class="textline" ng-bind="sbbxxVO.nsrsbh"></span>
+               </td>
+              <td align="right">金额单位：万元</td>
+            </tr>
+          </table></td>
+          </tr>
+    </table>
+</div>
+
+
+<div class="NewTableMain" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdclscqyxsmxb.jdcljxqyxsmxbGrid.jdclscqyxsmxbGridlbVO">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="1" >
+
+
+      <tr>
+        <td rowspan="2" align="center" class="title01">销售对象名称</td>
+        <td rowspan="2" align="center" class="title01">购货方纳税人识别号</td>
+        <td colspan="3" align="center" class="title01">销售情况</td>
+        <td rowspan="2"  align="center" width="110" class="title01" >操作</td>
+      </tr>
+      <tr>
+        <td align="center" class="title01">厂牌型号</td>
+        <td align="center" class="title01">车辆识别代码（车架号码）</td>
+        <td align="center" class="title01">销售价格</td>
+        
+      </tr>
+      <tr ng-repeat="p in jdclscqyxsmxbGridlbVO track by $index" ng-repeat-init="jdclscqyxsmxbGridlbVO"  
+      default-value='{"ewbhxh":"","xsdxmc":"","ghfnsrrbh":"","xsqkCpxh":"","xsqkClsbdm":"","xsqkXsjg":""}'>
+      <td align="center" class="title01" ng-bind="p.ewbhxh=$index+1" style="display:none"></td>        
+      <!-- <input type="hidden" ng-bind="p.ewbhxh=$index+1"> -->
+        <td class="edit left" align="center"><input type="text"  ng-model="p.xsdxmc"></td>
+        <td class="edit left" align="center"><input  type="text" ng-model="p.ghfnsrrbh"></td>
+        <td class="edit left" align="center"><input type="text"  ng-model="p.xsqkCpxh"></td>
+        <td class="edit left" align="center"><input  type="text" ng-model="p.xsqkClsbdm"></td>
+        <td class="edit right" align="center"><input  type="text" ng-datatype="number{2}" ng-model="p.xsqkXsjg"></td>
+ 		 <td align="center" ><div class="sbtnbox"><a class="layui-btn layui-btn-xs" ng-href="#" ng-click="add()">增加</a>&nbsp;<a class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0" ng-href="#" ng-click="del($index)">删除</a></div></td>
+      </tr>
+      <tr ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdclscqyxsmxb.jdcljxqyxsmxbGrid">
+        <td colspan="2" align="center" class="title01">合计</td>
+        <td class="read mid" align="center" >--</td>
+        <td class="read mid" align="center" >--</td>
+        <td class="read right" ><input class="tir" jflag="1" readonly type="text" ng-datatype="number{2}"  value="0.00" ng-model="jdcljxqyxsmxbGrid.xsqkXsjgHj" ></td>
+        <td  class="title01" align="center" ></td>
+      </tr>
+      <tr ng-render-finish=""></tr>
+  </table>
+</div>
+
+</div>
+</body>
+</html>

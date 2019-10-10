@@ -1,0 +1,124 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>财务报表报送引导页面</title>
+<link type="text/css" href="../../../../resources/style/green/css/table.css" rel="stylesheet">
+<script src="../../../../resources/js/lib/jquery.min.js"></script>
+<script src="../../../../resources/js/lib/json3.min.js" type="text/javascript"></script>
+<script src="../../../../resources/js/lib/jsonpath.js" type="text/javascript"></script>
+<script src="../../../../resources/js/lib/message.js" type="text/javascript"></script>
+<script src="../../../../resources/js/setting/angular_compatible_IE7.js" type="text/javascript"></script>
+<script src="../../../../resources/js/lib/angular.js" type="text/javascript"></script>
+<script src="../../../../setting_res/cwbbjcsz/cwbbjcsz.js" type="text/javascript"></script>
+<script src="../../../../resources/js/setting/setViewDirective.js" type="text/javascript"></script>
+<script src="../../../../resources/js/setting/setting_defaultdate.js" type="text/javascript"></script>
+    <script src="../../../../resources/js/setting/setViewEngine.js" type="text/javascript"></script>
+</head>
+
+<body >
+<div class="boxmain" id="viewCtrlId" ng-controller="viewCtrl">
+<ng-codetable url="cwbb_zlbs_dl.json" name="zlbsdlCT" node="" dm="root.dm" mc="root.mc"></ng-codetable>
+<ng-codetable url="cwbb_zlbs_xl.json" name="zlbsxlCT" node="" dm="root.dm" mc="root.mc"></ng-codetable>
+<ng-codetable url="cwbb_ydy_sbqj.json" name="cwbbSbqjCT" node="" dm="root.dm" mc="root.mc"></ng-codetable>
+
+<div class="NewTableHead">
+	<h1>财务报表报送</h1>
+	<span id="formDataSpan" style="display:none;">{{formData}}</span> 
+	<input value="cwbbydy" id="cwbbjcszym" type="hidden"/>
+	<input value="cwbbydy" id="zlbsxlYJNum" type="hidden"/>
+	<input value="cwbbydy" id="zlbsxlNDNum" type="hidden"/>
+	<input value="cwbbydy" id="zlbsxlYJCT" type="hidden"/>
+	<input value="cwbbydy" id="zlbsxlNDCT" type="hidden"/>
+</div>
+
+<div class="linkpagebox"  style="border:1px solid #fff; margin-bottom:5px;">
+<div class="table"></div>
+</div>
+
+<div class="linkpagebox">
+<div class="titleText">基础设置</div>
+
+<div class="divhide">
+<div class="table" style="padding-top:30px;padding-bottom:20px;"  ng-jprefix="cwbbbsjcsz">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+      <td width="120">资料报送小类<span class="font-color01"> *</span></td>
+      <td><span class="font-color01">
+        <select id="zlbsxlDm" ng-model="cwbbbsjcsz.zlbsxl" ng-change="changeZlbsxl(cwbbbsjcsz.zlbsxl)"  ng-selected="cwbbbsjcsz.zlbsxlDm==cwbbbsjcsz.zlbsxl" ng-options="key as value for (key,value) in CT.zlbsxlCT" disabled="disabled" class="select01" style="width:400px">
+          <option value=""></option>
+        </select>
+      </span>
+      <span id="zlbsxl" style="display: none;" class="font-color01">请选择资料报送小类！</span>
+      </td>
+      </tr>
+    <tr>
+      <td width="120">财务会计制度准则<span class="font-color01"> </span></td>
+      <td><span class="font-color01">
+        <select  ng-model="cwbbbsjcsz.cwkjzdzz" ng-selected="cwbbbsjcsz.kjzdzzDm==cwbbbsjcsz.cwkjzdzz" ng-options="key as value for (key,value) in CT.zlbsdlCT"  disabled="disabled"  class="select01" style="width:200px">
+          <option value=""></option>
+        </select>
+      </span>
+      <span id="cwkjzdzz" style="display: none;" class="font-color01">请选择财务会计制度准则！</span>
+      </td>
+      </tr>
+      <tr style="display: none;">
+      <td width="120" style="display: none;">报表类型<span class="font-color01"> </span></td>
+      <td>
+        <span id="bblx1" style="position: absolute;display: none;"><input  ng-model="cwbbbsjcsz.bblx" type="radio" ng-change="changeBblx(cwbbbsjcsz.bblx)" name="dd" id="radio1" value="0"  class="inputText02" > 月季报</span>
+        <span id="bblx2" style="margin-left:72px;display: none;"><input  ng-model="cwbbbsjcsz.bblx" type="radio" ng-change="changeBblx(cwbbbsjcsz.bblx)" name="dd" id="radio2" value="1" class="inputText02" > 年报</span>
+      	<span id="bblx" style="display: none;" class="font-color01">请选择月季报年报期！</span>
+      </td>
+      </tr>
+	  <tr id="yjbTr1" style="display:none;">
+      <td width="120">报送期间<span class="font-color01"> </span></td>
+      <td><span class="font-color01">
+        <!-- <input class="inputText02" style="width: 200px;" readonly="readonly" value="按月" ng-value="CT.cwbbSbqjCT[cwbbbsjcsz.bsqj]"> -->
+        <select id="bsqjId" ng-model="cwbbbsjcsz.bsqj" ng-change="bsqjToSsq()" ng-options="key as value for (key,value) in CT.cwbbSbqjCT" ng-selected="key==cwbbbsjcsz.bsqj" class="select01">
+          <option value=""></option>
+        </select>
+        </span>
+        <span id="bsqj" style="display: none;" class="font-color01">请选择报送期间！</span>
+        </td>
+      </tr>
+	<tr id="yjbTr2" style="display:none;">
+      <td width="120">请选择报送期<span class="font-color01"> </span></td>
+      <td>
+      <input id="sssqqId" ng-change="checkSsq('1')" class="inputDate01" ng-model="cwbbbsjcsz.sssqq" type="text" ng-laydate="{}" style="width:150px;">
+		至<span class="font-color01"> </span>
+      <input id="sssqzId" ng-change="checkSsq('2')" class="inputDate01" ng-model="cwbbbsjcsz.sssqz" type="text" ng-laydate="{}" style="width:150px;">
+      	<span id="sbssq" style="display: none;" class="font-color01">请选择正确的所属期！</span>
+      </td>
+      </tr>
+    <tr id="nbTr1" style="display:none;">
+      <td width="130">请选择年报所属年份<span class="font-color01"> </span></td>
+      <td><span class="font-color01">
+      <select ng-change="saveDate()" ng-model="cwbbbsjcsz.nbnf" ng-selected="key==cwbbbsjcsz.nbnf" ng-options="key as value for (key,value) in nbnfCT" class="select01" style="width:80px;">
+      </select>
+      </span></td>
+      </tr>
+  </table>
+
+</div>
+</div>
+</div>
+<div class="linkpagebox">
+<div class="titleText">相关说明</div>
+<div class="divhide">
+<div class="NewTableMain" style="padding-top:30px;padding-bottom:20px;" >
+<p style="line-height:18px; margin:10px 0; font-size:14px;">1、企业需根据执行的财务会计制度的不同，分别报送其规定的财务报表。</p>
+<p style="line-height:18px; margin:10px 0; font-size:14px;">2、纳税人在向主管税务机关报送其财务报表之前，应首先在税务机关进行过财务报表的核定，确定其财务报表的报送范围和报送属期。</p>
+<p style="line-height:18px; margin:10px 0; font-size:14px;">3、财务报表的报送期属分为按月报送、按季度报送和按年度报送：</p>
+<p style="line-height:18px; margin:10px 0; font-size:14px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 核定为按月报送财务报表的纳税人，应按照规定每个月度向税务机关报送其财务报表，每年报送12期月度报表；</p>
+<p style="line-height:18px; margin:10px 0; font-size:14px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 核定为按季报送财务报表的纳税人，应按照规定每个季度向税务机关报送其财务报表，每年报送4期季度报表；</p>
+<p style="line-height:18px; margin:10px 0; font-size:14px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 年度终了后，所有纳税人均需向税务机关报送其本年度的年度财务报表，即财务报表年报；</p>
+<p style="line-height:18px; margin:10px 0; font-size:14px;">4、报送小类则根据纳税人行业、会计制度准则确定，若由系统自动带出小类不符，<span style="font-weight:700;color:#FF0000;">请纳税人检查主行业及备案中会计制度准则是否正确</span></p>
+</div>
+</div>
+
+</div>
+<div style="display: none;" class="sbtnbox"><a class="sbtn sbtnw sbtn04" href="#">保存</a></div>
+</div>
+</body>
+</html>

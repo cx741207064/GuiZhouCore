@@ -1,0 +1,198 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+    width: 100%;
+    overflow-x: hidden;
+}
+ul, li {
+     list-style:none;
+}
+a {
+    color:#8f8f8f;
+    text-decoration:none;
+}
+div {
+    -moz-box-sizing: border-box;  /*Firefox3.5+*/
+    -webkit-box-sizing: border-box; /*Safari3.2+*/
+    -o-box-sizing: border-box; /*Opera9.6*/
+    -ms-box-sizing: border-box; /*IE8*/
+    box-sizing: border-box; /*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/
+}
+.outer {
+    padding: 0px 0 0 0;
+    height: 700px;
+}
+
+.title_bar {
+    padding: 10px 0;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: #FFF;
+}
+
+.title_left_btn {
+    background: #00ACEE url(image/return.png) no-repeat 20px;
+    color: #FFF;
+    width: 180px;
+    text-align: center;
+    padding: 5px 10px 5px 30px;
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+.video_body {
+    margin: 5px 0 5px 30px;
+    height: 600px;
+    z-index: 9;
+}
+
+.video_title {
+    margin: 5px 0;
+    padding: 5px 30px;
+}
+
+.video_class {
+    float: right;
+    margin-right: 100px;
+    margin-top: -55px;
+}
+.video_class span {
+    display: block;
+}
+.class_name {
+    color: #0AAAE8;
+    font-size: 16pt;
+    text-align: center;
+    width: 100px;
+}
+.class_type {
+    width: 100px;
+    text-align: center;
+}
+.video_main_area {
+    height: 600px;
+    background: #000;
+    overflow: hidden;
+}
+.video_player {
+    height: 600px;
+    width: 80%;
+    float: left;
+    color: #FFF;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+.video_foot {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 45px;
+    background:#1A1A1A;
+    border-top: solid 1px #2A2A2A;
+}
+
+.video_menu_area {
+    width: 312px;
+    margin-right: 0px;
+    height: 600px;
+    /*float: right;*/
+    color: #8F8F8F;
+    background: #2D2D2D;
+    position: absolute;
+    right: 0;
+}
+.video_menu_bg {
+    background: #414141;
+    height: 50px;
+    border-bottom: solid 1px #4D4D4D;
+}
+.video_menu_name {
+    margin-top: -40px;
+    background: #2D2D2D;
+    color: #FFF;
+    width: 100px;
+    height: 40px;
+    font-size: 14pt;
+    margin-left: 20px;
+    text-align: center;
+    padding: 8px 0;
+    border: solid 1px #4D4D4D;
+    border-bottom: none;
+}
+.video_float_btn {
+    float: left;
+    position: absolute;
+    height: 50px;
+    width: 16px;
+    background: #424242 url("image/right.png") no-repeat scroll 3px 15px;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+.btn_left {
+    background-image: url("image/left.png");
+}
+.btn_right {
+    background-image: url("image/right.png");
+}
+.video_menu_list {
+    margin: 15px 22px;
+    overflow-y: auto;
+    height: 520px;
+}
+.video_item {
+    margin:0px;
+    padding-left:5px;
+}
+.video_item li{
+
+    display:block ;
+    padding: 8px 25px;
+    margin: 1px 0;
+    /*background: #555555 url(../images/dot.png) no-repeat 8px;*/
+    overflow: hidden;
+    cursor: pointer;
+}
+.video_item_active {
+    background: #555555 url(image/play.png) no-repeat 8px;
+    color: #00AFF0;
+    cursor: default;
+}
+ .video_menu
+        {
+            padding: 0px;
+            margin: 2px;
+        }
+ .video_tt {
+    padding: 8px 25px;
+    margin: 2px 0;
+    background: #424242 url(image/arrow.png); background-repeat: no-repeat; background-position: 5px 0px;
+    overflow: hidden;
+    cursor: pointer;
+}
+  .video_tt_active {
+    padding: 8px 25px;
+    margin: 2px 0px 0px;
+    background: #555555 url(image/arrow.png) ;background-position: 5px -25px;background-repeat: no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+.content {
+      background: #555555 ;
+margin: 0px;
+ padding: 0px;
+}
+.item_play {
+    background: #555555 url(image/play.png) no-repeat 8px;
+  
+    cursor: default;
+}
+.item_play a{   color: #fff;
+}

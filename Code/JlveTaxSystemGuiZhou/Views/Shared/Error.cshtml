@@ -1,0 +1,31 @@
+﻿@model JlveTaxSystemGuiZhou.Models.ErrorModel
+
+<!DOCTYPE html>
+<html class="has-background-light">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="/icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <meta name="theme-color" content="#fafafa">
+
+    <link rel="stylesheet" href="/css/bulma.css">
+
+</head>
+
+<body class="has-spaced-navbar-fixed-top">
+    <div class="container has-text-centered">
+        <div class="content">
+            <p class="title">@Model.title</p>
+            <p class="is-size-4"><strong>@Model.message</strong></p>
+            <p class="is-size-5">@Model.stackTrace</p>
+        </div>
+    </div>
+</body>
+
+</html>

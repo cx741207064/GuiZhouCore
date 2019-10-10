@@ -1,0 +1,179 @@
+﻿/*container*/
+#msg-window {
+	background: #fff;
+	overflow: hidden;
+	font-size: 16px;
+	font-family: "微软雅黑";	
+    border-radius:5px;
+}
+
+/*header*/
+.msg-tl {
+	background: #FFFFFF  repeat-x 0 0;
+	
+	border-left: 1px solid #1a56a9;
+	border-top: 1px solid #1a56a9;
+}
+
+.msg-tr {
+	background: #FFFFFF  repeat-x 0 0;
+	
+	border-right: 1px solid #1a56a9;
+	border-bottom: #ebebeb 1px solid;
+}
+
+.msg-tc {
+	background: #1a56a9 repeat-x 0 0;
+	background-position-x:-700;
+	overflow: hidden;
+	height: 32px;
+	line-height: 32px;
+}
+
+.msg-ttc {
+	height: 3px
+}
+
+.msg-header-text {
+	font-size: 24px;
+	font-weight: normal;
+	color:#FFF;
+	margin-left: 5px;
+	float: left
+}
+
+.msg-header-tools {
+	float: right;
+	margin-top: 5px
+}
+
+.msg-header-tools strong {
+	display: none
+}
+
+/*body*/
+.msg-ml {
+	padding-left: 3px;
+	border-left: 1px solid #FFF;
+}
+
+.msg-mr {
+	padding-right: 3px;
+	border-right: 1px solid #FFF;
+}
+
+.msg-mc {
+	padding: 0;
+}
+
+.msg-body {
+	overflow: auto;
+	position:relative;
+	padding: 0;
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+/*button*/
+.msg-btn {
+	text-align: right;
+	padding-right: 5px;
+}
+
+/*footer*/
+.msg-bl {
+	padding-left: 3px;
+	border-left: 1px solid #8FBBEB;
+	border-bottom: 1px solid #FFF;
+}
+
+.msg-br {
+	padding-right: 3px;
+	border-right: 1px solid #8FBBEB;
+}
+
+.msg-bc {
+	height: 3px;
+	font-size: 3px;
+}
+
+/*icon*/
+.Message_alert {
+	padding-left: 90px;
+	background: url(images/info.gif) no-repeat 20px 50%
+}
+
+.Message_succeed {
+	padding-left: 90px;
+	background: url(images/right.gif) no-repeat 20px 50%
+}
+
+.Message_error {
+	padding-left: 90px;
+	background: url(images/err.gif) no-repeat 20px 50%
+}
+
+.Message_confirm {
+	padding-left: 90px;
+	background: url(images/ask.gif) no-repeat 20px 50%
+}
+
+.Message_alert .msg-content,.Message_succeed .msg-content,.Message_error .msg-content,.Message_confirm .msg-content
+	{
+	padding: 15px 1px 1px 1px
+}
+.msg-content-01{
+	display: table-cell;
+	height:100%;
+	position:relative; 
+	padding:10px;
+	line-height:18px;
+	vertical-align: middle;
+}
+/*图标公共定义*/
+.msg-header-tools div {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin: 0 1px;
+	background: url(images/ico.gif) no-repeat 0 0;
+}
+
+.Message_close {
+	background: url(/sbzs-cjpt-web/resources/images/customer/customerinformation/close.png) no-repeat 0 0 !important;
+}
+
+.Message_max {
+	background-position: 0 -16px !important;
+}
+
+.Message_min {
+	background-position: 0 0 !important;
+}
+
+.Message_normal {
+	background-position: -16px -16px !important;
+}
+
+/*取消确认按钮样式*/
+ input.btnStyle {
+	background: #1a56a9;
+	width: 80px;
+	height: 30px;
+	opacity:1;
+	font-size: 20px;
+	color: #FFF;
+	border: 0;
+	margin: 0 3px 5px 0;
+	line-height:28px; 
+	margin-right:5px; 
+	border-radius:1px; 
+	display:inline-block;
+	transition:opacity 0.5s;
+	-moz-transition:opacity 0.5s;
+	-webkit-transition:opacity 0.5s;
+	-o-transition:opacity 0.5s;
+} 
+
+input.btnStyle:hover{opacity:0.8;}

@@ -1,0 +1,127 @@
+﻿.uploadifyInput {
+	font-size : 25px;
+    opacity   : 0;
+    filter:Alpha(opacity=0);
+    position : absolute;
+    right    : -3px;
+    top      : -3px;
+    z-index  : 999;
+    cursor:pointer;
+}
+.uploadify-button {
+border-radius: 2px;
+    font-size: 14px;
+    margin: 0px 2px;
+    padding: 0px 10px;
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    background-color: #37BC9B;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 60px;
+}
+
+.uploadify-button:hover {
+    text-decoration:none;
+    background-color:#00b3de;
+}
+.uploadify-button.disabled {
+	background-color: #D0D0D0;
+	color: #808080;
+}
+/*
+.uploadify-queue {
+	margin-bottom: 1em;
+}*/
+.uploadify-queue-item {
+	 -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+/* 	border-radius: 3px;  */
+	font: 12px Verdana, Geneva, sans-serif;
+	margin-top: 5px;
+	margin: auto auto;	
+	width: 100%;
+	padding: 10px;
+	text-align: left;
+}
+.uploadify-error {
+	background-color: #FDE5DD !important;
+}
+.uploadify-queue-item .cancel a {
+	background: url('../img/uploadify-cancel.png') 0 0 no-repeat;
+	float: right;
+	height:	16px;
+	text-indent: -9999px;
+	width: 100px;
+}
+.uploadify-queue-item.completed {
+	background-color: #ffff80;
+}
+.uploadify-progress {
+	left: 0px;		
+	margin: 10px 0px;
+	width: 100%;
+	background-color: #000000;
+	text-align: left;
+}
+
+.uploadify-div-bar1 {
+	top: 120px;
+	left: 3.5%;
+	position: fixed;
+	width: 32%;
+	text-align: center;
+/* 	opacity: 1; */
+/* 	filter:alpha(opacity=100); */
+}
+
+.uploadify-div-bar2 {
+	position: relative;
+	text-align: left;
+	height: 100%;
+/* 	opacity: 1; */
+/* 	filter:alpha(opacity=100); */
+}
+
+.uploadify-progress-bar1 {
+	background-color: #0080c0;
+	height: 20px;
+	width: 0px;
+	opacity: 1;
+/* 	filter:alpha(opacity=100); */
+/* 	z-index: 23; */
+}
+
+.uploadify-progress-bar2 {
+	background-color: #0099FF;	
+	height: 5px;
+	width: 0px;
+}
+
+.uploadify-button-text{
+font-size:12px
+}
+
+*{ margin:0px; padding:0px; font-family:"微软雅黑";  list-style-type:none;}
+body{  padding-top:10px; padding-bottom:10px;}
+.NewTableHead{}
+.NewTableTop{}
+.NewTableHead h1{  font-size:18px; text-align:center; height:70px; line-height:70px;}
+.NewTableHead .dateTxt{ text-align:center; font-size:12px; height:28px; line-height:28px;}
+.NewTableTop td{ font-size:12px; height:22px; line-height:22px;}
+.NewTableMain {  background-color:#fff; padding-top:12px;}
+.NewTableMain .attachTable{ background-color:#b5b5b5; font-size:12px;}
+.NewTableMain td{ background-color:#fff; height:45px;}
+
+.btn{line-height:28px; margin-right:5px; border-radius:1px; padding:0px 15px; display:inline-block; border:1px solid transparent; color:#fff;cursor:pointer;  
+ transition:opacity 0.5s;-moz-transition:opacity 0.5s;-webkit-transition:opacity 0.5s;-o-transition:opacity 0.5s;} 
+ .btn01{ background-color:#00a2c9;font-size: 12px;}
+.btnNew{ color:#fff; margin:0px 2px; border-radius:2px; font-size:12px; padding:0px 0px; display:inline-block; height:25px; margin-right:15px; line-height:25px;}
+.btn02{ background-color:#00a2c9}
+
+.textRM{padding:10px 0; line-height:18px;font-size: 14px;margin-left: 2%}
+
+

@@ -1,0 +1,216 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" id="ng-app" ng-app="viewApp" xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<meta http-equiv="pragma" content="no-cache">  
+<meta http-equiv="cache-control" content="no-cache">  
+<meta http-equiv="expires" content="0">
+<title>申报作废</title>
+<!-- 通用样式和框架js -->
+
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/angular.js"></script>
+<link href="/sbzs-cjpt-web/resources/css/comon0.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/js/ecm-taglib/message/skin/default/Message.css" />
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/jquery.min.js"></script>
+<script type="text/javascript"src="/sbzs-cjpt-web/resources/js/ecm-taglib/json2/json2.js"></script>
+<script type="text/javascript">var contextRoot="/sbzs-cjpt-web";</script>
+<script type="text/javascript" src="/sbzs-cjpt-web/view/common/gy.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/jquery.reveal.js"></script>
+
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/DatePicker/DatePicker.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/laypage-v1.3/laypage/laypage.js"></script>
+
+<!-- 异常提示js -->
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/message.js"></script>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/css/message/message_solid.css">
+<!-- 自定义脚本 -->
+<script type="text/javascript" src="/sbzs-cjpt-web/view/nssb/sbzf/cp/cpDateControl.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/view/nssb/sbzf/sb/sbzf.js"></script>
+
+<!--4.0版本UI  -->
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources4/layui/css/layui.css" />
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+<!--<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/tax-js/jquery-1.9.1.min.js"></script> -->
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/tax-js/common.js"></script>
+<link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-css/common.css">
+<link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-font-icon/iconfont.css">
+
+</head>
+
+<body ng-app="viewApp"   id = "viewCtrlid">
+	<div  class="tax-center-box" ng-controller="viewCtrl">
+		<div class="ui-tax-center-box">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="52"><img
+						src="/sbzs-cjpt-web/abacus/resources4/tax-images/png_icon/sbzf.png"></td>
+					<td><div class="big_title">申报作废</div></td>
+				</tr>
+			</table>
+			<form class="marginT20 layui-form-item">
+				<table border="0" cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<td ng-cloak ng-if="showGdsbz=='Y'" id="gdbztd1"
+							style="display: none;">国地标志：</td>
+						<td ng-cloak ng-if="showGdsbz=='Y'" id="gdbztd2"
+							style="display: none;"><select id="gdbz" class="select01css"
+							style="width: 155px;">
+								<option value="0">全部</option>
+								<option value="1">国税</option>
+								<option value="2">地税</option>
+						</select></td>
+						<td ng-cloak ng-if="showGdsbz=='N'" style="display: none;">国地标志：</td>
+						<td ng-cloak ng-if="showGdsbz=='N'" style="display: none;"><span
+							ng-if="showGdsbz=='N'" id="gdbztd1"></span> <span
+							ng-if="showGdsbz=='N'" id="gdbztd2"></span> <select id="gdbz"
+							class="select01css" style="display: none;">
+								<option value="0">全部</option>
+								<option value="1">国税</option>
+								<option value="2">地税</option>
+						</select></td>
+						<td colspan="4">
+						    <div class="layui-inline">
+									<label class="layui-form-label label-left" style="width: 100px">申报日期起止:</label>
+								<div class="layui-input-inline" style="width: 120px">
+									<input type="text" class="layui-input layui-date-input" id="sbrqq" lay-key="1">
+								</div>
+							</div>
+							<div class="layui-inline">
+									<label class="layui-form-label label-left" style="width: 20px">-</label>
+								<div class="layui-input-inline" style="width: 120px">
+									<input type="text" class="layui-input layui-date-input" id="sbrqz"  lay-key="2">
+								</div>
+							</div>
+							<div class="layui-inline">
+									<label class="layui-form-label label-left" style="width: 86px">所属期起止:</label>
+								<div class="layui-input-inline" style="width: 120px">
+									<input type="text" class="layui-input layui-date-input" id="skssqq"  lay-key="3">
+								</div>
+							</div>
+							<div class="layui-inline">
+									<label class="layui-form-label label-left" style="width: 20px">-</label>
+								<div class="layui-input-inline" style="width: 120px">
+									<input type="text" class="layui-input layui-date-input" id="skssqz" lay-key="4">
+								</div>
+							</div>
+							<div class="layui-inline">
+								<button class="layui-btn layui-btn-primary" onclick="queryBtn()">查询</button>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<table width="99%" border="0" cellspacing="0" cellpadding="0" id="sbxxList" class="layui-table">
+				<thead>
+					<tr class="trheader">
+						<th width="50px">序号</th>
+						<th width="80px" ng-if="showGdsbz=='Y'">国地标识</th>
+						<th>申报表名称</th>
+						<th width="110px">申报日期</th>
+						<th width="110px" title="税（费）款所属期起">所属期起</th>
+						<th width="110px" title="税（费）款所属期止">所属期止</th>
+						<th width="110px" title="应补退税（费）额">应补退金额</th>
+						<th width="120px">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in items  | orderBy:['skssqq','skssqz']:true ">
+						<td align="center" ng-cloak ng-bind="$index + 1"></td>
+						<td align="center" ng-cloak ng-if="showGdsbz=='Y'" ng-bind-html="item.gdslxDm | gdslxDm | to_trusted"></td>
+						<td align="left" ng-cloak ng-bind="item.yzpzzlmc"></td>
+						<td align="center" ng-cloak ng-bind="item.sbrq"></td>
+						<td align="center" ng-cloak ng-bind="item.skssqq"></td>
+						<td align="center" ng-cloak ng-bind="item.skssqz"></td>
+						<td align="right" ng-cloak ng-bind="item.ybtse"></td>
+						<td align="center" ng-cloak ng-bind-html="item | pzxh | to_trusted"></td>
+					</tr>
+					<tr ng-cloak ng-if="items.length <= 0">
+						<td align="center" ng-cloak ng-if="showGdsbz=='Y'" colspan="8"><font
+							color="red">没有可作废的申报记录!</font></td>
+						<td align="center" ng-cloak ng-if="showGdsbz=='N'" colspan="7"><font
+							color="red">没有可作废的申报记录!</font></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+			<!-- <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-5">
+				<a href="javascript:;" class="layui-laypage-prev layui-disabled"
+					id="page1" data-page="0"><i class="layui-icon"></i></a><span
+					class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span><span
+					class="layui-laypage-skip">到第<input type="text" min="1"
+					value="1" class="layui-input">页
+					<button type="button" class="layui-laypage-btn">确定</button></span><span
+					class="layui-laypage-count" id="pageInfo">共 0 条</span><span
+					class="layui-laypage-limits"><select lay-ignore=""><option
+							value="10" selected="">10 条/页</option>
+				</select></span>
+			</div>  -->
+		<!-- 分页位置 -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="50"><select class="inputstyle inputstyle02" id="pageSize">
+							<option selected>10</option>
+					</select></td>
+					<td id="pageInfo">条/页，共0条信息</td>
+					<td>
+						<div class="page1" id="page1"
+							style="padding: 10px 0; float: right;">
+							<div class="page_box"></div>
+						</div>
+					</td>
+				</tr>
+		</table>
+		<!-- 分页位置 -->
+	</div>
+<script>
+var gdbsms='1';
+var gdslxDm_ = '1';
+var nsrxx ='{"gsNsrsbh":"91520190314387738N","gsZgswjdm":"15201156300","error":"","dsDjxh":"","gsDjxh":"10115201000083900814","dsZgswjdm":"","dsNsrmc":"","gsNsrmc":"贵州鸿瑞锦机电有限公司","gsSwjgDm":"15201150000","dsNsrsbh":"","dsSwjgDm":""}';
+var isQuery ='';
+var gdbz_ ='';
+var skssqq_1 ='';
+var skssqz_1 ='';
+var ywbm ='';
+//是否跳过按次作废时检查逾期判断，默认跳过，可以在菜单URL中配置，参数值只能是字符串true和false，或者不配置
+//即，在菜单URL中配置为chk_single_qx=true或者不配置时，跳过，只有在配置为false时候，才会对按次作废进行逾期校验
+var str_chkSingleQx = 'null';
+str_chkSingleQx = (str_chkSingleQx == 'null' || str_chkSingleQx=='' || str_chkSingleQx=='undefined' || (str_chkSingleQx!='true' && str_chkSingleQx!='false'))?'true':str_chkSingleQx;
+viewApp.controller('viewCtrl', function ($scope) {
+    var db_showGdsbz = 'N';
+    $scope.showGdsbz = (db_showGdsbz == 'null' || db_showGdsbz=='' || db_showGdsbz=='undefined')?'Y':db_showGdsbz;
+});
+//4.0日期控件 
+layui.use('laydate', function() {
+	var laydate = layui.laydate;
+		//日期范围
+		laydate.render({
+			elem : '#sbrqq'
+		});
+		laydate.render({
+			elem : '#sbrqz'
+		});
+		laydate.render({
+			elem : '#skssqq'
+		});
+		laydate.render({
+			elem : '#skssqz'
+		});
+	});
+	//加载层
+	var layer;
+	layui.use('layer', function() {
+		layer = layui.layer;
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px; font-family:"微软雅黑"; list-style-type:none;}
+a{ text-decoration:none; color:#008ec9}
+
+
+.TopHead { width:100%; background-color:#2191da; height:80px;
+    background-image: url(images/head_bg.png);
+    background-repeat: no-repeat;
+    background-position: right;}
+.TopHead .LeftPadding{ padding:0px 16px;}
+.topHeadTab { width:100%;height:80px;}
+.HeadTitle{ line-height:}
+.HeadTitle .spangs{ font-size:24px; color:#1a56a9; margin-right:16px; background-color:#fff; padding:2px 10px 5px 10px; border-radius:2px;}
+.HeadTitle .spanbm{ font-size: 24px;color: #fff;line-height: 80px;}
+
+/**变左边菜单样式01****/
+.MenuNormal .close_btn{ cursor:pointer;}
+.MenuNormal .close_btn2{ }
+.MenuNormal .close_btn1{ background-color:#efeeee;  font-size:12px;  text-align:center;}
+.MenuNormal .close_btn1 span{ display:block; background:#2191da; color:#fff;font-family:SimSun; height:50px; line-height:50px;width:10px;opacity:0.7 }
+.MenuNormal .close_btn1 span:hover{ display:block; background:#2191da; color:#fff;font-family:SimSun; height:50px; line-height:50px;opacity: 1;}
+.MenuNormal .SheetMenu {width: 330px;word-wrap: break-word;padding: 0 10px; }
+.MenuNormal .SheetMenu h3{ position: relative;margin-top: 10px;line-height: 38px;border-bottom: 1px solid #dcdee2;font-size: 16px;border-top-left-radius: 3px;border-top-right-radius: 3px;}
+/**.MenuNormal .SheetMenu h3:before{position: absolute; z-index:1px; margin-top:-1px;  content: "|"; font-weight:bold; color:#e76b42; left:20px;}*/
+.MenuNormal .SheetMenu .sheetlist a{ color:#676767; padding:8px 0px; padding: 10px 25px 10px 15px;line-height:20px; display:block; font-size:14px;}
+.MenuNormal .SheetMenu .current_selected_BD a{ color: #3e9be5;font-size:14px;}
+
+/**/
+.MenuNormal .SheetMenu .sheetlist a{overflow: hidden;text-overflow: ellipsis;}
+
+.MenuNormal .SheetMenu .sheetlist a:hover{color:#3e9be5;}
+.btnfixed { position: absolute;top: 0px;right: 0px;cursor: pointer;}
+.btnfixed span{width: 30px;height: 20px;display: block;text-align: center;display: block;font-size: 18px; }
+.btnfixed .icon-off{ color:#53acf3}
+.btnfixed .icon-on{ color:#53acf3}
+.leftTab{ }
+
+.sheetlist{overflow-y: auto;overflow-x: hidden }
+.tbsmlist{}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+    width: 6px;  /*滚动条宽度*/
+    height: 6px;  /*滚动条高度*/
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+    border-radius: 10px;  /*滚动条的背景区域的圆角*/
+    background-color: #fff;/*滚动条的背景颜色*/
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;  /*滚动条的圆角*/
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+    background-color: #bbb;  /*滚动条的背景颜色*/
+}
+/**变左边菜单样式01****/
+.MenuDev .close_btn{ cursor:pointer;}
+.MenuDev .close_btn2{ }
+.MenuDev .close_btn1{ background-color:#efeeee; width:10px; font-size:12px;  text-align:center;}
+.MenuDev .close_btn1 span{ display:block; background:#2191da; color:#fff;font-family:SimSun; height:50px; line-height:50px;opacity:0.7 }
+.MenuDev .close_btn1 span:hover{ display:block; background:#2191da; color:#fff;font-family:SimSun; height:50px; line-height:50px;opacity: 1;}
+.MenuDev { position:fixed; z-index:999; }
+.MenuDev .SheetMenu{ width:330px;word-wrap: break-word;padding: 0 10px;background-color: #fff  }
+.MenuDev .SheetMenu h3{position: relative;margin-top: 10px;line-height: 38px;border-bottom: 1px solid #dcdee2;font-size: 16px;border-top-left-radius: 3px;border-top-right-radius: 3px;}
+/**.MenuDev .SheetMenu h3:before{position: absolute; z-index:1px; margin-top:-1px;  content: "|"; font-weight:bold; color:#e76b42; left:20px;}*/
+.MenuDev .SheetMenu>ul{overflow-y:auto;}
+.MenuDev .SheetMenu .sheetlist a{ color:#444;padding:8px 0px; line-height:20px; display:block; font-size:14px;}
+.MenuDev .SheetMenu .current_selected_BD a{background-color: #edf6fc;color: #3e9be5;border-bottom: 1px dashed #dcdee2;}
+.MenuDev .SheetMenu .sheetlist a:hover{color:#3e9be5;}
+.MenuDev .SheetMenu .sheetlist a{color:#676767; padding:8px 0px; padding: 10px 25px 10px 15px;line-height:20px; display:block; font-size:14px;}
+
+.areaHeadBtn li{display:inline}
+.btn{ line-height:30px;height: 30px; margin-right:5px;white-space: nowrap; border-radius:1px; padding:0px 18px; display:inline-block; border: 1px solid #53acf3; color:#53acf3;cursor:pointer; 
+transition:opacity 0.5s;-moz-transition:opacity 0.5s;-webkit-transition:opacity 0.5s;-o-transition:opacity 0.5s;font-size: 14px;}
+.btn01,.btn05{ background-color:#00a2c9}
+.btn_read{ line-height:28px; margin-right:5px; border-radius:1px; padding:0px 20px; display:inline-block; border:1px solid transparent; color:#999; cursor:text; 
+transition:opacity 0.5s;-moz-transition:opacity 0.5s;-webkit-transition:opacity 0.5s;-o-transition:opacity 0.5s;}
+.btn_read01{ background-color:#ddd}
+.btn06{ background-color:#fff; /* border:1px solid #fff; */ color:#53acf3;opacity:1}
+.btn06:hover{ background-color:#fff; color:#53acf3; opacity:0.8}
+.btn10{ background-color:#ff9600; color:#fff; opacity:1}
+.btn10:hover{ background-color:#ffba00; color:#fff; opacity:0.8}
+.btn11{ background-color:#ff9600; color:#fff; opacity:1}
+.btn11:hover{ background-color:#ffba00; color:#fff; opacity:0.8}
+.btn01:hover{background-color:#00b3de;}
+
+/*开发者样式*/
+.DEV {overflow:hidden;}
+.DEV .TableMain, .DEV .RightEdit{ float:left;}
+.DEV .TableMain{ width:80%;}
+.DEV .RightEdit{ width:20%; overflow-y:hidden; background:#fff;display:block; /* visibility: visible; */}
+.DEV .RightEdit .boxStyle{ border-left:1px solid #CCC; overflow:hidden;}
+.DEV .RightEdit h1,.DEV .FootEdit h1{ border-bottom:1px solid #CCC; font-size:12px; color:#333; background-color:#f4f4f4; height:32px; line-height:32px; padding-left:10px;}
+.DEV .RightEdit #lblJpathSelected {font-size:12px; font-weight: lighter;}
+.DEV .RightEdit #inpJpathSelector {width:100%; font-size:12px; background-color: #EEFFEE;}
+.DEV .RightEdit #divDebugDataView {width:100%; height:90%; overflow:hidden;}
+.DEV .RightEdit #frmDebugDataView {width:100%; overflow:visible; border:0px; none;}
+.DEV .FootEdit {height:300px; clear:both; display:block; /* visibility: visible; */}
+.DEV .FootEdit h1{border-top:1px solid #CCC;}
+.DEV .FootEdit #divFormulaList{height:80%; width:40%; float:left; font-size:12px; overflow:scroll;}
+.DEV .FootEdit #divFormulaList li{white-space:nowrap; padding: 1px 0px 1px 0px;}
+.DEV .FootEdit input{font-size:12px; }
+.DEV .FootEdit #txtFormulaSearch{width:200px; margin-right:10px; background-color:#EEFFEE;}
+.DEV .FootEdit #lblFormulaId{width:160px; margin-right:10px;}
+.DEV .FootEdit #lblFormulaType{width:40px; margin-right:10px;}
+.DEV .FootEdit #lblFormulaDesc{width:45%; margin-right:10px;}
+.DEV .FootEdit #txtFormulaId{width:160px; margin-right:10px;}
+.DEV .FootEdit #txtFormulaType{width:40px; margin-right:10px;}
+.DEV .FootEdit #txtFormulaDesc{width:90%; margin-right:10px;}
+.DEV .FootEdit #txtFormulaTips{width:90%; margin-right:10px;}
+.DEV .FootEdit #lblFormulaLastError {color:#FF0000;}
+.DEV .FootEdit #txtFormulaTargetEditor{height:50px; width:100%; overflow:auto;}
+.DEV .FootEdit #txtFormulaEditor{width:100%; overflow:auto;}
+.DEV .FootEdit #lblFormulaTestResult{width:100%; margin-bottom: 5px;}
+.DEV .FootEdit #divFormulaEditor {height:80%; width:59%; float:right; font-size:12px;}
+.DEV .FootEdit #divFormulaEditor {font-size:12px; }
+.DEV .FootEdit #divFormulaEditor input[type="button"]{float:left; margin:0px 10px 0px 10px; padding:0px 10px 0px 10px;}
+.DEV .FootEdit #divFormulaEditor input[type="button"]:disabled{border:2px none; background-color:gray;}
+.DEV .tableDiv{overflow-y:auto;}
+.DEV .line{ position:absolute; width:10px;  cursor:move; top:0px; }
+.DEV .linefoot{ height:5px; position: fixed;  cursor:move; top:0px;}
+.USER {overflow:hidden;}
+.USER .tableDiv{overflow-y:auto;}
+.USER .RightEdit {display:none; /* visibility: hidden; */}
+.USER .FootEdit {display:none; /* visibility: hidden; */}
+.USER .biao_leftmenubox{ overflow-y:auto;}/* Add by C.Q 20170122 右边栏填表说明*/
+#frmSheet {border: 0px none;}
+.current_selected_BD {background-color: #edf6fc}
+/* 填表说明模式 */
+.USER .FootEdit2 {display:none; /* visibility: hidden; */}
+.VIEW {overflow:hidden;}
+.VIEW .FootEdit2 {height:300px; clear:both; display:block; /* visibility: visible; */}
+.VIEW .FootEdit2 h1 {border-bottom:1px solid #CCC; font-size:12px; color:#333; background-color:#f4f4f4; height:32px; line-height:32px; padding-left:10px;border-top:1px solid #CCC;}
+.VIEW .FootEdit2 input[type="button"] {float:right; margin:0px 10px 0px 10px; padding:0px 10px 0px 10px;}
+.VIEW .FootEdit2 table {color:#333; background-color:#f4f4f4;}
+.VIEW .FootEdit2 textarea {width:100%; height:200px; resize:none; margin:1px 0px 1px 0px; padding: 1px 1px 1px 1px;}
+.VIEW .FootEdit2 td {padding: 0px 3px 0px 3px;}
+.VIEW .biao_leftmenubox{ overflow-y:auto;} /* A by C.Q 20170122 右边栏填表说明*/
+
+/**变右边菜单样式01 A by C.Q 20170122****/
+.leftBox03 .biao_leftmenubox{min-width:250px; background:#f5f5f5; }
+.leftBox03 .biao_leftmenubox .tabbox{ border-top:1px solid #fff;}
+.leftBox03 .biao_leftmenubox .tabbox td{ background:#f5f5f5; cursor:pointer; font-size:14px; border-top:1px solid #f5f5f5; border-bottom:1px solid #d9d9d9; height:40px; text-align:center; color:#333; line-height:40px; border-right:1px solid #d9d9d9; color:#333;}
+.leftBox03 .biao_leftmenubox .tabbox td:nth-child(1){ border-left:1px solid #75abe2;}
+.leftBox03 .biao_leftmenubox .tabbox td.ved{ background:#f5f5f5; border-bottom:1px solid #f5f5f5; font-size:14px; color:#333;border-bottom:none;}
+.leftBox03 .biao_leftmenubox .conbox{ padding:10px; line-height:24px; font-size:14px; color:#333;}
+
+.leftBox03 .biao_leftmenubox .accordion{ margin-top:10px;}
+.leftBox03 .biao_leftmenubox .accordion-handle { position:relative; border-bottom:1px solid #99bae9;text-align:center; background-color:#ddeeff; text-decoration:none; color:#808080; cursor:pointer; transition:all 0.4s ease 0s; }
+.leftBox03 .biao_leftmenubox .accordion-handle:hover { background-color:#d9d9d9; }
+.leftBox03 .biao_leftmenubox .accordion-handle.active { background-color:#a6c6f1; color:#fff; }
+.leftBox03 .biao_leftmenubox .accordion-handle h4 { height:40px; line-height:40px; padding:0 15px; font-size:14px; font-weight:normal; }
+.leftBox03 .biao_leftmenubox .accordion-handle i { display:block; width:40px; height:40px; overflow:hidden; position:absolute; right:0; top:0; background:url(./images/icon-accordion.png) no-repeat top center; }
+.leftBox03 .biao_leftmenubox .accordion-handle.active i { background-position:bottom center; }
+.leftBox03 .biao_leftmenubox .accordion-content { padding:10px; display:none; overflow:auto; height:600x; }
+
+.leftBox03 .biao_leftmenubox .accordion-handle .arrow { display: block; width: 16px; height: 16px; z-index:9999; position:absolute; right:0; top:12px; margin-right:10px; background:url(./images/icon-accordion.png) no-repeat -11px -12px; }
+.leftBox03 .biao_leftmenubox .accordion-handle .arrow.up { background:url(./images/icon-accordion.png) no-repeat -11px -12px;}
+.leftBox03 .biao_leftmenubox .accordion-handle .arrow.down { background:url(./images/icon-accordion.png) no-repeat -11px -50px;}
+
+.accordion-content ul li{padding:5px; line-height:24px; font-size:14px; color:#555; text-align:justify;}
+.accordion-content ul li span{ display:block; border-bottom:1px solid #a6c6f1;}
+.accordion-content ul li i{ font-style:normal; background:#ddeeff; padding-right:8px;}
+.accordion-content{padding:5px; line-height:24px; font-size:14px; color:#555; text-align:justify;}
+
+/**变右边菜单样式01 end C.Q 20170122****/
+/*2017-03-10*/
+.leftmenucss li{position:relative; }
+.leftmenucss .sheetlist a{ display:block; background-color:#FFF; padding:10px 25px 10px 15px; color:#444; border-bottom: 1px dashed #dcdee2;font-size: 14px;line-height: 20px;}
+.leftmenucss .current_selected_BD a{ background-color: #edf6fc;color: #3e9be5;border-bottom: 1px dashed #dcdee2;}
+.leftmenucss .sheetlist a:hover{color:#3e9be5;}
+.leftmenucss .nopass-num{background-color:#de3013;padding:0 4px 1px 4px;color:#fff;-moz-border-radius: 15px; /* Firefox */-webkit-border-radius:15px;/* Safari 和 Chrome */border-radius:15px;/* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */height:14px;line-height:14px;font-size:12px;position:absolute;font-weight:400;float:left;right:1px;top:5px}
+.leftmenucss .nopass-num2{background-color:#ff8a00;padding:0 4px 1px 4px;color:#fff;-moz-border-radius: 15px; /* Firefox */-webkit-border-radius:15px;/* Safari 和 Chrome */border-radius:15px;/* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */height:14px;line-height:14px;font-size:12px;position:absolute;font-weight:400;right:1px;top:5px}
+.leftmenucss .tbsmlist a{ display:block; padding:0px; color:#008ec9;}
+/*2017-03-28*/
+
+/*上传资料按钮 提示数样式*/
+ .temp01{ 
+	border-radius:50%; 
+	width:14px; 
+	height:14px; 
+	background-color:red; 
+	display:block; 
+	position:absolute; 
+	margin-top:-35px; 
+	margin-left:65px;
+	color:white;
+	line-height:14px;
+	font-size:12px;
+	text-align:center; 
+} 
+ .temp02{    
+	border-radius:50%; 
+    width: 14px;
+    height: 14px;
+    background-color: #ff8000;
+    display: block;
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 65px;
+    color: #ffffff;
+    line-height: 14px;
+    font-size:12px;
+    text-align: center;
+}
+/**弹出框样式**/
+.winbox_bg{background-color:#000000; opacity:0; position:fixed; left:0px; top:0px; height:100%; width:100%; z-index:200;}
+.winbox{ opacity:0; border-radius:6px; z-index:202; position:absolute; top:-200px; left:50%; background-color:#fff; 
+box-shadow:2px 2px 9px #4e4e4e;-moz-box-shadow:2px 2px 9px #4e4e4e;-webkit-box-shadow:2px 2px 9px #4e4e4e;}
+.fszlys{border-radius:50%; width:14px; height:14px; background-color:white; display:block; position:absolute; margin-top:-25px; margin-left:66px;color:white;line-height:14px;font-size:12px;text-align:center; }
+.tc_tit {   
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color :#333;
+    background-color: #F8F8F8;
+    padding: 0 80px 0 20px;
+}
+.winclose {
+    font-size: 24px;text-align: center;line-height: 18px;height: 20px; width: 20px;color: black;
+    position: absolute; top: 10px;right: 20px;cursor: pointer;
+}
+
+@font-face {font-family: "iconfont";
+  src: url('../../fonts/iconfont.eot'); /* IE9*/
+  src: url('../../fonts/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../../fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-off:before { content: "\e761"; }
+.icon-on:before { content: "\e7d4"; }
+
+.leftmenucss .leftTab li{ font-weight:normal;color: #333; display:inline-block;padding: 0px 12px; margin-right:20px;line-height: 38px;cursor:pointer;}
+.leftmenucss .leftTab li:hover{ }
+.leftmenucss .leftTab .active{ border-bottom:2px solid #4285f4; font-weight:bold;}
+red {
+	color:red;
+}
+.red {
+	color:red;
+}
+#infConfigHtml div {
+			margin-top:10px;
+}
+#infConfigHtml {
+	padding: 10px 20px 0px 20px;
+}
+#infConfigHtml div.blue span {
+	color: blue;
+}
+
+.TopHead .numberbox{  position:absolute; margin-top: -15px; margin-left: 6px;}
+.TopHead .number{ display:inline-block; font-size:10px;  background-repeat:no-repeat; color:#fff; text-align:center; margin:0 2px; }
+.TopHead .numbga1{ background-image:url(../../img/topHead/numbga1.png); width:15px; height:15px; line-height:15px;}
+.TopHead .numbgb1{ background-image:url(../../img/topHead/numbgb1.png); width:15px; height:15px; line-height:15px;}
+
+.TopHead .numbga2{ background-image:url(../../img/topHead/numbga2.png); width:22px; height:15px; line-height:15px;}
+.TopHead .numbgb2{ background-image:url(../../img/topHead/numbgb2.png); width:22px; height:15px; line-height:15px;}
+
+/*新增样式2019-6-27*/
+.layui-table .layui-form-select .layui-edge{ box-sizing: initial;}
+
+.moreadd.layui-nav {
+    background: none;
+    padding: 0;
+    display: inline-block;
+}
+
+.layui-nav .layui-nav-item a {
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+}
+
+.layui-nav .layui-nav-item .layui-nav-child a {
+    padding: 0 20px;
+}
+
+.layui-nav .layui-nav-item a:before {
+    background: none;
+    color: #000000;
+}
+
+.layui-nav .layui-this:after:hover {
+    display: none !important;
+}
+
+.layui-nav .layui-this .layui-nav-child {
+    top: 30px;
+    left: 0;
+    border-radius: 4px;
+}
+.layui-nav-child {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 30px !important;
+    min-width: 100%;
+    line-height: 36px;
+    padding: 5px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,.12);
+    border: 1px solid #d2d2d2;
+    background-color: #fff;
+    z-index: 100;
+    border-radius: 2px;
+    white-space: nowrap
+}
+.layui-nav .layui-nav-item {
+    line-height: 30px; top: -2px;
+}
+
+.layui-nav .layui-this:after,
+.layui-nav-bar,
+.layui-nav-tree .layui-nav-itemed:after {
+    display: none;
+}
+.layui-nav .layui-nav-item a{cursor: pointer;}
+.layui-nav .layui-nav-item>a {
+    height: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    font-size: 12px;
+    position: relative;
+    top: -3px;
+    margin:0 5px 0 0;
+}
+
+.layui-nav .layui-nav-item>a.btn {
+    color: #53acf3 !important;
+    padding: 0 24px 0 14px !important;
+    top: -4px;
+}
+
+.layui-nav .layui-nav-item .layui-nav-more{ top: 12px; right: 6px; width: 14px; height: 8px; border: none; padding: 0; background: url(../../../resources4/tax-images/ttk/arrow_d_01.png) no-repeat center center;}
+.layui-nav .layui-nav-item .layui-nav-mored{ top: 12px; right: 6px; width: 14px; height: 8px; border: none; padding: 0; background: url(../../../resources4/tax-images/ttk/arrow_d_02.png) no-repeat center center; margin-top: -3px;}
+.layui-nav .layui-nav-item>a:hover{  }
+.layui-nav .layui-nav-item .layui-nav-child a{ padding: 0 12px; color: #666;  text-align: left; font-size: 12px; font-weight: normal;}
+.layui-nav .layui-nav-item .layui-nav-child a:hover{ background: rgba(0, 102, 179, .07);color: #0066b3;}

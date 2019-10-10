@@ -1,0 +1,245 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.content {
+
+    width: 100%;
+    background-color: #2F4050;
+}
+
+    .content .header {
+        padding: 0 20px;
+        box-sizing: border-box;
+        padding-top: 5px;
+        vertical-align: middle;
+          background-color: #fafafa;
+    }
+
+        .content .header .book {
+            background-image: url("/VideoManage/image/book.png");
+            background-size: 25px;
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 25px;
+            display: inline-block;
+        }
+
+    .content h2 {
+        margin: 0px;
+        font-size: 20px;
+        color: deepskyblue;
+        display: inline-block;
+        position: relative;
+        top: -5px;
+    }
+
+    .content .wrapper {
+       background-color: white;
+    width: 100%;
+    min-width: 0px !important;
+    margin: 0 auto;
+    padding: 15px 19px;
+    box-sizing: border-box;
+    /* background-image: url(/Content/mui/images/video/circle.png); */
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: 319px 4px;
+    position: relative;
+    padding-left: 167px;
+    }
+.content .wrapper .repeat {
+    width: 100%;
+    min-width: 0px !important;
+}
+        .content .wrapper .repeat {
+            width: 100%;
+            min-width: 0px;
+        }
+
+            .content .wrapper .repeat .tittle {
+                box-sizing: border-box;
+                width: 300px;
+                padding-right: 15px;
+                display: inline-block;
+            }
+
+        .content .wrapper .course {
+            border-left: 3px solid lightgrey;
+            width: 65%;
+            min-width: 410px;
+            box-sizing: border-box;
+            display: inline-block;
+            padding-bottom: 20px;
+        }
+
+        .content .wrapper .repeat .course strong .zhang {
+            font-size: 13px;
+            word-wrap: break-word;
+            word-break: break-all;
+            display: inline-block;
+            width: 280px;
+            position: relative;
+            left: -300px;
+            top: 0;
+            text-align: right;
+            display:none;
+        }
+
+        .content .wrapper .course .png {
+            width: 10px;
+            height: 10px;
+            background-image: url("/VideoManage/image/mrd.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            position: relative;
+            left: -37px;
+            top: 20px;
+        }
+
+        .content .wrapper .course .sect {
+            width: 20px;
+            height: 20px;
+            background-image: url("/VideoManage/image/bc.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            position: relative;
+            left: -11px;
+            top: -50px;
+        }
+
+        .content .wrapper .course .show {
+            list-style-type: none;
+            margin: 0;
+            display: inline-block;
+            width: 100%;
+            min-width: 400px;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+
+            .content .wrapper .course .show li {
+                width: 100%;
+                min-width: 310px;
+                /*padding-right: 10px;*/
+                box-sizing: border-box;
+                padding-left: 20px;
+            }
+
+..show li:hover {
+    background: #ccc;
+}
+
+.content .wrapper .course .show li span {
+    word-wrap: break-word;
+    word-break: break-all;
+    line-height: 20px;
+    width: 85%;
+    min-width: 197px;
+    display: inline-block;
+    font-size: 15px;
+    height: 32px;
+}
+
+.content .wrapper .course .btn {
+    min-width: 110px;
+    margin-top: 2px;
+    float: right;
+}
+
+    .content .wrapper .course .btn button {
+        height: 26px;
+        width: 50px;
+        min-width: 30px;
+        border-radius: 13px;
+        background-color: #00ACED;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+        box-sizing: border-box;
+    }
+
+        .content .wrapper .course .btn button:hover {
+            background-color: steelblue;
+        }
+
+.content .wrapper .circle {
+    width: 12px;
+    height: 12px;
+    background-image: url("/VideoManage/image/circle.png");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    position: absolute;
+    bottom: 5px;
+    left: 319px;
+}
+
+.play {
+    height: 26px;
+    width: 50px;
+    min-width: 30px;
+    border-radius: 13px;
+    background-color: #00ACED;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #ededed;
+    box-sizing: border-box;
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    line-height: 26px;
+    text-decoration: none;
+}
+
+    .play:hover {
+        color: #fff;
+    }
+
+.bgg {
+    background: #daf4fd;
+}
+
+.blue {
+    width: 10px;
+    height: 10px;
+    background-image: url("/VideoManage/image/xzz.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    left: -37px;
+    top: 20px;
+}
+
+.zhang {
+    display: none;
+}
+
+.tot {
+    font-size: 22px;
+    position: relative;
+    left: -300px;
+    top: -8px;
+    text-align: right;
+    color: #74BAFF;
+    width: 280px;
+    display: inline-block;
+}
+
+.stot {
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+    width: 280px;
+    position: relative;
+    left: -300px;
+    top: -10px;
+    text-align: right;
+    font-weight: 900;
+}

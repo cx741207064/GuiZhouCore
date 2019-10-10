@@ -1,0 +1,100 @@
+<!doctype html>
+<html id="ng-app" xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>固定资产加速折旧(扣除)优惠明细表</title>
+<script>
+	var subViewCustomScripts = ["/sbzs_res/qysds_a_18yjd/js/a201020.js" ];	
+</script>
+</head>
+
+<body>
+<div style="width:100%; margin:auto; padding-right:30px; padding-left:30px;" id="viewCtrlId" ng-controller="viewCtrl">
+<div class="NewTableHead">    
+    <h1>固定资产加速折旧(扣除)优惠明细表</h1>
+     
+</div>
+
+<div class="NewTableMain">
+<table width="100%" border="0" cellspacing="1" cellpadding="0"  ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A201020Ywbd.gdzcjszjkcMxbGrid.gdzcjszjkcmxbGridlb">
+  <tr>
+    <td width="7%" rowspan="3" align="center" class="title01">行次</td>
+    <td rowspan="3" align="center" class="title01">项目</td>
+    <td rowspan="2" align="center" class="title01">资产原值</td>
+    <td colspan="5" align="center" class="title01">本年累计折旧（扣除）金额</td>
+    </tr>
+  <tr>
+    <td align="center" class="title01">账载折旧金额</td>
+    <td align="center" class="title01">按照税收一般规定计算的折旧金额</td>
+    <td align="center" class="title01">享受加速折旧优惠计算的折旧金额</td>
+    <td align="center" class="title01">纳税调减金额</td>
+    <td align="center" class="title01">享受加速折旧优惠金额</td>
+  </tr>
+  <tr>
+    <td width="12%" align="center" class="title01">1</td>
+    <td width="12%" align="center" class="title01">2</td>
+    <td width="12%" align="center" class="title01">3</td>
+    <td width="12%" align="center" class="title01">4</td>
+    <td width="12%" align="center" class="title01">5</td>
+    <td width="12%" align="center" class="title01">6（4-3）</td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">1</td>
+    <td class="title01">一、 固定资产加速折旧（不含一次性扣除，2+3）</td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"      ng-model="gdzcjszjkcmxbGridlb[0].zcyz"   readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[0].zzzjjeLj" readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[0].azssybgdjsdzjjeLj"  readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[0].xsjszjyhjsdzjjeLj"  readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[0].nstjjeLj"  readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[0].xsjszjyhjeLj"  readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">2</td>
+    <td class="title01" style="padding-left:24px">（一）重要行业固定资产加速折旧</td>
+   <td class="edit right" ><input  ng-datatype="number"   type="text"      ng-model="gdzcjszjkcmxbGridlb[1].zcyz"    ng-blur="externalMethods('zyhyts','');"></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[1].zzzjjeLj"   ng-blur="externalMethods('zyhyts','');"></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[1].azssybgdjsdzjjeLj"   ng-blur="externalMethods('zyhyts','');"></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[1].xsjszjyhjsdzjjeLj"   ng-blur="externalMethods('zyhyts','');"></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[1].nstjjeLj"   ng-blur="externalMethods('zyhyts','');"></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[1].xsjszjyhjeLj"   ng-blur="externalMethods('zyhyts','');"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">3</td>
+    <td class="title01" style="padding-left:24px">（二）其他行业研发设备加速折旧</td>
+  <td class="edit right" ><input  ng-datatype="number"   type="text"      ng-model="gdzcjszjkcmxbGridlb[2].zcyz"   ng-blur="externalMethods('qthyts',gdzcjszjkcmxbGridlb[2].zcyz);"></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[2].zzzjjeLj" ></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[2].azssybgdjsdzjjeLj" ></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[2].xsjszjyhjsdzjjeLj" ></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[2].nstjjeLj" ></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[2].xsjszjyhjeLj"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">4</td>
+    <td class="title01">二、固定资产一次性扣除</td>
+  <td class="edit right" ><input  ng-datatype="number"   type="text"      ng-model="gdzcjszjkcmxbGridlb[3].zcyz" ></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[3].zzzjjeLj" ></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[3].azssybgdjsdzjjeLj" ></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[3].xsjszjyhjsdzjjeLj" ></td>
+    <td class="edit right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[3].nstjjeLj" ></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[3].xsjszjyhjeLj"  readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">5</td>
+    <td class="title01">合计（1+4）</td>
+   <td class="read right" ><input  ng-datatype="number"   type="text"      ng-model="gdzcjszjkcmxbGridlb[4].zcyz"   readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[4].zzzjjeLj"   readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[4].azssybgdjsdzjjeLj"  readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[4].xsjszjyhjsdzjjeLj"  readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[4].nstjjeLj"  readonly></td>
+    <td class="read right" ><input  ng-datatype="number"   type="text"    ng-model="gdzcjszjkcmxbGridlb[4].xsjszjyhjeLj"  readonly></td>
+  </tr>
+  <tr ng-render-finish="">
+</table>
+
+</div>
+ 
+
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+    {
+        "name":"资产负债表",
+        "dzbdbm":"CWBB_XQY_KJZZ_zcfz",
+        "bdsxmc":"SB100VO.SB100BdxxVO.cjbdxml.syxqyzcfzb.syxqyzcfzbGrid",
+        "url":"form/zcfz.html"
+    },
+    {
+        "name":"利润表_月报",
+        "dzbdbm":"CWBB_XQY_KJZZ_lrb_yb",
+        "bdsxmc":"SB100VO.SB100BdxxVO.cjbdxml.syxqylrb.syxqylrbGrid",
+        "url":"form/lrb_yb.html"
+    },
+    {
+        "name":"现金流量表_月报",
+        "dzbdbm":"CWBB_XQY_KJZZ_xjllb_yb",
+        "bdsxmc":"SB100VO.SB100BdxxVO.cjbdxml.syxqyxjllb.xqyxjllbGrid",
+        "url":"form/xjllb_yb.html"
+    }
+]

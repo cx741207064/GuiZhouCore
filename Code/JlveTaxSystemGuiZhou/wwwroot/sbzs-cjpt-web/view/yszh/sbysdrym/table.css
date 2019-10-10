@@ -1,0 +1,40 @@
+﻿/**** 采集类弹出窗口样式****/
+.winbox{ z-index:9999; position:absolute; top:10%; left:0%; background-color:#fff; border:1px solid #a6a6a6;
+ box-shadow:2px 5px 4px #a6a6a6,-2px 5px 4px #a6a6a6; 
+  transition:opacity 0.3s, display 0.3s;
+	-webkit-transition:opacity 0.3s, display 0.3s; border-radius: 3px;
+}
+.winbox_bg{ background-color:#000000; opacity:0;filter:alpha(opacity=0)\9; position:fixed; top:0px; height:100%; width:100%; z-index:200;}
+.winbox h1{ font-size: 14px;font-weight: normal;height: 40px;line-height: 40px;padding: 0 20px 0 20px;color: #333; border-bottom: 1px solid #eee;}
+.winbox h1 span{ cursor:pointer;color:#fff;background-image: url(win_close.png);background-repeat: no-repeat;background-position: right;}
+.winbox h1 img{ padding-left:2px; padding-right:2px; cursor:pointer;  }
+.winbox .tabs_01 { overflow:hidden; clear:both;}
+.winbox .tabs_01 li{ float:left;}
+.winbox .tabs_01 li a{ padding:5px 15px; display:block; color:#333; background-color:#d9dfe5; margin:2px 4px 2px 0; border-radius:1px; font-size:14px;}
+.winbox .tabs_01 .active a{ background-color:#546478; color:#fff;}
+.winbox .searchTable{/* overflow:auto;*/}
+.winbox .searchTable table,.winbox .searchTable01 table{ border-top:1px solid #dddddd; border-left:1px solid #dddddd ;font-size:12px;}
+.winbox .searchTable th ,.searchTable td,.winbox .searchTable01 th ,.searchTable01 td{ border-bottom:1px solid #dddddd; border-right:1px solid #dddddd;color:#666666; font-size:12px;}
+.winbox .searchTable th ,.winbox .searchTable01 th{padding:2px 5px; color:#444444;    height:32px; background-color:#eeeeee;}
+.winbox .searchTable td,.winbox .searchTable01 td{color:#313131; height:32px; padding:0px 5px; font-size:12px;}
+.winbox .searchTable td span,.winbox .searchTable01 td span{ font-size:12px;}
+.winbox .searchTable td a,.winbox .searchTable01 td a{ font-size:12px;}
+.winbox .searchTable tr:nth-child(odd){background-color:#fff;}
+.winbox .searchTable tr:nth-child(even){ background-color:#f9f9f9;}
+.winbox .searchTable tr{transition:background 0.5s;-moz-transition:background 0.5s; /* Firefox 4 */-webkit-transition:background 0.5s; /* Safari and Chrome */-o-transition:background 0.5s; /* Opera */}
+.winbox .searchTable tr:hover{ background-color:#f9f9f9;}
+.winbox .title{ font-size:18px; color:#1a56a8; height:38px; line-height:38px; }
+.winbox .title span{ display:inline-block; height:32px; line-height:32px; width:32px; text-align:center; font-weight:bold; color:#fff; background-color:#1a56a8; font-size:14px; border-radius:3px; margin-right:6px;}
+.winbox .inputbox{ padding:10px 22px 10px 22px; }
+.winbox .inputbox .table{ }
+.winbox .inputbox .table td{ font-size:14px;}
+.winbox .inputbox .table th{ font-weight:normal; text-align:left; height:32px; line-height:32px; font-size:14px; color:#808080;}
+.winbox .winbtn{ padding:15px 25px 15px 0px; text-align:right;}
+.winbox-content{ padding:20px 30px}
+.winbox-content .list01{ font-size:17px; color:#999999; margin-bottom:20px}
+.winbox-content .list02{ font-size:20px; color:#006cda;margin-bottom:20px}
+.winbox-content .list03{ font-size:14px; color:#000000;margin-bottom:10px; list-style-image:url(../images/circle.png); list-style-position:inside;}
+.winbox-content .list03 span{ font-weight:bold; margin:0px 4px; font-size:15px}
+/*表单头部白底，字体居左*/
+.winbox h1 table td {font-size: 14px;color: #333;font-weight: bold;position: relative;}
+.winbox h1 {background-color: #fff;}

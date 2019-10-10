@@ -1,0 +1,88 @@
+<!doctype html>
+<html id="ng-app" xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>机动车销售统一发票清单</title>
+
+</head>
+
+<body>
+<div style="width:96%; margin:auto;" id="viewCtrlId" ng-controller="viewCtrl">
+<div class="NewTableHead" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcxstyfpqd.sbbhead">
+     <h1>机动车销售统一发票清单</h1>
+     <li class="dateTxt">税款所属时间:<input type="text" datatype="date"  jflag="1" readonly style="width:100px; height:20px;" ng-model="sbbhead.skssqq
+" class=" topInput"> 至 <input type="text" datatype="date"  jflag="1" readonly style="width:100px; height:20px;" ng-model="sbbhead.skssqz
+" class="topInput"></li>
+</div>
+
+
+<div class="NewTableTop" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcxstyfpqd.sbbhead">
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>纳税人名称：
+                <span class="textline" ng-bind="sbbhead.nsrmc"></span></td>
+                <td align="right">纳税人识别号：<span class="textline" ng-bind="sbbhead.nsrsbh"></span></td>
+                 </tr>
+          </table></td>
+          </tr>
+    </table>
+</div>
+
+
+<div class="NewTableMain" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcxstyfpqd.jdcxstyfpqdGrid.jdcxstyfpqdGridlbVO">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="1"  >
+    <colgroup class="c1"></colgroup>
+	<colgroup class="c2"></colgroup>
+	<colgroup class="c3"></colgroup>
+	<colgroup class="c4"></colgroup>
+	<colgroup class="c5"></colgroup>
+	<colgroup class="c6"></colgroup>
+	<colgroup class="c7"></colgroup>
+	<colgroup class="c8"></colgroup>
+    <tbody>
+      <tr>
+        <td align="center" class="title01">发票代码</td>
+        <td align="center" class="title01">发票号码</td>
+        <td align="center" class="title01">生产企业名称</td>
+        <td align="center" class="title01">厂牌型号</td>
+        <td align="center" class="title01" style="line-height:18px;">车辆识别代码<br>（车架号码）</td>
+        <td align="center" class="title01">价费合计金额</td>
+         <td align="center" class="title01" width="100px">操作</td>
+      </tr>
+      <tr ng-repeat="p in jdcxstyfpqdGridlbVO track by $index" ng-repeat-init="jdcxstyfpqdGridlbVO" 
+      default-value='{"fpDm":"","fphm":"","scqymc":"","cpxh1":"","clsbdm":"","jfhjje":0.00}'>
+        <td class="edit left"><input jflag="1" ng-model="p.fpDm" type="text" ></td>
+        <td class="edit left"><input jflag="1" ng-model="p.fphm" type="text" ></td>
+        <td class="edit left"><input jflag="1" ng-model="p.scqymc" type="text" ></td>
+        <td class="edit left"><input jflag="1" ng-model="p.cpxh1" type="text" ></td>
+        <td class="edit left"><input jflag="1" ng-model="p.clsbdm" type="text" ></td>
+        <td class="edit right"><input class="tir" jflag="1" ng-model="p.jfhjje" type="text" ng-datatype="number{2}"></td>
+<td align="center" ><div class="sbtnbox"><a class="layui-btn layui-btn-xs" ng-href="#" ng-click="add()">增加</a>&nbsp;<a class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0" ng-href="#" ng-click="del($index)">删除</a></div></td>
+      </tr>
+     
+      <tr ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcxstyfpqd.jdcxstyfpqdGrid">
+        <td align="center" class="title01">合计</td>
+        <td class="back">--</td>
+        <td class="back">--</td>
+        <td class="back">--</td>
+        <td class="back">--</td>
+        <td class="read right"><input jflag="1" class="tir" readonly type="text" ng-datatype="number{2}" ng-model="jdcxstyfpqdGrid.jfhjjeHJ"></td>
+          <td  class="title01" align="center" ></td>
+      </tr>
+      <tr ng-render-finish=""></tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+ 
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>财务数据导入页面</title>
+<script type="text/javascript" src="../../../resources/js/lib/angular.js"></script>
+<script type="text/javascript" src="../../../resources/js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="../../../resources/js/jquery.base64.js"></script>
+<script type="text/javascript" src="../../../resources4/layui/layui.js"></script>
+<script type="text/javascript" src="../../../resources/js/ecm-taglib/laypage-v1.3/laypage/laypage.js"></script>
+<script type="text/javascript" src="../../../view/yszh/sbysdrym/sbysdrym.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../resources4/layui/css/layui.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../view/yszh/sbysdrym/table.css"></link>
+<script type="text/javascript">
+   	var yszhContextPath = parent.yszhWebContextPath;
+</script>
+</head>
+<body id="ng-app" ng-app="viewApp">
+	<div id="Model" class="winbox add" style="width:950px;overflow-x:auto;overflow-y:auto;">
+		<h1 style="margin-top:1px;">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td>财务数据导入</td>
+					<td align="right"><a href="#" class="winClose"><img src="close.png"/></a></td>
+				</tr>
+			</table>
+		</h1>
+	    <div class="inputbox" style="width:916px; overflow-y:auto; padding:17px;">
+	    	<div class="searchTable" ng-controller="viewCtrl" id="viewCtrlid">
+				<table width="99%" border="0" cellspacing="0" cellpadding="0" id="tcWindow">
+					<tbody>
+						<tr>
+							<th style="display:none">要素申报UUID</th>
+				            <th style="width: 28px;">选择</th>
+				            <th style="width: 40px;">序号</th>
+				            <th style="width: 150px;">上传时间</th>
+				            <th style="width: 80px;">财务软件</th>
+				            <th style="width: 280px;">文件名</th>
+				            <th>备注</th>
+				            <th style="width: 60px;">操作</th>
+						</tr>
+						<tr ng-repeat="item in sbysxxList" onclick='selectYsxxFun(this)'>
+							<td style="display: none" ng-cloak ng-bind="item.yssbid"></td>
+							<td align="center" ng-cloak ><input type="radio" name="selectYsxx" id="{{item.yssbid}}" /></td>
+							<td align="center" ng-cloak ng-bind="item.index + 1"></td>
+							<td align="center" ng-cloak ng-bind="item.strLrrq"></td>
+							<td align="center" ng-cloak ng-bind="item.appid"></td>
+							<td align="center" ng-cloak ng-bind="item.wjm"></td>
+							<td align="center" ng-cloak ng-bind="item.bz"></td>
+							<td align="center" ng-cloak ng-bind-html="item | yssbid | to_trusted"></td>
+						</tr>
+						<tr ng-cloak ng-if="sbysxxList.length <= 0">
+							<td colspan="11" align="center"><font color="red">系统没有查询到相关数据，请您查看在财务软件中是否上传成功，如有疑问，请联系您的财务厂商!</font></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="50"><select class="inputstyle inputstyle02"
+						id="pageSize">
+							<option selected>5</option>
+							<!-- <option >10</option> -->
+					</select></td>
+					<td id="pageInfo">条/页，共0条信息</td>
+					<td>
+						<div class="page1" id="page1"
+							style="padding: 10px 0; float: right;">
+							<div class="page_box"></div>
+						</div>
+					</td>
+				</tr>
+			</table>
+	    </div>
+	    <div class="winbtn">
+			<button class="layui-btn" onclick="ImportBtn()">导入</button>&nbsp;&nbsp;&nbsp;
+	    	<button class="layui-btn layui-btn-primary winClose">关闭</button>
+		</div>
+	</div>
+</body>
+</html>
+

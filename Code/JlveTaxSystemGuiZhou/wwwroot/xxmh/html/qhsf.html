@@ -1,0 +1,110 @@
+<!-- 切换身份start1 -->
+<div class="win-center" id="chooseNsr" style="display: none;">
+	<div class="sfxz-box">
+
+		<div class="left-box">
+			<div class="qybs-itme">
+
+				<div class="sfxz-center">
+
+					<div class="tax-title marginT20"><i class="dot"></i>企业办税</div>
+
+					<div id="qysfTitle" class="sfxz-search">
+						<div class="tax-search">选择企业：
+							<input type="text" id="qykeywords" name="qykeywords" oninput="getValue(this.value)"  onpropertychange="getValue(this.value)" placeholder="请输入关键词" class="search-input">
+							<a href="#" id="seachQy" name="seachQy">查询</a>
+						</div>
+					</div>
+
+					<div id="nsrzt" class="qybs-list-item">
+					</div>
+
+					<div class="qybs-add-btn" id="addQysf2"><img src="/xxmh/resources/images/common/icon_add.png"><span onclick="newQysf()">企业绑定</span></div>
+
+				</div>
+
+				<div class="btnbox">
+					<button id="qyjrBtn" class="layui-btn" onclick="selectQy()" >企业进入</button>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="right-box ">
+			<div class="grbs-itme">
+
+				<div class="sfxz-center">
+
+					<div class="tax-title marginT20"><i class="dot"></i>个人办税</div>
+
+					<!-- 没有实名  -->
+					<div id="smzTitle">
+						<div class="grbs-notice font-weak">
+							<i class="iconfont fsicon-tanhao "></i> 暂时未实名，请先进行实名制申请
+						</div>
+					</div>
+
+					<div id="addSmz" class="qybs-add-btn" onclick="newSmz();"><img src="/xxmh/resources4//tax-images/common/icon_add.png"><span>实名制申请</span></div>
+
+					<!-- 已经实名，没有授权数据  回传标志-->
+					<div id="smzxx" class="grbs-list-item">
+						<li id="qhsf_yhmc"></li>
+						<li id="qhsf_zjlx"></li>
+						<li id="qhsf_zjhm"></li>
+						<li id="qhsf_zjyxq"></li>
+					</div>
+
+					<div id="selectZrrs" class="sfxz-search">
+						<div id="grsfTitle" class="tax-search">
+							请选择个人身份
+							<input type="text" id="grkeywords" placeholder="请输入关键词" name="grkeywords" class="search-input">
+							<a id="seachGr" href="#">查询</a>
+						</div>
+						</div>
+						<div id="zrrsList" class="qybs-list-item">
+					</div>
+
+				</div>
+				<div class="btnbox">
+					<button class="layui-btn" onclick="grsfjr();">个人进入</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--切换身份弹出框结束-->
+
+<!-- 主管税务机关选择 开始-->
+
+<div class="win-center" id="zztsfqhDiv" style="display: none;">
+	<div class="sfxz-box">
+		<div class="sfxz-search">
+			<div class="tax-search">
+				请选择主管税务机关：
+				<input type="text" name="text" placeholder="请输入关键词" class="search-input" onblur="getZgswjgValue(this.value)">
+				<a href="javascript:seachZgswjg();" id="seachZgswjg" >查询</a>
+			</div>
+		</div>
+	</div>
+	<div class="sfxz-table">
+		<form class="layui-form" lay-filter="zztIdUL">
+			<table class="layui-table table-radio-center" >
+				<thead>
+				<tr>
+					<th style="width: 28px;">选择</th>
+					<th style="width: 185px;">主管税务所（科、分局）名称</th>
+					<th>课征主体登记类型 </th>
+					<th>跨区财产税主体登记标志</th>
+					<th>跨区域涉税事项报告编号</th>
+					<th></th>
+				</tr>
+				</thead>
+				<tbody id="zztIdUL">
+
+				</tbody>
+			</table>
+		</form>
+	</div>
+</div>
+<!-- 主管税务机关选择结束 -->

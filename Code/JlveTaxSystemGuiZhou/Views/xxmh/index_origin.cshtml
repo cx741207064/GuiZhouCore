@@ -1,0 +1,1179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="renderer" content="ie-comp" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=1" />
+<link href="/xxmh/resources/skin/css/comon0.css" rel="stylesheet" type="text/css" />
+<link href="/xxmh/resources/skin/css/index.css" rel="stylesheet" type="text/css" />
+<link href="/xxmh/resources/skin/css/qystyle.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/xxmh/resources/css/newcss/addstyle.css">
+<link rel="stylesheet" href="/xxmh/resources4/tax-css/index.css">
+<link rel="stylesheet" href="/xxmh/resources4/tax-css/common.css">
+<link rel="stylesheet" href="/xxmh/resources4/tax-font-icon/iconfont.css">
+<link rel="stylesheet" href="/xxmh/resources4/layui/css/layui.css">
+<link rel="icon" href="/xxmh/resources/images/common/favicon.ico" type="image/x-icon">
+<title>国家税务总局贵州省电子税务局</title>
+<script src="/xxmh/resources/skin/js/jquery.js"></script>
+<script src="/xxmh/resources4/layui/layui.js"></script>
+<script src="/xxmh/resources4/layui/transfer.js"></script>
+<script src="/xxmh/resources/js/ecm-taglib/json2/json2.js"></script>
+<script language="JavaScript" src="/xxmh/resources/skin/js/js.js"></script>
+<script type="text/javascript" src="/xxmh/resources/js/goPages.js"></script>
+<script src="/xxmh/resources/js/portal.js"></script>
+<script src="/xxmh/resources/js/urlLogic.js"></script>
+<script src="/xxmh/resources/js/mlog.js"></script>
+<script src="/xxmh/resources/js/sjzftb.js"></script>
+<script type="text/javascript" src="/xxmh/resources/js/golobalTitle.js"></script>
+<script type="text/javascript" src="/xxmh/resources/js/zxkf.js"></script>
+
+<style>
+	#lightbox{background:rgba(0,0,0,0.6);width:100%;height:100%;left:0;top:0;position:fixed; z-index:999;}
+		.lightbox01 img{left:50%;top:34px; position: absolute; margin-left:354px;}
+		.lightbox02 img,.lightbox03 img,.lightbox04 img,.lightbox05 img,.lightbox06 img{left:50%;top:50%; position: absolute; margin-left:-134px; }
+		.lightbox01 .lead{ background-color:#FFF; border-radius:4px;width:360px;left:50%;top:180px;margin-left:254px;  -moz-box-shadow: 0px 0px 5px #000; box-shadow: 0px 0px 4px #000; position:absolute;}
+		.lightbox02 .lead,.lightbox03 .lead,.lightbox04 .lead,.lightbox05 .lead,.lightbox06 .lead{ background-color:#FFF; border-radius:4px;width:360px;left:50%;top:50%; position: absolute; -moz-box-shadow: 0px 0px 5px #000; box-shadow: 0px 0px 4px #000; margin-left:260px; margin-top:40px;}
+		.lightbox01 .lead .content,.lightbox03 .lead .content,.lightbox05 .lead .content,.lightbox06 .lead .content{ padding:54px 26px; font-size:14px; color:#333333;}
+		.lightbox04 .lead .content{padding:30px 26px; font-size:14px; color:#333333; line-height:24px;}
+		.lightbox02 .lead .content{padding:42px 26px; font-size:14px; color:#333333;line-height:22px;}
+		.lightbox01 .footer li,.lightbox02 .footer01 li,.lightbox03 .footer01 li,.lightbox04 .footer01 li,.lightbox05 .footer01 li,.lightbox06 .footer01 li{ float:left;}
+		.lightbox01 .footer .nav,.lightbox02 .footer01 .nav,.lightbox03 .footer01 .nav,.lightbox04 .footer01 .nav,.lightbox05 .footer01 .nav,.lightbox06 .footer01 .nav{ padding:6px 0px 24px 20px;}
+		.lightbox01 .footer .nav span,.lightbox02 .footer01 .nav span,.lightbox03 .footer01 .nav span,.lightbox04 .footer01 .nav span,.lightbox05 .footer01 .nav span,.lightbox06 .footer01 .nav span{ display:inline-block; width:8px; height:8px;border:1px solid #789bcb; border-radius:50%;}
+		.lightbox01 .footer .active,.lightbox02 .footer01 .active,.lightbox03 .footer01 .active,.lightbox04 .footer01 .active,.lightbox05 .footer01 .active,.lightbox06 .footer01 .active{ background-color:#1a56a8;border:1px solid #1a56a8;}
+		.lightbox01 .footer .fbtn01 a,.lightbox02 .footer01 .fbtn01 a,.lightbox03 .footer01 .fbtn01 a,.lightbox04 .footer01 .fbtn01 a,.lightbox05 .footer01 .fbtn01 a,.lightbox06 .footer01 .fbtn01 a{ display:block; width:70px; height:30px; text-align:center; line-height:30px; color:#6282bb; border:1px solid #6282bb; margin-left:24px;border-radius:3px;}
+		.lightbox01 .footer .fbtn02 a{ display:block; width:70px; height:30px; text-align:center; line-height:30px; color:#fff; border:1px solid #1a56a8; background-color:#1a56a8; margin-left:102px;border-radius:3px;}
+		.lightbox02 .footer01 .fbtn02 a,.lightbox03 .footer01 .fbtn02 a,.lightbox04 .footer01 .fbtn02 a,.lightbox05 .footer01 .fbtn02 a{ display:block; width:70px; height:30px; text-align:center; line-height:30px; color:#fff; border:1px solid #1a56a8; background-color:#1a56a8; margin-left:10px;border-radius:3px;}
+		.lightbox01 .footer .fbtn03 a,.lightbox02 .footer01 .fbtn03 a,.lightbox03 .footer01 .fbtn03 a,.lightbox04 .footer01 .fbtn03 a,.lightbox05 .footer01 .fbtn03 a,.lightbox06 .footer01 .fbtn03 a{ color:#6282bb;display:block; width:70px; height:30px; text-align:center; line-height:30px; margin-left:10px;}
+		.lightbox06 .footer01 .fbtn04 a{ color:#ffffff;display:block; width:152px; height:30px; text-align:center; line-height:30px; margin-left:92px; background-color:#ff6600; border-radius:3px;}
+		.lightbox01,.lightbox02,.lightbox03,.lightbox04,.lightbox05,.lightbox06{ position:relative; z-index:9999;}
+		.lightbox02,.lightbox03,.lightbox04,.lightbox05,.lightbox06{ position:absolute; top:50%; margin-top:-166px; left:50%; margin-left:-2px;}
+	#main{ height:400px;}
+	.sh_title01{ border-bottom:0px solid #eeeeee; }
+	/* #qysfTitle{ padding:0;}
+	#qykeywords{ height: 30px; margin-left:50px;}
+	#seachQy { width: 50px; height: 32px; color: #fff; border: 1px solid #2d78f4; background: #3385ff; margin-left:12px;}
+	#seachZgswjg{ width: 60px;height: 30px;color: #fff; border: 1px solid #2d78f4; background: #3385ff; margin-left:12px;}
+	#zgswjgkeywords{ height: 28px; width:260px; margin-left:30px; padding-left:10px; border: 1px solid #999;} */
+	li.loginTop { padding-top: 14px; }
+.loginTopBtn a {
+	display: inline-block;
+    margin: 0 2px;
+    width: 84px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.clearfix:after {
+   content:"";
+   display: block;
+   clear:both;
+}
+
+.loginTopBtn .login {
+	background-color: #00b050;
+	border: 1px solid #b3d3ff;
+	color: #fff;
+	float:left
+}
+
+.loginTopBtn .register {
+	background-color: #3f8fd2;
+	border: 1px solid #b3d3ff;
+	color: #fff;
+	float:left
+}
+
+.login:HOVER { background-color: #33cccc;}
+
+.register:HOVER { background-color: #33cccc;}
+
+.input_keyword{
+	color: #a0c8ff;
+	background-color: #0e3973;
+	border: 0px;
+	padding:0px 12px 2px;
+	border-radius: 3px; width: 140px;
+}
+.layui-layer-btn .layui-layer-btn0{
+	background-color: #FFA533;
+	border: 1px solid #FFA533;
+	color: #FFF;
+}
+.layui-layer-btn .layui-layer-btn1{
+	background-color: #4898d5;
+	border: 1px solid #4898d5;
+	color: #FFF;
+}
+.input-css::-webkit-input-placeholder{color:#a0c8ff;}
+.head_top{ position: relative;}
+.head_top .login-info{ position: absolute; left: 0px;}
+.head_top .top-search{position: absolute; right: 0px; top: 1px;}
+.head_top .top-search .input-css{ color: rgba(162, 182, 210, 1); background-color: #0e3973; border: 0px; padding:0px 12px 2px; border-radius: 13px; width: 140px;height: 22px;border: 1px solid;outline: none;}
+.head_top .top-search .search-img{position: absolute; right: 10px; top: 4px;}
+.head_top .top-search input::-ms-clear{display:none;}
+</style>
+<script>
+
+var showGdsbz = "";//是否显示国地税标志 若非Y或N则保持原样
+
+function getCookie(name){
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+    return unescape(arr[2]);
+	else
+	return null;
+}
+
+$(document).ready(function() {
+	//总局要求 通知公告 不显示浮窗
+	m1 = getURLParameter("m1");
+	if(m1=="tzgg"){
+		$(".backtop").hide();
+	}
+    var winwidth=$(window).width()
+	if(winwidth<1240){
+		$(".juz").css({width:1000})
+		$(".sbjn ul").css({marginLeft:'-4.29%'})
+		$(".sbjn a").css({marginLeft:'4.29%'})
+		$(".bsfw_mar ul").css({marginLeft:'-158px'})
+		$(".bsfw_mar a").css({marginLeft:'160px'})
+		$(".hdfw_box ul").css({marginLeft:'-28px'})
+		$(".hdfw_box a").css({marginLeft:'29px'})
+		}
+
+     $(".fbtn03 a").click(function(){
+    	//获取当前时间
+  		var date=new Date();
+  		var expiresDays=365;
+  		//将date设置为365天以后的时间
+  		date.setTime(date.getTime()+expiresDays*24*3600*1000);
+  		document.cookie="userGuide=false; path=/; expires="+date.toGMTString();
+		$("#lightbox,.lightbox01").hide();
+	 });
+
+     getShowGdsbz();//获取国地税标志是否显示配置  在portal.js
+     getQhsfDiv();//获取切换身份和主管税务机关切换div
+     if(showGdsbz=="N"){
+    	$(".ctrl01").hide();
+		$(".ctrl02").show();
+     }else if(showGdsbz=="Y"){
+    	$(".ctrl01").show();
+		$(".ctrl02").hide();
+     }else{
+    	$(".ctrl01").show();
+ 		$(".ctrl02").hide();
+     }
+
+	 	// 绑定回车搜索
+	   	$("#searchword").keydown(function (e) {
+	          if (e.keyCode == 13) {
+	         	window.location.href="/yyzxn-cjpt-web/yyzx/qjss/showQjssPage.do?key="+encodeURI($('#searchword').val());
+	          }
+	      });
+
+	  	// 绑定按钮搜索
+	  	$("#keysearch").click(function (e) {
+	  		window.location.href="/yyzxn-cjpt-web/yyzx/qjss/showQjssPage.do?key="+encodeURI($('#searchword').val());
+	      });
+
+	 	var yjcd = getURLParameter("yjcd");
+		var ejcd = getURLParameter("ejcd");
+		var sjcd = getURLParameter("sjcd");
+		var from = getURLParameter("from");
+		if ("dzswj_qjss" == from) {
+		    if (yjcd != null && yjcd != "" && ejcd != null && ejcd != "") {
+		    	if(yjcd=="znhd"){
+			 		goPage('/xxmh/html/znhd.html','znhd','','','')
+				}else{
+			 		goPage('',yjcd,ejcd,'','');
+				}
+			}
+		}
+
+});
+
+
+
+var gsFwzcStr = "广东省国家税务局<br /> <span>国税纳税服务热线：12366-1</span>";
+var dsFwzcStr = "广东省地方税务局<br /> <span>地税纳税服务热线：12366-2<br /> 地税技术支持热线：10000-9</span>";
+
+var forw =  "";
+forw = getURLParameter("forw");
+
+var goPageUrl =  "";
+var zyUrl="/xxmh"
+var layer;
+goPageUrl = getURLParameter("goPageUrl");
+
+$(document).ready(function(){
+	layui.use(['layer'], function() {
+		layer = layui.layer;
+	});
+
+	/*
+	*	总局72号规范，新窗口打开功能页
+	*	这里通过新页面打开index页面，通过传参进来再调用gopage
+	*/
+	var gopage = getURLParameter("gopage");
+	if(gopage!=null&&gopage!=""&&gopage=="true"){
+		var url = getURLParameter("url") == null ? "" : unescape(getURLParameter("url"));
+		var m1 = getURLParameter("m1") == null ? "" : getURLParameter("m1");
+		var m2 = getURLParameter("m2") == null ? "" : getURLParameter("m2");
+		var fromWhere = getURLParameter("fromWhere") == null ? "" : getURLParameter("fromWhere");
+		var qxkzsx = getURLParameter("qxkzsx") == null ? "" : getURLParameter("qxkzsx");
+		$.post("/xxmh/portalSer/checkLogin.do",{},function(d){
+			var isLogin=d.isLogin;
+			var ssoXxmhUrl = d.ssoXxmhUrl;
+			$("#ssoXxmhUrl").val(ssoXxmhUrl); //信息门户单点登录地址
+			if(isLogin=="Y"){
+				var tabTitle = getURLParameter("tabTitle");
+				if(tabTitle!=null){
+					zyUrl="/xxmh/html/index_login.html?tabTitle="+tabTitle;//登陆后，主页按钮直接返回登陆后页面
+				}else{
+				zyUrl="/xxmh/html/index_login.html";//登陆后，主页按钮直接返回登陆后页面
+				}
+				userItemfd();
+				$("#userBtn").before("<p>|</p>")
+				$("#userBtn").show();
+				$("#tcBtn").before("<p>|</p>")
+                $("#tcBtn").show();//退出按钮
+				getMenu();
+			}else{
+				var tabTitle = getURLParameter2(url,"tabTitle");
+				if(tabTitle!=null){
+					zyUrl="/xxmh/html/index_login.html?tabTitle="+tabTitle;//登陆后，主页按钮直接返回登陆后页面
+				}
+				$("#tcan").hide();
+				$("#qhsf").hide();
+				$("#scgl").hide();
+				$("#dlbox").show();//登录按钮
+				$(".loginbefore").css("margin-right","60px");
+			}
+		});
+		layui.use(['layer'], function() {
+			layer = layui.layer;
+			goPage('',m1,m2,fromWhere,qxkzsx);
+		});
+		return false;
+	}
+	layui.use(['layer'], function() {
+		layer = layui.layer;
+	});
+
+	Hide_Suspend = GetQueryString("Hide_Suspend");
+	if(null != Hide_Suspend  && Hide_Suspend != ''){
+		document.cookie=("Hide_Suspend="+Hide_Suspend);
+	} else {
+		var results = document.cookie.match('(^|;) ?' + "Hide_Suspend" + '=([^;]*)(;|$)');
+		if (results) {
+			Hide_Suspend = results[2];
+		}
+	}
+
+	var strCookie=document.cookie;
+	//将多cookie切割为多个名/值对
+	var arrCookie=strCookie.split(";");
+
+ 	//遍历cookie数组，处理每个cookie对
+ 	var userGuideisNull = document.cookie.indexOf("userGuide=");
+
+ 	if(userGuideisNull<0){
+ 		var date=new Date();
+ 		var expiresDays=365;
+ 		//将date设置为365天以后的时间
+ 		date.setTime(date.getTime()+expiresDays*24*3600*1000);
+ 		document.cookie="userGuide=true; path=/; expires="+date.toGMTString();
+ 	}
+
+ 	var userGuide = document.cookie.indexOf("userGuide=false");
+
+ 	if(userGuide>=0){
+ 		$("#lightbox,.lightbox01").hide();
+ 	}
+
+	if(null != Hide_Suspend && Hide_Suspend != "" && typeof Hide_Suspend != "undefined"){
+		if(null != fwzcStr){
+			gsFwzcStr = fwzcStr;
+		}
+	}
+
+	//设置通知公告iframe地址，为了防止新生成的静态页面不生效，所以加了时间戳
+	//$("#ifrTzgg").attr("src","/xxmh/html/tzgglist.html?t="+(new Date()).getTime());
+	//先隐藏首页，如果是客户端进入后期再显示，处理gopage会先显示首页bug
+	if(null != Hide_Suspend && Hide_Suspend != "" && typeof Hide_Suspend != "undefined"){
+		$("#bodyIndex1").hide();
+		$("#headbox").hide();
+		$(".backtop").hide();
+	}else{//如果不是客户端进入，直接显示
+		$("#bodyIndex1").show();
+	}
+	var bszmFrom=$("#bszmFrom").val();//特殊处理，首次登录后，进入办税桌面
+	if(bszmFrom=="0"){
+		var bszmFrom=getURLParameter("bszmFrom");
+		if(bszmFrom=="qxgl"){//权限管理，企业授权
+			$("#bszmFrom").val("1");
+			//goPage('','yhgl','zhxx');
+			setTimeout(function(){
+				goPage('','yhgl','yhqxgl','','');
+			},500);
+		}else if(bszmFrom=="smzsq"){//实名制申请
+			$("#bszmFrom").val("1");
+			//goPage('','yhgl','zhxx');
+			setTimeout(function(){
+				goPage('','yhgl','smzsq','','');
+			},500);
+		}
+
+		if(!(forw == "" || forw == "undefined" || forw == null)  && (null != Hide_Suspend && Hide_Suspend != "" && typeof Hide_Suspend != "undefined")){
+			var params = [];
+			params = forw.split("-");
+			if(params.length > 1)
+				setTimeout(function(){
+					goPage('',params[0],params[1]);
+				},500);
+			else
+				setTimeout(function(){
+					goPage('',params[0]);
+				},500);
+	}}
+	statIndex();
+
+	//刷新了首页后，判断是否已经登录，是则进入办税桌面
+	var checkLoginUrl = "/portalSer/checkLogin.do" ;
+ 	var DZSWJ_TGC = getURLParameter("DZSWJ_TGC");
+	if(null != Hide_Suspend && Hide_Suspend != "" && typeof Hide_Suspend != "undefined" && null != DZSWJ_TGC && DZSWJ_TGC != "" && typeof DZSWJ_TGC != "undefined" ){
+		checkLoginUrl = checkLoginUrl + "?DZSWJ_TGC=" + DZSWJ_TGC;
+	}
+	var xxmhGdsbz;
+	$.post(contPath + checkLoginUrl,{},function(d){
+		var isLogin=d.isLogin;
+		var ssoXxmhUrl=d.ssoXxmhUrl;
+		xxmhGdsbz=d.gdsbz;
+
+		if("ds" == xxmhGdsbz){//如果国地税标志为地税
+			$("#font_logo_a").attr("href","http://bszs.conac.cn/sitename?method=show&id=06014364EC366859E053012819ACBE09");
+			$("#fwzcOne").html(dsFwzcStr);
+			$("#fwzcTwo").html(gsFwzcStr);
+		}else if("gs" == xxmhGdsbz){//如果国地税标志为地税
+
+			$("#font_logo_a").attr("href","http://bszs.conac.cn/sitename?method=show&id=0E2550625EA9504EE053012819AC0FB0");
+			$("#fwzcOne").html(gsFwzcStr);
+			$("#fwzcTwo").html(dsFwzcStr);
+		}else{
+			$("#fwzcOne").html(gsFwzcStr);
+			$("#fwzcTwo").html(dsFwzcStr);
+		}
+		$("#ssoXxmhUrl").val(ssoXxmhUrl);//信息门户单点登录地址
+		$("#xxmhGdsbz").val(xxmhGdsbz);//信息门户国地税标志
+		var dzswjclient=getURLParameter("dzswjclient");
+		if ("null" === dzswjclient){
+			dzswjclient = null;
+		}
+		if(dzswjclient!=undefined && dzswjclient!=null && dzswjclient!=""){//如果是来自网上税务局客户端的，则无需进入办税桌面，按照实际参数
+			//被嵌入网上税务局
+			setTimeout(function(){
+				var dzswjclient=getURLParameter("dzswjclient");
+				if(dzswjclient!=undefined && dzswjclient!=null && dzswjclient!=""){
+					if(dzswjclient=="bszm"){
+						goPage('/xxmh/page/bszm.html?m1=1','bszm','','','1');
+					}else{
+						goPage('',dzswjclient,'','','1');
+					}
+					$(".headbox").hide();
+					$(".backtop").hide();
+					$(".new_index_box").hide();
+				}
+			},1);
+		}else if(null != Hide_Suspend && Hide_Suspend != "" && typeof Hide_Suspend != "undefined"){//如果是xxx进入
+			$(".headbox").hide();
+			$(".backtop").hide();
+
+			// 如果是xxx状态,返回shid给xxx
+			if(null != Hide_Suspend && Hide_Suspend != "" && typeof Hide_Suspend != "undefined"){
+				try{
+					//window.external.InvokeService("OmniContainer", "NotifyLogined", JSON.stringify(str));
+					invokeServiceWithSessionInfo("NotifyLogined");
+				}
+				catch (e){
+				}
+			}
+			setTimeout(function(){
+				if(null != forw && forw != "" && forw != "undefined"){//如果有forw参数做跳转操作
+					var params = [];
+					params = forw.split("-");
+					if(null != goPageUrl && goPageUrl != "" && goPageUrl != "undefined"){
+						if(params.length > 1) {
+							goPage(goPageUrl,params[0],params[1]);
+						}else{
+							if(null != params[0] && params[0] != "" && params[0] != "undefined" && params[0] == "grsxbl"){
+								goPage('/xxmh/html/sxbl.html',params[0]);
+							}else{
+								goPage(goPageUrl,params[0]);
+							}
+						}
+					}else{
+						if(params.length > 1) {
+							goPage('',params[0],params[1]);
+						}else{
+							if(null != params[0] && params[0] != "" && params[0] != "undefined" && params[0] == "grsxbl"){
+								goPage('/xxmh/html/sxbl.html',params[0]);
+							}else{
+								goPage('',params[0]);
+							}
+						}
+					}
+				}else if(null != isLogin && isLogin=="Y"){
+					//如果是登陆状态，则更新菜单
+					setTimeout('getMenu()',10);//不延时执行的话，在ie下，退出登录和更新菜单不正常
+					goPage('/xxmh/page/bszm.html?m1=1','bszm','','',0);
+				}
+				$("#bodyIndex1").show();
+			},0);
+		}else if(isLogin=="Y"){
+			var info = d.info;
+			var userType = info.userType;
+			if("USER_TYPE_NSR" === userType) {
+				//debugger;
+				var dszdjxh = info.nsr.dszdjxh;
+				var gszdjxh = info.nsr.gszdjxh;
+				if((typeof dszdjxh === 'undefined' || dszdjxh === '') && (typeof gszdjxh === 'undefined' || gszdjxh === '')) {
+					zztsfqh(d.sfMrnszt);
+				}
+			}
+			//如果是登陆状态，则更新菜单
+			setTimeout('getMenu()',10);//不延时执行的话，在ie下，退出登录和更新菜单不正常
+			goPage('/xxmh/page/bszm.html?m1=1','bszm','','',0);
+		}else if(null == DZSWJ_TGC || DZSWJ_TGC == "" || DZSWJ_TGC == "undefined" ){
+			$.post('/sso/login',{},function(d){
+				if(d.charAt('CAS登录成功')>-1){
+					$.post('/sso/logout',{},function(d){});
+				}
+			});
+		}
+		if(null == isLogin || isLogin!="Y"){
+			window.location.href = "/xxmh";
+			//显示公告--登陆前的公告(sfdl='N')
+			//piaochuang("N");
+			//getGgxx("N");
+		}else{
+			if((d.sjly=="1"||d.sjly=="2"||d.sjly=="3"||d.sjly=="4")){
+					var isSwjgTx = d.isSwjgTx;
+					if(isSwjgTx=="true"){
+						swjgEno();
+					}
+			}
+//			checkLoginState();
+			//显示公告--登陆后的公告(sfdl='Y')
+			//piaochuang("Y");
+			//getGgxx("Y");
+		}
+
+	});
+});
+
+/**
+ * 用户名处滑动淡入淡出
+ */
+function userItemfd(){
+	var iSum;
+	$(".user-item").on("mouseenter",function(){
+		var i=0
+		iSum=setInterval(function(){
+		if(i>3){
+			$(".user-item ul").fadeIn()
+			clearInterval(iSum);
+		}
+		i++;
+		},70)
+
+	})
+
+	$(".user-item").on("mouseleave",function(){
+		$(".user-item ul").fadeOut();
+	    clearInterval(iSum);
+	})
+
+}
+function getGdsbz(){
+	var gdsbz="3";
+	if("ds" == xxmhGdsbz){
+		gdsbz="2";
+	}else if("gs" == xxmhGdsbz){
+		gdsbz="1";
+	}
+	return gdsbz;
+};
+
+var resSwjgIndex = 0;
+//税务机关提示
+function swjgEno(){
+	layer.close(resSwjgIndex);
+	var alerthtml ="<div class=\"tc_nav\" style='padding:30px 30px; width:685px;height:380px;	'>"
+		+"<div style=\"line-height: 40px;\"><div>尊敬的纳税人:<div>"
+		+"<div style=\"text-indent:2em\">根据广东省国家税务局、广东省地方税务局的工作安排，中山市国家税务局、中山市地方税务局经研究决定，自2017年7月1日起对中山地区的纳税人使用广东省网上税务局关闭“税号+密码”和“CA证书+密码”的登录入口。届时纳税人应通过“实名用户+密码”的登录入口进入广东省网上税务局。</div>"
+		+"<div style=\"text-indent:2em\">特别提醒：对于只在地税办理社保业务的单位（即纯社保缴费户），可通过以下两种方式办理业务：一是使用地税的客户端软件“广东省地方税务局电子办税服务厅”，二是使用地税社保网报系统“社保网报APP”。</div>"
+		+"</div>"
+		+"<div style=\"text-align:right;padding-right:20px;margin-top:20px;\">中山市国家税务局<br>2017年6月5日</div>"
+		+"<div class=\"page01\" style=\"text-align: center;margin-top: 25px;\">"
+		+"<input class=\"btn btn01\"  type=\"button\" onclick=\"logout()\" value=\"确定\"/>"
+		+"</div>"
+		+"</div>";
+	resSwjgIndex=layer.open({
+	type: 1, //弹窗
+	closeBtn: 0, //显示关闭按钮
+	offset:96,
+	shift: 0, //动画效果
+	area: ['750px', '500px'],
+	title:"温馨提醒",
+	content: alerthtml
+	});
+}
+
+$(document).ready(function(){
+	//初始化事件
+	$(".qysf_rnav li, .qysf_left li").live("click",function(){
+		$(this).addClass("active").siblings().removeClass("active")
+	});
+	$(".qysf_left li").live("click",function(){
+		var cldq=$(this).index()
+		$("#nsrzzt").children("div").hide()
+		$("#nsrzzt").children("div").eq(cldq).show()
+	});
+
+	$(".leftQY .nr li").click(function(){
+		$(this).addClass("active").siblings().removeClass("active")
+	});
+
+
+});
+
+
+
+$(document).ready(function() {
+    var winwidth=$(window).width()
+	if(winwidth<1240){
+		$(".juz").css({width:1000})
+		$(".sbjn ul").css({marginLeft:'-4.29%'})
+		$(".sbjn a").css({marginLeft:'4.29%'})
+		$(".bsfw_mar ul").css({marginLeft:'-158px'})
+		$(".bsfw_mar a").css({marginLeft:'160px'})
+		$(".hdfw_box ul").css({marginLeft:'-20px'})
+		$(".hdfw_box a").css({marginLeft:'20px'})
+	}
+
+    var gnUrl=getURLParameter("gnUrl");
+ 	var fcdid=getURLParameter("fcdid");
+ 	var cdtb=getURLParameter("cdtb");
+ 	var qxkzsx=getURLParameter("qxkzsx");
+
+ 	$('#hid_gnUrl').val(gnUrl);
+ 	$('#hid_fcdid').val(fcdid);
+ 	$('#hid_cdtb').val(cdtb);
+ 	$('#hid_qxkzsx').val(qxkzsx);
+
+ 	if(gnUrl !=null && gnUrl !=""){
+ 		goPage(gnUrl,fcdid,cdtb,"",qxkzsx);
+ 	}
+});
+
+/**
+ * 获取切换身份和主管税务机关切换div
+ */
+function getQhsfDiv(){
+	$.ajax({
+		type:"get",
+		url:"/xxmh/html/qhsf.html",
+		dataType:"text",
+		success:function(data){
+			$('body').append(data);
+		}
+	});
+}
+
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+
+/**
+ * 飘窗公告开始
+ */
+function piaochuang(sfdl){
+	$.ajax({
+		url:"/xxmh/portal/getTkGGxx.do",
+		data: { "sfdl": sfdl },
+		type:"post",
+		dataType:"json",
+		//contentType:"application/json",
+		success:function(data){
+			var ggnr;
+			if(typeof data === 'string')
+				ggnr = eval("("+data+")");
+			else
+				ggnr = data;
+	    	if(ggnr != null && ggnr != "") {
+	    		var i=0;
+	    		if(ggnr.length>1){
+	    			var maxtskkd=ggnr[0].tskkd;
+	    			var maxtskgd=ggnr[0].tskgd;
+	    			for(var j=1;j<ggnr.length;j++){
+	    				if(ggnr[j].tskkd>maxtskkd){
+	    					maxtskkd=ggnr[j].tskkd;
+	    					maxtskgd=ggnr[j].tskgd;
+	    				}
+	    			}
+	    			if(i<ggnr.length){
+	    			layer.open({
+		    			  type: 1
+		    			  ,title: false //不显示标题栏
+		    			  ,closeBtn: false
+		    			  ,area: [maxtskkd+'px',maxtskgd+'px']
+		    			  ,shade: 0.4
+		    			  ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+		    			  ,resize: false
+		    			  ,btn: ['下一条','关闭']
+		    			  ,btnAlign: 'c'
+		    			  ,moveType: 1 //拖拽模式，0或者1
+		    			  ,content: '<div id="ggtc" style="padding: 50px; line-height: 22px;background-color: #fff; color: #000; font-weight: 300;">'+ggnr[i].ggnr+'</div>'
+		    			  ,yes: function(index){
+		    				  i++;
+		    				if(i<ggnr.length){
+		    			  	  	$('#ggtc').html(ggnr[i].ggnr);
+		    				}else{
+		    					  layer.msg('没有了！');
+		    	    			}
+		    			  }
+		    			});
+	    			$($.find('a[class=layui-layer-btn0]')).attr('style','background-color:#fff;border:1px solid #4898d5;color:#4898d5;');
+	    			$($.find('a[class=layui-layer-btn1]')).attr('style','background-color:#fff;border:1px solid #4898d5;color:#4898d5;');
+	    			}
+	    		 }else{
+	    			layer.open({
+		    			  type: 1
+		    			  ,title: false //不显示标题栏
+		    			  ,closeBtn: false
+		    			  ,area: [ggnr[i].tskkd+'px',ggnr[i].tskgd+'px']
+		    			  ,shade: 0.4
+		    			  ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+		    			  ,resize: false
+		    			  ,btn: ['关闭']
+		    			  ,btnAlign: 'c'
+		    			  ,moveType: 1 //拖拽模式，0或者1
+		    			  ,content: '<div id="ggtc" style="padding: 50px; line-height: 22px; background-color: #fff; color: #000; font-weight: 300;">'+ggnr[i].ggnr+'</div>'
+	    			});
+	    			$($.find('a[class=layui-layer-btn0]')).attr('style','background-color:#fff;border:1px solid #4898d5;color:#4898d5;');
+	    		}
+	    	}
+		},error : function(data) {
+			/* layer.msg("获取公告失败！"); */
+		},
+		timeout : 1000000000
+	});
+}
+
+function getGgxx(sfdl) {
+	$.ajax({
+		url:"/xxmh/portal/getGGxx.do",
+		data: { "sfdl": sfdl },
+		type:"post",
+		dataType:"json",
+		//contentType:"application/json",
+		success:function(data){
+			var ggnr;
+			if(typeof data === 'string')
+				ggnr = eval("("+data+")");
+			else
+				ggnr = data;
+	    	if(ggnr != null && ggnr != "") {
+	    		var ggnrHtml = ggnr[0].ggnr;
+	    		for(var i = 1; i < ggnr.length; i++) {
+	    			ggnrHtml += "&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"+ggnr[i].ggnr+"<br/>";
+	    		}
+	    		$('#ad').show();
+	    		$('#ggnr').html(ggnrHtml);
+	    		Qdpf('ad');
+	    	} else {
+	    		$('#ad').hide();
+	    	}
+		},error : function(data) {
+			//layer.msg("error");
+		},
+		timeout : 1000000000
+	});
+}
+
+var x = 50,y = 60;
+var xin = true, yin = true;
+var step = 1;
+var delay = 30;
+var obj ;//漂浮窗对象
+//漂浮窗关闭
+function dogo(id){
+    document.getElementById(id).style.display="none";
+}
+//漂浮函数
+function floatAD(w_name) {
+   obj = document.getElementById(w_name);
+   var L=0;
+   var T=0;
+   var R= document.body.clientWidth-obj.offsetWidth;
+   var B = window.screen.availHeight-obj.offsetHeight-window.screenTop;
+   $('#ad').css('left' , x + document.documentElement.scrollLeft + document.body.scrollLeft);
+   $('#ad').css('top' , y + document.documentElement.scrollTop + document.body.scrollTop);
+   x = x + step*(xin?1:-1);
+   if (x < L) { xin = true; x = L;}
+   if (x > R){ xin = false; x = R;}
+   y = y + step*(yin?1:-1);
+   if (y < T) { yin = true; y = T; }
+   if (y > B) { yin = false; y = B; }
+}
+//启动漂浮
+function Qdpf(id){
+	var itl= setInterval("floatAD('"+id+"')", delay) ;
+	var w_obj = document.getElementById("ad");
+	w_obj.onmouseover=function(){clearInterval(itl);};
+	w_obj.onmouseout=function(){itl=setInterval("floatAD('ad')", delay);};
+}
+/**
+ * 飘窗公告开始
+ */
+
+</script>
+</head>
+<body>
+
+		<div id="guide" style="display:none;">
+		</div>
+
+<!-- 网上办税大厅主页公告漂浮窗口开始 -->
+		<!-- 自定义公告内容 -->
+<!-- 		<div id="lightbox"></div>
+			<div id="lightbox01" class="lightbox01" style="display:none;">
+			  <img src="/xxmh/resources/skin/images/lead01.png"  />
+			  <div class="lead">
+			     <div class="content">您可以从这里登录，登录后可以办理更多业务！</div>
+			     <div class="footer clearfix">
+			        <ul>
+				        <li class="nav">
+				             <span class="active"></span>
+				             <span></span>
+				             <span></span>
+				             <span></span>
+				             <span></span>
+				             <span></span>
+				        </li>
+				        <li class="fbtn02"><a href="javascript:login();">下一步</a></li>
+				        <li class="fbtn03"><a href="#">退出引导</a></li>
+				     </ul>
+			     </div>
+			  </div>
+			</div> -->
+
+		<div id="ad" style="position: absolute;left:0;top:0;display:none;z-index: 9999; ">
+		  <table style="border:solid 1px #ccc; width:400px; height:100px; background:#ffffdf">
+		  	<tr>
+		  		<td align="center" valign="top" style="background:#ffgccc; color:red;font-size:14px"><b>公&nbsp;&nbsp;&nbsp;&nbsp;告</b></td>
+		  	</tr>
+		  	<tr>
+		  		<td align="center" valign="top" style="background:#cccccc;height:1px"></td>
+		  	</tr>
+			<tr>
+				<td style="font-size:13px;color:#000" align="left">
+					<div id='ggnr'></div>
+				</td>
+			</tr>
+			<tr>
+		  		<td align="center" valign="top" style="background:#cccccc;height:1px"></td>
+		  	</tr>
+			<tr>
+				<td align="right" valign="bottom" style="background:#ffffdf"><a href="javascript:dogo('ad');" style="text-decoration:none;font-size:12px;color:red">[ × ]</a></td>
+			</tr>
+		  </table>
+		</div>
+
+    <!-- 网上办税大厅主页公告漂浮窗口结束 -->
+	<!-- 切换身份start -->
+<!-- 	<div id="chooseNsr" style="display:none" class="layui-layer-wrap" >
+		<div class="tc_nav_index">
+		  <div class="sh_title01"><div class="blold">企业办税</div><span></span></div>		
+			<div class="qysf">
+				<div class="qysf_right">
+				<h2 id="qysfTitle"><span>请选择企业</span><input type="text" id="qykeywords" class="qykeywords" oninput="getValue(this.value)"  onpropertychange="getValue(this.value)" name="qykeywords" >
+					<input type="button" id="seachQy" class="seachQy" name="seachQy" value="查询"> </h2> 
+					<div class="qysf_rnav">
+						<ul id="nsrzt"></ul>
+						<div id="addQysf2" style="padding:35px 0 0px 118px;" class="add_com"><a href="javascript:newQysf();">企业绑定</a></div>
+					</div>
+				</div>
+		  </div>
+		  <div style=" text-align:center; padding:10px 0;"> <a id="qyjrBtn" class="btn btn01" href="javascript:selectQy();"> 企业进入 </a> </div>
+		</div>
+		<div class="tc_nav_index" style="float: right;">
+		  <div class="sh_title01"><div class="blold">个人办税</div><span></span></div>
+		  <div class="grsftx">
+				<div id="smzTitle" class="" style="display:none;margin: 10px 10px 10px 10px;font-size: 14px;"> 
+					<h2>暂未实名，请先进行实名制申请</h2>
+				</div>
+		  		<div id="addSmz" style="padding:35px 0 40px 118px;display: none" class="add_com">
+		  			<a href="javascript:newSmz();">实名制申请</a>
+		  		</div>
+		  		<ul id="smzxx" style="vertical-align: middle; display: none;" class="nr">
+	          		<li id="qhsf_yhmc"></li>
+	          		<li id="qhsf_zjlx"></li>
+	          		<li id="qhsf_zjhm"></li>
+	          		<li id="qhsf_zjyxq"></li>
+	          	</ul>
+	          	
+	          	<div id="selectZrrs" class="grsf_right">
+					<h2 id="grsfTitle">暂未实名，请先进行实名制申请</h2>
+					<h2 id="grsfTitle"><span>请选择个人身份</span>
+						<input type="text" id="grkeywords" style="margin-left: 20px;" name="grkeywords" />
+						<input type="button" id="seachGr" name="seachGr" value="查询" />
+					</h2>
+
+					<div class="qysf_rnav">
+						<ul id="zrrsList" class="zrrsList" style="margin:0;padding:0;width:100%;">
+							
+						</ul>
+						<div id="addGrsqsq" style="padding:0px 0 0px 118px;" class="add_com2">
+							<a href="javascript:newQysf();">个人授权申请</a>
+						</div>
+					</div>
+				</div>
+		  </div>
+		  <div style=" text-align:center; padding:10px; 0"> <a class="btn btn01" style=" background-color:#00a33a;" onclick="javascript:grsfjr();"> 个人进入 </a> </div>
+		</div>
+	</div> -->
+	<!-- 切换身份end -->
+	<!-- 子主体身份切换 start-->
+
+<!-- 	<div id="zztsfqhDiv" class="layui-layer-wrap" style="display:none">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="50%" valign="top">
+					<div class="leftQY ">
+						<div class="sh_title01">
+							<div class="blold">请选择主管税务机关<input type="text" id="zgswjgkeywords"  oninput="getZgswjgValue(this.value)"  onpropertychange="getZgswjgValue(this.value)"  class="qykeywords" name="zgswjgkeywords" />
+					<input type="button" id="seachZgswjg" class="seachQy"  value="查询" onclick="seachZgswjg();"/>   </div>
+							<span></span>
+						</div>
+						
+						<div class="searchbox">
+						  <div class="searchTable">
+						    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+						      	<tbody>
+							      <tr>
+							        <th>选择</th>
+							        <th>主管税务所<br>（科、分局）名称</th>
+							        <th>课征主体登记类型</th>
+							        <th>跨区财产税主体<br>登记标志</th>
+							        <th>外出经营活动<br>税收管理证明编号</th>
+							        <th></th>
+							      </tr>
+							      <tr id="zztIdUL">
+							      </tr>
+						    	</tbody>
+						    </table>
+						  </div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div style="text-align: center; padding: 20px 0 40px 0;">
+			<a class="btn btn07" href="javascript:fhlhyw();">返回联合业务</a>
+			<a class="btn btn01" href="javascript:xzZztsf();">确定</a>
+			<a id="closeNsrzztLayer" class="btn btn01" href="javascript:closeZztDialog();">关闭</a>
+		</div>
+	</div> -->
+	<!-- 子主体身份切换 end-->
+
+	<div class="tax-head-box login-after">
+		 <img id="titleLogo" class="head-logo" src=""></i>
+		 <div class="head_menu head_menu01">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				  <tr>
+				    <td>
+				    	<ul id="topMenu" class="clearfix" style="display: none;">
+					      <li class="active" id="liM1_sy"><a href="javascript:window.location='index.html'">首页</a></li>
+					      <li id="liM1_gzcx"><a href="#none" onclick="javascript:window.goPage('xzzq.html?m1=gzcx','gzcx');">公众查询</a></li>
+					      <li id="liM1_bsfw"><a href="#none" onclick="javascript:window.goPage('tzgg.html?m1=bsfw','bsfw');">办税服务</a></li>
+					      <li id="liM1_znhd"><a href="#none" onclick="javascript:window.goPage('znhd.html?m1=znhd','znhd');">征纳互动</a></li>
+						  <li style="float:right;width:214px" >
+    	  					<div class="clearfix" style="width:190px">
+								<a href="javascript:login();" name="logTip1">登录</a>
+								<a href="javascript:reg();" name="logTip1">注册</a>
+							</div>
+   						 </li>
+						</ul>
+					</td>
+				  </tr>
+				</table>
+			</div>
+		 <div class="head-main">
+		        <!-- <div class="head-user" id="userName" style="min-height:18px;"></div> -->
+				<div class="head-right-menu loginbefore">
+				  <div class="head-search">
+					  <input type="text" id="searchword" name="text" placeholder="请输入需要搜索的内容" class="search-input">
+					  	<a id="keysearch" href="#">搜索</a>
+					  </div>
+				  <div class="head-btn">
+				  <a href="javascript:backZy();" id="zyBtn" class="head-btn-home"><span style="margin-left: 0px;">主页</span></a>
+				  <div id="userBtn" class="user-item" style="display:none;">
+					  <a href="##" class="user-name" id="userName" style="font-size:16px;"></a>
+					  <ul>
+						  <p class="top-dot"><i class="iconfont fsicon-dot-up"></i></p>
+						  <dl>
+							 <dd class="user-item-txt" id="userName2"></dd>
+							 <dd class="user-item-menu" id="qhsfBtn" style="display:none;"><a href="javascript:changeCard();"><i class="iconfont fsicon-qiehuanjiaose"></i>切换身份</a></dd>
+							 <dd class="user-item-menu" id="zztsfqhBtn" style="display:none;"><a href="javascript:void(0);"><i class="iconfont fsicon-xuanze"></i>选择主管税务机关</a></dd>
+						  </dl>
+				      </ul>
+				  </div>
+				  <a href="javascript:void(0);" style="display:none;" id="tcBtn" class="head-btn-close"><span>退出</span></a>
+		        </div>
+
+		        <div class="dlbox" id="dlbox" style="display:none;">
+				<a href="javascript:login();" class="loginico">
+					<img src="/xxmh/resources4/tax-images/login/loginimg.png">
+					<h4>登录</h4>
+				</a>
+				</div>
+		        </div>
+	     </div>
+	</div>
+	<!-- 中间主体部分 -->
+	<div class="" id="mainBodyDiv">
+
+		<div class="mainBox juz" id="indexMain" style="display:none;">
+		    <div class="noticeBox">
+		         <iframe id="ifrTzgg" class="iframe1" frameborder="no" scrolling="no" name="allbox" width="100%" height="97px" src="/xxmh/html/tzgglist.html"></iframe>
+		    </div>
+
+		<div class="tltlebox"> <ul> <span>办税服务</span></ul> </div>
+		<div class="bsfw_img sbjn">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  				<tr>
+					 <td width="138"><a href="#none" onclick="javascript:goPage('','bsfw','bszn','0','0');" class="limg"><img src="/xxmh/resources/skin/images/index/bs_ico1.png"/><span>办税指南</span></a></td>
+					 <td>&nbsp;</td>
+					 <td width="138"><a href="#none" onclick="javascript:goPage('','bsfw','bsdz','0','0');"><img src="/xxmh/resources/skin/images/index/bs_ico2.png"/><span>办税地图</span></a></td>
+					 <td>&nbsp;</td>
+					 <td width="138"><a href="#none" onclick="javascript:goPage('','bsfw','bsrl','0','0');"><img src="/xxmh/resources/skin/images/index/bs_ico3.png"/><span>办税日历</span></a></td>
+					 <td>&nbsp;</td>
+					 <td width="138"><a href="#none" onclick="javascript:goPage('','bsfw','xzzq','0','0');"><img src="/xxmh/resources/skin/images/index/bs_ico4.png"/><span>下载专区</span></a></td>
+					 <td>&nbsp;</td>
+					 <td width="138"><a href="#none" onclick="javascript:goPage('','bsfw','bszt','0','0');" class="rimg"><img src="/xxmh/resources/skin/images/index/bs_ico6.png"/><span>办税专题</span></a></td>
+					 <td>&nbsp;</td>
+    				 <td width="140"> <a href="#none" onclick="javascript:goPage('','bsfw','bsyy','0','0');"><img src="/xxmh/resources/skin/images/index/bs_ico7.png"/><span>办税预约</span></a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="tltlebox"> <ul> <span>公众查询</span></ul> </div>
+		<div class="cxfw_box">
+		 <ul>
+		  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico1.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','dsbdfpcy','0','0');">丢失被盗发票查验</a></li>
+		  <!--<li><i><img src="/xxmh/resources/skin/images/index/cx_ico3.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','fplxcx','0','0');">发票流向查询</a></li>-->
+		  <li class="mar"><i><img src="/xxmh/resources/skin/images/index/cx_ico4.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','swdjxxcx','0','0');">税务登记信息查询</a></li>
+	 	  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico6.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','ybnsrzgcx','0','0');">一般纳税人资格查询</a></li>
+		  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico12.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','sbqkcx','0','0');">申报情况查询</a></li>
+		  <!-- <li class="mar"><i><img src="/xxmh/resources/skin/images/index/cx_ico7.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','dzwsyzcx','0','0');">电子文书验证查询</a></li> -->
+		<!--  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico8.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','cktslcx','0','0');">出口退税率查询</a></li> -->
+		  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico9.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','qsqycx','0','0');">欠税企业查询</a></li>
+<!--  <li class="mar"><i><img src="/xxmh/resources/skin/images/index/cx_ico10.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','qyxydjcx','0','0');">企业信用等级查询</a></li> -->
+<!--  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico11.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','clgzscx','0','0');">车辆购置税查询</a></li> -->
+		  <li><i><img src="/xxmh/resources/skin/images/index/cx_swsswsggl_c.png"/></i><a href="http://hd.chinatax.gov.cn/fagui/action/InitShiWuSuo.do" target="_blank">税务师事务所公告栏</a></li>
+<!--  <li class="mar"><i><img src="/xxmh/resources/skin/images/index/cx_ckqygllbcx_c.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','ckqygllbcx','0','0');">出口企业管理类别查询</a></li> -->
+		  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico11.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','ccsxxcx','0','0');">车船税信息查询</a></li>
+<!--  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico1.png"/></i><a href="http://www.gdltax.gov.cn/portal/gdsite/Q06ZZOX1ULVJG9W2ELGUW8G3EYK3F8NJ.htm" target="_blank">个人所得税证明和清单查验</a></li> -->
+		  <li><i><img src="/xxmh/resources/skin/images/index/cx_ico6.png"/></i><a href="#none" onclick="javascript:goPage('','gzcx','nsrztcx','0','0');">纳税人状态查询</a></li>
+		 </ul>
+		</div>
+
+		<div class="tltlebox"> <ul> <span>征纳互动</span></ul> </div>
+		<div class="hdfw_box">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td width="138"><a href="#" onclick="javascript:window.goPage('znhd.html?m1=znhd','znhd','','0','0');"><img src="/xxmh/resources/skin/images/index/hd_ico1.png"/><span>涉税违法举报</span></a></td>
+			    <td>&nbsp;</td>
+			    <td width="138"><a href="#" onclick="javascript:window.goPage('znhd.html?m1=znhd','znhd','','0','0');"><img src="/xxmh/resources/skin/images/index/hd_ico2.png"/><span>服务投诉</span></a></td>
+			    <td>&nbsp;</td>
+			    <td width="138"><a href="#" onclick="javascript:window.goPage('znhd.html?m1=znhd','znhd','','0','0');"><img src="/xxmh/resources/skin/images/index/hd_ico3.png"/><span>在线咨询</span></a></td>
+			    <td>&nbsp;</td>
+			    <td width="138"><a href="#" onclick="javascript:window.goPage('znhd.html?m1=znhd','znhd','','0','0');"><img src="/xxmh/resources/skin/images/index/hd_ico4.png"/><span>满意度调查</span></a></td>
+			    <td>&nbsp;</td>
+			    <td width="138"><a href="#" onclick="javascript:window.goPage('znhd.html?m1=znhd','znhd','','0','0');"><img src="/xxmh/resources/skin/images/index/hd_ico6.png"/><span>在线访谈</span></a></td>
+			    <td>&nbsp;</td>
+			    <td width="138"><a href="#" onclick="javascript:window.goPage('znhd.html?m1=znhd','znhd','','0','0');"><img src="/xxmh/resources/skin/images/index/hd_ico5.png"/><span>税务学堂</span></a></td>
+			  </tr>
+			</table>
+		</div>
+
+		</div>
+
+
+		<div class="juz body_box" id="mainContent" style="display:none">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td class="left_box" valign="top">
+			    	<input type='hidden' id="bszmFrom" value="0"/><!-- 登录后从登录页面进入办税桌面 -->
+			    	<input type='hidden' id="curM1" value=""/>
+				    <div class="left_menu">
+				    </div>
+			  	</td>
+
+			    <td class="right_box"  valign="top">
+			    <iframe id="ifrMain" class="iframe1" frameborder="no" name="allbox" width="100%" height="900" src=""></iframe>
+			    </td>
+			  </tr>
+			</table>
+		</div>
+
+	</div>
+
+	<!-- 页脚部分 -->
+	<div class="new_index_box" style="display:none;">
+	    <div class="foot_link juz">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td valign="top" width="50%">
+					<h3>服务支持</h3>
+			         <ul style="width:400px;">
+			           <li style="width:200px; float:left" id="fwzcOne" class="ctrl01">
+			           </li>
+			           <li style="width:200px; float:left" id="fwzcTwo" class="ctrl01">
+			           </li>
+			           <li style="width:200px; float:left; display:none;" class="ctrl02">
+			          	 贵州省省税务局<br /> <span>纳税服务热线：12366-1</span>
+			           </li>
+			         </ul>
+			    </td>
+			    <td class="vline" width="50">&nbsp;</td>
+			    <td valign="top">
+					<!--<h3>网站链接</h3>
+					<div class="ctrl01">
+					<a href="http://www.chinatax.gov.cn/" target='_blank'>国家税务总局</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="http://www.gd-n-tax.gov.cn" target="_blank">广东省国家税务局</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="http://www.gdltax.gov.cn/" target='_blank'>广东省地方税务局</a></div>
+					<div class="ctrl02"><a href="http://www.gd-n-tax.gov.cn" target="_blank">广东省税务局</a></div>-->
+			    </td>
+			  </tr>
+			</table>
+		</div>
+
+
+		<div class=" indexfoot">
+			<div class="foot_box juz">
+				<div class="font_logo"><a id="font_logo_a" href="http://bszs.conac.cn/sitename?method=show&id=0E2550625EA9504EE053012819AC0FB0"  target="_blank"><img src="/xxmh/resources/skin/images/foot_logo.png" /></a></div>
+				<ul class="ctrl02">&copy;2016版权所有：国家税务总局贵州省税务局<br />地址：贵州省贵阳市中山西路83号</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 页脚部分 -->
+
+	<!--<div class="backtop">
+	    <ul>
+	    	<li id="scgl" class="mabox">
+	        	<a href="#none" onclick='onclickScgl()'>
+	        		<img title="收藏" src="/xxmh/resources/skin/images/icons/sc.png" />
+	        	</a>
+	        </li>
+	        <li class="mabox"><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons03.png" /><span>微信</span></a>
+		        <div class="erweima">
+		        	<h3>微信二维码</h3>
+		        	<div class="ctrl01">
+		        	<img src="/xxmh/resources/skin/images/gswx.jpg" width="100" height="100" />
+		            <img src="/xxmh/resources/skin/images/dswx.jpg" width="100" height="100" /></div>
+		           <div class="ctrl02"><img src="/xxmh/resources/skin/images/gswx.jpg" width="100" height="100" /></div>
+		        </div>
+	        </li>
+	        <li class="mabox"><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons01.png" /><span>微博</span></a>
+		        <div class="erweima">
+		        	<h3>微博二维码</h3>
+		        	<div class="ctrl01">
+		            <img src="/xxmh/resources/skin/images/gswb.jpg" width="100" height="100" />
+		            <img src="/xxmh/resources/skin/images/dswb.png" width="100" height="100" /></div>
+		            <div class="ctrl02"><img src="/xxmh/resources/skin/images/gswb.jpg" width="100" height="100" /></div>
+		        </div>
+
+	        </li>
+	        <li class="mabox">
+	        	<a href="#none" onclick='onclickZxkf()'>
+	        		<img title="在线客服" src="/xxmh/resources/skin/images/icons/left_icons06.png" />
+	        	</a>
+	        </li>
+			<li class="mabox">
+				<a href="#none" onclick='onclickCzgc()'>
+					<img title="操作规程" src="/xxmh/resources/skin/images/icons/czgc.png" />
+				</a>
+			</li>
+
+	       &lt;!&ndash;  <li class="mabox"><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons06.png" /><span>手机客户端</span></a>
+		        <div class="erweima">
+		        	<h3>手机客户端</h3>
+		            <img src="/xxmh/resources/skin/images/gswb.jpg" width="100" height="100" /><p>安卓版</p>
+		            <img src="/xxmh/resources/skin/images/dswb.png" width="100" height="100" /><p>ios版</p>
+		        </div>
+	        </li> &ndash;&gt;
+        	&lt;!&ndash; <li><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons05.png" /><span>在线咨询</span></a></li>
+	        <li><a href="#none"><img src="/xxmh/resources/skin/images/icons/left_icons02.png" /><span>客服电话</span></a></li> &ndash;&gt;
+	        <li><a href="#"><img src="/xxmh/resources/skin/images/icons/left_icons04.png" /><span>顶部</span></a></li>
+	    </ul>
+	</div>-->
+		<!-- 操作规程修改 by hd-->
+		<div id="czgcDiv" style="width: 100%;display: none">
+			<div class="ui-tax-center-box">
+				<form class="layui-form">
+					<div class="layui-form-item" style="margint-bottom:16px">
+						<div class="layui-inline" style="margin-top:-1%">
+							<label class="layui-form-label" style="width:50px;padding:0px 10px 0px 0px"><h5>标题：</h5></label>
+							<div class="layui-input-inline">
+								<select name="czgcmc" id="czgcmc"  lay-verify="required" lay-filter="czgcmc" style="background-color: #0994dc">
+									<option value="">请选择...</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="layui-form-item" id="loadCzgcDiv">
+						<div class="news-page-box">
+							<div class="news-page-center" id="loadCzgcDivChild" style="margin-top: 16px;position:relative;overflow:auto;overflow-x: hidden;height: 60%;">
+								<p class="line-p marginT20"></p>
+								<div class="news-text marginT30 marginB32" id="news-text">
+									<div id="content"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	<input type='hidden' id="logoutUrl" value=""/><!-- 退出登录地址 -->
+	<input type='hidden' id="ssoServerAddr" value=""/><!-- 单点登录地址 -->
+	<input type='hidden' id="ssoXxmhUrl" value=""/><!-- 信息门户单点登录地址 -->
+	<input type='hidden' id="xxmhGdsbz" value="gs"/><!-- 信息门户国地税标志 -->
+
+	<input type='hidden' id="hid_gnUrl" value=""/>
+	<input type='hidden' id="hid_fcdid" value=""/>
+	<input type='hidden' id="hid_cdtb" value=""/>
+	<input type='hidden' id="hid_qxkzsx" value=""/>
+	<div style="display:none"><iframe id="qhsfIfrm" src="" style="display:none"></iframe></div><!-- 切换身份后，通知外围系统 -->
+        <!--本地化显示测试环境还是生产环境 --- 开始 ------>
+        <div id="CheckEnvironment" style="position: absolute; left: 40%;top:15px;display:none">
+            <marquee style="width:300px;"><A title=客户端检测提示   style="color: red; font-size: 30px;" href="#"><SPAN   style="COLOR: #ff0000" spanstyle="font-size:40pt">测试环境</SPAN></A></marquee>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                //检查是否是测试环境
+                var localStr = location.href;
+                if (localStr.indexOf("test") > 0) {
+                    $("#CheckEnvironment").show();
+                }
+            });
+        </script>
+        <!--本地化显示测试环境还是生产环境 --- 结束 ------>
+</body>
+</html>

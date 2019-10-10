@@ -1,0 +1,350 @@
+﻿@model  JlveTaxSystemGuiZhou.Models.Model
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<title>其他申报</title> 
+
+<script type="text/javascript">var cp = '/sbzs-cjpt-web';var contextRoot="/sbzs-cjpt-web";</script>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/css/comon0.css" />
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/message/Message.js"></script>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/_res_/js/message/skin/default/Message.css" />
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/DatePicker/DatePicker.js"></script>
+
+<!--4.0版本UI  -->
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources4/layui/css/layui.css" id="layui_layer_skinlayercss"/>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources4/tax-font-icon/iconfont.css"/>
+<link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-css/common.css">
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+
+<style>
+.selebox {
+	margin-left: 10px;
+	float: left;
+	position: relative;
+}
+
+.selebox .i_default {
+	height: 28px;
+	margin-top: 4px;
+}
+
+.selebox .i_default a {
+	background: url(/sbzs-cjpt-web/resources/images/xlbtn.png) no-repeat;
+	color: #FFF;
+	font-size: 14px;
+	display: block;
+	text-indent: 26px;
+	width: 151px;
+	line-height: 28px;
+	height: 28px;
+}
+</style>
+</head>
+<body class="padd01">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+		<tr>
+			<td width="50"><img
+				src="/sbzs-cjpt-web/resources/images/icons/left_sbjs_qtsb.png"></td>
+			<td><div class="big_title">其他申报</div></td>
+		</tr>
+	</table>
+	<div class="user_box01" style="width: 98.5%">
+		<div class="searchbox">
+			<div class="searchCriteria" style="width: 99%;border-bottom: none;margin: 0;padding: 0;">
+				<table border="0" cellpadding="0" cellspacing="0" width="97%">
+					<tr>
+						<div class="layui-inline">
+							<label class="layui-form-label label-left">申报月份：</label>
+							<div class="layui-input-inline">
+					        	<input type="text" class="layui-input layui-date-input" id="test3" value="2019-09" readonly="readonly">
+					        </div>
+						</div>
+					</tr>
+				</table>
+			</div>
+			<div class="searchTable">
+				<div class="sh_title01 sh_title02" style="width: 99%;border-bottom: none;">
+					<div id="gdslesfsb" class="tax-title marginB16 blold"><i class="dot" style="height: 16px;top: 11px;"></i>
+						税费申报
+					</div>
+				</div>
+				<!-- 申报表格，可覆盖，但不建议覆盖 -->
+				<iframe width="100%" id="iframeId" frameborder="0" scrolling="no" style="border:0px" src="/sbzs-cjpt-web/biz/sbqc/sbqc_qtsb/setting/lhQtsbbs.jsp"></iframe>
+				<!-- 提示说明，可覆盖，自行覆盖 -->
+				<iframe width="100%" id="msgiframe" frameborder="0" scrolling="no" style="border:0px" src="/sbzs-cjpt-web/biz/sbqc/sbqc_qtsb/setting/doWord.jsp"></iframe>
+			</div>
+		</div>
+	</div>
+	
+	<!-- CSS样式  建议不要动  begin-->
+	<script type="text/javascript">
+	var layer;
+	//初始化时间控件
+	layui.use(['laydate','layer'], function(){
+		var sbny = tjNd + '-' +tjYf;
+		var laydate = layui.laydate;
+		layer = layui.layer;
+		//年月选择器
+		laydate.render({
+			elem: '#test3'
+		    ,type: 'month'
+		    ,value: sbny
+		    ,isInitValue: true
+		    ,btns: ['now', 'confirm']
+		    ,done: function(value, date){
+		    	var sksq = value; 
+		    	var href = window.location.href;
+				if (href.indexOf("?") > 0) {
+					href = href.substr(0, href.indexOf("?"));
+				}
+				if (href.indexOf(";") > -1) {
+					href = href.substr(0, href.indexOf(";"));
+				}
+				href = href+"?tjNd="+sksq.substr(0, 4)+"&tjYf="+sksq.substr(5, 6)+"&gdslxDm="+gdslxDm;
+				+ yypt_nsrsbh + "&appid=" + appid;
+				window.location.href = href; 
+		    }
+			,ready: function(date){
+			    return
+			}
+		});
+	});
+	
+	//提示弹层
+	function alertMsg(msg,msgType,otherMsg){
+			var top="auto"//默认自动
+		 	if(window.top==window.self){
+				//不存在父页面
+		  	}else{
+		  		//获取父页面滚动条的高度
+				top=window.parent.document.documentElement.scrollTop+100+"px";
+		  	}
+			if(msgType == "1"){
+				layer.open({
+			        type: 1
+			        ,area: ['400px']   //固定宽高400px
+					,offset: top
+			 		,title:['提示信息']  
+			 		,scrollbar: false
+			        ,content: msg
+			        ,btn: ['关闭']
+			        ,btnAlign: 'r' //按钮居右
+			        ,yes: function(){
+			        	layer.closeAll();
+			        }
+				});
+			}
+			if(msgType == "3"){
+				layer.open({
+			        type: 1
+			        ,area: '400px'   //固定宽400px   高自适应
+					,offset: top
+			 		,title:['请选择申报方式']  
+			 		,scrollbar: false
+			        ,content: msg
+			        ,btn: ['关闭']
+			        ,btnAlign: 'r' //按钮居右
+			        ,yes: function(){
+			        	layer.closeAll();
+			        }
+				});
+			}
+		}
+	
+		$(document).ready(function() {
+			//总控页面宽度
+			var winwidth = $(window).width()
+			if (winwidth < 1240) {
+				$(".juz").css({
+					width : 1000
+				})
+			}
+			$("#sksq").on('click', function() {
+				//是否允许月份切换
+				var childWindow = $("#iframeId")[0].contentWindow;//获取子窗体中的对象
+				var tqyqsbbz = childWindow.checkYfjk();//调取子页面的formSubmit方法 jquery的写法
+				if(tqyqsbbz=="Y"){
+					return;
+				}
+				new DatePicker({
+					inputObj : this,
+					dateFormatStyle : 'yyyyMM',
+					beginDate : '2000-01-01',
+					endDate : '2099-12-30',
+					lang : 1,
+					type : 'm',
+					isShowClear : false,
+					callBack : changvalue
+				}).show();
+			});
+
+			$(".djsj").click(function() {
+				window.open("../biao/biao1.html", "_blank")
+			});
+
+			//更多操作按钮
+			$(".btn_more").mouseover(function() {
+				$(".btn_more ul").fadeIn()
+			});
+
+			$(".btn_more").mouseleave(function() {
+				$(".btn_more ul").fadeOut(100)
+			});
+
+			$(".btn_more li a").click(function() {
+				$(".btn_more ul").fadeOut(100)
+			});
+		});
+		function changvalue() {
+			var sksq = $("#sksq").html();
+			var href = window.location.href;
+			if (href.indexOf("?") > 0) {
+				href = href.substr(0, href.indexOf("?"));
+			}
+			if (href.indexOf(";") > -1) {
+				href = href.substr(0, href.indexOf(";"));
+			}
+			href = href+"?tjNd="+sksq.substr(0, 4)+"&tjYf="+sksq.substr(4, 6)+"&gdslxDm="+gdslxDm;
+			window.location.href = href;
+		}
+		function alertWin(title, MSG, w, h) {
+			var titleheight = "22px"; // 提示窗口标题高度
+			var bordercolor = "#666699"; // 提示窗口的边框颜色
+			var titlecolor = "#FFFFFF"; // 提示窗口的标题颜色
+			var titlebgcolor = "#666699"; // 提示窗口的标题背景色
+			var bgcolor = "#FFFFFF"; // 提示内容的背景色
+
+			var iWidth = document.documentElement.clientWidth;
+			var iHeight = document.documentElement.clientHeight;
+			var bgObj = document.createElement("div");
+			bgObj.style.cssText = "position:absolute;left:0px;top:0px;width:"
+					+ iWidth
+					+ "px;height:"
+					+ Math.max(document.body.clientHeight, iHeight)
+					+ "px;filter:Alpha(Opacity=30);opacity:0.3;background-color:#000000;z-index:101;";
+			document.body.appendChild(bgObj);
+
+			var msgObj = document.createElement("div");
+			msgObj.style.cssText = "position:absolute;font:11px '宋体';top:"
+					+ (iHeight - h) / 2 + "px;left:" + (iWidth - w) / 2
+					+ "px;width:" + w + "px;height:" + h
+					+ "px;text-align:center;border:1px solid " + bordercolor
+					+ ";background-color:" + bgcolor
+					+ ";padding:1px;line-height:22px;z-index:102;";
+			document.body.appendChild(msgObj);
+
+			var table = document.createElement("table");
+			msgObj.appendChild(table);
+			table.style.cssText = "margin:0px;border:0px;padding:0px;";
+			table.cellSpacing = 0;
+			var tr = table.insertRow(-1);
+			var titleBar = tr.insertCell(-1);
+			titleBar.style.cssText = "width:100%;height:"
+					+ titleheight
+					+ "px;text-align:left;padding:3px;margin:0px;font:bold 13px '宋体';color:"
+					+ titlecolor + ";border:1px solid " + bordercolor
+					+ ";cursor:move;background-color:" + titlebgcolor;
+			titleBar.style.paddingLeft = "10px";
+			titleBar.innerHTML = title;
+			var moveX = 0;
+			var moveY = 0;
+			var moveTop = 0;
+			var moveLeft = 0;
+			var moveable = false;
+
+			var docMouseMoveEvent = document.onmousemove;
+			var docMouseUpEvent = document.onmouseup;
+			titleBar.onmousedown = function() {
+				var evt = getEvent();
+				moveable = true;
+				moveX = evt.clientX;
+				moveY = evt.clientY;
+				moveTop = parseInt(msgObj.style.top);
+				moveLeft = parseInt(msgObj.style.left);
+
+				document.onmousemove = function() {
+					if (moveable) {
+						var evt = getEvent();
+						var x = moveLeft + evt.clientX - moveX;
+						var y = moveTop + evt.clientY - moveY;
+						if (x > 0 && (x + w < iWidth) && y > 0
+								&& (y + h < iHeight)) {
+							msgObj.style.left = x + "px";
+							msgObj.style.top = y + "px";
+						}
+					}
+				};
+				document.onmouseup = function() {
+					if (moveable) {
+						document.onmousemove = docMouseMoveEvent;
+						document.onmouseup = docMouseUpEvent;
+						moveable = false;
+						moveX = 0;
+						moveY = 0;
+						moveTop = 0;
+						moveLeft = 0;
+					}
+				};
+			}
+
+			var closeBtn = tr.insertCell(-1);
+			closeBtn.style.cssText = "cursor:pointer; padding:2px;background-color:"
+					+ titlebgcolor;
+			closeBtn.innerHTML = "<span style='font-size:15pt; color:"+titlecolor+";'>×</span>";
+			closeBtn.onclick = function() {
+				document.body.removeChild(bgObj);
+				document.body.removeChild(msgObj);
+			}
+			var msgBox = table.insertRow(-1).insertCell(-1);
+			msgBox.style.cssText = "font:10pt '宋体';";
+			msgBox.colSpan = 2;
+			msgBox.innerHTML = MSG;
+			//msgBox.innerHTML = "<div>请选择申报方式</div><div><input type=\"button\" value=\"点这里\" \" /></div>";
+
+			// 获得事件Event对象，用于兼容IE和FireFox
+			function getEvent() {
+				return window.event || arguments.callee.caller.arguments[0];
+			}
+		};
+		function changeHeight(id) {
+			try {
+				var height = document.body.scrollHeight + 4;
+				//设置最小值  兼容时间插件
+				if(height < 500){
+					height = 500;
+				}
+				$("#" + id, window.parent.document).css({
+					'height' : height
+				});
+			} catch (ex) {
+			}
+		}
+		changeHeight("ifrMain");
+		
+		function openWindow(url){
+			var isClose; //判断当前弹出窗体是否关闭 
+			isClose = window.open (url); 
+			//暂时不启用 目前暂无刷新状态，无需执行
+			//if(!isClose){ 
+			//	var childWindow = $("#iframeId")[0].contentWindow;//获取子窗体中的对象
+			//	childWindow.loadQtsb();//调取子页面的formSubmit方法 jquery的写法
+			//} 
+		}
+		<!-- CSS样式  建议不要动  end-->
+		//获取url参数
+	    var gdslxDm ='1';
+	    var tjNd ='@Model.GDTXDate.sbNd';
+	    var tjYf ='@Model.GDTXDate.sbYf';
+	    var yypt_nsrsbh ='';
+	    var appid ='';
+	    var token ='';
+	</script>
+</body>
+</html>

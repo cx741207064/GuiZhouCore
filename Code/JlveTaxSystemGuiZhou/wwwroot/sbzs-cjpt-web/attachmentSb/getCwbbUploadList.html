@@ -1,0 +1,397 @@
+﻿
+
+	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>   
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+    <title>文件上传</title>
+    <!-- 自定义参数 -->
+    <script type="text/javascript">var DZSWJ_TGC = 'a2e81c8c93c34e178e54b44f537918a5';</script>
+    <link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/css/comon0.css" />
+    <link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/css/table.css" />
+    <link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/_res_/js/message/skin/default/Message.css"/>
+  	<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/sbzs_res/upload/css/attachment/attachment.css" />
+  	<script type="text/javascript" src="/sbzs-cjpt-web/sbzs_res/upload/js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/sbzs-cjpt-web/sbzs_res/upload/js/lib/attachment/jQueryFileUpload/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="/sbzs-cjpt-web/sbzs_res/upload/js/lib/attachment/jQueryFileUpload/jquery.iframe-transport.js"></script>
+	<script type="text/javascript" src="/sbzs-cjpt-web/sbzs_res/upload/js/lib/attachment/jQueryFileUpload/jquery.fileupload.js"></script>
+	<script type="text/javascript" src="/sbzs-cjpt-web/sbzs_res/upload/js/lib/attachment/jQueryFileUpload/jquery.fileupload-process.js"></script>
+	<script type="text/javascript" src="/sbzs-cjpt-web/sbzs_res/upload/js/lib/attachment/jQueryFileUpload/jquery.fileupload-validate.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/message/Message.js"></script>
+    <script type="text/javascript" src="/sbzs-cjpt-web/abacus/sbzs_res/upload/js/lib/attachment/cwbbscfz.js"></script>
+    <SCRIPT language=JavaScript src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+    <!-- 进度条资源  -->
+	<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/sbzs_res/upload/css/attachment/styles.css">
+ 	 <style type="text/css">
+    	.btnBack{
+    		background-color: #37BC9B;
+    	}
+    	.btnAfter{
+    		background-color: #DDE0E5;
+    		Disabled:Disabled;
+    	}
+    	.uploadify {
+		    margin:0;
+		    padding: 0;
+		    position: relative;
+		}
+		.uploadify-div-bar2 {
+		    height: 45px;
+		    position: relative;
+		    text-align: left;
+		}
+    </style>
+  </head>  
+  <body>
+	  <div id="viewCtrlId" ng-controller="viewCtrl">
+	     <div class="NewTableMain" style="width: 100%;">
+	     
+	         <table class="attachTable" width="96%" border="0" cellspacing="1" cellpadding="0" style="margin-left: 2%;" id="yscwbbTablebj">
+		  <tr>
+		    <td colspan="4" class="title01"><strong>原始财务报表资料</strong></td>
+		    </tr>
+		  <tr>
+		    <td width="10%" align="center" class="title01">序号</td>
+		    <td width="20%" align="center" class="title01">提交资料名称</td>
+		    <td width="20%" align="center" class="title01">报送要求</td>
+		    <td width="50%" align="center" class="title01">报送方式</td>
+		  </tr>
+	 <tr>
+		    <td align="center" class="title01">1</td>
+		    <td class="ReadInput02" > <input type="text" readonly value="原始财务报表"  id="sclx1"></td>
+		    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+		    <td class="ReadInput02" align="center"> 
+		    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue1" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt1">未上传</span>
+							<span id="fs1" style="display: none;">0</span>
+							<div id="fj1" style="display: none;"></div>
+							<input type="hidden" id="bcwjm1" value="">
+							<input type="hidden" id="bcwjgs1" value="">
+							<input type="hidden" id="flzlDm1" value="003084">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify1" id="uploadify1" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile1" href="javascript:void(0)" style="display: none;" onClick="chakan(1);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete1"  href="javascript:void(0)"  onclick="canceljudge(1)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td align="center" class="title01">2</td>
+		    <td class="ReadInput02" > <input type="text" readonly value="原始财务报表"  id="sclx2"></td>
+		    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+		    <td class="ReadInput02" align="center"> 
+		    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue2" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt2">未上传</span>
+							<span id="fs2" style="display: none;">0</span>
+							<div id="fj2" style="display: none;"></div>
+							<input type="hidden" id="bcwjm2" value="">
+							<input type="hidden" id="bcwjgs2" value="">
+							<input type="hidden" id="flzlDm2" value="003084">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify2" id="uploadify2" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile2" href="javascript:void(0)" style="display: none;" onClick="chakan(2);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete2"  href="javascript:void(0)"  onclick="canceljudge(2)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td align="center" class="title01">3</td>
+		    <td class="ReadInput02" > <input type="text" readonly value="原始财务报表"  id="sclx3"></td>
+		    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+		    <td class="ReadInput02" align="center"> 
+		    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue3" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt3">未上传</span>
+							<span id="fs3" style="display: none;">0</span>
+							<div id="fj3" style="display: none;"></div>
+							<input type="hidden" id="bcwjm3" value="">
+							<input type="hidden" id="bcwjgs3" value="">
+							<input type="hidden" id="flzlDm3" value="003084">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify3" id="uploadify3" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile3" href="javascript:void(0)" style="display: none;" onClick="chakan(3);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete3"  href="javascript:void(0)"  onclick="canceljudge(3)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td align="center" class="title01">4</td>
+		    <td class="ReadInput02" > <input type="text" readonly value="原始财务报表"  id="sclx4"></td>
+		    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+		    <td class="ReadInput02" align="center"> 
+		    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue4" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt4">未上传</span>
+							<span id="fs4" style="display: none;">0</span>
+							<div id="fj4" style="display: none;"></div>
+							<input type="hidden" id="bcwjm4" value="">
+							<input type="hidden" id="bcwjgs4" value="">
+							<input type="hidden" id="flzlDm4" value="003084">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify4" id="uploadify4" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile4" href="javascript:void(0)" style="display: none;" onClick="chakan(4);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete4"  href="javascript:void(0)"  onclick="canceljudge(4)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td align="center" class="title01">5</td>
+		    <td class="ReadInput02" > <input type="text" readonly value="原始财务报表"  id="sclx5"></td>
+		    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+		    <td class="ReadInput02" align="center"> 
+		    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue5" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt5">未上传</span>
+							<span id="fs5" style="display: none;">0</span>
+							<div id="fj5" style="display: none;"></div>
+							<input type="hidden" id="bcwjm5" value="">
+							<input type="hidden" id="bcwjgs5" value="">
+							<input type="hidden" id="flzlDm5" value="003084">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify5" id="uploadify5" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile5" href="javascript:void(0)" style="display: none;" onClick="chakan(5);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete5"  href="javascript:void(0)"  onclick="canceljudge(5)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+		    </td>
+		  </tr>
+		</table>
+	     
+	     
+	     <table class="attachTable" width="96%" border="0" cellspacing="1" cellpadding="0" style="margin-left: 2%;" id="yscwbbTable">
+		  <tr>
+		    <td colspan="4" class="title01"><strong>原始财务报表资料</strong></td>
+		    </tr>
+		  <tr>
+		    <td width="10%" align="center" class="title01">序号</td>
+		    <td width="20%" align="center" class="title01">提交资料名称</td>
+		    <td width="20%" align="center" class="title01">报送要求</td>
+		    <td width="50%" align="center" class="title01">报送方式</td>
+		  </tr>
+		  <tr>
+		    <td align="center" class="title01">1</td>
+		    <td class="ReadInput02" > <input type="text" readonly value="原始财务报表" id="sclx1"></td>
+		    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+		    <td class="ReadInput02" align="center"> 
+		    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue1" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt1">未上传</span>
+							<span id="fs1" style="display: none;">0</span>
+							<div id="fj1" style="display: none;"></div>
+							<input type="hidden" id="bcwjm1" value="">
+							<input type="hidden" id="bcwjgs1" value="">
+							<input type="hidden" id="flzlDm1" value="003084">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify1" id="uploadify1" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile1" href="javascript:void(0)" style="display: none;" onclick="chakan(1);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete1"  href="javascript:void(0)"  onclick="canceljudge(1)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+		    </td>
+		  </tr>
+		</table>
+	    <p style="text-align:center; margin-top:10px;">
+	    <td><a style="background-color:#34ace5;" href="javascript:;" class="sbtn" id="addtryscwbb" onclick="addTr('yscwbbTable','原始财务报表','003084');">增行</a></td>
+	    <td><a style="background-color:#34ace5;display:none;" href="javascript:;" class="sbtn" onclick="delTr('yscwbbTable');" id="yscwbbDeleteButton">删行</a></td>
+	    </p>
+	</div>
+	<div class="NewTableMain" style="width: 100%;">
+	  <table class="attachTable" width="96%" border="0" cellspacing="1" cellpadding="0" style="margin-left: 2%;" id="fzTablebj">
+	  <tr>
+	    <td colspan="4" class="title01"><strong>附注资料</strong></td>
+	    </tr>
+	  <tr>
+	    <td width="10%" align="center" class="title01">序号</td>
+	    <td width="20%" align="center" class="title01">提交资料名称</td>
+	    <td width="20%" align="center" class="title01">报送要求</td>
+	    <td width="50%" align="center" class="title01">报送方式</td>
+	  </tr>
+	   <tr>
+	    <td align="center" class="title01">1</td>
+	    <td class="ReadInput02" > <input type="text" readonly value="附注"  id="sclx6"></td>
+	    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+	    <td class="ReadInput02" align="center">
+	    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue6" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt6">未上传</span>
+							<span id="fs6" style="display: none;">0</span>
+							<div id="fj6" style="display: none;"></div>
+							<input type="hidden" id="bcwjm6" value="">
+							<input type="hidden" id="bcwjgs6" value="">
+							<input type="hidden" id="flzlDm6" value="003085">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify6" id="uploadify6" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile6" href="javascript:void(0)" style="display: none;" onClick="chakan(6);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete6"  href="javascript:void(0)"  onclick="canceljudge(6)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td align="center" class="title01">2</td>
+	    <td class="ReadInput02" > <input type="text" readonly value="附注"  id="sclx7"></td>
+	    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+	    <td class="ReadInput02" align="center">
+	    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue7" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt7">未上传</span>
+							<span id="fs7" style="display: none;">0</span>
+							<div id="fj7" style="display: none;"></div>
+							<input type="hidden" id="bcwjm7" value="">
+							<input type="hidden" id="bcwjgs7" value="">
+							<input type="hidden" id="flzlDm7" value="003085">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify7" id="uploadify7" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile7" href="javascript:void(0)" style="display: none;" onClick="chakan(7);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete7"  href="javascript:void(0)"  onclick="canceljudge(7)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td align="center" class="title01">3</td>
+	    <td class="ReadInput02" > <input type="text" readonly value="附注"  id="sclx8"> </td>
+	    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+	    <td class="ReadInput02" align="center">
+	    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue8" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt8">未上传</span>
+							<span id="fs8" style="display: none;">0</span>
+							<div id="fj8" style="display: none;"></div>
+							<input type="hidden" id="bcwjm8" value="">
+							<input type="hidden" id="bcwjgs8" value="">
+							<input type="hidden" id="flzlDm8" value="003085">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify8" id="uploadify8" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile8" href="javascript:void(0)" style="display: none;" onClick="chakan(8);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete8"  href="javascript:void(0)"  onclick="canceljudge(8)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td align="center" class="title01">4</td>
+	    <td class="ReadInput02" > <input type="text" readonly value="附注"  id="sclx9"></td>
+	    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+	    <td class="ReadInput02" align="center">
+	    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue9" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt9">未上传</span>
+							<span id="fs9" style="display: none;">0</span>
+							<div id="fj9" style="display: none;"></div>
+							<input type="hidden" id="bcwjm9" value="">
+							<input type="hidden" id="bcwjgs9" value="">
+							<input type="hidden" id="flzlDm9" value="003085">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify9" id="uploadify9" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile9" href="javascript:void(0)" style="display: none;" onClick="chakan(9);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete9"  href="javascript:void(0)"  onclick="canceljudge(9)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td align="center" class="title01">5</td>
+	    <td class="ReadInput02" > <input type="text" readonly value="附注"  id="sclx10"></td>
+	    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+	    <td class="ReadInput02" align="center">
+	    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue10" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt10">未上传</span>
+							<span id="fs10" style="display: none;">0</span>
+							<div id="fj10" style="display: none;"></div>
+							<input type="hidden" id="bcwjm10" value="">
+							<input type="hidden" id="bcwjgs10" value="">
+							<input type="hidden" id="flzlDm10" value="003085">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify10" id="uploadify10" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile10" href="javascript:void(0)" style="display: none;" onClick="chakan(10);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete10"  href="javascript:void(0)"  onclick="canceljudge(10)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+	    </td>
+	  </tr>
+	</table>
+	
+     <table class="attachTable" width="96%" border="0" cellspacing="1" cellpadding="0" style="margin-left: 2%;" id="fzTable">
+	  <tr>
+	    <td colspan="4" class="title01"><strong>附注资料</strong></td>
+	    </tr>
+	  <tr>
+	    <td width="10%" align="center" class="title01">序号</td>
+	    <td width="20%" align="center" class="title01">提交资料名称</td>
+	    <td width="20%" align="center" class="title01">报送要求</td>
+	    <td width="50%" align="center" class="title01">报送方式</td>
+	  </tr>
+	  <tr>
+	    <td align="center" class="title01">1</td>
+	    <td class="ReadInput02" > <input type="text" readonly value="附注" id="sclx2"></td>
+	    <td class="ReadInput02" > <input type="text" readonly value="条件报送"></td>
+	    <td class="ReadInput02" align="center">
+	    	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td align="center" id="queue2" width="40%"></td><!-- 文件上传进度条 -->		
+						<td align="center" width="10%">
+							<span id="sczt2">未上传</span>
+							<span id="fs2" style="display: none;">0</span>
+							<div id="fj2" style="display: none;"></div>
+							<input type="hidden" id="bcwjm2" value="">
+							<input type="hidden" id="bcwjgs2" value="">
+							<input type="hidden" id="flzlDm2" value="003085">
+						</td>
+						<td align="center" width="20%"><div  class="uploadify-button" >选择文件<input  type="file" width="60px" name="uploadify2" id="uploadify2" class="uploadifyInput" /></div></td>
+						<td align="center" width="15%">&nbsp;<a class='sbtn sbtn02' id="downfile2" href="javascript:void(0)" style="display: none;" onclick="chakan(2);">查看</a>&nbsp</td>
+						<td align="center" width="15%"><a class='sbtn btn01 btnBack' id="delete2"  href="javascript:void(0)"  onclick="canceljudge(2)" style="display: none;">删除</a></td>
+					</tr>
+				</table>
+	    </td>
+	  </tr>
+	</table>
+	<p style="text-align:center; margin-top:10px;">
+	<td><a style="background-color:#34ace5;" class="sbtn" href="javascript:;"  id="addtrfz"  onclick="addTr('fzTable','附注','003085');">增行</a></td>
+	<td><a style="background-color:#34ace5;display:none;" class="sbtn" href="javascript:;" onclick="delTr('fzTable');" id="fzDeleteButton">删行</a></td>
+	</p>
+	<p style="text-align:center; margin-top:10px;"  id="tsxxp" ><span style="color: red;">温馨提示：上传文件的格式只支持(xls,txt,img,doc,pdf,jpg,bmp,png,xlsx,docx,rar,zip,xml,gif,jpeg)支持最大上传值为10M.</span></p>
+	</div>
+      
+
+</div>
+</div>
+</body>
+<script type="text/javascript">
+	window.contextPath = $("#contextPath").val();
+	var djxh = '10115201000083900814';
+	var sbywbm = 'cwbb_xqy_kjzz';
+	var gdslxDm = '1';
+</script>
+</html>

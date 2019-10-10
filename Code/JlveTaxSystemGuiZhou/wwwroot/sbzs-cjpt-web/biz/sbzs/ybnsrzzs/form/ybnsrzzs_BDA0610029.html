@@ -1,0 +1,94 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>机动车辆经销企业销售明细表</title>
+</head>
+
+<body>
+<div style="width:96%; margin:auto;" id="viewCtrlId" ng-controller="viewCtrl">
+<div class="NewTableHead" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcljxqyxsmxb.sbbheadVO">
+     <h1>机动车辆经销企业销售明细表</h1>
+     <li class="dateTxt">税款所属时间:<input type="text" datatype="date"  readonly style="width:100px; height:20px;" ng-model="sbbheadVO.skssqq" class="topInput"> 至 <input type="text" datatype="date"  readonly style="width:100px; height:20px;" ng-model="sbbheadVO.skssqz" class="topInput"></li>
+</div>
+
+
+<div class="NewTableTop" ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcljxqyxsmxb.sbbheadVO">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>纳税人名称： 
+      <span class="textline" ng-bind="sbbheadVO.nsrmc"></span>
+     </td>
+   
+  </tr>
+  <tr>
+        <td>纳税人识别号： 
+      <span class="textline" ng-bind="sbbheadVO.nsrsbh"></span>
+        </td>
+    <td align="right">金额单位：万元</td>
+  </tr>
+</table>
+</div>
+
+
+<div class="NewTableMain"  ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcljxqyxsmxb.jdcljxqyxsmxbGrid.jdcljxqyxsmxbGridlbVO">
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="1" class="jdcjxxsmxb">
+ 
+    <tbody>
+	<tr>
+		<td colspan="2" align="center" class="title01">进货渠道</td>
+		<td rowspan="2" align="center" class="title01">销售对象名称</td>
+		<td rowspan="2" align="center" class="title01">厂牌型号</td>
+		<td rowspan="2" align="center" class="title01">车辆识别代码<br>（车架号码）</td>
+		<td rowspan="2" align="center" class="title01">计税价格</td>
+		<td rowspan="2" align="center" class="title01"  width="100px">操作</td>
+	</tr>
+	<tr>
+		<td align="center" class="title01">企业名称</td>
+		<td align="center" class="title01">纳税人识别号</td>
+	</tr>
+	<tr ng-repeat="p in jdcljxqyxsmxbGridlbVO track by $index" ng-repeat-init="jdcljxqyxsmxbGridlbVO" 
+	default-value='{"ewbhxh":"","jhqdQymc":"","jhqdNsrsbh":"","xsdxmc":"","cpxh1":"","clsbdm":"","jsjg":""}'>
+	
+		<td align="center" style="display:none" ng-bind="p.ewbhxh=$index+1"></td> 
+		<td class="edit left"><input  type="text"  ng-model="p.jhqdQymc"></td>
+		<td class="edit left"><input  type="text" ng-model="p.jhqdNsrsbh"></td>
+		<td class="edit left"><input  type="text"  ng-model="p.xsdxmc"></td>
+		<td class="edit left"><input  type="text"  ng-model="p.cpxh1"></td>
+		<td class="edit left"><input  type="text"  ng-model="p.clsbdm"></td>
+		<td class="edit right"><input class="tir"  type="text" ng-datatype="number{2}" ng-model="p.jsjg"></td>
+		 <td align="center" ><div class="sbtnbox"><a class="layui-btn layui-btn-xs" ng-href="#" ng-click="add()">增加</a>&nbsp;<a class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0" ng-href="#" ng-click="del($index)">删除</a></div></td>
+	</tr>
+	
+	<tr ng-jprefix="zzsybsbSbbdxxVO.zzssyyybnsr_jdcljxqyxsmxb.jdcljxqyxsmxbGrid">
+		<td colspan="3" align="center" class="title01">合计</td>
+		
+		<td class="back">--</td>
+		<td class="back">--</td>
+		<td class="read right"><input class="tir"  value="0.00" readonly type="text" ng-datatype="number{2}" ng-model="jdcljxqyxsmxbGrid.jsjgHJ"></td>
+		<td  class="title01" align="center" ></td>
+	</tr>
+	<tr ng-render-finish=""></tr>
+</tbody>
+</table>
+
+
+
+
+  
+  
+  
+
+
+
+</div>
+
+ 
+
+
+</div>
+</body>
+</html>

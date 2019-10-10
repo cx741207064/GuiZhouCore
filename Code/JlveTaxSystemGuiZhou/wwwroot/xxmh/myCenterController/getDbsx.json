@@ -1,0 +1,25 @@
+{
+	"totalrecordcount": 1,
+	"flag": "ok",
+	"ydsum": 0,
+	"items": [{
+		"dbsj": "2019-09-04",
+		"ywlxBm": "nsrwsbtx",
+		"paramers": {
+			"ysqxxid": "0aaa385581fc4dcca68d277c22d19e2c"
+		},
+		"txbt": "您有未申报的税种（截止2019-09-04 10:49:09）",
+		"gdsmc": "G",
+		"ly": "G",
+		"url": "/sbzs-cjpt-web/biz/sbqc/sbqc_aqsb",
+		"id": "FA2D00EBAC1001131BD7078838E4AAF7",
+		"content": "尊敬的纳税人：<p style='text-indent:2em'>截止2019-09-04 10:49:09，您有未申报的税种，请及时办理。</p>",
+		"txnr": "<div><div id=\"txnrTitle\"><h4 style=\"text-align: center;font-family:sans-serif,宋体;  font-size: 20px;padding-bottom: 10px;\">@@1</h4><div><hr style=\"height:2px;border:none;border-top:1px solid #b0bdb4;\" /><div style=\"padding-left: 10px; \"> <div id=\"txnrBody\"><div style=\"margin-top: 15px;\"><span style=\"font-weight:bold;font-size: 13px;\">尊敬的纳税人：<span><span style=\"color: rgba(140, 146, 148, 0.73);\"><span>\t<div style=\"color:#828282;\"><div style=\"color: rgba(0, 0, 0, 0.68);;font-size: 13px;\"><span>&nbsp;&nbsp;&nbsp;</span></div><div><ul style=\"list-style: none; padding-left: 0;color: rgba(0, 0, 0, 0.68);;font-size: 13px;\"><li style=\"text-indent:2em;\">尊敬的纳税人：<p style='text-indent:2em'>截止2019-09-04 10:49:09，您有未申报的税种，请及时办理。</p></li><ul><div><div style=\"margin-top: 10px;color: rgba(0, 0, 0, 0.68);;font-size: 13px;\"></div></div><div style=\"margin-top: 30px;\"><div style=\"margin-right: 15%; text-align: right;color: rgba(0, 0, 0, 0.68);;font-size: 13px;\"></div><div style=\"margin-right: 15%; text-align: right;color: rgba(0, 0, 0, 0.68);;font-size: 13px;\">@@2</div></div></div></div>",
+		"zt": "0",
+		"isCompleted": "N",
+		"isRead": "N"
+	}],
+	"pages": 1,
+	"contextPath": "http://etax.guizhou.chinatax.gov.cn:80",
+	"wdsum": 0
+}

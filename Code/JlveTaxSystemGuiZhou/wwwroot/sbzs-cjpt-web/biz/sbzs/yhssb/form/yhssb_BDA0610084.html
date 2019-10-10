@@ -1,0 +1,201 @@
+<!doctype html>
+<html  id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<script type="text/javascript" src="yhs.js"></script>
+<script type="text/javascript" src="ysdj_yhs.js"></script>
+<title>001$印花税纳税申报表</title>
+</head>
+
+<body>
+<div  style="width:120%; margin:auto;" id="viewCtrlId" ng-controller="viewCtrl">
+<ng-codetable model="qcs.formContent.sbYhs.body.mxxxs.jmxxlist" name="zspmJmxzCT" node="" dm="" mc=""></ng-codetable>
+<ng-codetable model="qcs.initData.yhsInitData.hdxxGrid.hdxxGridlb" name="hdblsCT" node="" dm="" mc=""></ng-codetable>
+<ng-codetable model="qcs.formContent.sbYhs.body.mxxxs.mxxx" name="mxxxCT" node="" dm="yspzDm" mc=""></ng-codetable>
+<!-- 下拉框 -->
+<ng-codetable url="dm_gy_sfzjlx.json" name="sfzjlxCT" node="" dm="sfzjlx" mc=""></ng-codetable>
+<ng-codetable url="dm_yhssb_zspm.json" name="zspmCT" node="" dm="zspmDm" mc=""></ng-codetable>
+<ng-codetable url="dm_gy_zspm.json" name="zspmmcCT" node="" dm="zspm" mc=""></ng-codetable>
+<ng-codetable model="qcs.hdbls" name="hdblCT" node="" dm="" mc=""></ng-codetable>
+  <div class="NewTableHead"   ng-jprefix="yyssbbdxxVO.yhssb">
+      <h1>印花税纳税申报（报告）表						
+    </h1>
+</div>
+  <div class="NewTableMain"  >
+      <table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr ng-jprefix="yyssbbdxxVO.yhssb.sbbhead" >
+    <td class="title01"> 纳税人识别号</td>
+    <td colspan="2" class="read left"><input   type="text"     readonly   ng-model="sbbhead.nsrsbh"></td>
+    <td colspan="2" class="title01"> 纳税人名称</td>
+    <td colspan="2" class="read left"><input   type="text"     readonly    ng-model="sbbhead.nsrmc"></td>
+    <td class="title01"> 申报日期</td>
+    <td colspan="4" class="read left"><input   type="text"     readonly     ng-model="sbbhead.sbrq1"></td>
+  </tr>
+  <tr ng-jprefix="yyssbbdxxVO.yhssb.sbbhead">
+    <td class="title01"> 税款所属期起</td>
+    <td colspan="2" class="read left"><input id="skssq"  type="text"     readonly   n  ng-model="sbbhead.skssqq"></td>
+    <td colspan="2" class="title01"> 税款所属期止</td>
+    <td colspan="2" class="read left"><input   type="text"     readonly   ng-model="sbbhead.skssqz"></td>
+    <td class="title01"> 申报类型</td>
+    <td colspan="4" class="read left"><input   type="text"     readonly     ng-model="sbbhead.sblxMc"></td>
+  </tr>
+  <tr ng-jprefix="yyssbbdxxVO.yhssb.sbbhead">
+    <td class="title01"> 纳税人类型</td>
+    <td colspan="2" class="read left"><input   type="text"     readonly    ng-model="sbbhead.nsrlxMc"></td>
+    <td colspan="2" class="title01"> 登记注册类型</td>
+    <td colspan="2" class="read left"><input   type="text"     readonly     ng-model="sbbhead.djzclxMc"></td>
+    <td class="title01"> 所属行业</td>
+    <td colspan="4" class="read left"><input   type="text"     readonly   "  ng-model="sbbhead.hyMc"></td>
+  </tr>
+  <tr ng-jprefix="yyssbbdxxVO.yhssb.sbbhead">
+    <td class="title01"> 身份证件类型</td>
+    <td colspan="2" class="read left"><input   type="text"     readonly     ng-model="sbbhead.sfzjlxmc"></td>
+    <td colspan="2" class="title01"> 身份证件号码</td>
+    <td colspan="2" class="read left"><input   type="text"     readonly     ng-model="sbbhead.sfzjhm"></td>
+	<td  class="title01"> 联系方式</td>
+    <td colspan="4" class="edit left"><input   type="text"   ng-datatype="digit"        ng-model="sbbhead.lxdh"></td>
+  </tr>
+  <tr ng-jprefix="yyssbbdxxVO.yhssb.sbbhead">
+    <td colspan="5" class="title01">本期是否适用增值税小规模纳税人减征政策（减免性质代码：0009049901）</td>
+    <td>
+    	<input type="radio" name="bqsfsyxgmyhzc" value="Y" ng-model="sbbhead.bqsfsyxgmyhzc" ng-change="externalMethods('changeBqsfsyxgmyhzc')" style="margin:0 5px 0 10px;vertical-align:text-top;">
+    	是
+    	<input type="radio" name="bqsfsyxgmyhzc" value="N" ng-model="sbbhead.bqsfsyxgmyhzc" style="margin:0 5px 0 10px;vertical-align:text-top;">
+    	否
+    </td>
+    <td colspan="3" class="title01"> 减征比例（%）</td>
+    <td colspan="3" class="read right"><input ng-if="sbbhead.phjzbl==''||sbbhead.phjzbl==null||sbbhead.phjzbl==undefined||sbbhead.phjzbl==0"  readonly value=""  type="text">
+									   <input ng-if="sbbhead.phjzbl!=''&&sbbhead.phjzbl!=null&&sbbhead.phjzbl!=undefined&&sbbhead.phjzbl!=0"  readonly value="{{(sbbhead.phjzbl*100).toFixed(2)}}"  type="text">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="3" class="title01 title02"><div align="center"><strong>应税凭证名称</strong></div></td>
+    <td rowspan="2" class="title01 title02"><div align="center"><strong>计税金额或件数</strong></div></td>
+    <td colspan="2" class="title01 title02"><div align="center"><strong>核定征收</strong></div></td>
+    <td rowspan="2" class="title01 title02"><div align="center"><strong>适用税率</strong></div></td>
+    <td rowspan="2" class="title01 title02"><div align="center"><strong>本期应纳税额</strong></div></td>
+    <td rowspan="2" class="title01 title02"><div align="center"><strong>本期已缴税额</strong></div></td>
+    <td colspan="2" class="title01 title02"><div align="center"><strong>本期减免税额</strong></div></td>
+    <td rowspan="2" class="title01 title02"><div align="center"><strong>本期增值税小规模纳税人减征额</strong></div></td>
+    <td rowspan="2" class="title01 title02"><div align="center"><strong>本期应补（退）税额</strong></div></td>
+    <td rowspan="2" align="center" class="title01 title02" width="90px">操作 </td>
+
+     </tr>
+  <tr>
+    <td class="title01 title02"><div align="center"><strong>核定计税依据</strong></div></td>
+    <td class="title01 title02"><div align="center"><strong>核定比例</strong></div></td>
+    <td class="title01 title02"><div align="center"><strong>减免性质代码</strong></div></td>
+    <td class="title01 title02"><div align="center"><strong>减免税额</strong></div></td>
+  </tr>
+  <tr ng-jprefix="yyssbbdxxVO.yhssb.yhssbGrid.yhssbGridlb">
+    <td class="title01 title02"><div align="center">1</div></td>
+    <td class="title01 title02"><div align="center">2</div></td>
+    <td class="title01 title02"><div align="center">3</div></td>
+    <td class="title01 title02"><div align="center">4</div></td>
+    <td class="title01 title02"><div align="center">5=1*4+2*3*4</div></td>
+    <td class="title01 title02"><div align="center">6</div></td>
+    <td class="title01 title02"><div align="center">7</div></td>
+    <td class="title01 title02"><div align="center">8</div></td>
+    <td class="title01 title02"><div align="center">9</div></td>
+    <td class="title01 title02"><div align="center">10=5-6-8-9</div></td>
+    <td align="center" class="title01 title02">11</td>
+  </tr>
+  <tr ng-repeat="p in yhssbGridlb track by $index" ng-repeat-init="yhssbGridlb" 
+     default-value='{"zspmResult": "true",",zspmTips":"","zspmMc":"","zspmDm":"","jsje":0.00,"hdzsHdde":0.00,"hdzsHdbl":0.00,"sysl":0.00,"bqynse":0.00,"bqyjse1":0.00,"ssjmxzDm":"","jmse":0.00,"bqybtse":0.00,"jmzlxDm":"","jmsl":0.00,"jmfd":0.00,"jmed":0.00,"hdlx":"0","jmxxId":""}'  >
+    <td class="edit left" ng-show="p.sdBz != 'Y' && 'Y'!=formData.qcs.initData.yhsInitData.acsbyxbqrdBz"><select ng-change="externalMethods('selectYspz',$index)"  ng-model="p.zspmDm" ng-options="value.yspzDm as value.yspzMc for (key,value) in CT.mxxxCT" ng-selected="key==p.zspmDm"  ng-disabled="p.sdBz == 'Y'"><option value=""></option></select></td>
+    <td class="read left" ng-show="p.sdBz == 'Y' && 'Y'!=formData.qcs.initData.yhsInitData.acsbyxbqrdBz"><input  ng-model="p.zspmMc"   type="text"  readonly ></td>
+    <td class="read left" ng-show="'Y'==formData.qcs.initData.yhsInitData.acsbyxbqrdBz">
+    	<select ng-change="externalMethods('selectYspz',$index)"  ng-model="p.zspmDm" ng-options="value.zspmDm as value.zspmMc for (key,value) in CT.zspmCT" ng-selected="key==p.zspmDm"><option value=""></option></select>
+    </td>
+    <td class="edit right"><input   ng-datatype="number"  ng-model="p.jsje"   type="text"   ></td>
+    <td class="edit right"><input   type="text"       ng-datatype="number"  ng-model="p.hdzsHdde"></td>
+    <td class="edit right" ng-show="p.hdlx == '2'"><select ng-change="externalMethods('selectHdbl',$index)"   ng-model="p.hdzsHdbl" ng-options="value as value for (key,value) in CT.hdblCT[p.zspmDm]" ng-selected="key==p.hdzsHdbl"  ><option value=""></option></select></td>
+    <td class="read right" ng-show="p.hdlx != '2'"><input   type="text"       ng-datatype="percent{4}"  ng-model="p.hdzsHdbl" readonly></td>
+    <!-- <td class="edit right"><select ng-change="externalMethods('selectHdbl',$index)"   ng-model="p.hdzsHdbl" ng-options="value.hdbl as value.hdbl for (key,value) in CT.hdblsCT | cascadeFilter:'zspmDm':p.zspmDm | cascadeFilter:'hdlx2':p.hdlx" ng-selected="key==p.hdzsHdbl"  ><option value="0"></option></select><input   type="text"       ng-datatype="percent{4}"  ng-model="p.hdzsHdbl"></td> -->
+    <td class="read right"><input   type="text"    readonly   ng-datatype="percent{4}"  ng-model="p.sysl"></td>
+    <td class="read right"><input   type="text"    readonly   ng-datatype="number"  ng-model="p.bqynse"></td>
+    <td class="edit right"><input   ng-datatype="number"  ng-model="p.bqyjse1"   type="text"   ></td>
+    <td class="edit right"  width="20%" id="ssjmxzDm{{$index}}">
+   		<select ng-select-query class="form-control" placeholder="" ng-model="p.jmxxId" ng-options="value.jmxxId as value.dm+'|'+value.swsxMc+'|'+value.mc for (key,value) in CT.zspmJmxzCT[p.zspmDm]" ng-selected="key==value.jmxxId"  ng-change="externalMethods('changeJmse',$index)"><option value=""></option></select>
+    	<!-- <select ng-show-select="selectShow{{$index}}" ng-select-query class="form-control" placeholder="请选择" ng-model="p.ssjmxzDm" ng-options="value.dm as value.dm+'|'+value.swsxMc+'|'+value.mc for (key,value) in CT.zspmJmxzCT[p.zspmDm]" ng-selected="key==value.dm"  ng-change="externalMethods('changeJmse',$index)"><option value=""></option></select> -->
+ 		<!-- <input id="selectShow{{$index}}" type="hidden" ng-model="p.ssjmxzPjMc" ng-value="p.ssjmxzPjMc"> -->
+    </td>
+	<td align="center" class="title01" style="display: none;"><input type="text" ng-model="p.zspmMc" ng-value="p.zspmMc=CT.zspmmcCT[p.zspmDm]"></td>
+    <td class="edit right"><input ng-datatype="number" ng-model="p.jmse" type="text"></td>
+    <td class="read right"><input ng-datatype="number" ng-model="p.phjmse" type="text" readonly></td>
+    <td class="read right"><input type="text" readonly ng-datatype="number{1}" ng-model="p.bqybtse"></td>
+    <td align="center">
+    	<div class="sbtnbox">
+			<button class="layui-btn layui-btn-xs" ng-href="#" ng-click="add()">增加</button>
+			<button class="layui-btn layui-btn-danger layui-btn-xs" ng-if="$index!=0&&p.sdBz != 'Y'" ng-href="#" ng-click="del($index)">删除</button>
+		</div>
+	</td> 
+    
+  </tr>
+  <tr ng-jprefix="yyssbbdxxVO.yhssb.yhssbGrid">
+    <td class="title01"><div align="center">合计</div></td>
+    <td class="read right"><input   type="text"    readonly   ng-datatype="number"  ng-model="yhssbGrid.jsjehj"></td>
+    <td class="read mid" align="center">--</td>
+    <td class="read mid" align="center">--</td>
+    <td class="read mid" align="center">--</td>
+    <td class="read right"><input   type="text"    readonly   ng-datatype="number"  ng-model="yhssbGrid.bqynsehj"></td>
+    <td class="read right"><input   type="text"    readonly   ng-datatype="number"  ng-model="yhssbGrid.bqyjse1hj"></td>
+    <td class="read mid" align="center">--</td>
+    <td class="read right"><input   type="text"    readonly   ng-datatype="number"  ng-model="yhssbGrid.jmsehj"></td>
+    <td class="read right"><input   type="text"    readonly   ng-datatype="number"  ng-model="yhssbGrid.phjmsehj"></td>
+    <td class="read right"><input   type="text"    readonly   ng-datatype="number{1}"  ng-model="yhssbGrid.bqybtsehj"></td>
+    <td class="read mid"><input  type="text"  value="--" readonly ></td>
+    <tr>
+    <td colspan="12" class="title01"><strong>以下由纳税人填写：</strong></td>
+    </tr>
+  <tr>
+    <td class="title01">纳税人声明</td>
+    <td colspan="11"  style="padding:20px;" >此纳税申报表是根据《中华人民共和国印花税暂行条例》和国家有关税收规定填报的，是真实的、可靠的、完整的。</td>
+    </tr>         
+  <tr ng-jprefix="yyssbbdxxVO.yhssb.slrxxForm">
+    <td class="title01" align="center">纳税人签章</td>
+    <td colspan="1">&nbsp;</td>
+    <td class="title01" align="center">办税人</td>
+    <td colspan="1" class="edit left"><input  type="text" ng-model="slrxxForm.bsr"/></td>
+    <td class="title01" align="center">代理人</td>
+    <td colspan="1" class="edit left"><input  type="text" ng-model="slrxxForm.dlr"/></td>
+    <td class="title01" align="center">代理人身份证件类型 </td>
+    <td class="edit right"  width="20%" id="ssjmxzDm{{$index}}">
+   		<select ng-select-query class="form-control" placeholder="" ng-model="slrxxForm.dlrsfzjzlDm1" ng-options="key as key+'|'+value for (key,value) in CT.sfzjlxCT" ng-selected="key==value.dm"  ng-change="externalMethods('changeJmse',$index)"><option value=""></option></select>
+   			<input  ng-value="slrxxForm.dlrsfzjzlMc=(slrxxForm.dlrsfzjzlDm1 == '') ?  '' : CT.sfzjlxCT[slrxxForm.dlrsfzjzlDm1]"  style="display:none"/>
+    </td>
+    <td class="title01" align="center">代理人身份证号</td>
+    <td colspan="3" class="edit left"><input type="text"  ng-model="slrxxForm.dlrsfzjhm1"></td>
+
+  </tr>
+  <tr >
+    <td colspan="12" class="title01"><strong>以下由税务机关填写：</strong></td>
+  </tr>
+  <tr ng-render-finish="">
+    <td class="title01" align="center">受理人</td>
+    <td colspan="2">&nbsp;</td>
+    <td class="title01" align="center">受理日期</td>
+    <td colspan="2" class="EditInput02"><span >
+      <input name="text3" type="text" class="topInput"
+					style="width:40px;text-align:center" readonly/>
+年
+        
+        &nbsp; &nbsp;
+        <input name="text3" type="text" class="topInput"
+					style="width:20px;text-align:center" readonly/>
+月
+        &nbsp; &nbsp;
+        <input name="text3" type="text" class="topInput"
+					style="width:20px; text-align:center" readonly/>
+日</span></td>
+    <td class="title01" align="center">受理税务机关签章</td>
+    <td colspan="5">&nbsp;</td>
+    </tr>
+  </tr>
+</table>  
+  
+  </div>
+</div>
+</body>
+</html>

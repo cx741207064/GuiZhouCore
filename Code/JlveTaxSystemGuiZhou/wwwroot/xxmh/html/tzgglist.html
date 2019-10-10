@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="renderer" content="ie-comp" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE" />
+<title>通知公告</title>
+<link href="/xxmh/resources/skin/css/index.css" rel="stylesheet" type="text/css" />
+<link href="/xxmh/resources/skin/css/comon0.css" rel="stylesheet" type="text/css" />
+<link href="/xxmh/resources/skin/css/tzgg.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/xxmh/resources/skin/js/jquery.js"></script>
+<script type="text/javascript" src="/xxmh/resources/skin/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript">
+	//显示国地税标志
+	var showGdsbz = parent.showGdsbz;
+	
+	$(function() {
+		
+		if(showGdsbz == "N"){
+			$(".fontcolor01,.fontcolor02").hide();
+		}
+		
+		//滚动效果
+		jQuery(".noticeBox").slide({
+			titCell : ".controlBtn ul",
+			mainCell : ".list ul",
+			autoPage : true,
+			autoPlay : true,
+			effect : "top",
+			delayTime : "1500",
+			mouseOverStop : true,
+			interTime : "5000",
+			scroll : 3,
+			vis : 3,
+			trigger : "click",
+			mouseOverStop : true
+		});
+		
+		$(".controlBtn ul li").each(function() {
+			$(this).html("");
+			if ($(this).index() == 0)
+				$(this).addClass("upBtn");
+			if ($(this).index() == 1)
+				$(this).addClass("downBtn");
+			$(this).css("cursor", "pointer");
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="noticeBox">
+		<div class="title">通知公告</div>
+		<div class="list" style="margin-top: 5px;">
+		<span style="display: none"></span>
+			<ul>
+				
+				<!--<li><span class="fontcolor01">[国税]</span> <a href="http://www.gd-n-tax.gov.cn/pub/gdgsww/bsfw/tzgg/201607/t20160706_974850.html" target='_blank'>增值税发票开票系统升级提醒</a> [2016-07-06]</li>-->
+				<!---->
+				<!--<li><span class="fontcolor01">[国税]</span> <a href="http://www.gd-n-tax.gov.cn/pub/gdgsww/bsfw/tzgg/201606/t20160628_968942.html" target='_blank'>广东省国家税务局关于实施境外旅客购物离境退税政策有关事项的通告</a> [2016-06-28]</li>-->
+				<!---->
+				<!--<li><span class="fontcolor01">[国税]</span> <a href="http://www.gd-n-tax.gov.cn/pub/gdgsww/bsfw/tzgg/201606/t20160627_967986.html" target='_blank'>广东省国家税务局督查公告</a> [2016-06-27]</li>-->
+				<!---->
+				<!--<li><span class="fontcolor02">[地税]</span> <a href="http://www.gdltax.gov.cn/portal/site/site/portal/gdsite/nrpage.portal?contentId=LCOKO25IU6K37LDV9QXTAGBWAA0W012W&categoryId=BYM56843MJCJ6ZNL7FD7AIYY13BYMPCV" target='_blank'>广东省地方税务局关于延长2016年6月份申报纳税期限的通知</a> [2016-06-16]</li>-->
+				<!---->
+				<!--<li><span class="fontcolor02">[地税]</span> <a href="http://www.gdltax.gov.cn/portal/site/site/portal/gdsite/nrpage.portal?contentId=BGS0VALJ13PI5NAOD6K6GW7WNSU64WX9&categoryId=BYM56843MJCJ6ZNL7FD7AIYY13BYMPCV" target='_blank'>关于贯彻落实《广东省行政许可事项通用目录（2016年版）》的通知-->
+<!--</a> [2016-06-02]</li>-->
+				
+				<li><span class="fontcolor02">[地税]</span> <a href="http://www.gdltax.gov.cn/portal/site/site/portal/gdsite/nrpage.portal?contentId=2HKNTRXS3R3NALG6TEUXB554JUIN9H7U&categoryId=BYM56843MJCJ6ZNL7FD7AIYY13BYMPCV" target='_blank'>关于资源税改革具体政策问题的通知</a> [2016-05-12]</li>
+				
+			</ul>
+		</div>
+		<div class="controlBtn">
+			<ul>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

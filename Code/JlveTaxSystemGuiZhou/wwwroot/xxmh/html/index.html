@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=1"/>
+    <title>国家税务总局贵州省电子税务局</title>
+    <link rel="stylesheet" href="/xxmh/resources4/layui/css/layui.css">
+    <link rel="stylesheet" href="/xxmh/resources4/tax-css/index.css">
+    <!--<link rel="stylesheet" href="/xxmh/resources/css/newcss/addstyle.css">-->
+    <link rel="icon" href="/xxmh/resources/images/common/favicon.ico" type="image/x-icon">
+</head>
+<style type="text/css">
+    #cjwtContent ul li {
+        list-style-type: none;
+        line-height: 30px;
+    }
+
+    #cjwtList {
+        margin-bottom: 80px;
+    }
+
+    #cjwtList div {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #cjwtList div div {
+        margin-top: 0px;
+        font-size: 16px;
+    }
+
+    .cjwt__list a:hover {
+        color: #00a2c9;
+        text-decoration: underline;
+    }
+
+    #cjwtList div h3 {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .cjwt__list a {
+        text-decoration: none;
+        color: #000
+    }
+
+    #detailPage {
+        padding: 10px 40px;
+        margin-bottom: 100px;
+    }
+
+    #detailPage div p {
+        text-indent: 2em;
+        margin: 0;
+        line-height: 30px;
+        font-size: 16px;
+    }
+
+    #detailPage div div div {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .arrow_point {
+        display: block;
+        margin-right: 70px;
+        float: right;
+        line-height: 20px;
+        margin-top: 3px;
+    }
+</style>
+
+<body class="index_body">
+<div class="">
+    <div class="indextop">
+        <div class="layui-row">
+            <div class="layui-col-xs7 logo">
+                <img id="titleLogo" src=""/>
+            </div>
+            <div class="layui-col-xs5 rcon">
+                <div class="list">
+                    <a href="#" onclick="checkEnv()"><img
+                            src="/xxmh/resources4/tax-images/login/top_icon01.png"/>环境检测</a>
+                    <a href="#" onclick="goIndexUrl('','gzcx','xzzq','','0');"><img
+                            src="/xxmh/resources4/tax-images/login/top_icon02.png"/>下载</a>
+                    <a href="#" onclick="frequentlyQuestion()"><img
+                            src="/xxmh/resources4/tax-images/login/top_icon03.png"/>帮助</a>
+                </div>
+                <div class="dlbox">
+                    <a href="javascript:login();" class="loginico"> <img
+                            src="/xxmh/resources4/tax-images/login/loginimg.png"/> <h4>登录</h4></a>
+                </div>
+            </div>
+        </div>
+        <div class="bigbox menusDiv">
+            <ul>
+                <!-- 我的待办 -->
+                <li onclick="javascript:login();"><img src="/xxmh/resources4/tax-images/login/index_bigico1.png"
+                                                       class="icon"/>
+                    <h3>我的待办</h3></li>
+                <!-- 我的预约 -->
+                <li onclick="javascript:login();"><img src="/xxmh/resources4/tax-images/login/index_bigico2.png"
+                                                       class="icon"/>
+                    <h3>我要预约</h3></li>
+                <!-- 个性服务 -->
+                <li onclick="javascript:login();"><img src="/xxmh/resources4/tax-images/login/index_bigico3.png"
+                                                       class="icon"/>
+                    <h3>个性服务</h3></li>
+                <!-- 通知公告 -->
+                <li onclick="goIndexUrl('','dlhtzgg','zngg','','0');"><img
+                        src="/xxmh/resources4/tax-images/login/index_bigico4.png" class="icon"/>
+                    <h3>通知公告</h3></li>
+            </ul>
+        </div>
+    </div>
+    <div class="topbg">
+        <img src="/xxmh/resources4/tax-images/login/bg02.jpg"/>
+    </div>
+    <div class="indexbom menusDiv">
+        <ul>
+            <a href="#" class="bg1" onclick="javascript:login();"> <img
+                    src="/xxmh/resources/images/login/index_ico1.png"/>我的信息 </a>
+            <a href="#" class="bg2" onclick="javascript:login();"> <img
+                    src="/xxmh/resources/images/login/index_ico2.png"/>我要办税 </a>
+            <a href="#" class="bg3" onclick="javascript:login();"> <img
+                    src="/xxmh/resources/images/login/index_ico3.png"/>我要查询 </a>
+            <a href="#" class="bg4" onclick="javascript:login();"> <img
+                    src="/xxmh/resources/images/login/index_ico4.png"/>互动中心 </a>
+            <a href="#" class="bg5" onclick="goUrl('/xxmh/html/index_login.html?tabTitle=gzfwTab&toLogin=N')"> <img
+                    src="/xxmh/resources/images/login/index_ico5.png"/>公众服务 </a>
+        </ul>
+    </div>
+
+    <div class="footbom">
+        <img src="/xxmh/resources4/tax-images/login/foot.png"/>
+        <p> 版权所有: <span id="footTitle">国家税务总局贵州省税务局</span><br/>服务电话: 12366 </p>
+    </div>
+</div>
+<!--start 常见问题 -->
+<div id="cjwtContent" style="display: none;">
+    <div style="width: 840px; height: 320px;">
+        <!--start 常见问题刘表 -->
+        <div id="cjwtList" style="display: none;">
+            <div>
+                <h3> 一、使用电子税务局依赖的电脑环境设备<span class="arrow_point"> </span></h3>
+            </div>
+            <div>
+                <h3> 二、电子税务局个人用户注册、实名认证和纳税人绑定流程<span class="arrow_point"> </span></h3>
+            </div>
+            <div>
+                <h3> 三、电子税务局登录流程<span class="arrow_point"> </span></h3>
+            </div>
+            <div>
+                <h3> 四、常见问题解答<span class="arrow_point"> </span></h3>
+                <div class="cjwt__list" style="margin-top: 15px; margin-left: 30px; display: none;">
+                    <ul>
+                        <li id="li_3_0"><a href="#none">1.当用IE浏览器预览提交页面一直在加载中，如下图所示，应如何处理？</a></li>
+                        <li id="li_3_1"><a href="#none">2.登录贵州省电子税务局，选择企业身份登录后提示“纳税人主体被停用”。</a></li>
+                        <li id="li_3_2"><a href="#none">3.税务机关登记的企业基本信息有误，已经在申请变更税务登记信息，为什么还是不能绑定纳税人？</a></li>
+                        <li id="li_3_3"><a href="#none">4.使用国税或地税CA证书是否可以办理对方的涉税业务？</a></li>
+                        <li id="li_3_4"><a href="#none">5.上传附报资料时，页面报：“尊敬的纳税人：您好，您使用的CA数字证书与电子税务局当前登录的账号不匹配，请检查！”
+                            时，如何解决？</a></li>
+                        <li id="li_3_5"><a href="#none">6.提交PDF表单时，页面提示：“纳税人必须签名”，此时怎么办？</a></li>
+                        <li id="li_3_6"><a href="#none">7.在电子税务局注册账号时使用的手机号码已经不用了，可以换成其他手机号码吗？</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--end  常见问题列表 -->
+        <!--start 常见问题详细页面 -->
+        <div id="detailPage" style="display: none;">
+            <div>
+                <div>
+                    <h4>1. 支持的操作系统</h4>
+                    <p>电子税务局目前支持操作系统的为：Windows Xp、Windows vista、Windows7、Windows8、Windows10。</p>
+                </div>
+                <div>
+                    <h4>2.支持的浏览器版本和PDF插件</h4>
+                    <p>电子税务局推荐使用IE内核系列版本浏览器，具体有：Internet Explorer8、Internet Explorer9、Internet Explorer10、Internet
+                        Explorer11，推荐使用Internet Explorer9及以上的IE浏览器版本 ，IE8以下版本和非IE内核浏览器兼容性较差，不建议使用。</p>
+                    <p>电子税务局PDF插件仅支持Adobe Reader 10、Adobe Reader XI(11)和Acrobat Reader DC，对于其他版本的PDF插件兼容性较差，不建议使用。</p>
+                    <p>
+                        当浏览器版本不兼容或PDF插件版本不支持时，使用电子税务局的某些功能将无法正常使用，因此，建议使用“电子税务局网页报税设置工具”（在电子税务局主页面点击“登录”按钮，在登录页面的右下侧可下载该工具）检测浏览器版本和插件安装情况：</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>
+                        根据《贵州省国家税务局关于实行税收实名制管理的公告》（贵州省国家税务局公告〔2016〕14号）要求，税务机关在明确办税人员办税人员身份及办税授权关系的前提下为纳税人办理相关涉税事项。故，对于新注册个人用户使用贵州电子税务局，需先在电子税务局登录页面进行“用户注册”。注册完成后，还需要完成“实名制申请”和“企业绑定”两个步骤的操作，才能登录贵州省电子税务局后办理各项涉税（费）业务：</p>
+                    <h4>1）个人信息的实名认证</h4>
+                    <p> 实名认证可以通过贵州国税手机APP进行办理，也可以携带相关证件信息到国税基层税务局进行实名认证后在贵州省电子税务局网页或贵州国税手机APP进行实名制绑定。</p>
+                    <p> 未实名的个人用户，只能申请授权办理个税社保业务。</p>
+                </div>
+                <div>
+                    <h4>2）申请绑定企业纳税人</h4>
+                    <p>
+                        已实名认证通过的个人用户为金三系统中登记的企业法定代表人、财务负责人或办税员，可通过电子税务局网站申请企业绑定，系统自动审核通过，并授权对应的身份。其中法定代表人和财务负责人具有管理权限，可审核授权其他用户的身份申请。</p>
+                    <p>非金三系统中登记的办税员若需绑定该企业，有三种途径获得企业办税权限，</p>
+                    <p>1）通过电子税务局发起“纳税人授权申请”，需要经过企业法定代表人、财务负责人或其他普通管理权限人员审核通过后，才能为该纳税人办理相关涉税（费）业务。</p>
+                    <p>2）企业法定代表人、财务负责人或普通管理员权限人员直接输入办税员注册账号或手机号码直接进行授权，无需申请。</p>
+                    <p>3）办税员携带《纳税人办税授权委托书》等相关资料到国税前台申请“纳税人身份授权”,然后登录电子税务局发起“纳税人授权申请”，则无需审核，直接通过。</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p> 电子税务局支持以下两种用户场景的登录方式：<span style="font-weight: bold;">企业账号登录和个人用户登录。</span></p>
+                    <p> 1. <span style="font-weight: bold;">企业账号登录</span>：可使用纳税人识别号（社会信用代码）和CA证书登录两种方式。 </p>
+                    <p>
+                        纳税人使用纳税人识别号（社会信用代码）登录电子税务局，登录账号和密码与纳税人之前登录“贵州省国家税务局网上办税大厅”或“贵州省地方税务局电子办税服务厅”的相同；CA证书登录模式支持纳税人插入CA介质的方式登录电子税务局。</p>
+                    <p style="color: red;">后期将逐步实施过渡使用个人账号注册登录电子税局，企业账号登录作为过渡期使用。 </p>
+                    <p></p>
+                </div>
+                <div>
+                    <p><span style="font-weight: bold;">2. 个人用户登录</span>： </p>
+                    <p>贵州省电子税务局注册用户，可以使用用户名方式进行登录；</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>当使用IE浏览器在预览提交页面显示“页面加载中，请稍后”时，请检查电脑的IE浏览器版本是否为IE8或以上版本、是否安装了Adober Reader 10或以上的版本。</p>
+                </div>
+                <div>
+                    <p>请记录系统提示的停用原因，并联系信息有误一方税务机关进行税务登记信息变更。</p>
+                </div>
+                <div>
+                    <p>1）电子税务局是每个工作日晚六点同步在金三系统中修改的企业基本信息，请耐心等待；</p>
+                    <p>2）若已过了前面所述时间，请联系主管税务机关咨询处理。</p>
+                </div>
+                <div>
+                    <p>根据《贵州省国家税务局
+                        贵州省地方税务局关于推行数字证书（CA证书）全面互认的通告》（2017年第2号），目前国地税CA证书已全面互认，系统支持国税和地税的CA登录贵州省电子税务局，支持贵州省电子税务局所有涉税业务的国税或地税CA签名。</p>
+                </div>
+                <div>
+                    <p>出现此类提示的原因，是当前登录办理业务的纳税人与CA绑定的纳税人不一致，解决方法为切换正确的CA介质，再进行业务办理。</p>
+                </div>
+                <div>
+                    <p>出现此提示说明该纳税人是CA用户，CA用户在提交涉税事项申请表单时必须进行签名，即点击页面的最下方的签名域进行签名即可。</p>
+                </div>
+                <div>
+                    <p>可以更换手机号码。操作方法如下：登录电子税务局，进入“用户信息---账号设置---用户账号信息管理---账号信息”功能可进行手机号码修改。</p>
+                </div>
+            </div>
+        </div>
+        <!--end 常见问题详细页面 -->
+    </div>
+</div>
+
+<script src="/xxmh/resources/skin/js/jquery.js"></script>
+<script src="/xxmh/resources4/layui/layui.js"></script>
+<script type="text/javascript" src="/xxmh/resources/js/goPages.js"></script>
+<script src="/xxmh/resources/js/portal.js"></script>
+<script src="/xxmh/resources/js/thirdPartyCall/assert/layer/layer.js"></script>
+<script src="/xxmh/resources/js/golobalTitle.js"></script>
+<script type="text/javascript" src="/xxmh/resources/js/getOsBrower.js"></script>
+<!-- <script type="text/javascript" src="/xxmh/resources/js/zxkf.js"></script> -->
+
+<script type="text/javascript">
+    //全局变量
+    var layer;
+    var cjwt;
+
+    //刷新了首页后，判断是否已经登录，是则进入办税桌面
+    $.post("/xxmh/portalSer/checkLogin.do", {}, function (d) {
+        var isLogin = d.isLogin;
+        var ssoXxmhUrl = d.ssoXxmhUrl;
+        $("#ssoXxmhUrl").val(ssoXxmhUrl); //信息门户单点登录地址
+        if (isLogin == "Y") {
+            window.location.href = "/xxmh/html/index_login.html";
+        }
+    });
+
+    $(function () {
+        layui.use(['layer'], function () {
+            layer = layui.layer;
+        });
+
+        /**
+         * 获取国地税显示标志控制页面元素显示
+         */
+        getShowGdsbz(); //获取国地税标志是否显示配置  在portal.js
+
+        /**
+         * 背景图片自适应
+         */
+        $(window).resize(function () {
+            setIe()
+        });
+
+        setIe();
+
+        /**
+         * 常见问题
+         */
+        var cjwtObj = $("#cjwtList div");
+
+        cjwtObj.find("div ul li").on("click", function () {
+            var currentTitle = $(this).children("a").text().substring(2);
+            var id = $(this).attr("id");
+            var index_p1 = id.indexOf("_");
+            var index_p2 = id.lastIndexOf("_");
+            layer.title(currentTitle, cjwt);
+            var index_div = id.substring(index_p1 + 1, index_p2);
+            var index_li = id.substring(index_p2 + 1, id.length);
+            $("#cjwtList").hide();
+            $("#detailPage").show();
+            $("#detailPage").children("div:eq(" + index_div + ")").show();
+            $("#detailPage").children("div:eq(" + index_div + ")").siblings().hide();
+            $("#detailPage").children("div:eq(" + index_div + ")").children("div:eq(" + index_li + ")").show();
+            $("#detailPage").children("div:eq(" + index_div + ")").children("div:eq(" + index_li + ")").siblings().hide();
+
+        })
+
+        cjwtObj.find("h3").on("click", function () {
+            var index = $(this).parent().index();
+            if (index < 3) {
+                $("#detailPage").children("div:eq(" + index + ")").show();
+                $("#detailPage").children("div:eq(" + index + ")").siblings().hide();
+                $("#cjwtList").hide();
+                $("#detailPage").show();
+            } else {
+                var p_src = $(this).children(".arrow_point").children().attr("src");
+                if ("images/cjwt/right.png" == p_src) {
+                    $(this).children(".arrow_point").children().attr("src", "images/cjwt/adown.png");
+                } else {
+                    $(this).children(".arrow_point").children().attr("src", "images/cjwt/right.png");
+                }
+                $(this).parent().children("div").slideToggle("slow",
+                    function () {
+                    });
+            }
+        });
+
+    });
+
+    function setIe() {
+        var ieWidth = $(window).width();
+        var width;
+        if (ieWidth < 1200) {
+            width = 1200;
+        } else {
+            width = ieWidth;
+        }
+        $(".topbg img").width(width);
+        $("body").width(width);
+    }
+
+    //关闭常见问题弹出框
+    function closeCjwt() {
+        layer.close(cjwt);
+    }
+
+    //常见问题返回按钮
+    function backCjwt() {
+        layer.title('常见问题', cjwt);
+        $("#cjwtList").show();
+        $("#detailPage").hide();
+    }
+
+    function frequentlyQuestion() {
+        cjwt = layer.open({
+            type: 1,
+            //弹窗
+            closeBtn: 1,
+            //不显示关闭按钮
+            shift: 0,
+            //动画效果
+            area: ['900px', '500px'],
+            title: ['常见问题'],
+            btn: ['关闭', '返回'],
+            yes: function (index, layero) {
+                closeCjwt();
+            },
+            btn2: function (index, layero) {
+                backCjwt();
+                return false;
+            },
+            success: function (layero, index) {
+                $("#cjwtList").show();
+                $("#cjwt_btn").show();
+                $("#detailPage").hide();
+            },
+            content: $("#cjwtContent")
+        });
+    }
+
+    //检测环境
+    function checkEnv() {
+        //获取浏览器信息
+        var browerName = "";
+        var ieVersion = "";
+        try {
+            var brower = getBrowerInfo();
+            browerName = brower.client.name;
+            var browerVersion = brower.client.version;
+            ieVersion = parseInt(browerVersion.substring(0, 2));
+        } catch (e) {
+        }
+        IeEno(browerName, ieVersion);
+    }
+
+    //IE提示
+    function IeEno(browerName, ieVersion) {
+        var alerthtml = "";
+        if (browerName == "IE" && ieVersion > 8) {
+            alerthtml += "<div class=\"tc_nav\"><div style=\"height:50px; line-height:50px; text-align:center;font-size:18px;\">您的浏览器版本符合系统要求，祝您使用愉快</div>" + "<div style=\"height:40px; line-height:40px; text-align:center;font-size:12px;\">如需正常使用本网站，请确定您已经<span style=\"color:red;\">关闭兼容模式</span></div>" + "<div style=\"height:30px; line-height:30px; text-align:center;font-size:12px;\">如需更好体验本网站，我们推荐您使用如下浏览器</div>" + "<div style=\"height:60px; line-height:60px; width:60px; margin:0px auto; padding-bottom:15px;\"><img  style=\"width: 60px; height: 60px;\" src=\"/xxmh/resources/images/login/ieicon.png\"/></div>" + "<div style=\"height:32px; line-height:32px; text-align:center;font-size:12px;color:#22b6e7;\">IE9及以上版本的IE浏览器</div>" + "<div style=\"height:20px; line-height:20px; text-align:center;font-size:13px;\">您还可以点击“下载检测工具”，安装一键检测工具，完成对运行环境更详细的检测和设置。</div>" + "<div class=\"page01\" style=\"margin-left:267px\">" + "</div>" + "</div>";
+        } else {
+            alerthtml += "<div class=\"tc_nav\"><div style=\"height:50px; line-height:50px; text-align:center;font-size:18px;\">系统检测到您正在使用<span style=\"color:red;font-size:18px;\">非IE9及以上版本的IE浏览器</span>访问网上税务局</div>" + "<div style=\"height:40px; line-height:40px; text-align:center;font-size:12px;\">如需正常使用本网站，请确定您已经<span style=\"color:red;\">关闭兼容模式</span></div>" + "<div style=\"height:30px; line-height:30px; text-align:center;font-size:12px;\">如需更好体验本网站，我们推荐您使用如下浏览器</div>" + "<div style=\"height:60px; line-height:60px; width:60px; margin:0px auto; padding-bottom:15px;\"><img  style=\"width: 60px; height: 60px;\" src=\"/xxmh/resources/images/login/ieicon.png\"/></div>" + "<div style=\"height:32px; line-height:32px; text-align:center;font-size:12px;color:#22b6e7;\">IE9及以上版本的IE浏览器</div>" + "<div style=\"height:20px; line-height:20px; text-align:center;font-size:13px;\">您还可以点击“下载检测工具”，安装一键检测工具，完成对运行环境更详细的检测和设置。</div>" + "<div class=\"page01\" style=\"margin-left:267px\">" + "</div>" + "</div>";
+        }
+
+        resIeIndex = layer.open({
+            type: 1,
+            //弹窗
+            btn: ['检测工具下载', '下次再说'],
+            offset: 96,
+            shift: 0,
+            //动画效果
+            area: ['700px', '400px'],
+            title: "版本提醒",
+            content: alerthtml,
+            yes: function downLoadIE() {
+                window.open("http://download.etaxcn.com/gddzswj/gddzswjwybsszgj.zip", "_blank");
+            }
+        });
+    }
+    $(function () {
+        alertTzgg();//通知公告
+    });
+    /*
+    * 支持多条公告，json数组
+    * bt:标题
+    * zw:正文
+    * sj:时间
+    * lk:落款
+    *
+    * */
+    var tzggBz = true; // 通知公告控制开关，false不弹框，true则弹框
+    var tzggData = [{
+        "bt": "  国家税务总局贵州省电子税务局<br>域名变更公告 ",
+        /*"zw": ["    根据国家信息系统等级保护要求，为了保护您的信息安全并提供安全、高效、稳定的办税服务，从3月1日起，使用帐号密码方式登录电子税务局的，将增加手机短信验证。","选择帐号密码方式登录的，输入帐号和密码后，点击获取验证码，系统会自动发送验证码到帐号注册时采集的手机号上。对注册时未录入手机号或者办税人员变更的，从2月1日起至2月28日，纳税人可使用帐号和密码登录电子税务局录入或更改手机号码。企业帐号登录的，在【我的信息--纳税人信息--修改绑定手机】中录入手机号码。自然人帐号登录的，在【我的信息--用户管理--用户信息管理--帐户信息】里面修改录入手机号码。为在3月1日前您能正常登录电子税务局，请于2月28日前完成手机号码修改及录入工作。","为便捷操作，电子税务局同时提供了支付宝、微信扫码登录和CA登录，您可以在自然人登录界面，使用微信或支付宝扫码进行实名认证后，微信或支付宝扫码人脸识别登录电子税务局，申请绑定企业办税。扫码登录后，将鼠标移动到电子税务局页面右上角单位名称处，可自由切换个人办税与企业办税。对税务代理或者需要办理多家企业涉税事项的，推荐使用支付宝微信扫码登录!"*/
+        "zw": ["    根据《国务院办公厅关于加强政府网站域名管理的通知》（国办函〔2018〕55号）相关规定和国家税务总局有关要求，2019年06月21日20时起，国家税务总局贵州省电子税务局网站域名变更为<span style=\"color:red;font-weight: 900;\">https://etax.guizhou.chinatax.gov.cn</span>，原域名www.dzswj.gz-l-tax.gov.cn将于近期停止使用。","特此公告。"
+            ],
+        "sj": "2019年06月21日",
+        "lk": "国家税务总局贵州省税务局"
+    },
+    {
+        "bt": "  国家税务总局贵州省电子税务局<br>给个人所得税扣缴义务人的一封信 ",
+        /*"zw": ["    根据国家信息系统等级保护要求，为了保护您的信息安全并提供安全、高效、稳定的办税服务，从3月1日起，使用帐号密码方式登录电子税务局的，将增加手机短信验证。","选择帐号密码方式登录的，输入帐号和密码后，点击获取验证码，系统会自动发送验证码到帐号注册时采集的手机号上。对注册时未录入手机号或者办税人员变更的，从2月1日起至2月28日，纳税人可使用帐号和密码登录电子税务局录入或更改手机号码。企业帐号登录的，在【我的信息--纳税人信息--修改绑定手机】中录入手机号码。自然人帐号登录的，在【我的信息--用户管理--用户信息管理--帐户信息】里面修改录入手机号码。为在3月1日前您能正常登录电子税务局，请于2月28日前完成手机号码修改及录入工作。","为便捷操作，电子税务局同时提供了支付宝、微信扫码登录和CA登录，您可以在自然人登录界面，使用微信或支付宝扫码进行实名认证后，微信或支付宝扫码人脸识别登录电子税务局，申请绑定企业办税。扫码登录后，将鼠标移动到电子税务局页面右上角单位名称处，可自由切换个人办税与企业办税。对税务代理或者需要办理多家企业涉税事项的，推荐使用支付宝微信扫码登录!"*/
+        "zw": ["    感谢您们长期以来对个人所得税扣缴工作的理解和支持！" ,
+            "按照《中华人民共和国个人所得税法》及其相关规定，向个人支付所得的单位或者个人是个人所得税的扣缴义务人，应当按照国家规定办理全员全额扣缴申报，并向纳税人提供其个人所得和已扣缴税款等信息。" ,
+            "为了帮助广大扣缴义务人朋友更方便地了解扣缴个人所得税的相关规定，我们制作了《个人所得税扣缴业务指南》，对扣缴个人所得税的范围、税款计算、申报流程等规定进行了梳理，供扣缴工作中参考使用。如果在扣缴工作中有其他疑问和建议，欢迎拨打12366纳税服务热线或者向税务机关进行咨询。",
+            "<a style='color: #0a7fbc' href='https://www.kancloud.cn/cnspray/kxzy/847560' target='_blank'>国家税务总局贵州省电子税务局快速操作指南。</a>"
+            + "<a style='color: #0a7fbc' href='https://www.kancloud.cn/czzy/dzswjczzy/852222' target='_blank'>国家税务总局贵州省电子税务局操作指引。</a>"
+            ,"<a style='color: #0a7fbc' href='http://download.etaxcn.com/GZDS/CZSC/减税降费一点通.pdf'>附件:关于“减税降费一点通”的通知。</a>"
+            ,"<a style='color: #0a7fbc' href='http://download.etaxcn.com/GZDS/CZSC/个人所得税扣缴业务指南.docx'>附件:个人所得税扣缴业务指南。</a>"
+            ,"<a style='color: #0a7fbc' href='http://download.etaxcn.com/GZDS/CZSC/短信验证码接收常见问题及解决办法.docx'>附件:短信验证码接收常见问题及解决办法。</a>" ],
+        "sj": "2019年01月31日",
+        "lk": "国家税务总局贵州省税务局"
+    }];
+
+    function alertTzgg() {
+        var alerthtml = "<div>";
+         for (var index in tzggData) {
+            alerthtml = alerthtml + "<p style=\"text-align:center\"><font style=\"font-size:30px;text-align:center\">" + tzggData[index].bt + "</font></p><br>" +
+                "<p style=\"text-indent : 0px;line-height:20px;text-align:left\"><font style='font-size: 18px'>尊敬的纳税人：</font></p>";
+            for (var i = 0; i < tzggData[index].zw.length; i++) {
+                alerthtml = alerthtml + "<p style=\"text-indent : 35px;line-height:25px; text-align:left\">" + tzggData[index].zw[i] + "</p>";
+            }
+            alerthtml = alerthtml + "<br>" +
+                "<p style=\"text-indent : 0px; line-height:20px;text-align:right\">" + tzggData[index].lk + "</p>\n" +
+                "<p style=\"text-indent : 0px; line-height:20px;text-align:right\">" + tzggData[index].sj + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>";
+        }
+        alerthtml = alerthtml + "</div>";
+         if (alerthtml != "" && tzggBz) {
+            layer.open({
+                type: 1, //弹窗
+                closeBtn: 1, //不显示关闭按钮
+                shift: 0, //动画效果
+                shadeClose: true,//点击窗体外关闭
+                area: ['950px', '500px'],
+                title: ['通知公告'],
+                content: alerthtml,
+                success: function (layero) {
+                    layero.find('.layui-layer-content').css('height', '80%');
+                }
+            });
+        }
+    }
+</script>
+<!--本地化显示测试环境还是生产环境 --- 开始 ------>
+<div id="CheckEnvironment" style="position: absolute; left: 40%;top:15px;display:none">
+    <marquee style="width:300px;"><A title=客户端检测提示   style="color: red; font-size: 30px;" href="#"><SPAN   style="COLOR: #ff0000" spanstyle="font-size:40pt">测试环境</SPAN></A></marquee>
+</div>
+<script type="text/javascript">
+    $(function () {
+        //检查是否是测试环境
+        var localStr = location.href;
+        if (localStr.indexOf("test") > 0) {
+            $("#CheckEnvironment").show();
+        }
+    });
+</script>
+<!--本地化显示测试环境还是生产环境 --- 结束 ------>
+</body>
+<input type="hidden" id="ssoXxmhUrl" value=""/>
+</html>

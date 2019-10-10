@@ -1,0 +1,109 @@
+﻿@model JlveTaxSystemGuiZhou.Models.Model
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>此页面仅仅是作为页面跳转（处理IE加载css时出现408的错误）</title>
+
+</head>
+<body onload="autoSubmit();">
+
+<form  id="payform" action="/sbzs-cjpt-web/sb/gotoSbresult.do" method="post"> 
+ 	
+	<input type="hidden" id="nsrmc" name="nsrmc" value="a29369ed036e2493f850a23ca8e096c0e6241700a28c0893fd7edac422c15a4d416b4e9324ce1f0b" />
+	<input type="hidden" id="nsrsbh" name="nsrsbh" value="0413edef2597066710b3e467b5ad8a43686ce82b4680a505c358313a12846e86" />
+	<input type="hidden"  id="result" name="result" value="373cfd8d278b76745c146abbffe416aff8cc008fadaa907ca66d371b5b84395b85286c3ade6ee272862b1c2ddb62737d19b980f3c7ca0bf1d967355ac8c6cf8023b02004101667b06c76d2b737cfba35faf700bc5d8c158e45d63cbb46b19694129c6a5814687c71e4ac7b75fd897f4a652ebd7981b95f77504cc6f4bd84766c8bd8abeb7cdfb983ccc702893bd8cff89766a8de71779d8792841274fea35499353ac668261a413a6630c308c4cb21b3f38327b9a886abe267231d686707e240ccac5b0cf3931211" />
+	<input type="hidden"  id="sbjkTs" name="sbjkTs" value="您的税款所属期为2019-04-01至2019-06-30的《附加税申报表》（应征凭证序号为：10011119000053283372）已申报成功。税款金额：0.00元，无需进行缴款。" />
+	<input type="hidden"  id="ybtse" name="ybtse" value="0.00" />
+	<input type="hidden" id="djxh" name="djxh" value="" />
+	<input type="hidden"  id="needBack" name="needBack" value="" />
+	<input type="hidden"  id="sbywbm" name="sbywbm" value="" />
+	<input type="hidden"  id="yzpzxh" name="yzpzxh" value="10011119000053283372" />
+	<input type="hidden"  id="needJk" name="needJk" value="" />
+	<input type="hidden"  id="zsyzpzxh" name="zsyzpzxh" value="" />
+	<input type="hidden" id="errMsg" name="errMsg" value=""/>
+	<input type="hidden" id="ysqxxid" name="ysqxxid" value="@Model.qc.Id"/>
+	<input type="hidden" id="code" name="code" value=""/>
+	<input type="hidden" id="_bizReq_path_" name="_bizReq_path_" value="sbzs/lhfjssb"/>
+	<input type="hidden" id="_query_string_" name="_query_string_" value="%22nsqx_dm%22%3A%2208%22%2C%22zsxmDm%22%3A%2210109%22%2C%22sbSign%22%3A%2240aa654b3848748f7642f3e900c387be%22%2C%22gdslxDm%22%3A%221%22%2C%22skssq_z%22%3A%222019-06-30%22%2C%22ywbm%22%3A%22LHFJSSB%22%2C%22tjNd%22%3A%222019%22%2C%22sssqZ%22%3A%222019-06-30%22%2C%22skssq_q%22%3A%222019-04-01%22%2C%22sbqx%22%3A%222019-07-15%22%2C%22sssqQ%22%3A%222019-04-01%22%2C%22tjYf%22%3A%2207%22%2C%22gsdq%22%3A%22111%22%2C%22zspmDm%22%3A%22101090201%22%2C%22nsqxDmIn%22%3A%22%22%2C%22djxh%22%3A%2210111102010000069822%22%2C%22nsrsbh%22%3A%2291110116MA00H4L8X1%22%2C%22sssqQ%22%3A%222019-04-01%22%2C%22sssqZ%22%3A%222019-06-30%22%2C%22jumpFjssb%22%3A%22N%22%2C%22extraKey%22%3A%22lhfjs_E54F952A840C51396F83C5A6195514B1%22"/>
+	<input type="hidden" id="qzbz" name=qzbz value=""/>
+	<input type="hidden" id="gzsbTip" name=gzsbTip value=""/>
+	<input type="hidden" id="isShowGzsbTip" name=isShowGzsbTip value=""/>
+	<input type="hidden" id="toPath" name="toPath" value="/WEB-INF/_default_/well/"/>
+	<!-- 优惠提醒相关 -->
+	<input type="hidden" id="yhtxArray" name="yhtxArray" value=""/>
+	<input type="hidden" id="yhtxMsg" name="yhtxMsg" value=""/>
+	<!-- 提交中 -->
+	<input type="hidden" id="sbtjgcbz" name="sbtjgcbz" value=""/>
+</form>
+</body>
+
+<script type="text/javascript">
+function autoSubmit(){
+	//阻断提示和非阻断提示
+	var errors = '' ;
+    var warns = '' ;
+    if(typeof errorsAndWarnsAlert != "undefined"){
+ 		//调用 errorsAndWarnsAlert
+ 		errorsAndWarnsAlert(errors,warns,'well')
+  	}else{
+		if(errors != null && errors != '' && errors != '[]'){
+			var index = window.parent.layer.load(2,{shade: 0.3});
+			var myErrors = '';
+			try{
+				var tempErrors = eval('('+errors+')');
+				for(var i = 1; i <= tempErrors.length; i++){
+					if(tempErrors.length == 1){
+						if(tempErrors.length == 1){
+    						myErrors = tempErrors[0].msg;
+    						break;
+    					}
+						myErrors = tempErrors[0].msg;
+						break;
+					}
+					myErrors += i+ "：" +tempErrors[i-1].msg + "<br>";
+				}
+			}catch(err){
+				myErrors= errors;
+			}
+			window.parent.layer.alert(myErrors, {
+				icon : 5,
+				offset : '270px'
+			});
+		}else if(warns != null && warns != '' && warns != '[]'){
+			var index = window.parent.layer.load(2,{shade: 0.3});
+			var myWarns = '';
+			try{
+				var tempWarns = eval('('+warns+')');
+				for(var i = 1; i <= tempWarns.length; i++){
+					if(tempWarns.length == 1){
+						if(tempWarns.length == 1){
+							myWarns = tempWarns[0].msg;
+							break;
+						}
+						myWarns = tempWarns[0].msg;
+						break;
+					}
+					myWarns += i + "：" + tempWarns[i-1].msg + "<br>";
+				}
+			}catch(err){
+				myWarns= warns;
+			}
+			window.parent.layer.alert(myWarns, {
+				icon : 5,
+				offset : '270px'
+			});
+  	    	document.getElementById("payform").submit();
+  	    	window.parent.layer.close(index);
+		}else{
+			
+ 			document.getElementById("payform").submit();
+		}
+  	}
+}
+</script>
+
+
+</html>

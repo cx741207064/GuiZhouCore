@@ -1,0 +1,292 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>中华人民共和国企业所得税月（季）度预缴纳税申报表（A类）</title>
+<script>
+	var subViewCustomScripts = ["/sbzs_res/qysds_a_18yjd/js/a200000.js" ];	
+</script>
+</head>
+
+<body>
+<!-- <div id="menuContent" class="menuContent" style="display:none; position: absolute; z-index:9999;"> 
+<ul id="treeDemo" class="ztree" style="margin-top:0; width:160px; height:250px; overflow-y: scroll; border: 1px solid #617775;background: #fff;"></ul> 
+</div> -->
+<div style="width:96%; margin:auto;"  id="viewCtrlId" ng-controller="viewCtrl">
+<ng-codetable url="dm_gy_sfzjlx.json" name="sfzjlxCT" node="" dm="root.dm" mc="root.mc"></ng-codetable>
+<ng-codetable url="dm_gy_xzqh.json" name="xzqhCT" node="" dm="root.dm" mc="root.mc"></ng-codetable>
+
+<!-- <div class="NewTableHead"   ng-jprefix="qcs.initData.qysds2015JmJdAsbInitData.sssq"> -->
+<div class="NewTableHead"   ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.nsrxxForm"  >
+     <h1>中华人民共和国企业所得税月（季）度预缴纳税申报表（A类）</h1>
+    <li class="dateTxt">税款所属期
+	    <!-- <input type="text" readonly="true" style="width:100px; height:20px;" ng-model="sssq.rqQ" class="topInput"> --> 
+	    <input type="text"  readonly="true"  style="width:100px; height:20px;"  class="topInput"  ng-model="nsrxxForm.skssqq"> 
+	   	至
+	   	<!-- <input type="text" readonly="true" style="width:100px; height:20px;" ng-model="sssq.rqZ" class="topInput"> --> 
+	   	<input type="text" readonly="true" style="width:100px; height:20px;"  class="topInput"  ng-model="nsrxxForm.skssqz"> 
+   	</li>
+</div>
+
+
+<div class="NewTableTop"   ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.nsrxxForm"    >
+<table width="100%" border="0" cellspacing="0" cellpadding="0">  
+  <tr>    
+    <td>纳税人识别号（统一社会信用代码）：<span class="textline"   ng-bind="nsrxxForm.nsrsbh" ></span>  
+    </td>
+    <td align="right">金额单位:人民币元（列至角分）&nbsp;&nbsp;</td>
+  </tr>
+  <tr >    
+    <td>纳税人名称：<span class="textline"   ng-bind="nsrxxForm.nsrmc"></span>  </td>
+    <td align="right"></td>
+  </tr>
+  
+</table>
+</div>
+
+<!-- <div class="NewTableMain" ng-jprefix="qysdsczzsyjdSbbdxxVO.qysdsyjdyjnssbbal.sbbxxForm"> -->
+<div class="NewTableMain"    ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.sbbxxForm" >
+<table width="100%" border="0" cellspacing="1" cellpadding="0" ng-jprefix="fq.nsrjbxx">
+  <tr  ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.nsrxxForm">
+    <td align="center" class="title01">预缴方式</td>
+    <td colspan="3" class="title01">&nbsp;<input type="radio"    value="1"  ng-model="nsrxxForm.yjfs"     style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;"   disabled>&nbsp;&nbsp;按照实际利润额预缴&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"    value="2"   ng-model="nsrxxForm.yjfs"       style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;"   disabled>&nbsp;&nbsp;按照上一纳税年度应纳税所得额平均额预缴 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"   value="3"   ng-model="nsrxxForm.yjfs"      style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;"   disabled>&nbsp;&nbsp;按照税务机关确定的其他方法预缴</td>
+    </tr>
+  <tr  ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.nsrxxForm">
+    <td align="center" class="title01">企业类型</td>
+    <td colspan="3" class="title01">&nbsp;<input type="radio"   value="0"  ng-model="nsrxxForm.sbqylx"   style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;"  disabled>&nbsp;&nbsp;一般企业&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio"    value="1"  ng-model="nsrxxForm.sbqylx"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;"  disabled>&nbsp;&nbsp;跨地区经营汇总纳税企业总机构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio"    value="2"  ng-model="nsrxxForm.sbqylx"   style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;"  disabled>&nbsp;&nbsp;跨地区经营汇总纳税企业分支机构</td>
+    </tr>
+    <tr ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.nsrxxForm">
+    <td   align="center" class="title01">跨省总机构行政区划</td>
+    <td  style = "width:20%">
+     <!-- <select  ng-change="externalMethods('changeXzqh','');"  ng-show-tbsm="{{CT.xzqhCT[nsrxxForm.xzqhszDm]}}" name="select" id="select" ng-model="nsrxxForm.xzqhszDm" ng-options="key as value for (key,value) in CT.xzqhCT"><option value=""></option></select><input  type="hidden"   ng-value="nsrxxForm.xzqhszmc=CT.xzqhCT[nsrxxForm.xzqhszDm]"/>  -->
+         <!--   <input type="text" style = "width:100%;height:100%;" ng-blur="externalMethods('changeXzqh','');" ng-tree='{"url":"xzqh_tree.json","parentSeleced":"N","parentAdd":"N","width":"300","affectNode":""}' align="left" ng-model="nsrxxForm.xzqhszDm"  ng-value="nsrxxForm.xzqhszmc=CT.xzqhCT[nsrxxForm.xzqhszDm] "/>
+       	<input type="hidden" ng-blur="externalMethods('changeXzqh','');" ng-model="nsrxxForm.xzqhszDm" ng-value="nsrxxForm.xzqhszmc=CT.xzqhCT[nsrxxForm.xzqhszDm]"/> -->
+   <select  disabled="disabled" ng-show="nsrxxForm.sbqylx!='2'" class="form-control" ng-select-query ng-change="externalMethods('changeXzqh','');" ng-model="nsrxxForm.xzqhszObj"  id="xzqhszObj" ng-options="key as value.dm+'|'+value.mc for (key,value) in CT.xzqhCT">
+   		<option value=""></option>
+   	</select>
+   	<select ng-show="nsrxxForm.sbqylx=='2'" class="form-control" ng-select-query ng-change="externalMethods('changeXzqh','');" ng-model="nsrxxForm.xzqhszObj"  id="xzqhszObj" placeholder="" ng-options="key as value.dm+'|'+value.mc for (key,value) in CT.xzqhCT">
+	   	<option  value=""></option>
+	</select>
+   	<input type="hidden" ng-model="nsrxxForm.xzqhszDm" ng-value="nsrxxForm.xzqhszDm=CT.xzqhCT[nsrxxForm.xzqhszObj].dm">
+    <input type="hidden" ng-model="nsrxxForm.xzqhszmc" ng-value="nsrxxForm.xzqhszmc=CT.xzqhCT[nsrxxForm.xzqhszObj].mc">
+    </td>
+    <td align="center" colspan="2" style="color:red">提示：总机构在外省的分支机构申报时，请先选择跨省总机构行政区划</td>
+   
+    </tr>
+    
+  <tr>
+    <td colspan="4" align="center" class="title01"><strong>预缴税款计算</strong></td>
+    </tr>
+  <tr>
+    <td width="10%" align="center" class="title01">行次</td>
+    <td colspan="2" align="center" class="title01" >项目</td>
+    <td width="25%" align="center" class="title01">本年累计金额</td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">1</td>
+    <td colspan="2" class="title01">营业收入</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"     ng-model="sbbxxForm.yysrLj"  readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">2</td>
+    <td colspan="2" class="title01">营业成本</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.yycbLj"  readonly ></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">3</td>
+    <td colspan="2" class="title01">利润总额</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.lrzeLj"  readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">4</td>
+    <td colspan="2" class="title01">加：特定业务计算的应纳税所得额</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.tdywjsdynssdeLj"    ng-blur="externalMethods('zb4row','');"  readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">5</td>
+    <td colspan="2" class="title01">减：不征税收入</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.bzssrLj"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">6</td>
+    <td colspan="2" class="title01">减：免税收入、减计收入、所得减免等优惠金额（填写A201010）</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.mssrLj"  readonly ></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">7</td>
+    <td colspan="2" class="title01">减：固定资产加速折旧（扣除）调减额（填写A201020）</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.gdzcjszjkctjeLj"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">8</td>
+    <td colspan="2" class="title01">减：弥补以前年度亏损</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.mbyqndksLj"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">9</td>
+    <td colspan="2" class="title01">实际利润额（3+4-5-6-7-8） \ 按照上一纳税年度应纳税所得额平均额确定的应纳税所得额</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.sjlreLj"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">10</td>
+    <td colspan="2" class="title01">税率(25%)</td>
+    <td class="read right"><input  ng-datatype="percent{0}"   type="text"  ng-model="sbbxxForm.slLj"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">11</td>
+    <td colspan="2" class="title01">应纳所得税额（9×10）</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.ynsdseLj"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">12</td>
+    <td colspan="2" class="title01">减：减免所得税额（填写A201030）</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.jmsdseLj"  readonly ></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">13</td>
+    <td colspan="2" class="title01">减：实际已缴纳所得税额</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.sjyyjsdseLj"  readonly ></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">14</td>
+    <td colspan="2" class="title01">减：特定业务预缴（征）所得税额</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.tdywyjzsdseLj"  readonly ></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">15</td>
+    <td colspan="2" class="title01">本期应补（退）所得税额（11-12-13-14） \ 税务机关确定的本期应纳所得税额</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.ybtsdseLj"   readonly></td>
+  </tr>
+  
+  <tr>
+    <td colspan="4" align="center" class="title01"><strong>汇总纳税企业总分机构税款计算</strong></td>
+    </tr>
+  <tr>
+    <td align="center" class="title01">16</td>
+    <td rowspan="4" align="center" class="title01">总机构填报</td>
+    <td class="title01">总机构本期分摊应补（退）所得税额（17+18+19）</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.zjgybtsdseBq"  readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">17</td>
+    <td class="title01">其中：总机构分摊应补（退）所得税额（15×总机构分摊比例<input  ng-datatype="percent{2}"   class="topInput" style="width:10%;text-align:right;"     type="text"  ng-model="sbbxxForm.zjgftbl" >） </td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.zjgyftsdseBq"  readonly></td>
+  </tr>
+ <tr>
+    <td align="center" class="title01">18</td>
+      <td class="title01">财政集中分配应补（退）所得税额（15×财政集中分配比例<input  ng-datatype="percent{2}"   class="topInput" style="width:10%;text-align:right;"     type="text"  ng-model="sbbxxForm.zjgczjzftbl" >） </td>
+         
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.czjzfpsdseBq"   readonly></td>
+ </tr>
+  <tr>
+    <td align="center" class="title01">19</td>
+    <td class="title01">总机构具有主体生产经营职能的部门分摊所得税额（15×全部分支机构分摊比例<input  ng-datatype="percent{2}"   class="topInput" style="width:10%;text-align:right;"     type="text"  ng-model="sbbxxForm.fzjgftbl" >
+    ×总机构具有主体生产经营职能部门分摊比例<input  ng-datatype="percent{8}"   class="topInput" style="width:20%;text-align:right;background-color:#f1edee;"     type="text"  ng-model="sbbxxForm.dlscjybmftbl"  readonly>)</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.zjgdlscjybmyftsdseBq"   readonly></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">20</td>
+    <td rowspan="2" align="center" class="title01">分支机构填报</td>
+    <td class="title01">分支机构本期分摊比例</td>
+    <td class="read right"><input  ng-datatype="percent{8}"   type="text"  ng-model="sbbxxForm.fpbl"  readonly ></td>
+  </tr>
+  <tr>
+    <td align="center" class="title01">21</td>
+    <td class="title01">分支机构本期分摊应补（退）所得税额</td>
+    <td class="read right"><input  ng-datatype="number"   type="text"  ng-model="sbbxxForm.fzjgfpsdseBq"  readonly></td>
+  </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="1" cellpadding="0" ng-jprefix="kz.temp.zb">
+  <tr>
+    <td colspan="4" align="center" class="title01"><strong>附报信息</strong></td>
+    </tr>
+    <tr>
+    <td align="center" width="25%" class="title01">小型微利企业</td>
+    <td align="center" width="25%" class="title01">&nbsp;<input type="radio"  ng-model="sbbxxForm.sfsyxxwlqy"    value="Y" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  ng-model="sbbxxForm.sfsyxxwlqy"    value="N"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</td>
+    <td align="center" width="25%" class="title01">科技型中小企业</td>
+    <td align="center" width="25%" class="title01">&nbsp;<input type="radio"  ng-model="sbbxxForm.sfkjxzxqy"   value="Y"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  ng-model="sbbxxForm.sfkjxzxqy"    value="N" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</td>
+    </tr>
+    <tr>
+    <td align="center" width="25%" class="title01">高新技术企业</td>
+    <td align="center" width="25%" class="title01">&nbsp;<input type="radio"   value="Y"  ng-model="sbbxxForm.sfgxjsqy"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  ng-model="sbbxxForm.sfgxjsqy"   value="N" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</td>
+    <td align="center" width="25%" class="title01">技术入股递延纳税事项</td>
+    <td align="center" width="25%" class="title01">&nbsp;<input type="radio"   ng-model="sbbxxForm.sffsjsrgdynssx"  value="Y" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;"  onchange="jsrgtisp(this)"  >&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"   ng-model="sbbxxForm.sffsjsrgdynssx"   value="N"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</td>
+    </tr>
+   <!--  <tr>
+    <td colspan="4" align="center" class="title01" style="padding:0px; height:0px">
+    <div style="display:inline-block; width:24%; border-right:1px solid #b5b5b5; padding:5px 0px">小型微利企业</div><div style="display:inline-block; width:24%; border-right:1px solid #b5b5b5;padding:5px 0px">&nbsp;<input type="radio"  ng-model="sbbxxForm.sfsyxxwlqy"    value="Y" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  ng-model="sbbxxForm.sfsyxxwlqy"    value="N"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</div>
+    <div style="display:inline-block; width:24%; border-right:1px solid #b5b5b5;padding:5px 0px">科技型中小企业</div><div style="display:inline-block; width:24%;padding:5px 0px">&nbsp;<input type="radio"  ng-model="sbbxxForm.sfkjxzxqy"   value="Y"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  ng-model="sbbxxForm.sfkjxzxqy"    value="N" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</div>
+    </td>
+    </tr>
+  <tr>
+    <td colspan="4" align="center" class="title01" style="padding:0px; height:0px">
+    <div style="display:inline-block; width:24%; border-right:1px solid #b5b5b5; padding:5px 0px">高新技术企业</div><div style="display:inline-block; width:24%; border-right:1px solid #b5b5b5;padding:5px 0px">&nbsp;<input type="radio"   value="Y"  ng-model="sbbxxForm.sfgxjsqy"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  ng-model="sbbxxForm.sfgxjsqy"   value="N" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</div>
+    <div style="display:inline-block; width:24%; border-right:1px solid #b5b5b5;padding:5px 0px">技术入股递延纳税事项</div><div style="display:inline-block; width:24%;padding:5px 0px">&nbsp;<input type="radio"   ng-model="sbbxxForm.sffsjsrgdynssx"  value="Y" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"   ng-model="sbbxxForm.sffsjsrgdynssx"   value="N"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</div>
+    </td>
+  </tr> -->
+    
+    
+    
+  <tr>
+    <td align="center" class="title01">期末从业人数</td>
+    <td colspan="3" class="edit right"><input  ng-datatype="number{0}"   type="text"   ng-model="sbbxxForm.qmcyrs"></td>
+    </tr>
+  <tr  ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.nsrqtxxForm">
+    <td colspan="4" align="left" class="title01">&nbsp; &nbsp;&nbsp; &nbsp;谨声明：此纳税申报表是根据《中华人民共和国企业所得税法》《中华人民共和国企业所得税法实施条例》以及有关税收政策和国家统一会计制度的规定填报的，是真实的、可靠的、完整的。<div style="text-align:right; padding-bottom:10px">法定代表人（签章）：<input  type="text" class="topInput" style="width:160px;text-align:center"  ng-model="nsrqtxxForm.fddbr"     />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<input  type="text" class="topInput" style="width:40px;text-align:center"  ng-value="(nsrxxForm.sbrq1).split('-')[0]"  readonly  />年&nbsp; &nbsp;
+      <input  type="text" class="topInput" style="width:20px;text-align:center"  ng-value="(nsrxxForm.sbrq1).split('-')[1]"  readonly  />月&nbsp; &nbsp;
+      <input  type="text" class="topInput" style="width:20px; text-align:center"  ng-value="(nsrxxForm.sbrq1).split('-')[2]" readonly   />日</div></td>
+    </tr>
+    
+    
+    
+    <tr ng-show="(nsrjbxx.swjgDm).substring(1,3)=='37'" ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.nsrqtxxForm">
+      <td colspan="4" style="padding-left:10px"><div style="display:inline-block; width:32%; border-right:1px solid #b5b5b5; padding-top:10px">
+      <div style="padding-bottom:8px">纳税人公章：<input  type="text" class="topInput" style="width:198px;text-align:center"  readonly    /></div>
+      <div style="padding-bottom:42px">会计主管：<input  type="text" class="topInput" style="width:210px;text-align:center"       ng-model="nsrqtxxForm.kjzg"/></div>      
+      <div style="padding-bottom:10px">填表日期：<input  type="text" class="topInput" style="width:210px;text-align:center"  readonly    ng-model="nsrqtxxForm.rqStr"  /></div></div>
+       
+      <div style="display:inline-block; width:32%;border-right:1px solid #b5b5b5;padding-left:10px">
+      <div style="padding-bottom:8px">代理申报中介机构公章：<input  type="text" class="topInput" style="width:140px;text-align:center"    readonly  /></div>    
+      <div style="padding-bottom:8px">经办人：<input  type="text" class="topInput" style="width:224px;text-align:center"      ng-model="nsrqtxxForm.jbr"  /></div>
+      <div style="padding-bottom:8px">经办人执业证件号码：<input  type="text" class="topInput" style="width:150px;text-align:center"        ng-model="nsrqtxxForm.jbrzyzjhm"/></div>      
+      <div style="padding-bottom:10px">代理申报日期：<input  type="text" class="topInput" style="width:188px;text-align:center"   readonly   ng-model="nsrqtxxForm.dlsbrq"  /></div></div>
+        <div style="display:inline-block; width:32%;padding-left:10px">
+      <div style="padding-bottom:8px">主管税务机关受理专用章：<input  type="text" class="topInput" style="width:132px;text-align:center"  readonly    /></div>
+      <div style="padding-bottom:42px">受理人：<input  type="text" class="topInput" style="width:228px;text-align:center"       ng-model="nsrqtxxForm.slr" readonly /></div>
+      <div style="padding-bottom:10px">受理日期：<input  type="text" class="topInput" style="width:216px;text-align:center"   readonly   ng-model="nsrqtxxForm.rqStr"  /></div> </div> </td>
+    </tr>
+    <tr ng-show="(nsrjbxx.swjgDm).substring(1,3)!='37'" ng-jprefix="ht.qysdsczzsyjdSbbdxxVO.A200000Ywbd.nsrqtxxForm">
+      <td colspan="4" style="padding-left:10px"><div style="display:inline-block; width:32%; border-right:1px solid #b5b5b5; padding-top:10px">
+      <div style="padding-bottom:8px">纳税人公章：<input  type="text" class="topInput" style="width:160px;text-align:center"  readonly    /></div>
+      <div style="padding-bottom:8px">会计主管：<input  type="text" class="topInput" style="width:160px;text-align:center"       ng-model="nsrqtxxForm.kjzg"/></div>
+      <div style="padding-bottom:8px">办理人：<input  type="text" class="topInput" style="width:160px;text-align:center"       ng-model="nsrqtxxForm.blr"/></div>
+      <div style="padding-bottom:8px">办理人员身份证件类型：<select style="width: 130px" ng-show-tbsm="{{CT.sfzjlxCT[nsrqtxxForm.blrysfzjlxDm]}}" name="select" id="select" ng-model="nsrqtxxForm.blrysfzjlxDm" ng-options="key as value for (key,value) in CT.sfzjlxCT"><option value=""></option></select><input  type="hidden"   ng-value="zb.blrysfzjlxMc=CT.sfzjlxCT[nsrqtxxForm.blrysfzjlxDm]"/></div>
+      <div style="padding-bottom:8px">办理人员身份证件号码：<input  type="text" class="topInput" style="width: 130px;text-align:center"   ng-show-tbsm="{{nsrqtxxForm.blrysfzjhm}}"    ng-model="nsrqtxxForm.blrysfzjhm"/></div>
+      <div style="padding-bottom:10px">填表日期：<input  type="text" class="topInput" style="width:160px;text-align:center"  readonly    ng-model="nsrqtxxForm.rqStr"  /></div></div>
+       
+      <div style="display:inline-block; width:32%;border-right:1px solid #b5b5b5;padding-left:10px">
+      <div style="padding-bottom:19px">代理申报中介机构公章：<input  type="text" class="topInput" style="width:110px;text-align:center"    readonly  /></div>
+      <div style="padding-bottom:10px">是否代理申报：&nbsp;<input type="radio"  ng-model="nsrqtxxForm.sfdlsb"    value="Y" style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  ng-model="nsrqtxxForm.sfdlsb"    value="N"  style="vertical-align:middle; margin-top:-2px; margin-bottom:1px;">&nbsp;&nbsp;否</div>
+      <div style="padding-bottom:10px">代理申报中介机构：<input  type="text" class="topInput" style="width:160px;"         ng-model="nsrqtxxForm.dlsbzjjg" /></div>
+      <div style="padding-bottom:10px">经办人：<input  type="text" class="topInput" style="width:160px;text-align:center"      ng-model="nsrqtxxForm.jbr"  /></div>
+      <div style="padding-bottom:10px">经办人执业证件号码：<input  type="text" class="topInput" style="width:130px;text-align:center"        ng-model="nsrqtxxForm.jbrzyzjhm"/></div>
+      <div style="padding-bottom:10px" ng-show="nsrqtxxForm.sfdlsb=='Y'">代理申报日期：<input  type="text" class="topInput" style="width:160px;text-align:center"   readonly   ng-model="nsrqtxxForm.rqStr"  /></div>
+      <div style="padding-bottom:10px" ng-show="nsrqtxxForm.sfdlsb!='Y'">代理申报日期：<input  type="text" class="topInput" style="width:160px;text-align:center"   readonly   ng-model="nsrqtxxForm.dlsbrq"  /></div></div>
+        <div style="display:inline-block; width:32%;padding-left:10px">
+      <div style="padding-bottom:43px">主管税务机关受理专用章：<input  type="text" class="topInput" style="width:100px;text-align:center"  readonly    /></div>
+      <div style="padding-bottom:72px">受理人：<input  type="text" class="topInput" style="width:160px;text-align:center"       ng-model="nsrqtxxForm.slr" readonly /></div>
+      <div style="padding-bottom:10px">受理日期：<input  type="text" class="topInput" style="width:160px;text-align:center"   readonly   ng-model="nsrqtxxForm.rqStr"  /></div> </div> </td>
+    </tr>
+  <tr ng-render-finish="">
+</table>
+
+</div>
+
+
+
+</div>
+</body>
+</html>

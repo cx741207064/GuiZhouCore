@@ -1,0 +1,204 @@
+<!doctype html>
+<html id="ng-app"  xmlns:ng="http://angularjs.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<title>现金流量表_月报</title>
+</head>
+
+<body>
+<div style="width:96%; margin:auto;"  ng-jprefix="SB100VO.SB100BdxxVO.cjbdxml.syxqyxjllb.nsrxxForm3"  id="viewCtrlId" ng-controller="viewCtrl">
+<div class="NewTableHead">
+     <h1>现金流量表_月报（适用执行小企业会计准则的企业）</h1>
+	<li class="dateTxt">
+	所属期起<input type="text" class="topInput" value=" " ng-model="nsrxxForm3.skssqq" readonly="true"> 
+	所属期止<input type="text" class="topInput" value=" " ng-model="nsrxxForm3.skssqz" readonly="true"> 
+	 </li>     
+</div>
+
+<div class="NewTableTop">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	    <td>报送日期：<span class="textline" ng-bind="nsrxxForm3.bsrq" ></td>
+	    <td align="right"></td>
+   </tr>
+   <tr>
+    <td>纳税人识别号：<span class="textline" ng-bind="nsrxxForm3.nsrsbh">
+    </td>
+    <td align="right">会小企03表</td>
+  </tr>
+  <tr>
+    <td>纳税人名称：<span class="textline" ng-bind="nsrxxForm3.nsrmc">
+    </td>
+    <td align="right">单位：元      
+</td>
+  </tr>
+</table>
+</div>
+
+<div class="NewTableMain">
+<table width="100%" border="0" cellspacing="1" cellpadding="0" ng-jprefix="SB100VO.SB100BdxxVO.cjbdxml.syxqyxjllb.xqyxjllbGrid">
+    <tr>
+      <td align="center" class="title01"><strong>项      目</strong></td>
+      <td align="center" class="title01"><strong>行次</strong></td>
+      <td align="center" class="title01"><strong>本月金额</strong></td>
+      <td align="center" class="title01"><strong>本年累计金额</strong></td>
+      </tr>
+    <tr>
+      <td class="title01"><strong> 一、经营活动产生的现金流量：</strong></td>
+      <td class="title01">　</td>
+      <td class="title01">　</td>
+      <td class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">   销售产成品、商品、提供劳务收到的现金</td>
+      <td align="center" class="title01">1</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[0].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[0].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">   收到其他与经营活动有关的现金</td>
+      <td align="center" class="title01">2</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[1].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[1].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">   购买原材料、商品、接受劳务支付的现金</td>
+      <td align="center" class="title01">3</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[2].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[2].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">   支付的职工薪酬</td>
+      <td align="center" class="title01">4</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[3].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[3].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">   支付的税费</td>
+      <td align="center" class="title01">5</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[4].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[4].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">   支付其他与经营活动有关的现金</td>
+      <td align="center" class="title01">6</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[5].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[5].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">      经营活动产生的现金流量净额</td>
+      <td align="center" class="title01">7</td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[6].byje" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[6].bnljje" type="text" value="0.00" readonly></td>
+      </tr>
+    <tr>
+      <td class="title01"><strong> 二、投资活动产生的现金流量：</strong></td>
+      <td align="center" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">    收回短期投资、长期债券投资和长期股权投资收到的现金</td>
+      <td align="center" class="title01">8</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[7].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[7].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    取得投资收益收到的现金</td>
+      <td align="center" class="title01">9</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[8].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[8].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    处置固定资产、无形资产和其他非流动资产收回的现金净额</td>
+      <td align="center" class="title01">10</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[9].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[9].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    短期投资、长期债券投资和长期股权投资支付的现金</td>
+      <td align="center" class="title01">11</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[10].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[10].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    购建固定资产、无形资产和其他非流动资产支付的现金</td>
+      <td align="center" class="title01">12</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[11].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[11].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">       投资活动产生的现金流量净额</td>
+      <td align="center" class="title01">13</td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[12].byje" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[12].bnljje" type="text" value="0.00" readonly></td>
+      </tr>
+    <tr>
+      <td class="title01"><strong> 三、筹资活动产生的现金流量：</strong></td>
+      <td align="center" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      <td width="161" class="title01">　</td>
+      </tr>
+    <tr>
+      <td class="title01">    取得借款收到的现金  </td>
+      <td align="center" class="title01">14</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[13].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[13].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    吸收投资者投资收到的现金</td>
+      <td align="center" class="title01">15</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[14].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[14].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    偿还借款本金支付的现金</td>
+      <td align="center" class="title01">16</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[15].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[15].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    偿还借款利息支付的现金</td>
+      <td align="center" class="title01">17</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[16].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[16].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    分配利润支付的现金</td>
+      <td align="center" class="title01">18</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[17].byje" type="text" value="0.00"></td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[17].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr>
+      <td class="title01">    筹资活动产生的现金流量净额</td>
+      <td align="center" class="title01">19</td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[18].byje" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[18].bnljje" type="text" value="0.00" readonly></td>
+      </tr>
+    <tr>
+      <td class="title01"><strong> 四、现金净增加额</strong></td>
+      <td align="center" class="title01">20</td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[19].byje" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[19].bnljje" type="text" value="0.00" readonly></td>
+      </tr>
+    <tr>
+      <td class="title01"> 加：期初现金余额</td>
+      <td align="center" class="title01">21</td>
+      <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[20].byje" type="text" value="0.00"></td>
+      <!--       <td align="right" width="161">0.00 </td> -->
+<!--       <td align="right" width="161">0.00 </td> -->
+      
+       <td class="edit right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[20].bnljje" type="text" value="0.00"></td>
+      </tr>
+    <tr ng-render-finish="">
+      <td class="title01"><strong> 五、期末现金余额</strong></td>
+      <td align="center" class="title01">22</td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[21].byje" type="text" value="0.00" readonly></td>
+      <td class="read right"><input ng-datatype="number" ng-model="xqyxjllbGrid.xqyxjllbGridlb[21].bnljje" type="text" value="0.00" readonly></td>
+      </tr>
+  </table>
+</div>
+</div>
+</body>
+</html>

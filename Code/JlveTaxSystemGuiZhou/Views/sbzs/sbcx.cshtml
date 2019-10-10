@@ -1,0 +1,344 @@
+﻿@model JlveTaxSystemGuiZhou.Models.Model
+
+
+	
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="ng-app" ng-app="viewApp" xmlns:ng="http://angularjs.org">
+<head>
+<meta name="renderer" content="ie-stand" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+<meta http-equiv="pragma" content="no-cache">  
+<meta http-equiv="cache-control" content="no-cache">  
+<meta http-equiv="expires" content="0">
+<title>申报查询</title>
+<!-- 通用样式和框架js -->
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/_res_/js/lib/angular.js"></script>
+<link href="/sbzs-cjpt-web/abacus/_res_/css/comon0.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/js/ecm-taglib/message/skin/default/Message.css" />
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/jquery.min.js"></script>
+<script type="text/javascript"src="/sbzs-cjpt-web/resources/js/ecm-taglib/json2/json2.js"></script>
+<script type="text/javascript">var contextRoot="/sbzs-cjpt-web";</script>
+<script type="text/javascript" src="/sbzs-cjpt-web/view/common/gy.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/jquery.reveal.js"></script>
+
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/DatePicker/DatePicker.js"></script>
+
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/ecm-taglib/laypage-v1.3/laypage/laypage.js"></script>
+
+<script type="text/javascript" src="/sbzs-cjpt-web/resources/js/lib/message.js"></script>
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/resources/css/message/message_solid.css">
+	<!-- 自定义脚本 -->
+
+<script type="text/javascript">
+	//低版本IE兼容性处理：控制台日志记录器。
+	if (!window.console) {
+	  console = { log : function(){} };
+	}
+	var gdbsms='1';
+	var gdslxDm_ = '1';
+	var nsrxx = '{"gsNsrsbh":"91520190314387738N","gsZgswjdm":"15201156300","error":"","dsDjxh":"","gsDjxh":"10115201000083900814","dsZgswjdm":"","dsNsrmc":"","gsNsrmc":"贵州鸿瑞锦机电有限公司","gsSwjgDm":"15201150000","dsNsrsbh":"","dsSwjgDm":""}';
+	//var jsessionid = '';
+	var DZSWJ_TGC = 'a2e81c8c93c34e178e54b44f537918a5';
+	var ywbm = '';
+</script>
+<script type="text/javascript" src="/sbzs-cjpt-web/view/nssb/sbxxcx/sbcxjdy.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/view/nssb/sbxxcx/sbcxzdy.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/view/nssb/sbzf/cp/cpDateControl.js"></script>
+
+<!--4.0版本UI  -->
+<link rel="stylesheet" type="text/css" href="/sbzs-cjpt-web/abacus/resources4/layui/css/layui.css" />
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/layui/layui.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/tax-js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/sbzs-cjpt-web/abacus/resources4/tax-js/common.js"></script>
+<link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-css/common.css">
+<link rel="stylesheet" href="/sbzs-cjpt-web/abacus/resources4/tax-font-icon/iconfont.css">
+</head>
+
+
+<body  ng-app="viewApp"  id = "viewCtrlid">
+
+		<div  class="tax-center-box" ng-controller="viewCtrl">
+			<div class="ui-tax-center-box">
+			
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="top_title" style="margin-bottom: 10px;">
+			  <tr>
+			    <td width="52"><img src="/sbzs-cjpt-web/abacus/resources4/tax-images/png_icon/sbcxjdy.png"></td>
+			    <td><div class="big_title">申报查询及打印</div></td>
+			  </tr>
+			</table>
+			<div class="title">
+				<ul class="nav">
+					<li>报税中心</li>
+					<li>申报查询</li>
+				</ul>
+				<div class="theme">申报查询</div>
+			</div>
+		
+			<form class="marginT20 layui-form-item">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td ng-cloak ng-if="showGdsbz=='Y'" id="gdbztd1"  style="display : none;">国地标志：</td>
+						<td ng-cloak ng-if="showGdsbz=='Y'" id="gdbztd2"  style="display : none;">
+							<select id="gdbz" class="select01css" style="width: 155px;">
+								<option value="0">全部</option>
+								<option value="1">国税</option>
+								<option value="2">地税</option>
+							</select>
+						</td>
+						<td ng-cloak ng-if="showGdsbz=='N'"  style="display : none;">国地标志：</td>
+						<td ng-cloak ng-if="showGdsbz=='N'"  style="display : none;">
+							<span ng-if="showGdsbz=='N'" id="gdbztd1"></span>
+							<span ng-if="showGdsbz=='N'" id="gdbztd2"></span>
+							<select id="gdbz" class="select01css" style="display: none;">
+								<option value="0">全部</option>
+								<option value="1">国税</option>
+								<option value="2">地税</option>
+							</select>
+						</td>
+						<td colspan="4">
+							<div class="layui-inline marginB12">
+								<label class="layui-form-label label-left" style="width: 100px">申报日期起止:</label>
+								<input type="hidden" name="sssqQ" id="sssqQ" value="null">
+								<input type="hidden" name="sssqZ" id="sssqZ" value="null">
+								<input type="hidden" name="nsqx" id="nsqx">
+								<div class="layui-input-inline" style="width: 120px">
+									<input type="text" class="layui-input layui-date-input" id="sbrqq" lay-key="1">
+								</div>
+							</div>
+							<div class="layui-inline marginB12">
+								<label class="layui-form-label label-left" style="width: 20px">-</label>
+								<div class="layui-input-inline" style="width: 120px">
+									<input type="text" class="layui-input layui-date-input" id="sbrqz"  lay-key="2">
+								</div>
+							</div>
+							<div class="layui-inline marginB12">
+								<label class="layui-form-label label-left" style="width: 110px">税款所属期起止:</label>
+								<div class="layui-input-inline" style="width: 120px">
+									<input type="text" class="layui-input layui-date-input" id="skssqq" lay-key="3">
+								</div>
+							</div>
+							<div class="layui-inline marginB12">
+								<label class="layui-form-label label-left" style="width: 20px">-</label>
+								<div class="layui-input-inline" style="width: 120px">
+									<input type="text" class="layui-input layui-date-input" id="skssqz" lay-key="4">
+								</div>
+							</div>
+							<div class="layui-inline marginB12">
+								<button class="layui-btn layui-btn-primary" onclick="queryBtn()">查询</button>
+								<!-- <button class="layui-btn" onclick="resetBtn()">重 置</button> -->
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		
+			<table width="100%" class="layui-table" border="0" cellspacing="0" cellpadding="0" id="sbxxGrid">
+				<tr class="trheader">
+					<th width="5%">序号</th>
+					<th width="5%" ng-if="showGdsbz=='Y'">国地标志</th>
+					<th width="23%">申报表名称</th>
+					<th width="10%">征收项目</th>
+					<th width="10%">申报日期</th>
+					<th width="10%">税款所属期起</th>
+					<th width="10%">税款所属期止</th>
+					<th width="10%">应补退税额</th>
+					<th width="10%">操作</th>
+				</tr>
+				<tr ng-repeat="item in items">
+					<td align="center" ng-cloak ng-bind="item.index + 1"></td>
+					<td align="center" ng-cloak ng-if="showGdsbz=='Y'" ng-bind-html="item.gdslxDm | gdslxDm | to_trusted"></td>
+					<td align="left" ng-cloak ng-bind="item.yzpzzlmc"></td>
+					<td align="left" ng-cloak ng-bind="item.zsxmmc"></td>
+					<td align="center" ng-cloak ng-bind="item.sbrq | limitTo : 10"></td>
+					<td align="center" ng-cloak ng-bind="item.skssqq | limitTo : 10"></td>
+					<td align="center" ng-cloak ng-bind="item.skssqz | limitTo : 10"></td>
+					<td align="right" ng-cloak ng-bind="item.ybtse"></td>
+					<!-- 按钮兼容2.0 ywrz 、依申请信息 1.0 ywrz-->
+					<!--version=1为依申请数据，version=3为纳服业务日志数据,version=4为其他渠道数据-->
+					<td align="center" ng-cloak ng-if="item.version == 1" ng-bind-html="item | pzxh | to_trusted"></td>
+					<td align="center" ng-cloak ng-if="item.version == 3" ng-bind-html="item | cksbb | to_trusted"></td>
+					
+					<td align="center" ng-cloak ng-if="item.version == 4" ng-bind-html="item | cksbb | to_trusted"></td>
+					<!-- 增值税0申报后，征管自动申报一税两费 -->
+					<td align="center" ng-cloak ng-if="item.version == 00" ng-bind-html="item | fjssb | to_trusted"></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" id="sbxxNotTips" style="display: none;border-top: 0;">
+				<tbody>
+					<tr>
+						<td align="center" ng-if="showGdsbz=='Y'" colspan="9"><font color="red">没有申报信息!</font></td>
+				    	<td align="center" ng-if="showGdsbz!='Y'" colspan="8"><font color="red">没有申报信息!</font></td>
+					</tr>
+				</tbody>
+			</table>
+		
+       		</div> <!-- box -->
+       		
+       		<!-- 分页位置 -->
+			<!--<div class="layui-box layui-laypage layui-laypage-default"
+				id="layui-laypage-5">
+				<a href="javascript:;" class="layui-laypage-prev layui-disabled"
+					id="page1" data-page="0"><i class="layui-icon"></i></a><span
+					class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span><span class="layui-laypage-skip">到第<input
+					type="text" min="1" value="1" class="layui-input">页
+					<button type="button" class="layui-laypage-btn">确定</button></span><span
+					class="layui-laypage-count" id="pageInfo">共 0 条</span><span
+					class="layui-laypage-limits"><select lay-ignore=""><option
+							value="10" selected="">10 条/页</option>
+				</select></span>
+			</div>-->
+		
+			 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="50">
+						<select class="inputstyle inputstyle02"
+							id="pageSize">
+								<option selected>10</option>
+						</select>
+					</td>
+					<td id="pageInfo">条/页，共0条信息</td>
+					<td>
+						<div class="page1" id="page1" style="padding: 10px 0; float: right;">
+							<div class="page_box"></div>
+						</div>
+					</td>
+				</tr>
+			</table> 
+			<!-- 分页位置 -->
+			<!--<div style="padding: 20px 0; color: #666666;letter-spacing:1px;font-size: 12px">
+				温馨提示:&nbsp;查询时申报年月、所属期起止请二选一。
+           </div>-->
+       		
+		</div>
+
+</body>
+<script type="text/javascript">
+//初始化日期控件
+//定义laydate全局基础参数
+/* laydate.set({
+	min : "2000-01-01", // 设定最小日期为当前日期
+	max : '2099-12-31', // 最大日期
+	type: 'month',
+	istime : false,
+	istoday : false
+});
+//申报年月
+laydate.render({
+	elem : '#sbny'
+});
+//税款所属期起
+var start = laydate.render({
+	elem : '#skssqq',
+	done : function(value,date) {
+		if(value!=""){
+			end.config.min = {
+                year: date.year,
+                month: date.month - 1,
+                date: date.date,
+                hours: date.hours,
+                minutes: date.minutes,
+                seconds: date.seconds
+			}; //开始日选好后，重置结束日的最小日期
+		}
+	}
+});
+//税款所属期止
+var end = laydate.render({
+	elem : '#skssqz',
+	done : function(value,date) {
+		if(value!=""){
+			start.config.max = {
+                year: date.year,
+                month: date.month - 1,
+                date: date.date,
+                hours: date.hours,
+                minutes: date.minutes,
+                seconds: date.seconds
+            }; //结束日选好后，重置开始日的最大日期
+		}
+	}
+}); */
+
+//改用datepicker
+/* $("#sbny").on('click', function () {
+	new DatePicker({inputObj:this,dateFormatStyle:'yyyy-MM',beginDate:'2000-01-01',endDate:'2099-12-30',lang:1,type:'m'}).show();
+	//WdatePicker({dateFmt:'yyyyMM',maxDate:'%y-%M-%d 00:00:00',autoPickDate:true,onpicked:changvalue,isShowClear:false});
+}); 
+
+$("#skssqq").on('click', function () {
+	new DatePicker({inputObj:this,dateFormatStyle:'yyyy-MM',beginDate:'2000-01-01',endDate:'2099-12-30',lang:1,type:'m'}).show();
+	//WdatePicker({dateFmt:'yyyyMM',maxDate:'%y-%M-%d 00:00:00',autoPickDate:true,onpicked:changvalue,isShowClear:false});
+});
+
+$("#skssqz").on('click', function () {
+	new DatePicker({inputObj:this,dateFormatStyle:'yyyy-MM',beginDate:'2000-01-01',endDate:'2099-12-30',lang:1,type:'m'}).show();
+});*/
+
+viewApp.controller('viewCtrl', function ($scope) {
+    var db_showGdsbz = 'N';
+    $scope.showGdsbz = (db_showGdsbz == 'null' || db_showGdsbz=='' || db_showGdsbz=='undefined')?'Y':db_showGdsbz;
+});
+
+var date = new Date('@Model.GDTXDate.sbrqz');
+var year = date.getFullYear();  
+var month = date.getMonth() + 1;
+if(month < 10){
+	month = "0" + month;
+}
+var day = date.getDate();
+var firstDay = year + '-' + month + '-01';
+var nowDay = year + '-' + month + '-' + day;
+
+//4.0日期控件 
+layui.use('laydate', function() {
+var laydate = layui.laydate;
+
+//日期范围
+laydate.render({
+	elem : '#sbrqq',
+	value : firstDay
+});
+
+laydate.render({
+	elem : '#sbrqz',
+	value : nowDay
+});
+
+laydate.render({
+	elem : '#sbrq',
+	range : true
+});
+
+/* laydate.render({
+	elem : '#skssq',
+	range : true
+}); */
+
+laydate.render({
+	elem : '#skssqq',
+});
+
+laydate.render({
+	elem : '#skssqz',
+});
+
+/* laydate.render({
+	elem : '#sbny',
+	type: 'month'
+}); */
+
+});
+//加载层
+var layer;
+layui.use('layer', function() {
+layer = layui.layer;
+})
+
+</script>
+</html>
